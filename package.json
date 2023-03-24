@@ -1,0 +1,33 @@
+{
+  "name": "@rainbowatcher/eslint-config-mono",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@7.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+  },
+  "keywords": [
+    "eslint",
+    "lint",
+    "config"
+  ],
+  "author": "rainbowatcher <rainbow-w@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/rainbowatcher/eslint-config/issues"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "lint": "eslint .",
+    "release": "changelogen -r",
+    "publish": "npm publish && git push --follow-tags"
+  },
+  "devDependencies": {
+    "@rainbowatcher/eslint-config-ts": "workspace:*",
+    "changelogen": "^0.5.1",
+    "eslint": "^8.36.0",
+    "tsup": "^6.7.0"
+  }
+}

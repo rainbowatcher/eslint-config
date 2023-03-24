@@ -1,0 +1,25 @@
+{
+  "name": "@rainbowatcher/eslint-config",
+  "version": "0.0.0",
+  "description": "rainbowatcher's ESLint config presets",
+  "author": "rainbowatcher <rainbow-w@qq.com>",
+  "homepage": "https://github.com/rainbowatcher/eslint-config",
+  "license": "MIT",
+  "keywords": ["eslint-config"],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "scripts": {
+    "publish": "npm publish && git push --follow-tags"
+  },
+  "dependencies": {
+    "@rainbowatcher/eslint-config-ts": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}
