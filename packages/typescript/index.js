@@ -19,9 +19,7 @@ module.exports = {
   },
   settings: {
     "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-      },
+      node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] },
     },
     "import/parsers": {
       [require.resolve("@typescript-eslint/parser")]: [".ts", ".tsx"],
@@ -34,6 +32,7 @@ module.exports = {
     "@typescript-eslint",
   ],
   rules: {
+    "import/no-unresolved": "off",
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "warn",
     // off
