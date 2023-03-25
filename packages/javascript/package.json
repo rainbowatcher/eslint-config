@@ -17,7 +17,9 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "eslint": ">=7.4.0",
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
     "eslint-plugin-import": "^2.27.5"
   },
   "devDependencies": {
