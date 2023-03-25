@@ -3,31 +3,28 @@
   "version": "0.0.1-beta.1",
   "private": true,
   "packageManager": "pnpm@7.1.0",
+  "author": "rainbowatcher <rainbow-w@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rainbowatcher/eslint-config.git"
   },
+  "bugs": {
+    "url": "https://github.com/rainbowatcher/eslint-config/issues"
+  },
   "keywords": [
+    "eslint-config",
     "eslint",
     "lint",
     "config"
   ],
-  "author": "rainbowatcher <rainbow-w@qq.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
-  "bugs": {
-    "url": "https://github.com/rainbowatcher/eslint-config/issues"
-  },
   "scripts": {
-    "build": "pnpm -r build",
     "lint": "eslint .",
-    "release": "changelogen -r",
-    "publish": "npm publish && git push --follow-tags"
+    "release": "bumpp -r && pnpm -r publish"
   },
   "devDependencies": {
-    "@rainbowatcher/eslint-config-ts": "workspace:*",
-    "changelogen": "^0.5.1",
     "eslint": "^8.36.0",
-    "tsup": "^6.7.0"
+    "typescript": "^5.0.2"
   }
 }

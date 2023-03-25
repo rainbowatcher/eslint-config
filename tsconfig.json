@@ -6,9 +6,9 @@
     "moduleResolution": "node"
   },
   "include": [
-    "packages/**/*.ts"
+    "./packages/**/*.ts"
   ],
   "exclude": [
-    "fixtures/**/*.*"
+    "./fixtures/**/*.*"
   ]
 }

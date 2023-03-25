@@ -27,9 +27,9 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@rainbowatcher/eslint-config": "*",
     "@iconify-json/carbon": "^1.1.16",
     "@intlify/unplugin-vue-i18n": "^0.9.2",
+    "@rainbowatcher/eslint-config": "*",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^4.1.0",

@@ -60,6 +60,14 @@ module.exports = {
 }
 ```
 
+## Plan
+
+I will consider referencing the following projects:
+
+1. [eslint-config-standard](https://github.com/standard/eslint-config-standard)
+2. [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
+3. [antfu/eslint-config](https://github.com/antfu/eslint-config)
+
 ## License
 
 [MIT](./LICENSE) License &copy; 2023-PRESENT [Rainbow Watcher](https://github.com/rainbowatcher)
