@@ -3,22 +3,24 @@
   "version": "0.0.1-beta.1",
   "description": "rainbowatcher's ESLint config presets",
   "author": "rainbowatcher <rainbow-w@qq.com>",
-  "homepage": "https://github.com/rainbowatcher/eslint-config",
   "license": "MIT",
+  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rainbowatcher/eslint-config/issues"
+  },
   "keywords": [
     "eslint-config"
   ],
   "main": "index.js",
-  "files": [
-    "index.js"
-  ],
   "peerDependencies": {
     "eslint": ">=7.4.0"
   },
-  "scripts": {
-    "publish": "npm publish && git push --follow-tags"
-  },
   "dependencies": {
+    "@rainbowatcher/eslint-config-json": "workspace:*",
     "@rainbowatcher/eslint-config-ts": "workspace:*"
   },
   "devDependencies": {
