@@ -34,6 +34,7 @@ module.exports = {
   rules: {
     "import/no-unresolved": "off",
     "no-empty-function": "off",
+    "import/named": "off",
     "@typescript-eslint/no-empty-function": "warn",
     // off
     "@typescript-eslint/no-explicit-any": "off",
