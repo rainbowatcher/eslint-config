@@ -6,7 +6,9 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:import/recommended",
+  ],
+  plugins: [
+    "import",
   ],
   overrides: [],
   parserOptions: {
@@ -65,11 +67,13 @@ module.exports = {
     // # 9. Classes & Constructors
     "no-constructor-return": ["error"],
     // # 10. Modules
+    "import/export": "error",
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "error",
+    "import/no-named-as-default-member": "error",
     "import/order": "error",
     "import/first": "error",
     "import/no-mutable-exports": "error",
-    "import/no-unresolved": "off",
-    "import/no-absolute-path": "off",
     "no-duplicate-imports": ["error", { includeExports: true }],
     // # 11. Iterators and Generators
     "no-await-in-loop": ["error"],
