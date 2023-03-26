@@ -1,6 +1,6 @@
 {
   "name": "@rainbowatcher/eslint-config-ts",
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.4",
   "description": "rainbowatcher's ESLint config presets",
   "author": "rainbowatcher <rainbow-w@qq.com>",
   "license": "MIT",
