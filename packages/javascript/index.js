@@ -47,7 +47,7 @@ module.exports = {
   },
   rules: {
     // # 1. Types
-    "no-constant-binary-expression": ["error"],
+    "no-constant-binary-expression": "error",
     // # 2. References
     // # 3. Objects
     "object-shorthand": "error",
@@ -95,7 +95,7 @@ module.exports = {
     // "arrow-body-style": ["error", "as-needed"],
     "arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
     // # 9. Classes & Constructors
-    "no-constructor-return": ["error"],
+    "no-constructor-return": "error",
     // # 10. Modules
     "import/export": "error",
     "import/no-duplicates": "error",
@@ -106,7 +106,7 @@ module.exports = {
     "import/no-mutable-exports": "error",
     "no-duplicate-imports": ["error", { includeExports: true }],
     // # 11. Iterators and Generators
-    "no-await-in-loop": ["error"],
+    "no-await-in-loop": "error",
     // # 12. Properties
     // # 13. Variables
     // # 14. Hoisting
@@ -141,6 +141,7 @@ module.exports = {
       process.platform === "win32" ? "off" : "error",
       "unix",
     ],
+    "space-infix-ops": "error",
     // # 20. Commas
     "comma-dangle": ["error", "always-multiline"],
     // # 21. Semicolons
