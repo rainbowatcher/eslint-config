@@ -10,6 +10,13 @@ module.exports = {
     "plugin:import/typescript",
   ],
   parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: [
+    "@typescript-eslint",
+  ],
   settings: {
     "import/resolver": {
       node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] },
@@ -25,69 +32,12 @@ module.exports = {
     parserOptions: {
       tsconfigRootDir: process.cwd(),
       project: [tsconfig],
-      ecmaVersion: "latest",
-      sourceType: "module",
     },
-    plugins: [
-      "@typescript-eslint",
-    ],
     extends: ["plugin:@typescript-eslint/recommended"],
-
     excludedFiles: ["**/*.md/*.*"],
     files: ["*.ts", "*.tsx", "*.mts", "*.cts"],
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
     rules: {
-      // ref: https://github.com/xojs/eslint-config-xo-typescript/blob/main/index.js
-      "@typescript-eslint/ban-types": [
-        "error",
-        {
-          extendDefaults: false,
-          types: {
-            String: {
-              message: "Use `string` instead.",
-              fixWith: "string",
-            },
-            Number: {
-              message: "Use `number` instead.",
-              fixWith: "number",
-            },
-            Boolean: {
-              message: "Use `boolean` instead.",
-              fixWith: "boolean",
-            },
-            Symbol: {
-              message: "Use `symbol` instead.",
-              fixWith: "symbol",
-            },
-            BigInt: {
-              message: "Use `bigint` instead.",
-              fixWith: "bigint",
-            },
-            Object: {
-              message: "The `Object` type is mostly the same as `unknown`. You probably want `Record<string, unknown>` instead. See https://github.com/typescript-eslint/typescript-eslint/pull/848",
-              fixWith: "Record<string, unknown>",
-            },
-            "{}": {
-              message: "The `{}` type is mostly the same as `unknown`. You probably want `Record<string, unknown>` instead.",
-              fixWith: "Record<string, unknown>",
-            },
-            object: {
-              message: "The `object` type is hard to use. Use `Record<string, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
-              fixWith: "Record<string, unknown>",
-            },
-            Function: "Use a specific function type instead, like `() => void`.",
-            null: {
-              message: "Use `undefined` instead. See: https://github.com/sindresorhus/meta/issues/7",
-              fixWith: "undefined",
-            },
-            "[]": "Don't use the empty array type `[]`. It only allows empty arrays. Use `SomeType[]` instead.",
-            "[[]]": "Don't use `[[]]`. It only allows an array with a single element which is an empty array. Use `SomeType[][]` instead.",
-            "[[[]]]": "Don't use `[[[]]]`. Use `SomeType[][][]` instead.",
-            "[[[[]]]]": "ur drunk 🤡",
-            "[[[[[]]]]]": "🦄💥",
-          },
-        },
-      ],
       "@typescript-eslint/no-empty-interface": "off",
       "@typescript-eslint/no-empty-function": "warn",
       "@typescript-eslint/no-var-requires": "error",
@@ -135,9 +85,65 @@ module.exports = {
   }],
 
   rules: {
+    // # 10. Modules
     "import/no-unresolved": "off",
     "no-empty-function": "off",
     "import/named": "off",
     "no-duplicate-imports": "off",
+    "@typescript-eslint/consistent-type-imports": ["error", {
+      prefer: "type-imports",
+      disallowTypeAnnotations: false,
+    }],
+    // ref: https://github.com/xojs/eslint-config-xo-typescript/blob/main/index.js
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        extendDefaults: false,
+        types: {
+          String: {
+            message: "Use `string` instead.",
+            fixWith: "string",
+          },
+          Number: {
+            message: "Use `number` instead.",
+            fixWith: "number",
+          },
+          Boolean: {
+            message: "Use `boolean` instead.",
+            fixWith: "boolean",
+          },
+          Symbol: {
+            message: "Use `symbol` instead.",
+            fixWith: "symbol",
+          },
+          BigInt: {
+            message: "Use `bigint` instead.",
+            fixWith: "bigint",
+          },
+          Object: {
+            message: "The `Object` type is mostly the same as `unknown`. You probably want `Record<string, unknown>` instead. See https://github.com/typescript-eslint/typescript-eslint/pull/848",
+            fixWith: "Record<string, unknown>",
+          },
+          "{}": {
+            message: "The `{}` type is mostly the same as `unknown`. You probably want `Record<string, unknown>` instead.",
+            fixWith: "Record<string, unknown>",
+          },
+          object: {
+            message: "The `object` type is hard to use. Use `Record<string, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
+            fixWith: "Record<string, unknown>",
+          },
+          Function: "Use a specific function type instead, like `() => void`.",
+          null: {
+            message: "Use `undefined` instead. See: https://github.com/sindresorhus/meta/issues/7",
+            fixWith: "undefined",
+          },
+          "[]": "Don't use the empty array type `[]`. It only allows empty arrays. Use `SomeType[]` instead.",
+          "[[]]": "Don't use `[[]]`. It only allows an array with a single element which is an empty array. Use `SomeType[][]` instead.",
+          "[[[]]]": "Don't use `[[[]]]`. Use `SomeType[][][]` instead.",
+          "[[[[]]]]": "ur drunk 🤡",
+          "[[[[[]]]]]": "🦄💥",
+        },
+      },
+    ],
   },
 }
