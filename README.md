@@ -66,7 +66,8 @@ I will consider referencing the following projects:
 
 1. [eslint-config-standard](https://github.com/standard/eslint-config-standard)
 2. [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
-3. [antfu/eslint-config](https://github.com/antfu/eslint-config)
+3. [eslint-config-alloy](https://github.com/AlloyTeam/eslint-config-alloy)
+4. [antfu/eslint-config](https://github.com/antfu/eslint-config)
 
 ## License
 
