@@ -1,0 +1,29 @@
+{
+  "name": "@rainbowatcher/eslint-config-vue",
+  "version": "0.0.1-beta.5",
+  "description": "rainbowatcher's ESLint config presets",
+  "author": "rainbowatcher <rainbow-w@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rainbowatcher/eslint-config/issues"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "eslint-plugin-vue": "^9.9.0",
+    "local-pkg": "^0.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0"
+  }
+}
