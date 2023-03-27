@@ -44,6 +44,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
+    allowImportExportEverywhere: false,
   },
   rules: {
     // # 1. Types
