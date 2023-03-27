@@ -137,6 +137,7 @@ module.exports = {
     "array-bracket-spacing": ["error", "never"],
     "no-mixed-spaces-and-tabs": "error",
     "no-trailing-spaces": "error",
+    "no-multi-spaces": "error",
     "comma-spacing": ["error", { before: false, after: true }],
     "linebreak-style": [
       process.platform === "win32" ? "off" : "error",
