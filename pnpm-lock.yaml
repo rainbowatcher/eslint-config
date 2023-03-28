@@ -21,11 +21,11 @@ importers:
   packages/all:
     specifiers:
       '@rainbowatcher/eslint-config-json': workspace:*
-      '@rainbowatcher/eslint-config-ts': workspace:*
+      '@rainbowatcher/eslint-config-vue': workspace:*
       eslint: ^8.36.0
     dependencies:
       '@rainbowatcher/eslint-config-json': link:../json
-      '@rainbowatcher/eslint-config-ts': link:../typescript
+      '@rainbowatcher/eslint-config-vue': link:../vue
     devDependencies:
       eslint: 8.36.0
 
@@ -62,10 +62,12 @@ importers:
 
   packages/vue:
     specifiers:
+      '@rainbowatcher/eslint-config-ts': workspace:*
       eslint: ^8.36.0
       eslint-plugin-vue: ^9.10.0
       local-pkg: ^0.4.3
     dependencies:
+      '@rainbowatcher/eslint-config-ts': link:../typescript
       eslint-plugin-vue: 9.10.0_eslint@8.36.0
       local-pkg: 0.4.3
     devDependencies:

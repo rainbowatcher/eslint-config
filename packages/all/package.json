@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@rainbowatcher/eslint-config-json": "workspace:*",
-    "@rainbowatcher/eslint-config-ts": "workspace:*"
+    "@rainbowatcher/eslint-config-vue": "workspace:*"
   },
   "devDependencies": {
     "eslint": "^8.36.0"
