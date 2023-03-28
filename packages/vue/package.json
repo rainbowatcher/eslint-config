@@ -20,6 +20,7 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
+    "@rainbowatcher/eslint-config-ts": "workspace:*",
     "eslint-plugin-vue": "^9.10.0",
     "local-pkg": "^0.4.3"
   },
