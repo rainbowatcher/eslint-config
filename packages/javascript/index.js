@@ -53,6 +53,7 @@ module.exports = {
     // # 3. Objects
     "object-shorthand": "error",
     "quote-props": ["error", "as-needed"],
+    "object-curly-newline": ["error", { consistent: true, multiline: true }],
     // # 4. Arrays
     "no-array-constructor": "error",
     "array-callback-return": ["error", { checkForEach: true }],
@@ -106,6 +107,16 @@ module.exports = {
     "import/first": "error",
     "import/no-mutable-exports": "error",
     "no-duplicate-imports": ["error", { includeExports: true }],
+    "sort-imports": [
+      "error",
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        allowSeparatedGroups: false,
+      },
+    ],
     // # 11. Iterators and Generators
     "no-await-in-loop": "error",
     // # 12. Properties
