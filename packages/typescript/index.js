@@ -38,10 +38,8 @@ module.exports = {
     files: ["*.ts", "*.tsx", "*.mts", "*.cts"],
     // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
     rules: {
-      "@typescript-eslint/no-empty-interface": "off",
       "@typescript-eslint/no-empty-function": "warn",
       "@typescript-eslint/no-var-requires": "error",
-      "@typescript-eslint/no-explicit-any": "off",
       "no-throw-literal": "off",
       "@typescript-eslint/no-throw-literal": "error",
       "no-implied-eval": "off",
@@ -85,15 +83,7 @@ module.exports = {
   }],
 
   rules: {
-    // # 10. Modules
-    "import/no-unresolved": "off",
-    "no-empty-function": "off",
-    "import/named": "off",
-    "no-duplicate-imports": "off",
-    "@typescript-eslint/consistent-type-imports": ["error", {
-      prefer: "type-imports",
-      disallowTypeAnnotations: false,
-    }],
+    // # 1. Types
     // ref: https://github.com/xojs/eslint-config-xo-typescript/blob/main/index.js
     "@typescript-eslint/ban-types": [
       "error",
@@ -145,5 +135,16 @@ module.exports = {
         },
       },
     ],
+    // # 10. Modules
+    "import/no-unresolved": "off",
+    "no-empty-function": "off",
+    "import/named": "off",
+    "no-duplicate-imports": "off",
+    "@typescript-eslint/consistent-type-imports": ["error", {
+      prefer: "type-imports",
+      disallowTypeAnnotations: false,
+    }],
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 }
