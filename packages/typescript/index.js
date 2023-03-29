@@ -135,16 +135,22 @@ module.exports = {
         },
       },
     ],
+    "@typescript-eslint/no-explicit-any": "off",
+    // # 13. Variables
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     // # 10. Modules
     "import/no-unresolved": "off",
-    "no-empty-function": "off",
     "import/named": "off",
     "no-duplicate-imports": "off",
     "@typescript-eslint/consistent-type-imports": ["error", {
       prefer: "type-imports",
       disallowTypeAnnotations: false,
     }],
+    // # 16. Blocks
+    "no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
-    "@typescript-eslint/no-explicit-any": "off",
+    // 19. Whitespace
+    "@typescript-eslint/space-infix-ops": "error",
   },
 }
