@@ -143,6 +143,7 @@ module.exports = {
       process.platform === "win32" ? "off" : "error",
       "unix",
     ],
+    "key-spacing": ["error", { beforeColon: false, afterColon: true }],
     "space-infix-ops": "error",
     // # 20. Commas
     "comma-dangle": ["error", "always-multiline"],
