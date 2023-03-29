@@ -121,6 +121,13 @@ module.exports = {
     "no-await-in-loop": "error",
     // # 12. Properties
     // # 13. Variables
+    "prefer-const": [
+      "error",
+      {
+        destructuring: "all",
+        ignoreReadBeforeAssign: true,
+      },
+    ],
     // # 14. Hoisting
     // # 15. Comparison Operators & Equality
     "no-unneeded-ternary": "error",
