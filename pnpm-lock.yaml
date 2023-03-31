@@ -4,13 +4,12 @@ importers:
 
   .:
     specifiers:
-      packages: link:packages
       '@commitlint/config-conventional': ^17.4.4
-      '@rainbowatcher/eslint-config': workspace:0.0.1-beta.11
-      '@rainbowatcher/eslint-config-js': workspace:0.0.1-beta.11
-      '@rainbowatcher/eslint-config-json': workspace:0.0.1-beta.11
-      '@rainbowatcher/eslint-config-ts': workspace:0.0.1-beta.11
-      '@rainbowatcher/eslint-config-vue': workspace:0.0.1-beta.11
+      '@rainbowatcher/eslint-config': workspace:0.0.1-beta.12
+      '@rainbowatcher/eslint-config-js': workspace:*
+      '@rainbowatcher/eslint-config-json': workspace:*
+      '@rainbowatcher/eslint-config-ts': workspace:*
+      '@rainbowatcher/eslint-config-vue': workspace:*
       ava: ^5.2.0
       commitlint: ^17.5.0
       conventional-changelog-cli: ^2.2.2
@@ -18,22 +17,20 @@ importers:
       lint-staged: ^13.2.0
       simple-git-hooks: ^2.8.1
       typescript: ^5.0.2
-    dependencies:
-      packages: link:packages
+    devDependencies:
+      '@commitlint/config-conventional': 17.4.4
       '@rainbowatcher/eslint-config': link:packages/all
       '@rainbowatcher/eslint-config-js': link:packages/javascript
       '@rainbowatcher/eslint-config-json': link:packages/json
       '@rainbowatcher/eslint-config-ts': link:packages/typescript
       '@rainbowatcher/eslint-config-vue': link:packages/vue
-    devDependencies:
-      '@commitlint/config-conventional': 17.4.4
       ava: 5.2.0
-      commitlint: 17.5.0
+      commitlint: 17.5.1
       conventional-changelog-cli: 2.2.2
       eslint: 8.37.0
       lint-staged: 13.2.0
       simple-git-hooks: 2.8.1
-      typescript: 5.0.2
+      typescript: 5.0.3
 
   packages/all:
     specifiers:
@@ -115,15 +112,15 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@commitlint/cli/17.5.0:
-    resolution: {integrity: sha512-yNW3+M7UM1ioK28LKTrryIVB5qGpXlEv8+rJQiWPMZNayy9/1XR5+lL8qBTNlgopYtZWWnIm5RETcAN29ZTL/A==}
+  /@commitlint/cli/17.5.1:
+    resolution: {integrity: sha512-pRRgGSzdHQHehxZbGA3qF6wVPyl+EEQgTe/t321rtMLFbuJ7nRj2waS17s/v5oEbyZtiY5S8PGB6XtEIm0I+Sg==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
       '@commitlint/format': 17.4.4
       '@commitlint/lint': 17.4.4
       '@commitlint/load': 17.5.0
-      '@commitlint/read': 17.4.4
+      '@commitlint/read': 17.5.1
       '@commitlint/types': 17.4.4
       execa: 5.1.1
       lodash.isfunction: 3.0.9
@@ -204,13 +201,13 @@ packages:
       '@types/node': 18.15.11
       chalk: 4.1.2
       cosmiconfig: 8.1.3
-      cosmiconfig-typescript-loader: 4.3.0_5afifk6gmlkzfxzyz25sp2vify
+      cosmiconfig-typescript-loader: 4.3.0_yn4xpz4ei2cnz6chm4vbw2etyi
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1_qj46uwwzcluhgvra3n2zhrviru
-      typescript: 5.0.2
+      ts-node: 10.9.1_pj3xut33gta66wns5w7rs6cilm
+      typescript: 5.0.3
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -230,8 +227,8 @@ packages:
       conventional-commits-parser: 3.2.4
     dev: true
 
-  /@commitlint/read/17.4.4:
-    resolution: {integrity: sha512-B2TvUMJKK+Svzs6eji23WXsRJ8PAD+orI44lVuVNsm5zmI7O8RSGJMvdEZEikiA4Vohfb+HevaPoWZ7PiFZ3zA==}
+  /@commitlint/read/17.5.1:
+    resolution: {integrity: sha512-7IhfvEvB//p9aYW09YVclHbdf1u7g7QhxeYW9ZHSO8Huzp8Rz7m05aCO1mFG7G8M+7yfFnXB5xOmG18brqQIBg==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/top-level': 17.4.0
@@ -1017,12 +1014,12 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /commitlint/17.5.0:
-    resolution: {integrity: sha512-uUDHN7WOUu3zBAGM/1rYGshT/f1HCwcnt3wFoKlVtzkGsb2OmAV5oCDkN1hlrbv6BUENM0wqrZjuwO1Q557Z2A==}
+  /commitlint/17.5.1:
+    resolution: {integrity: sha512-BmYX5GJrZFk/90Owlsoh7J38hbikK1AIE+j0MlU0U+Vns+JNHwOE+6jkU9UYEiyY9rrgrI50kx2thI3028FwGw==}
     engines: {node: '>=v14'}
     hasBin: true
     dependencies:
-      '@commitlint/cli': 17.5.0
+      '@commitlint/cli': 17.5.1
       '@commitlint/types': 17.4.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -1233,7 +1230,7 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/4.3.0_5afifk6gmlkzfxzyz25sp2vify:
+  /cosmiconfig-typescript-loader/4.3.0_yn4xpz4ei2cnz6chm4vbw2etyi:
     resolution: {integrity: sha512-NTxV1MFfZDLPiBMjxbHRwSh5LaLcPMwNdCutmnHJCKoVnlvldPWlllonKwrsRJ5pYZBIBGRWWU2tfvzxgeSW5Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1244,8 +1241,8 @@ packages:
     dependencies:
       '@types/node': 18.15.11
       cosmiconfig: 8.1.3
-      ts-node: 10.9.1_qj46uwwzcluhgvra3n2zhrviru
-      typescript: 5.0.2
+      ts-node: 10.9.1_pj3xut33gta66wns5w7rs6cilm
+      typescript: 5.0.3
     dev: true
 
   /cosmiconfig/8.1.3:
@@ -3639,7 +3636,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.9.1_qj46uwwzcluhgvra3n2zhrviru:
+  /ts-node/10.9.1_pj3xut33gta66wns5w7rs6cilm:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -3665,7 +3662,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.0.2
+      typescript: 5.0.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -3741,8 +3738,8 @@ packages:
       is-typed-array: 1.1.10
     dev: false
 
-  /typescript/5.0.2:
-    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
+  /typescript/5.0.3:
+    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
     engines: {node: '>=12.20'}
     hasBin: true
     dev: true
