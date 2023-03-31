@@ -61,6 +61,7 @@ module.exports = {
       "@typescript-eslint/restrict-plus-operands": "error",
       "@typescript-eslint/restrict-template-expressions": "error",
       "@typescript-eslint/unbound-method": "error",
+      ...getNamingConventionRule({ isTsx: false }),
     },
   },
   {
@@ -147,10 +148,91 @@ module.exports = {
       prefer: "type-imports",
       disallowTypeAnnotations: false,
     }],
+
     // # 16. Blocks
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
     // 19. Whitespace
+    "space-infix-ops": "off",
     "@typescript-eslint/space-infix-ops": "error",
+    "keyword-spacing": "off",
+    "@typescript-eslint/keyword-spacing": "error",
   },
+}
+
+
+function getNamingConventionRule({ isTsx }) {
+  return {
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        /// selector: ['variableLike', 'memberLike', 'property', 'method'],
+        // Note: Leaving out `parameter` and `typeProperty` because of the mentioned known issues.
+        // Note: We are intentionally leaving out `enumMember` as it's usually pascal-case or upper-snake-case.
+        selector: ["variable", "function", "classProperty", "objectLiteralProperty", "parameterProperty", "classMethod", "objectLiteralMethod", "typeMethod", "accessor"],
+        format: [
+          "strictCamelCase",
+          isTsx && "StrictPascalCase",
+        ].filter(Boolean),
+        // We allow double underscore because of GraphQL type names and some React names.
+        leadingUnderscore: "allowSingleOrDouble",
+        trailingUnderscore: "allow",
+        // Ignore `{'Retry-After': retryAfter}` type properties.
+        filter: {
+          regex: "[- ]",
+          match: false,
+        },
+      },
+      {
+        selector: "typeLike",
+        format: [
+          "StrictPascalCase",
+        ],
+      },
+      {
+        selector: "variable",
+        types: [
+          "boolean",
+        ],
+        format: [
+          "StrictPascalCase",
+        ],
+        prefix: [
+          "is",
+          "has",
+          "can",
+          "should",
+          "will",
+          "did",
+        ],
+      },
+      {
+        // Interface name should not be prefixed with `I`.
+        selector: "interface",
+        filter: /^(?!I)[A-Z]/.source,
+        format: [
+          "StrictPascalCase",
+        ],
+      },
+      {
+        // Type parameter name should either be `T` or a descriptive name.
+        selector: "typeParameter",
+        filter: /^T$|^[A-Z][a-zA-Z]+$/.source,
+        format: [
+          "StrictPascalCase",
+        ],
+      },
+      // Allow these in non-camel-case when quoted.
+      {
+        selector: [
+          "classProperty",
+          "objectLiteralProperty",
+        ],
+        format: null,
+        modifiers: [
+          "requiresQuotes",
+        ],
+      },
+    ],
+  }
 }
