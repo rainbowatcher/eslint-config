@@ -54,6 +54,7 @@ module.exports = {
     "object-shorthand": "error",
     "quote-props": ["error", "as-needed"],
     "object-curly-newline": ["error", { consistent: true, multiline: true }],
+    "object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
     // # 4. Arrays
     "no-array-constructor": "error",
     "array-callback-return": ["error", { checkForEach: true }],
@@ -73,7 +74,7 @@ module.exports = {
       },
     }],
     // # 6. Strings
-    quotes: ["error", "double"],
+    quotes: ["error", "double", { avoidEscape: true }],
     "template-curly-spacing": "error",
     "prefer-template": "error",
     "no-useless-escape": "error",
@@ -161,6 +162,7 @@ module.exports = {
       process.platform === "win32" ? "off" : "error",
       "unix",
     ],
+    "keyword-spacing": "error",
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
     "space-infix-ops": "error",
     // # 20. Commas
@@ -172,7 +174,7 @@ module.exports = {
       "consistent",
     ],
     "object-curly-spacing": ["error", "always"],
-
+    "newline-per-chained-call": ["error", { ignoreChainWithDepth: 2 }],
     // # 22. Type Casting & Coercion
     // # 23. Naming Conventions
     // # 24. Accessors
