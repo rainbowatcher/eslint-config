@@ -148,8 +148,9 @@ module.exports = {
       prefer: "type-imports",
       disallowTypeAnnotations: false,
     }],
-
     // # 16. Blocks
+    "brace-style": "off",
+    "@typescript-eslint/brace-style": ["error", "stroustrup", { allowSingleLine: true }],
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
     // 19. Whitespace

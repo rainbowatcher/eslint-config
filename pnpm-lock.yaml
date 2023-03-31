@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@commitlint/config-conventional': ^17.4.4
-      '@rainbowatcher/eslint-config': workspace:0.0.1-beta.12
+      '@rainbowatcher/eslint-config': workspace:*
       '@rainbowatcher/eslint-config-js': workspace:*
       '@rainbowatcher/eslint-config-json': workspace:*
       '@rainbowatcher/eslint-config-ts': workspace:*
