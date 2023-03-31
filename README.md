@@ -69,6 +69,22 @@ I will consider referencing the following projects:
 3. [eslint-config-alloy](https://github.com/AlloyTeam/eslint-config-alloy)
 4. [antfu/eslint-config](https://github.com/antfu/eslint-config)
 
+## Development
+
+1. Clone this repository
+2. Enable Corepack using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
+3. Install dependencies using `pnpm install`
+4. Add self to node_modules
+
+```bash
+pnpm add -w --workspace \
+@rainbowatcher/eslint-config \
+@rainbowatcher/eslint-config-js \
+@rainbowatcher/eslint-config-ts \
+@rainbowatcher/eslint-config-json \
+@rainbowatcher/eslint-config-vue
+```
+
 ## License
 
 [MIT](./LICENSE) License &copy; 2023-PRESENT [Rainbow Watcher](https://github.com/rainbowatcher)
