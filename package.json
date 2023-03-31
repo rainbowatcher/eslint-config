@@ -23,10 +23,20 @@
     "lint": "eslint .",
     "prepare": "simple-git-hooks",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "release": "bumpp -r --no-push && pnpm changelog && git push --follow-tags && pnpm -r publish"
+    "release": "bumpp -r --no-push && pnpm changelog && git push --follow-tags && pnpm -r publish",
+    "test": "ava"
+  },
+  "dependencies": {
+    "@rainbowatcher/eslint-config": "workspace:0.0.1-beta.11",
+    "@rainbowatcher/eslint-config-js": "workspace:0.0.1-beta.11",
+    "@rainbowatcher/eslint-config-json": "workspace:0.0.1-beta.11",
+    "@rainbowatcher/eslint-config-ts": "workspace:0.0.1-beta.11",
+    "@rainbowatcher/eslint-config-vue": "workspace:0.0.1-beta.11",
+    "packages": "link:packages"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.4.4",
+    "ava": "^5.2.0",
     "commitlint": "^17.5.0",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.36.0",
@@ -40,5 +50,10 @@
   },
   "lint-staged": {
     "*.{js,ts,json}": "eslint --fix"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ]
   }
 }
