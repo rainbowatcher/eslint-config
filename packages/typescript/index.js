@@ -171,7 +171,7 @@ function getNamingConventionRule({ isTsx }) {
         // Note: We are intentionally leaving out `enumMember` as it's usually pascal-case or upper-snake-case.
         selector: ["variable", "function", "classProperty", "objectLiteralProperty", "parameterProperty", "classMethod", "objectLiteralMethod", "typeMethod", "accessor"],
         format: [
-          "strictCamelCase",
+          "camelCase",
           isTsx && "StrictPascalCase",
         ].filter(Boolean),
         // We allow double underscore because of GraphQL type names and some React names.
