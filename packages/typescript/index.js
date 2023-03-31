@@ -150,7 +150,7 @@ module.exports = {
     }],
     // # 16. Blocks
     "brace-style": "off",
-    "@typescript-eslint/brace-style": ["error", "stroustrup", { allowSingleLine: true }],
+    "@typescript-eslint/brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
     // 19. Whitespace
