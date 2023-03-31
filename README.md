@@ -62,7 +62,7 @@ module.exports = {
 
 ## Plan
 
-I will consider referencing the following projects:
+We will consider referencing the following projects:
 
 1. [eslint-config-standard](https://github.com/standard/eslint-config-standard)
 2. [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
@@ -72,18 +72,9 @@ I will consider referencing the following projects:
 ## Development
 
 1. Clone this repository
-2. Enable Corepack using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
-3. Install dependencies using `pnpm install`
-4. Add self to node_modules
-
-```bash
-pnpm add -w --workspace \
-@rainbowatcher/eslint-config \
-@rainbowatcher/eslint-config-js \
-@rainbowatcher/eslint-config-ts \
-@rainbowatcher/eslint-config-json \
-@rainbowatcher/eslint-config-vue
-```
+2. Enable Corepack by using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
+3. Install dependencies by using `pnpm install`
+4. Add rules and test cases, then run tests by using `pnpm test`
 
 ## License
 
