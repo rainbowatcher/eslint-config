@@ -166,6 +166,7 @@ module.exports = {
     "keyword-spacing": "error",
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
     "space-infix-ops": "error",
+    "space-in-parens": ["error", "never"],
     // # 20. Commas
     "comma-dangle": ["error", "always-multiline"],
     // # 21. Semicolons
@@ -175,7 +176,7 @@ module.exports = {
       "consistent",
     ],
     "object-curly-spacing": ["error", "always"],
-    "newline-per-chained-call": ["error", { ignoreChainWithDepth: 2 }],
+    "newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
     // # 22. Type Casting & Coercion
     // # 23. Naming Conventions
     // # 24. Accessors
