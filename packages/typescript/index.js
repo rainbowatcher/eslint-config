@@ -170,7 +170,18 @@ function getNamingConventionRule({ isTsx }) {
         /// selector: ['variableLike', 'memberLike', 'property', 'method'],
         // Note: Leaving out `parameter` and `typeProperty` because of the mentioned known issues.
         // Note: We are intentionally leaving out `enumMember` as it's usually pascal-case or upper-snake-case.
-        selector: ["variable", "function", "classProperty", "objectLiteralProperty", "parameterProperty", "classMethod", "objectLiteralMethod", "typeMethod", "accessor"],
+        selector: [
+          "variable",
+          "function",
+          "classProperty",
+          // disabled for some object's key is a path
+          // "objectLiteralProperty",
+          "parameterProperty",
+          "classMethod",
+          "objectLiteralMethod",
+          "typeMethod",
+          "accessor",
+        ],
         format: [
           "camelCase",
           isTsx && "StrictPascalCase",
@@ -227,7 +238,6 @@ function getNamingConventionRule({ isTsx }) {
       {
         selector: [
           "classProperty",
-          "objectLiteralProperty",
         ],
         format: null,
         modifiers: [
