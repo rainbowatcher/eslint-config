@@ -1,6 +1,8 @@
-# @rainbowatcher/eslint-config
+[![npm](https://img.shields.io/npm/v/@rainbowatcher/eslint-config?color=a1b858)](https://npmjs.com/package/@rainbowatcher/eslint-config)
+![npm download](https://img.shields.io/github/license/rainbowatcher/eslint-config?color=a1b858&)
+![GitHub repo size](https://img.shields.io/github/repo-size/rainbowatcher/eslint-config)
 
-[![npm](https://img.shields.io/npm/v/@rainbowatcher/eslint-config?color=a1b858&label=)](https://npmjs.com/package/@rainbowatcher/eslint-config)
+# @rainbowatcher/eslint-config
 
 ## Usage
 
