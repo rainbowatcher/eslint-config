@@ -198,7 +198,7 @@ function getNamingConventionRule({ isTsx }) {
       {
         selector: "typeLike",
         format: [
-          "StrictPascalCase",
+          "PascalCase",
         ],
       },
       {
@@ -207,7 +207,7 @@ function getNamingConventionRule({ isTsx }) {
           "boolean",
         ],
         format: [
-          "StrictPascalCase",
+          "PascalCase",
         ],
         prefix: [
           "is",
@@ -223,7 +223,7 @@ function getNamingConventionRule({ isTsx }) {
         selector: "interface",
         filter: /^(?!I)[A-Z]/.source,
         format: [
-          "StrictPascalCase",
+          "PascalCase",
         ],
       },
       {
@@ -231,7 +231,7 @@ function getNamingConventionRule({ isTsx }) {
         selector: "typeParameter",
         filter: /^T$|^[A-Z][a-zA-Z]+$/.source,
         format: [
-          "StrictPascalCase",
+          "PascalCase",
         ],
       },
       // Allow these in non-camel-case when quoted.
