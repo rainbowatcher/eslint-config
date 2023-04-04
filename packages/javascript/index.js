@@ -101,6 +101,8 @@ module.exports = {
     "no-constructor-return": "error",
     "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
     // # 10. Modules
+    // disabled because it not compatible with virtual module in vite
+    "no-undef": "off",
     "import/export": "error",
     "import/no-duplicates": "error",
     "import/newline-after-import": "error",
