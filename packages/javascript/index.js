@@ -99,6 +99,7 @@ module.exports = {
     "arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
     // # 9. Classes & Constructors
     "no-constructor-return": "error",
+    "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
     // # 10. Modules
     "import/export": "error",
     "import/no-duplicates": "error",
@@ -149,11 +150,7 @@ module.exports = {
       },
     }],
     // # 19. Whitespace
-    indent: ["error", 2, {
-      SwitchCase: 1,
-      VariableDeclarator: "first",
-      outerIIFEBody: 1,
-    }],
+    indent: ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     "array-bracket-spacing": ["error", "never"],
     "no-mixed-spaces-and-tabs": "error",
     "no-trailing-spaces": "error",
