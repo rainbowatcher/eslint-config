@@ -1,3 +1,5 @@
+"use strict"
+
 const fs = require("node:fs")
 const path = require("node:path")
 
@@ -40,14 +42,14 @@ module.exports = {
     rules: {
       "@typescript-eslint/no-empty-function": "warn",
       "@typescript-eslint/no-var-requires": "error",
-      "no-throw-literal": "off",
-      "@typescript-eslint/no-throw-literal": "error",
+      // "no-throw-literal": "off",
+      // "@typescript-eslint/no-throw-literal": "error",
       "no-implied-eval": "off",
       "@typescript-eslint/no-implied-eval": "error",
       "dot-notation": "off",
       "@typescript-eslint/dot-notation": ["error", { allowKeywords: true }],
       "@typescript-eslint/no-floating-promises": "error",
-      "@typescript-eslint/no-misused-promises": "error",
+      // "@typescript-eslint/no-misused-promises": "error",
       "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/no-for-in-array": "error",
       "@typescript-eslint/no-unnecessary-type-assertion": "error",
@@ -61,6 +63,33 @@ module.exports = {
       "@typescript-eslint/restrict-plus-operands": "error",
       "@typescript-eslint/restrict-template-expressions": "error",
       "@typescript-eslint/unbound-method": "error",
+
+      "@typescript-eslint/no-redundant-type-constituents": "error",
+      "@typescript-eslint/no-meaningless-void-operator": "error",
+      "@typescript-eslint/no-base-to-string": "error",
+      "@typescript-eslint/no-confusing-void-expression": "error",
+      "@typescript-eslint/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
+      "@typescript-eslint/no-misused-promises": [
+        "error",
+        {
+          checksConditionals: true,
+          // TODO: I really want this to be `true`, but it makes it inconvenient to use
+          // async functions as event handlers... I need to find a good way to handle that.
+          // https://github.com/sindresorhus/refined-github/pull/2391#discussion_r318990466
+          checksVoidReturn: false,
+        },
+      ],
+      "no-throw-literal": "off",
+      "@typescript-eslint/no-throw-literal": [
+        "error",
+        {
+          // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
+          allowThrowingUnknown: true,
+          allowThrowingAny: false,
+        },
+      ],
+      camelcase: "off",
+      "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
       ...getNamingConventionRule({ isTsx: false }),
     },
   },
@@ -84,8 +113,10 @@ module.exports = {
   }],
 
   rules: {
-    // # 1. Types
-    // ref: https://github.com/xojs/eslint-config-xo-typescript/blob/main/index.js
+    "@typescript-eslint/adjacent-overload-signatures": "error",
+    "@typescript-eslint/array-type": ["error", { default: "array-simple" }],
+    "@typescript-eslint/ban-ts-comment": ["error", { "ts-expect-error": "allow-with-description", minimumDescriptionLength: 4 }],
+    "@typescript-eslint/ban-tslint-comment": "error",
     "@typescript-eslint/ban-types": [
       "error",
       {
@@ -136,28 +167,169 @@ module.exports = {
         },
       },
     ],
-    "@typescript-eslint/no-explicit-any": "off",
-    // # 13. Variables
+    "@typescript-eslint/class-literal-property-style": ["error", "fields"],
+    "@typescript-eslint/consistent-generic-constructors": ["error", "constructor"],
+    "@typescript-eslint/consistent-indexed-object-style": "error",
+    "@typescript-eslint/default-param-last": "error",
+    "@typescript-eslint/consistent-type-assertions": ["error", { assertionStyle: "as", objectLiteralTypeAssertions: "allow-as-parameter" }],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports", disallowTypeAnnotations: false }],
+    "@typescript-eslint/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
+    "@typescript-eslint/member-ordering": [
+      "error",
+      {
+        default: [
+          "signature",
+
+          "public-static-field",
+          "public-static-method",
+
+          "protected-static-field",
+          "protected-static-method",
+
+          "private-static-field",
+          "private-static-method",
+
+          "static-field",
+          "static-method",
+
+          "public-decorated-field",
+          "public-instance-field",
+          "public-abstract-field",
+          "public-field",
+
+          "protected-decorated-field",
+          "protected-instance-field",
+          "protected-abstract-field",
+          "protected-field",
+
+          "private-decorated-field",
+          "private-instance-field",
+          "private-field",
+
+          "instance-field",
+          "abstract-field",
+          "decorated-field",
+          "field",
+
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "constructor",
+
+          "public-decorated-method",
+          "public-instance-method",
+          "public-abstract-method",
+          "public-method",
+
+          "protected-decorated-method",
+          "protected-instance-method",
+          "protected-abstract-method",
+          "protected-method",
+
+          "private-decorated-method",
+          "private-instance-method",
+          "private-method",
+
+          "instance-method",
+          "abstract-method",
+          "decorated-method",
+          "method",
+        ],
+      },
+    ],
+    "@typescript-eslint/no-duplicate-enum-values": "error",
+    "@typescript-eslint/no-dynamic-delete": "error",
+    "@typescript-eslint/no-extraneous-class": [
+      "error",
+      {
+        allowConstructorOnly: false,
+        allowEmpty: false,
+        allowStaticOnly: false,
+        allowWithDecorator: true,
+      },
+    ],
+    // To allow `ignoreVoid` in `@typescript-eslint/no-floating-promises`
+    "no-void": ["error", { allowAsStatement: true }],
+    "@typescript-eslint/no-for-in-array": "error",
+    "@typescript-eslint/no-inferrable-types": "error",
+    "@typescript-eslint/no-misused-new": "error",
+    "@typescript-eslint/no-namespace": "error",
+    "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+    // "@typescript-eslint/no-require-imports": "error",
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        allowDestructuring: true,
+      },
+    ],
+    // This rule may cause eslint to mischeck
+    // "@typescript-eslint/no-explicit-any": "off",
+
+    // Off
+    "brace-style": "off",
+    "@typescript-eslint/brace-style": ["error", "1tbs", { allowSingleLine: true }],
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "comma-spacing": "off",
+    "@typescript-eslint/comma-spacing": ["error", { before: false, after: true }],
+    "default-param-last": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    // # 10. Modules
     "import/no-unresolved": "off",
     "import/named": "off",
     "no-duplicate-imports": "off",
-    "@typescript-eslint/consistent-type-imports": ["error", {
-      prefer: "type-imports",
-      disallowTypeAnnotations: false,
-    }],
-    // # 16. Blocks
-    "brace-style": "off",
-    "@typescript-eslint/brace-style": ["error", "1tbs", { allowSingleLine: true }],
     "no-empty-function": "off",
-    "@typescript-eslint/no-empty-interface": "off",
-    // 19. Whitespace
+    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-empty-interface": ["error", { allowSingleExtends: true }],
     "space-infix-ops": "off",
     "@typescript-eslint/space-infix-ops": "error",
     "keyword-spacing": "off",
     "@typescript-eslint/keyword-spacing": "error",
+    "func-call-spacing": "off",
+    "@typescript-eslint/func-call-spacing": ["error", "never"],
+    indent: "off",
+    "@typescript-eslint/indent": ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
+    "lines-between-class-members": "off",
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      {
+        // Workaround to allow class fields to not have lines between them.
+        // refer: XO - TODO: Get ESLint to add an option to ignore class fields.
+        exceptAfterSingleLine: true,
+      },
+    ],
+    "no-array-constructor": "off",
+    "@typescript-eslint/no-array-constructor": "error",
+    "no-dupe-class-members": "off",
+    "@typescript-eslint/no-dupe-class-members": "error",
+    "no-loss-of-precision": "off",
+    "@typescript-eslint/no-loss-of-precision": "error",
+    "no-extra-parens": "off",
+    "@typescript-eslint/no-extra-parens": ["error", "functions"],
+    "no-extra-semi": "off",
+    "@typescript-eslint/no-extra-semi": "error",
+    "no-loop-func": "off",
+    "@typescript-eslint/no-loop-func": "error",
+    "no-redeclare": "off",
+    "@typescript-eslint/no-redeclare": "error",
+    "no-restricted-imports": "off",
+    "@typescript-eslint/no-restricted-imports": [
+      "error",
+      [
+        "error",
+        "domain",
+        "freelist",
+        "smalloc",
+        "punycode",
+        "sys",
+        "querystring",
+        "colors",
+      ],
+    ],
+
   },
 }
 
@@ -171,7 +343,6 @@ function getNamingConventionRule({ isTsx }) {
         // Note: Leaving out `parameter` and `typeProperty` because of the mentioned known issues.
         // Note: We are intentionally leaving out `enumMember` as it's usually pascal-case or upper-snake-case.
         selector: [
-          "variable",
           "function",
           "classProperty",
           // disabled for some object's key is a path
@@ -194,6 +365,15 @@ function getNamingConventionRule({ isTsx }) {
           regex: "[- ]",
           match: false,
         },
+      },
+      {
+        selector: "variable",
+        modifiers: ["const"],
+        format: ["camelCase", "UPPER_CASE"],
+      },
+      {
+        selector: "variable",
+        format: ["camelCase"],
       },
       {
         selector: "typeLike",
