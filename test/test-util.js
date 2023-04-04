@@ -12,10 +12,12 @@ async function runEslint(string, package) {
 }
 
 module.exports = function (package) {
-  return function (rule, input) {
-    test(`[${rule}] >>> ${input}`, async (t) => {
+  return function (rule, input, expect = true) {
+    test(`[${rule}] >>> ${input} - ${expect}`, async (t) => {
       const errors = await runEslint(input, package)
-      t.true(hasRule(errors, rule), JSON.stringify(errors, null, 2))
+      const has = hasRule(errors, rule)
+      const msg = JSON.stringify(errors, null, 2)
+      expect ? t.true(has, msg) : t.false(has, msg)
     })
   }
 }
