@@ -276,7 +276,7 @@ module.exports = {
     "@typescript-eslint/comma-spacing": ["error", { before: false, after: true }],
     "default-param-last": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": "off",
     "import/no-unresolved": "off",
     "import/named": "off",
     "no-duplicate-imports": "off",
