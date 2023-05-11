@@ -2,7 +2,9 @@ const path = require("node:path")
 const { ESLint } = require("eslint")
 const test = require("ava")
 
-const hasRule = (errors, ruleId) => errors.some(error => error.ruleId === ruleId)
+function hasRule(errors, ruleId) {
+  return errors.some(error => error.ruleId === ruleId)
+}
 
 async function runEslint(string, package) {
   const packageName = path.join(process.cwd(), `packages/${package}`)
