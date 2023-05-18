@@ -281,7 +281,7 @@ module.exports = {
     "import/named": "off",
     "no-duplicate-imports": "off",
     "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": ["error", { allowSingleExtends: true }],
     "space-infix-ops": "off",
     "@typescript-eslint/space-infix-ops": "error",
