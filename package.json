@@ -27,7 +27,7 @@
     "test": "ava"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/config-conventional": "^17.6.3",
     "@rainbowatcher/eslint-config": "workspace:*",
     "@rainbowatcher/eslint-config-js": "workspace:*",
     "@rainbowatcher/eslint-config-json": "workspace:*",
@@ -35,12 +35,13 @@
     "@rainbowatcher/eslint-config-vue": "workspace:*",
     "ava": "^5.2.0",
     "bumpp": "^9.1.0",
-    "commitlint": "^17.5.0",
+    "commitlint": "^17.6.3",
     "conventional-changelog-cli": "^2.2.2",
-    "eslint": "^8.36.0",
-    "lint-staged": "^13.2.0",
+    "eslint": "^8.41.0",
+    "eslint-define-config": "^1.20.0",
+    "lint-staged": "^13.2.2",
     "simple-git-hooks": "^2.8.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
