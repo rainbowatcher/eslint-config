@@ -1,11 +1,12 @@
 const { isPackageExists } = require("local-pkg")
+const { defineConfig } = require("eslint-define-config")
 
 const TS = isPackageExists("typescript")
 
 if (!TS)
   console.warn("[@rainbowatcher/eslint-config] TypeScript is not installed, fallback to JS only.")
 
-module.exports = {
+module.exports = defineConfig({
   overrides: [
     {
       files: ["*.vue"],
@@ -107,4 +108,4 @@ module.exports = {
     "vue/space-unary-ops": ["error", { words: true, nonwords: false }],
     "vue/template-curly-spacing": "error",
   },
-}
+})

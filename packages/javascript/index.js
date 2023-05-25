@@ -1,4 +1,6 @@
-module.exports = {
+const { defineConfig } = require("eslint-define-config")
+
+module.exports = defineConfig({
   env: {
     browser: true,
     es2021: true,
@@ -196,4 +198,4 @@ module.exports = {
     // # 31. Performance
     // # 31. Others
   },
-}
+})
