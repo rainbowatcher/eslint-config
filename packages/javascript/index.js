@@ -114,7 +114,7 @@ module.exports = defineConfig({
     "no-constructor-return": "error",
     "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
     // # 10. Modules
-    // disabled because it not compatible with virtual module in vite
+    // disabled as it is not compatible with the virtual module in Vite.
     "no-undef": "off",
     "import/export": "error",
     "import/no-duplicates": "error",
@@ -123,7 +123,7 @@ module.exports = defineConfig({
     "import/order": "error",
     "import/first": "error",
     "import/no-mutable-exports": "error",
-    "no-duplicate-imports": ["error", { includeExports: true }],
+    // "no-duplicate-imports": ["error", { includeExports: true }],
     "sort-imports": [
       "error",
       {
