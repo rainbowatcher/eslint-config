@@ -46,6 +46,11 @@ module.exports = defineConfig({
     ".vitepress/cache",
   ],
   overrides: [],
+  settings: {
+    "import/resolver": {
+      node: { extensions: [".js", ".jsx", ".mjs", ".d.ts"] },
+    },
+  },
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
