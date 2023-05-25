@@ -42,6 +42,8 @@ module.exports = defineConfig({
     "!.github",
     "!.vitepress",
     "!.vscode",
+    // force exclude
+    ".vitepress/cache",
   ],
   overrides: [],
   parserOptions: {
