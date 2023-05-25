@@ -1,4 +1,6 @@
-module.exports = {
+const { defineConfig } = require("eslint-define-config")
+
+module.exports = defineConfig({
   extends: [
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:jsonc/recommended-with-json",
@@ -96,9 +98,15 @@ module.exports = {
         ],
       },
     },
+    {
+      files: ["tsconfig.*.json"],
+      rules: {
+        "jsonc/no-comments": "off",
+      },
+    },
   ],
   rules: {
     // override/add rules settings here, such as:
     // 'jsonc/rule-name': 'error'
   },
-}
+})

@@ -1,11 +1,12 @@
 const { isPackageExists } = require("local-pkg")
+const { defineConfig } = require("eslint-define-config")
 
 const TS = isPackageExists("typescript")
 
 if (!TS)
   console.warn("[@rainbowatcher/eslint-config] TypeScript is not installed, fallback to JS only.")
 
-module.exports = {
+module.exports = defineConfig({
   overrides: [
     {
       files: ["*.vue"],
@@ -66,7 +67,7 @@ module.exports = {
     "vue/array-bracket-spacing": ["error", "never"],
     "vue/arrow-spacing": ["error", { before: true, after: true }],
     "vue/block-spacing": ["error", "always"],
-    "vue/brace-style": ["error", "1tbs", { allowSingleLine: true }],
+    "vue/brace-style": ["error", "stroustrup", { allowSingleLine: true }],
     "vue/comma-dangle": ["error", "always-multiline"],
     "vue/comma-spacing": ["error", { before: false, after: true }],
     "vue/comma-style": ["error", "last"],
@@ -107,4 +108,4 @@ module.exports = {
     "vue/space-unary-ops": ["error", { words: true, nonwords: false }],
     "vue/template-curly-spacing": "error",
   },
-}
+})
