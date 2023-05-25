@@ -98,6 +98,12 @@ module.exports = defineConfig({
         ],
       },
     },
+    {
+      files: ["tsconfig.*.json"],
+      rules: {
+        "jsonc/no-comments": "off",
+      },
+    },
   ],
   rules: {
     // override/add rules settings here, such as:
