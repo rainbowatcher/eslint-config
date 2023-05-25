@@ -20,6 +20,7 @@
     "eslint": ">=7.32.0"
   },
   "dependencies": {
+    "eslint-define-config": "^1.20.0",
     "eslint-plugin-antfu": "^0.39.3",
     "eslint-plugin-import": "^2.27.5"
   },
