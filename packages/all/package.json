@@ -17,7 +17,7 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "eslint": ">=7.32.0"
+    "eslint": ">=8.41.0"
   },
   "dependencies": {
     "@rainbowatcher/eslint-config-json": "workspace:*",
