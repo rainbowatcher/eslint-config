@@ -57,9 +57,6 @@ module.exports = defineConfig({
     allowImportExportEverywhere: false,
   },
   rules: {
-    // antfu
-    "antfu/import-dedupe": "error",
-    "antfu/top-level-function": "error",
     // # 1. Types
     "no-constant-binary-expression": "error",
     // # 2. References

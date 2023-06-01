@@ -100,6 +100,11 @@ function getNamingConventionRule({ isTsx }) {
 
 module.exports = defineConfig({
   extends: ["@rainbowatcher/eslint-config-js"],
+  rules: {
+    // antfu
+    "antfu/top-level-function": "error",
+    "antfu/generic-spacing": "error",
+  },
   overrides: !fs.existsSync(path.join(process.cwd(), tsconfig)) ? [] : [{
     extends: [
       "plugin:import/recommended",
