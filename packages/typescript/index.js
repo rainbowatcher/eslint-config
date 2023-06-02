@@ -100,6 +100,10 @@ function getNamingConventionRule({ isTsx }) {
 
 module.exports = defineConfig({
   extends: ["@rainbowatcher/eslint-config-js"],
+  plugins: [
+    "import",
+    "antfu",
+  ],
   rules: {
     // antfu
     "antfu/top-level-function": "error",

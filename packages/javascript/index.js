@@ -11,7 +11,6 @@ module.exports = defineConfig({
   ],
   plugins: [
     "import",
-    "antfu",
   ],
   ignorePatterns: [
     "*.min.*",
