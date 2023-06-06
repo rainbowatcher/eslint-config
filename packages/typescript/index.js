@@ -43,7 +43,8 @@ function getNamingConventionRule({ isTsx }) {
       {
         selector: "variable",
         modifiers: ["const"],
-        format: ["camelCase", "UPPER_CASE"],
+        // storybook use PascalCase define template
+        format: ["camelCase", "UPPER_CASE", "PascalCase"],
       },
       {
         selector: "typeLike",
