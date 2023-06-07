@@ -36,7 +36,7 @@
     "ava": "^5.3.0",
     "bumpp": "^9.1.1",
     "commitlint": "^17.6.5",
-    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-cli": "^3.0.0",
     "eslint": "^8.42.0",
     "eslint-define-config": "^1.20.0",
     "lint-staged": "^13.2.2",
