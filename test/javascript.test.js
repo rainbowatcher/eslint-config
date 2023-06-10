@@ -20,3 +20,4 @@ const foo2 = {
   foo: "bar" }
 `)
 
+expectErr("no-control-regex", "const RE = /[\u0000-\u001F\"#$&*+,:;<=>?[\\]^`{|}\u007F]/g", false)

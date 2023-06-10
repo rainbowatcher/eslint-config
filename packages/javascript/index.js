@@ -200,5 +200,6 @@ module.exports = defineConfig({
     // # 30. Testing
     // # 31. Performance
     // # 31. Others
+    "no-control-regex": "off",
   },
 })
