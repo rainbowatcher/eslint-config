@@ -1,6 +1,6 @@
 {
   "name": "@rainbowatcher/eslint-config-vue",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "rainbowatcher's ESLint config presets",
   "author": "rainbowatcher <rainbow-w@qq.com>",
   "license": "MIT",
