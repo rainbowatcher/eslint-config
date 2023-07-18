@@ -295,7 +295,7 @@ module.exports = defineConfig({
         },
       ],
       // This rule may cause eslint to mischeck
-      // "@typescript-eslint/no-explicit-any": "off",
+      // "@typescript-eslint/no-explicit-any": "error",
 
       // Off
       "brace-style": "off",
@@ -413,6 +413,7 @@ module.exports = defineConfig({
       ],
       camelcase: "off",
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+      "@typescript-eslint/type-annotation-spacing": "error",
       ...getNamingConventionRule({ isTsx: false }),
     },
   },
