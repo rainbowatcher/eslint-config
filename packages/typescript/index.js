@@ -348,16 +348,18 @@ module.exports = defineConfig({
       "no-restricted-imports": "off",
       "@typescript-eslint/no-restricted-imports": [
         "error",
-        [
-          "error",
-          "domain",
-          "freelist",
-          "smalloc",
-          "punycode",
-          "sys",
-          "querystring",
-          "colors",
-        ],
+        {
+          paths: [
+            "error",
+            "domain",
+            "freelist",
+            "smalloc",
+            "punycode",
+            "sys",
+            "querystring",
+            "colors",
+          ],
+        },
       ],
 
       // === extra
