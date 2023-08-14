@@ -2,7 +2,7 @@
   "name": "@rainbowatcher/eslint-config-mono",
   "version": "0.3.0",
   "private": true,
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@8.6.12",
   "author": "rainbowatcher <rainbow-w@qq.com>",
   "license": "MIT",
   "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
@@ -27,7 +27,7 @@
     "test": "ava"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.6.6",
+    "@commitlint/config-conventional": "^17.7.0",
     "@rainbowatcher/eslint-config": "workspace:*",
     "@rainbowatcher/eslint-config-js": "workspace:*",
     "@rainbowatcher/eslint-config-json": "workspace:*",
@@ -35,12 +35,12 @@
     "@rainbowatcher/eslint-config-vue": "workspace:*",
     "ava": "^5.3.1",
     "bumpp": "^9.1.1",
-    "commitlint": "^17.6.6",
+    "commitlint": "^17.7.1",
     "conventional-changelog-cli": "^3.0.0",
-    "eslint": "^8.45.0",
-    "eslint-define-config": "^1.21.0",
-    "lint-staged": "^13.2.3",
-    "simple-git-hooks": "^2.8.1",
+    "eslint": "^8.47.0",
+    "eslint-define-config": "^1.23.0",
+    "lint-staged": "^13.3.0",
+    "simple-git-hooks": "^2.9.0",
     "typescript": "^5.1.6"
   },
   "simple-git-hooks": {
