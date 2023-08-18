@@ -67,6 +67,8 @@ function getNamingConventionRule({ isTsx }) {
           "should",
           "will",
           "did",
+          "show",
+          "hide",
         ],
       },
       {
