@@ -39,7 +39,7 @@
     "conventional-changelog-cli": "^4.0.0",
     "eslint": "^8.47.0",
     "eslint-define-config": "^1.23.0",
-    "lint-staged": "^13.3.0",
+    "lint-staged": "^14.0.1",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2"
   },
