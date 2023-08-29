@@ -21,3 +21,8 @@ const foo2 = {
 `)
 
 expectErr("no-control-regex", "const RE = /[\u0000-\u001F\"#$&*+,:;<=>?[\\]^`{|}\u007F]/g", false)
+
+expectErr("no-await-in-loop", `
+for (const item in [() => new Promise(() => {})]) {
+  await item()
+}`)

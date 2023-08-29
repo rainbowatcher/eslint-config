@@ -131,7 +131,7 @@ module.exports = defineConfig({
       },
     ],
     // # 11. Iterators and Generators
-    "no-await-in-loop": "error",
+    "no-await-in-loop": "warn",
     // # 12. Properties
     // # 13. Variables
     "prefer-const": [
