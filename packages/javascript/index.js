@@ -146,7 +146,7 @@ module.exports = defineConfig({
     "no-unneeded-ternary": "error",
     // # 16. Blocks
     "block-spacing": ["error", "always"],
-    "brace-style": ["error", "1tbs", { allowSingleLine: true }],
+    "brace-style": ["error", "stroustrup", { allowSingleLine: true }],
     // # 17. Control Statements
     // # 18. Comments
     "spaced-comment": ["error", "always", {
