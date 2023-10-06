@@ -17,17 +17,17 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "eslint": ">=8.49.0",
+    "eslint": ">=8.51.0",
     "typescript": ">= 5.2.2"
   },
   "dependencies": {
     "@rainbowatcher/eslint-config-js": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
-    "eslint-plugin-antfu": "^0.41.0",
-    "eslint-plugin-jest": "^27.2.3"
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint-plugin-antfu": "^0.43.1",
+    "eslint-plugin-jest": "^27.4.2"
   },
   "devDependencies": {
-    "eslint": "^8.49.0"
+    "eslint": "^8.51.0"
   }
 }
