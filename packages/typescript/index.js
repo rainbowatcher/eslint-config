@@ -4,6 +4,7 @@ const { defineConfig } = require("eslint-define-config")
 
 const tsconfig = process.env.ESLINT_TSCONFIG || "tsconfig.json"
 
+// eslint-disable-next-line no-unused-vars
 function getNamingConventionRule({ isTsx }) {
   return {
     "@typescript-eslint/naming-convention": [
@@ -418,7 +419,7 @@ module.exports = defineConfig({
       camelcase: "off",
       "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
       "@typescript-eslint/type-annotation-spacing": "error",
-      ...getNamingConventionRule({ isTsx: false }),
+      // ...getNamingConventionRule({ isTsx: false }),
     },
   },
   {

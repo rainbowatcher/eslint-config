@@ -28,9 +28,9 @@ expect("@typescript-eslint/ban-types", "type foo = () => void", false)
 
 expect("@typescript-eslint/space-infix-ops", "const foo =5")
 
-expect("@typescript-eslint/naming-convention", "var FOO = 1")
-expect("@typescript-eslint/naming-convention", "let FOO = 2")
-expect("@typescript-eslint/naming-convention", "const FOO = 2", false)
+// expect("@typescript-eslint/naming-convention", "var FOO = 1")
+// expect("@typescript-eslint/naming-convention", "let FOO = 2")
+// expect("@typescript-eslint/naming-convention", "const FOO = 2", false)
 
 expect("@typescript-eslint/type-annotation-spacing", "type Foo3 = { name:string }")
 expect("@typescript-eslint/type-annotation-spacing", "type Foo3 = { name : string }")
