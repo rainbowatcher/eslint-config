@@ -17,13 +17,13 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "eslint": ">=8.54.0"
+    "eslint": ">=8.55.0"
   },
   "dependencies": {
     "@rainbowatcher/eslint-config-json": "workspace:*",
     "@rainbowatcher/eslint-config-vue": "workspace:*"
   },
   "devDependencies": {
-    "eslint": "^8.54.0"
+    "eslint": "^8.55.0"
   }
 }
