@@ -33,7 +33,7 @@
     "@rainbowatcher/eslint-config-json": "workspace:*",
     "@rainbowatcher/eslint-config-ts": "workspace:*",
     "@rainbowatcher/eslint-config-vue": "workspace:*",
-    "ava": "^5.3.1",
+    "ava": "^6.0.0",
     "bumpp": "^9.2.0",
     "commitlint": "^18.4.3",
     "conventional-changelog-cli": "^4.1.0",
