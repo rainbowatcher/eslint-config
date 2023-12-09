@@ -1,29 +1,29 @@
 {
-  "name": "@rainbowatcher/eslint-config-js",
-  "version": "0.3.4",
-  "description": "rainbowatcher's ESLint config presets",
-  "author": "rainbowatcher <rainbow-w@qq.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rainbowatcher/eslint-config.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rainbowatcher/eslint-config/issues"
-  },
-  "keywords": [
-    "eslint-config"
-  ],
-  "main": "index.js",
-  "peerDependencies": {
-    "eslint": ">=8.55.0"
-  },
-  "dependencies": {
-    "eslint-define-config": "^2.0.0",
-    "eslint-plugin-import": "^2.29.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.55.0"
-  }
+    "name": "@rainbowatcher/eslint-config-js",
+    "version": "0.3.4",
+    "description": "rainbowatcher's ESLint config presets",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "keywords": [
+        "eslint-config"
+    ],
+    "main": "index.js",
+    "peerDependencies": {
+        "eslint": ">=8.55.0"
+    },
+    "dependencies": {
+        "eslint-define-config": "^2.0.0",
+        "eslint-plugin-import": "^2.29.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.55.0"
+    }
 }

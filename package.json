@@ -1,58 +1,58 @@
 {
-  "name": "@rainbowatcher/eslint-config-mono",
-  "version": "0.3.4",
-  "private": true,
-  "packageManager": "pnpm@8.11.0",
-  "author": "rainbowatcher <rainbow-w@qq.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rainbowatcher/eslint-config.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rainbowatcher/eslint-config/issues"
-  },
-  "keywords": [
-    "eslint-config",
-    "eslint",
-    "lint",
-    "config"
-  ],
-  "scripts": {
-    "lint": "eslint .",
-    "prepare": "simple-git-hooks",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "release": "bumpp -r && pnpm -r publish",
-    "test": "ava"
-  },
-  "devDependencies": {
-    "@commitlint/config-conventional": "^18.4.3",
-    "@rainbowatcher/eslint-config": "workspace:*",
-    "@rainbowatcher/eslint-config-js": "workspace:*",
-    "@rainbowatcher/eslint-config-json": "workspace:*",
-    "@rainbowatcher/eslint-config-ts": "workspace:*",
-    "@rainbowatcher/eslint-config-vue": "workspace:*",
-    "ava": "^6.0.0",
-    "bumpp": "^9.2.0",
-    "commitlint": "^18.4.3",
-    "conventional-changelog-cli": "^4.1.0",
-    "eslint": "^8.55.0",
-    "eslint-define-config": "^2.0.0",
-    "lint-staged": "^15.2.0",
-    "simple-git-hooks": "^2.9.0",
-    "typescript": "^5.3.2"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "commit-msg": "npx commitlint --edit $1"
-  },
-  "lint-staged": {
-    "*.{js,ts,json}": "eslint --fix"
-  },
-  "ava": {
-    "files": [
-      "test/**/*.test.js"
-    ]
-  }
+    "name": "@rainbowatcher/eslint-config-mono",
+    "version": "0.3.4",
+    "private": true,
+    "packageManager": "pnpm@8.11.0",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "keywords": [
+        "eslint-config",
+        "eslint",
+        "lint",
+        "config"
+    ],
+    "scripts": {
+        "lint": "eslint .",
+        "prepare": "simple-git-hooks",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+        "release": "bumpp -r && pnpm -r publish",
+        "test": "ava"
+    },
+    "devDependencies": {
+        "@commitlint/config-conventional": "^18.4.3",
+        "@rainbowatcher/eslint-config": "workspace:*",
+        "@rainbowatcher/eslint-config-js": "workspace:*",
+        "@rainbowatcher/eslint-config-json": "workspace:*",
+        "@rainbowatcher/eslint-config-ts": "workspace:*",
+        "@rainbowatcher/eslint-config-vue": "workspace:*",
+        "ava": "^6.0.0",
+        "bumpp": "^9.2.0",
+        "commitlint": "^18.4.3",
+        "conventional-changelog-cli": "^4.1.0",
+        "eslint": "^8.55.0",
+        "eslint-define-config": "^2.0.0",
+        "lint-staged": "^15.2.0",
+        "simple-git-hooks": "^2.9.0",
+        "typescript": "^5.3.2"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged",
+        "commit-msg": "npx commitlint --edit $1"
+    },
+    "lint-staged": {
+        "*.{js,ts,json}": "eslint --fix"
+    },
+    "ava": {
+        "files": [
+            "test/**/*.test.js"
+        ]
+    }
 }
