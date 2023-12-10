@@ -107,6 +107,6 @@ module.exports = defineConfig({
         "vue/space-infix-ops": "error",
         "vue/space-unary-ops": ["error", { words: true, nonwords: false }],
         "vue/template-curly-spacing": "error",
-        "vue/html-indent": ["error", 4, { baseIndent: 4, alignAttributesVertically: true }],
+        "vue/html-indent": ["error", 4, { baseIndent: 1, alignAttributesVertically: true }],
     },
 })
