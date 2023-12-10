@@ -111,7 +111,7 @@ module.exports = defineConfig({
     rules: {
     // antfu
         "antfu/top-level-function": "error",
-        "antfu/generic-spacing": "error",
+        // "antfu/generic-spacing": "error",
     },
     overrides: !fs.existsSync(path.join(process.cwd(), tsconfig)) ? [] : [{
         extends: [
