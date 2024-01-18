@@ -192,7 +192,7 @@ module.exports = defineConfig({
                         },
                         Function: "Use a specific function type instead, like `() => void`.",
                         null: {
-                            message: "Use `undefined` instead. See: https://github.com/sindresorhus/meta/issues/7",
+                            message: "Use `undefined` instead, except you known what you want to do. See: https://github.com/sindresorhus/meta/issues/7",
                             fixWith: "undefined",
                         },
                         "[]": "Don't use the empty array type `[]`. It only allows empty arrays. Use `SomeType[]` instead.",
@@ -383,12 +383,12 @@ module.exports = defineConfig({
             // "@typescript-eslint/no-for-in-array": "error",
             "@typescript-eslint/no-unnecessary-type-assertion": "error",
             /* Will cause incorrect type judgment.
-      "@typescript-eslint/no-unsafe-call": "error",
-      "@typescript-eslint/no-unsafe-argument": "error",
-      "@typescript-eslint/no-unsafe-assignment": "error",
-      "@typescript-eslint/no-unsafe-member-access": "error",
-      "@typescript-eslint/no-unsafe-return": "error",
-      */
+            "@typescript-eslint/no-unsafe-call": "error",
+            "@typescript-eslint/no-unsafe-argument": "error",
+            "@typescript-eslint/no-unsafe-assignment": "error",
+            "@typescript-eslint/no-unsafe-member-access": "error",
+            "@typescript-eslint/no-unsafe-return": "error",
+            */
             "require-await": "off",
             "@typescript-eslint/require-await": "error",
             "@typescript-eslint/restrict-plus-operands": "error",
