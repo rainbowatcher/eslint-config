@@ -1,6 +1,6 @@
 {
     "name": "@rainbowatcher/eslint-config-mono",
-    "version": "0.3.7",
+    "version": "0.3.8",
     "private": true,
     "packageManager": "pnpm@8.14.1",
     "author": "rainbowatcher <rainbow-w@qq.com>",
