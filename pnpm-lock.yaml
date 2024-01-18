@@ -105,8 +105,8 @@ importers:
         specifier: ^6.19.0
         version: 6.19.0(eslint@8.56.0)(typescript@5.3.3)
       eslint-plugin-antfu:
-        specifier: ^1.0.13
-        version: 1.0.13(eslint@8.56.0)
+        specifier: ^2.1.1
+        version: 2.1.1(eslint@8.56.0)
       eslint-plugin-jest:
         specifier: ^27.6.3
         version: 27.6.3(@typescript-eslint/eslint-plugin@6.19.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -1726,8 +1726,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-antfu@1.0.13(eslint@8.56.0):
-    resolution: {integrity: sha512-JzWEzNWZcNK4Q4Tz4VaNELhu3VgCv3obSYxUbK1UhbDBmr2v0a7H9n9xGv5GTS4LkEo905/2Gq6y0dcoBq5FZA==}
+  /eslint-plugin-antfu@2.1.1(eslint@8.56.0):
+    resolution: {integrity: sha512-HCPo3IP15/gOaruIb1ce6R4LUv/MKBZCmWzqYiLGDFW43WW4juPURnjaQIE3AgWNSoCURqD3wxerXYKzokKTgA==}
     peerDependencies:
       eslint: '*'
     dependencies:
