@@ -54,25 +54,6 @@ function getNamingConventionRule({ isTsx }) {
                 ],
             },
             {
-                selector: "variable",
-                types: [
-                    "boolean",
-                ],
-                format: [
-                    "PascalCase",
-                ],
-                prefix: [
-                    "is",
-                    "has",
-                    "can",
-                    "should",
-                    "will",
-                    "did",
-                    "show",
-                    "hide",
-                ],
-            },
-            {
                 // Interface name should not be prefixed with `I`.
                 selector: "interface",
                 filter: /^(?!I)[A-Z]/.source,
