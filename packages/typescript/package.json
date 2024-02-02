@@ -22,9 +22,9 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-js": "workspace:*",
-        "@typescript-eslint/eslint-plugin": "^6.19.0",
-        "@typescript-eslint/parser": "^6.19.0",
-        "eslint-plugin-antfu": "^2.1.1",
+        "@typescript-eslint/eslint-plugin": "^6.20.0",
+        "@typescript-eslint/parser": "^6.20.0",
+        "eslint-plugin-antfu": "^2.1.2",
         "eslint-plugin-jest": "^27.6.3"
     },
     "devDependencies": {
