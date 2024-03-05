@@ -17,13 +17,13 @@
     ],
     "main": "index.js",
     "peerDependencies": {
-        "eslint": ">=8.56.0"
+        "eslint": ">=8.57.0"
     },
     "dependencies": {
         "eslint-define-config": "^2.1.0",
         "eslint-plugin-import": "^2.29.1"
     },
     "devDependencies": {
-        "eslint": "^8.56.0"
+        "eslint": "^8.57.0"
     }
 }
