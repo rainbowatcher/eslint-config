@@ -37,7 +37,7 @@
         "bumpp": "^9.4.0",
         "commitlint": "^19.2.2",
         "conventional-changelog-cli": "^4.1.0",
-        "eslint": "^8.57.0",
+        "eslint": "^9.1.1",
         "eslint-define-config": "^2.1.0",
         "lint-staged": "^15.2.2",
         "simple-git-hooks": "^2.11.1",
