@@ -1,5 +1,6 @@
 {
     "name": "@rainbowatcher/eslint-config-vue",
+    "type": "module",
     "version": "0.3.8",
     "description": "rainbowatcher's ESLint config presets",
     "author": "rainbowatcher <rainbow-w@qq.com>",
@@ -15,16 +16,27 @@
     "keywords": [
         "eslint-config"
     ],
-    "main": "index.js",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup --clean --dts",
+        "watch": "tsup --watch"
+    },
     "peerDependencies": {
-        "eslint": ">=8.57.0"
+        "eslint": ">=9.0.0"
     },
     "dependencies": {
+        "@rainbowatcher/eslint-config-shared": "workspace:*",
         "@rainbowatcher/eslint-config-ts": "workspace:*",
-        "eslint-plugin-vue": "^9.24.0",
+        "eslint-merge-processors": "^0.1.0",
+        "eslint-plugin-vue": "^9.25.0",
+        "eslint-processor-vue-blocks": "^0.1.2",
         "local-pkg": "^0.5.0"
     },
     "devDependencies": {
-        "eslint": "^8.57.0"
+        "eslint": "^9.1.1"
     }
 }

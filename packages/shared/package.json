@@ -1,5 +1,5 @@
 {
-    "name": "@rainbowatcher/eslint-config-ts",
+    "name": "@rainbowatcher/eslint-config-shared",
     "type": "module",
     "version": "0.3.8",
     "description": "rainbowatcher's ESLint config presets",
@@ -20,26 +20,9 @@
     "types": "./dist/index.d.ts",
     "files": [
         "dist"
-    ],
+    ], 
     "scripts": {
         "build": "tsup --clean --dts",
         "watch": "tsup --watch"
-    },
-    "peerDependencies": {
-        "eslint": ">=9.0.0",
-        "typescript": ">= 5.4.3"
-    },
-    "dependencies": {
-        "@rainbowatcher/eslint-config-js": "workspace:*",
-        "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@stylistic/eslint-plugin-ts": "^1.7.2",
-        "@typescript-eslint/eslint-plugin": "^7.7.1",
-        "@typescript-eslint/parser": "^7.7.1",
-        "eslint-plugin-antfu": "^2.1.2",
-        "eslint-plugin-jest": "^28.2.0",
-        "local-pkg": "^0.5.0"
-    },
-    "devDependencies": {
-        "eslint": "^9.1.1"
     }
 }
