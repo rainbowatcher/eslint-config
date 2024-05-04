@@ -32,7 +32,7 @@
         "@vitest/ui": "^1.5.2",
         "bumpp": "^9.4.0",
         "commitlint": "^19.3.0",
-        "conventional-changelog-cli": "^4.1.0",
+        "conventional-changelog-cli": "^5.0.0",
         "eslint": "^9.1.1",
         "eslint-flat-config-utils": "^0.2.4",
         "lint-staged": "^15.2.2",
