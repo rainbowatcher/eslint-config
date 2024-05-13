@@ -23,17 +23,17 @@
     ],
     "scripts": {
         "build": "tsup --clean --dts",
-        "watch": "tsup --watch"
+        "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0"
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "eslint-define-config": "^2.1.0",
+        "eslint-flat-config-utils": "^0.2.4",
         "eslint-plugin-jsonc": "^2.15.1"
     },
     "devDependencies": {
-        "eslint": "^9.1.1"
+        "eslint": "^9.2.0"
     }
 }

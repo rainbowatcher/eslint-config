@@ -1,1 +1,73 @@
-{}
+{
+    "name": "@rainbowatcher/eslint-config-mono",
+    "type": "module",
+    "version": "0.3.8",
+    "private": true,
+    "packageManager": "pnpm@9.1.1",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "build": "tsup --clean --dts",
+        "build:watch": "tsup --watch",
+        "prepare": "simple-git-hooks",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+        "release": "bumpp && pnpm publish",
+        "test": "vitest"
+    },
+    "dependencies": {
+        "@dprint/json": "^0.19.2",
+        "@dprint/typescript": "^0.90.5",
+        "@stylistic/eslint-plugin": "^2.1.0",
+        "eslint-config-flat-gitignore": "^0.1.5",
+        "eslint-plugin-antfu": "^2.2.0",
+        "eslint-plugin-format": "^0.1.1",
+        "eslint-plugin-import-x": "^0.5.0",
+        "eslint-plugin-jsonc": "^2.15.1",
+        "eslint-plugin-markdown": "^5.0.0",
+        "eslint-plugin-n": "^17.6.0",
+        "eslint-plugin-unicorn": "^53.0.0",
+        "eslint-plugin-unused-imports": "^3.2.0",
+        "globals": "^15.2.0",
+        "jsonc-eslint-parser": "^2.4.0",
+        "local-pkg": "^0.5.0",
+        "toml-eslint-parser": "^0.9.3",
+        "typescript-eslint": "^7.8.0",
+        "vue-eslint-parser": "^9.4.2",
+        "yaml-eslint-parser": "^1.2.2"
+    },
+    "devDependencies": {
+        "@commitlint/config-conventional": "^19.2.2",
+        "@rainbowatcher/eslint-config-json": "workspace:*",
+        "@rainbowatcher/eslint-config-ts": "workspace:*",
+        "@types/eslint": "^8.56.10",
+        "@types/node": "^20.12.11",
+        "@vitest/ui": "^1.6.0",
+        "bumpp": "^9.4.1",
+        "commitlint": "^19.3.0",
+        "conventional-changelog-cli": "^5.0.0",
+        "eslint": "^9.2.0",
+        "eslint-flat-config-utils": "^0.2.4",
+        "jiti": "^1.21.0",
+        "lint-staged": "^15.2.2",
+        "simple-git-hooks": "^2.11.1",
+        "tsup": "^8.0.2",
+        "typescript": "^5.4.5",
+        "vitest": "^1.6.0"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged",
+        "commit-msg": "npx commitlint --edit $1"
+    },
+    "lint-staged": {
+        "*.{js,ts,json}": "eslint --fix"
+    }
+}

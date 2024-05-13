@@ -1,15 +1,15 @@
 import { GLOB_TSX } from "@rainbowatcher/eslint-config-shared"
-import type { Linter } from "eslint"
-import { getLanguageOptions } from "../language_options"
 import { namingConvertion } from "../naming_convertion"
+import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 
-const tsxConfig: Linter.FlatConfig = {
-    name: "rainbowatcher/ts/tsx",
-    files: [GLOB_TSX],
-    languageOptions: getLanguageOptions(),
-    rules: {
-        ...namingConvertion(true),
-    },
+export function tsx(): EslintFlatConfigItem {
+    return {
+        files: [GLOB_TSX],
+        name: "rainbowatcher:ts:tsx",
+        rules: {
+            ...namingConvertion(true),
+        },
+    }
 }
 
-export default tsxConfig
+export default tsx

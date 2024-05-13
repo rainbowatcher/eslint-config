@@ -23,16 +23,47 @@
     ],
     "scripts": {
         "build": "tsup --clean --dts",
-        "watch": "tsup --watch"
+        "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
+        "@rainbowatcher/eslint-config-ignore": "workspace:*",
+        "@rainbowatcher/eslint-config-js": "workspace:*",
+        "@rainbowatcher/eslint-config-json": "workspace:*",
+        "@rainbowatcher/eslint-config-md": "workspace:*",
+        "@rainbowatcher/eslint-config-ts": "workspace:*",
+        "@rainbowatcher/eslint-config-vue": "workspace:*",
         "eslint": ">=9.0.0"
     },
+    "peerDependenciesMeta": {
+        "@rainbowatcher/eslint-config-ignore": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-js": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-json": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-md": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-ts": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-vue": {
+            "optional": true
+        }
+    },
     "dependencies": {
-        "@rainbowatcher/eslint-config-json": "workspace:*",
-        "@rainbowatcher/eslint-config-vue": "workspace:*"
+        "@antfu/install-pkg": "^0.3.3",
+        "@clack/prompts": "^0.7.0",
+        "@rainbowatcher/eslint-config-shared": "workspace:*",
+        "eslint-flat-config-utils": "^0.2.4",
+        "local-pkg": "^0.5.0",
+        "magicast": "^0.3.4",
+        "picocolors": "^1.0.0"
     },
     "devDependencies": {
-        "eslint": "^9.1.1"
+        "eslint": "^9.2.0"
     }
 }

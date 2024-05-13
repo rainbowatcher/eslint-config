@@ -4,6 +4,16 @@
 
 # @rainbowatcher/eslint-config
 
+## Features
+
+- Double quotes, no semi colon
+
+## Why
+
+1. double quotes
+
+We use double quotes, because Strings in many other backend languages that are using double quotes, It can reduce the discomfort when switching languages and make coding smoother.
+
 ## Usage
 
 ### Install
@@ -16,7 +26,7 @@ pnpm add -D eslint @rainbowatcher/eslint-config
 
 ```json
 {
-  "extends": "@rainbowatcher"
+    "extends": "@rainbowatcher"
 }
 ```
 
@@ -28,10 +38,10 @@ For example:
 
 ```json
 {
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  }
+    "scripts": {
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
+    }
 }
 ```
 
@@ -41,24 +51,38 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
 
 ```json
 {
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+    "prettier.enable": false,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
 ```
 
 ### TypeScript Aware Rules
 
-Type aware rules are enabled when a `tsconfig.eslint.json` is found in the project root, which will introduce some stricter rules into your project. If you want to enable it while have no `tsconfig.eslint.json` in the project root, you can change tsconfig name by modifying `ESLINT_TSCONFIG` env. 
+Type aware rules are enabled when a `tsconfig.eslint.json` is found in the project root, which will introduce some stricter rules into your project. If you want to enable it while have no `tsconfig.eslint.json` in the project root, you can change tsconfig name by modifying `ESLINT_TSCONFIG` env.
+
+```ts
+// eslint.config.js
+import process from "node:process"
+import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
+
+// const foo = "bar"
+process.env.ESLINT_TSCONFIG = "tsconfig.json"
+export default {
+    extends: "@rainbowatcher",
+}
+```
 
 ```js
-// .eslintrc.js
-process.env.ESLINT_TSCONFIG = 'tsconfig.json'
+// eslint.config.js
+import process from "node:process"
+import { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-module.exports = {
-  extends: '@rainbowatcher'
+process.env.ESLINT_TSCONFIG = "tsconfig.json"
+export default {
+    extends: "@rainbowatcher",
 }
 ```
 

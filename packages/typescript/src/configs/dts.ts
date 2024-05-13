@@ -1,13 +1,12 @@
 import { GLOB_DTS } from "@rainbowatcher/eslint-config-shared"
-import type { Linter } from "eslint"
+import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 
-
-const dtsConfig: Linter.FlatConfig = {
-    name: "rainbowatcher/ts/dts",
-    files: [GLOB_DTS],
-    rules: {
-        "ts/no-unused-vars": "off",
-    },
+export function dts(): EslintFlatConfigItem {
+    return {
+        files: [GLOB_DTS],
+        name: "rainbowatcher:ts:dts",
+        rules: {
+            "ts/no-unused-vars": "off",
+        },
+    }
 }
-
-export default dtsConfig

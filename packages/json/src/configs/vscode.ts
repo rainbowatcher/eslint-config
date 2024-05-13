@@ -1,10 +1,11 @@
 import type { Linter } from "eslint"
 
-export default function vscodeEslintConfig(): Linter.FlatConfig {
+export function vscode(): Linter.FlatConfig {
     return {
         files: ["**/.vscode/settings.json", "**/.vscode/extensions.json"],
-        name: "rainbowatcher/vscode/settings.json",
+        name: "rainbowatcher:json:vscode",
         rules: {
+            "jsonc/comma-dangle": ["error", "always"],
             "jsonc/no-comments": "off",
         },
     }

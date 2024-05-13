@@ -1,3 +1,4 @@
+// syntax: https://github.com/micromatch/micromatch#extglobs
 export const GLOB_JS = "**/*.?([cm])js"
 export const GLOB_JSX = "**/*.?([cm])jsx"
 export const GLOB_TS = "**/*.?([cm])ts"
@@ -13,6 +14,7 @@ export const GLOB_HTML = "**/*.htm?(l)"
 export const GLOB_ASTRO = "**/*.astro"
 export const GLOB_GRAPHQL = "**/*.{g,graph}ql"
 export const GLOB_MARKDOWN = "**/*.md"
+export const GLOB_NEST_MARKDOWN = "**/*.md/*.md"
 export const GLOB_SVELTE = "**/*.svelte"
 
 export const GLOB_STYLE = "**/*.{c,le,sc}ss"
@@ -21,13 +23,15 @@ export const GLOB_POSTCSS = "**/*.{p,post}css"
 export const GLOB_LESS = "**/*.less"
 export const GLOB_SCSS = "**/*.scss"
 
-export const GLOB_SRC = "?([cm])[jt]s?(x)"
+export const GLOB_SRC_EXT = "?([cm])[jt]s?(x)"
+export const GLOB_SRC = "**/*.?([cm])[jt]s?(x)"
+export const GLOB_MARKDOWN_CODE = `${GLOB_MARKDOWN}/${GLOB_SRC}`
 export const GLOB_TESTS = [
-    `**/__tests__/**/*.${GLOB_SRC}`,
-    `**/*.spec.${GLOB_SRC}`,
-    `**/*.test.${GLOB_SRC}`,
-    `**/*.bench.${GLOB_SRC}`,
-    `**/*.benchmark.${GLOB_SRC}`,
+    `**/__tests__/**/*.${GLOB_SRC_EXT}`,
+    `**/*.spec.${GLOB_SRC_EXT}`,
+    `**/*.test.${GLOB_SRC_EXT}`,
+    `**/*.bench.${GLOB_SRC_EXT}`,
+    `**/*.benchmark.${GLOB_SRC_EXT}`,
 ]
 
 export const GLOB_EXCLUDE = [

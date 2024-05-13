@@ -1,15 +1,13 @@
-import type { Linter } from "eslint"
-import antfu from "eslint-plugin-antfu"
-import pluginTs from "@typescript-eslint/eslint-plugin"
+import { interopDefault } from "@rainbowatcher/eslint-config-shared"
+import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 
-function getTsSetup(): Linter.FlatConfig {
+export async function setup(): Promise<EslintFlatConfigItem> {
+    const pluginTs = await interopDefault(import("@typescript-eslint/eslint-plugin"))
+
     return {
-        name: "rainbowatcher/ts/setup",
+        name: "rainbowatcher:ts:setup",
         plugins: {
-            ts: pluginTs as any,
-            antfu,
+            ts: pluginTs,
         },
     }
 }
-
-export default getTsSetup()

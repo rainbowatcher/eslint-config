@@ -9,9 +9,6 @@
         "skipLibCheck": true
     },
     "include": [
-        "packages/**/*.ts",
-        "test/**/*.ts",
-        "test/**/_.ts",
-        "vitest.config.ts"
+        "**/*.ts"
     ]
 }

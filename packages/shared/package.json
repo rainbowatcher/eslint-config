@@ -20,9 +20,13 @@
     "types": "./dist/index.d.ts",
     "files": [
         "dist"
-    ], 
+    ],
     "scripts": {
         "build": "tsup --clean --dts",
-        "watch": "tsup --watch"
+        "watch": "tsup --dts --watch"
+    },
+    "dependencies": {
+        "eslint-config-flat-gitignore": "^0.1.5",
+        "eslint-flat-config-utils": "^0.2.4"
     }
 }

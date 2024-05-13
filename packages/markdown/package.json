@@ -1,0 +1,42 @@
+{
+    "name": "@rainbowatcher/eslint-config-md",
+    "type": "module",
+    "version": "0.3.8",
+    "description": "rainbowatcher's ESLint config presets",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "keywords": [
+        "eslint-config"
+    ],
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup --clean --dts",
+        "watch": "tsup --dts --watch"
+    },
+    "peerDependencies": {
+        "eslint": ">=9.0.0"
+    },
+    "dependencies": {
+        "@rainbowatcher/eslint-config-shared": "workspace:*",
+        "eslint-flat-config-utils": "^0.2.4",
+        "eslint-merge-processors": "^0.1.0",
+        "eslint-plugin-markdown": "^5.0.0",
+        "eslint-plugin-prettier": "^5.1.3"
+    },
+    "devDependencies": {
+        "@types/eslint-plugin-markdown": "^2.0.2",
+        "eslint": "^9.2.0"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "name": "@rainbowatcher/eslint-config-prettier",
+    "type": "module",
+    "version": "0.3.8",
+    "description": "rainbowatcher's ESLint config presets",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "keywords": [
+        "eslint-config"
+    ],
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup --clean --dts",
+        "watch": "tsup --dts --watch"
+    },
+    "peerDependencies": {
+        "eslint": ">=9.0.0"
+    },
+    "dependencies": {
+        "@rainbowatcher/eslint-config-shared": "workspace:*",
+        "eslint-plugin-prettier": "^5.1.3",
+        "prettier": "^3.2.5"
+    },
+    "devDependencies": {
+        "eslint": "^9.2.0"
+    }
+}

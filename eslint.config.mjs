@@ -1,7 +1,10 @@
-import tsEsConfig from "@rainbowatcher/eslint-config-ts"
-import jsonEsConfig from "@rainbowatcher/eslint-config-json"
+import { defineConfig } from "@rainbowatcher/eslint-config"
 
-export default [
-    ...tsEsConfig,
-    ...jsonEsConfig,
-]
+export default defineConfig({
+    gitignore: true,
+    json: true,
+    markdown: true,
+    style: true,
+    typescript: true,
+    vue: true,
+})

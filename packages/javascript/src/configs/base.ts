@@ -1,86 +1,79 @@
-import { GLOB_JS } from "@rainbowatcher/eslint-config-shared"
-import type { Linter } from "eslint"
-import eslintJs from "@eslint/js"
+import { interopDefault } from "@rainbowatcher/eslint-config-shared"
 import globals from "globals"
+import { getFiles } from "../files"
+import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-const jsConfig: Linter.FlatConfig = {
-    name: "rainbowatcher/js/base",
-    // https://github.com/micromatch/micromatch#extglobs
-    files: [GLOB_JS],
-    languageOptions: {
-        sourceType: "module",
-        globals: {
-            ...globals.browser,
-            ...globals.es2021,
-            ...globals.node,
-            document: "readonly",
-            navigator: "readonly",
-            window: "readonly",
-        },
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
+export async function base(opts: Options): Promise<EslintFlatConfigItem> {
+    const eslintJs = await interopDefault(import("@eslint/js"))
+
+    return {
+        files: getFiles(opts),
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.es2021,
+                ...globals.node,
+                document: "readonly",
+                navigator: "readonly",
+                window: "readonly",
             },
-            ecmaVersion: "latest",
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true,
+                },
+                ecmaVersion: "latest",
+                sourceType: "module",
+            },
             sourceType: "module",
         },
-    },
-    linterOptions: {
-        // report unused eslint-disable directives
-        reportUnusedDisableDirectives: true,
-    },
-    rules: {
-        ...eslintJs.configs.recommended.rules,
-        // https://eslint.org/docs/latest/rules/<rule-name>
-        "no-var": "error",
-        "object-shorthand": "error",
-        "no-array-constructor": "error",
-        "array-callback-return": ["error", { checkForEach: true }],
-        "prefer-destructuring": ["error", {
-            VariableDeclarator: {
-                array: false,
-                object: true,
-            },
-            AssignmentExpression: {
-                array: false,
-                object: false,
-            },
-        }],
-        "prefer-template": "error",
-        "no-useless-escape": "error",
-        "prefer-rest-params": "error",
-        "default-param-last": "error",
-        "no-new-func": "error",
-        "no-loop-func": "error",
-        "no-empty-function": "warn",
-        "no-constructor-return": "error",
-        "no-undef": "off",
-        "no-duplicate-imports": ["error", { includeExports: true }],
-        "sort-imports": [
-            "error",
-            {
-                ignoreCase: false,
-                ignoreDeclarationSort: true,
-                ignoreMemberSort: false,
-                memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-                allowSeparatedGroups: false,
-            },
-        ],
-        "no-await-in-loop": "warn",
-        "prefer-const": [
-            "error",
-            {
+        linterOptions: {
+            // report unused eslint-disable directives
+            reportUnusedDisableDirectives: true,
+        },
+        name: "rainbowatcher:js:rules",
+        rules: {
+            ...eslintJs.configs.recommended.rules,
+            // https://eslint.org/docs/latest/rules/<rule-name>
+            "array-callback-return": ["error", {
+                checkForEach: true,
+            }],
+            "default-param-last": "error",
+            eqeqeq: ["error", "smart"],
+            "no-array-constructor": "error",
+            "no-await-in-loop": "warn",
+            "no-constructor-return": "error",
+            "no-control-regex": "off",
+            "no-duplicate-imports": ["error", {
+                includeExports: true,
+            }],
+            "no-empty-function": "warn",
+            "no-loop-func": "error",
+            "no-new-func": "error",
+            "no-restricted-globals": ["error", "event"],
+            "no-undef": "off",
+            "no-unneeded-ternary": "error",
+            "no-useless-escape": "error",
+            "no-var": "error",
+            "object-shorthand": "error",
+            "prefer-const": ["error", {
                 destructuring: "all",
                 ignoreReadBeforeAssign: true,
-            },
-        ],
-        "no-unneeded-ternary": "error",
-        "no-restricted-globals": [
-            "error",
-            "event",
-        ],
-        "no-control-regex": "off",
-    },
-}
+            }],
+            "prefer-destructuring": ["error", {
+                AssignmentExpression: {
+                    array: false,
+                    object: false,
+                },
+                VariableDeclarator: {
+                    array: false,
+                    object: true,
+                },
+            }],
+            "prefer-rest-params": "error",
+            "prefer-template": "error",
 
-export default jsConfig
+            // use import/order instead
+            "sort-imports": "off",
+        },
+    }
+}

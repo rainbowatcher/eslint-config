@@ -1,68 +1,89 @@
-import type { Linter } from "eslint"
-import { jsStyleConfig } from "@rainbowatcher/eslint-config-js"
-import { GLOB_TS, renameRules } from "@rainbowatcher/eslint-config-shared"
-import stylisticTs from "@stylistic/eslint-plugin-ts"
+import {
+    GLOB_TS, GLOB_TSX, GLOB_VUE, interopDefault, renameRules,
+} from "@rainbowatcher/eslint-config-shared"
+import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-const tsStyleConfig: Linter.FlatConfig = {
-    name: "rainbowatcher/ts/style",
-    files: [GLOB_TS],
-    plugins: {
-        style: stylisticTs,
-    },
-    rules: {
-        "style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-        "style/comma-dangle": ["error", "always-multiline"],
-        "style/comma-spacing": ["error", { before: false, after: true }],
-        "style/func-call-spacing": ["error", "never"],
-        "style/block-spacing": ["error", "always"],
-        "style/key-spacing": ["error", { beforeColon: false, afterColon: true }],
-        "style/object-curly-spacing": ["error", "always"],
-        "style/indent": ["error", 4, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
-        "style/keyword-spacing": "error",
-        "style/lines-between-class-members": [
-            "error",
-            "always",
-            {
-                exceptAfterSingleLine: true,
-            },
-        ],
-        "style/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
-        "style/no-extra-parens": ["error", "functions"],
-        "style/no-extra-semi": "error",
-        "style/semi": ["error", "never"],
-        "style/space-infix-ops": "error",
-        "style/type-annotation-spacing": "error",
-        "style/quotes": ["error", "double", { avoidEscape: true }],
-        "style/quote-props": ["error", "as-needed"],
-    },
-}
+export async function style(opts: Options): Promise<EslintFlatConfigItem> {
+    if (!opts.style) return {}
+    const stylisticTs = await interopDefault(import("@stylistic/eslint-plugin-ts"))
+    const files = opts.jsx ? [GLOB_TS, GLOB_TSX] : [GLOB_TS]
+    opts.vue && files.push(GLOB_VUE)
 
-function tsStyleExtendJsConfig(): Linter.FlatConfig {
     return {
-        ...jsStyleConfig,
-        files: [GLOB_TS],
+        files,
+        name: "rainbowatcher:ts:style",
         plugins: {
-            "style-js": jsStyleConfig.plugins!.style,
+            "style-ts": stylisticTs,
         },
         rules: {
-            ...renameRules(jsStyleConfig.rules, { style: "style-js" }),
-            "style/brace-style": 0,
-            "style/comma-dangle": 0,
-            "style/comma-spacing": 0,
-            "style/block-spacing": 0,
-            "style/key-spacing": 0,
-            "style/object-curly-spacing": 0,
-            "style/indent": 0,
-            "style/keyword-spacing": 0,
-            "style/lines-between-class-members": 0,
-            "style/semi": 0,
-            "style/space-infix-ops": 0,
-            "style/quote-props": 0,
+            ...renameRules(stylisticTs.configs["all-flat"].rules, { "@stylistic/ts": "style-ts" }),
+
+            // "style-ts/func-call-spacing": ["error", "never"],
+            // "style-ts/comma-spacing": ["error", { after: true, before: false }],
+            // "style-ts/key-spacing": ["error", { afterColon: true, beforeColon: false }],
+            // "style-ts/keyword-spacing": "error",
+            // "style-ts/lines-between-class-members": [
+            //     "error",
+            //     "always",
+            //     {
+            //         exceptAfterSingleLine: true,
+            //     },
+            // ],
+            // "style-ts/no-extra-semi": "error",
+            // "style-ts/no-extra-parens": ["error", "functions"],
+            // "style-ts/block-spacing": ["error", "always"],
+            // "style-ts/space-infix-ops": "error",
+            "style-ex/type-generic-spacing": "error",
+            "style-ex/type-named-tuple-spacing": "error",
+            "style-js/brace-style": "off",
+            "style-js/comma-dangle": "off",
+            "style-js/comma-spacing": "off",
+            "style-js/indent": "off",
+            "style-js/lines-around-comment": "off",
+            "style-js/no-extra-parens": "off",
+            "style-js/object-curly-spacing": "off",
+            "style-js/quotes": "off",
+            "style-js/semi": "off",
+            "style-js/space-infix-ops": "off",
+            "style-ts/brace-style": ["error", "1tbs", { allowSingleLine: true }],
+            "style-ts/comma-dangle": ["error", "always-multiline"],
+            "style-ts/indent": ["error", 4, {
+                SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1,
+            }],
+            "style-ts/lines-around-comment": ["error", {
+                afterBlockComment: false,
+                afterHashbangComment: true,
+                afterLineComment: false,
+                allowArrayEnd: false,
+                allowArrayStart: true,
+                allowBlockEnd: false,
+                allowBlockStart: true,
+                allowClassEnd: false,
+                allowClassStart: true,
+                allowEnumEnd: false,
+                allowEnumStart: true,
+                allowInterfaceEnd: false,
+                allowInterfaceStart: true,
+                allowModuleEnd: false,
+                allowModuleStart: false,
+                allowObjectEnd: false,
+                allowObjectStart: true,
+                allowTypeEnd: false,
+                allowTypeStart: true,
+                beforeBlockComment: true,
+                beforeLineComment: true,
+                ignorePattern: "eslint|global",
+            }],
+            "style-ts/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
+            "style-ts/object-curly-spacing": ["error", "always"],
+            "style-ts/quote-props": ["error", "as-needed"],
+            "style-ts/quotes": ["error", "double", { avoidEscape: true }],
+            "style-ts/semi": ["error", "never"],
+            "style-ts/space-before-blocks": "error",
+            "style-ts/space-before-function-paren": ["error", {
+                anonymous: "always", asyncArrow: "always", named: "never",
+            }],
+            "style-ts/type-annotation-spacing": "error",
         },
     }
-}
-
-export {
-    tsStyleConfig,
-    tsStyleExtendJsConfig,
 }

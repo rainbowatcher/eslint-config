@@ -1,25 +1,20 @@
-import type { Linter } from "eslint"
-import jsonSetup from "./configs/setup"
-import jsonBaseConfig from "./configs/base"
-import jsonConfig from "./configs/json"
-import json5Config from "./configs/json5"
-import jsoncConfig from "./configs/jsonc"
-import pkgJsonConfig from "./configs/pkg_json"
-import tsconfigConfig from "./configs/tsconfig"
-import vscodeEslintConfig from "./configs/vscode"
-import jsonStyleConfig from "./configs/style"
+import { base } from "./configs/base"
+import { packageJson } from "./configs/pkg_json"
+import { setup } from "./configs/setup"
+import { style } from "./configs/style"
+import { tsconfig } from "./configs/tsconfig"
+import { vscode } from "./configs/vscode"
+import type { EslintFlatConfigs, Options } from "@rainbowatcher/eslint-config-shared"
 
-const jsonEsConfig: Linter.FlatConfig[] = [
-    jsonSetup,
-    jsonBaseConfig,
-    jsonConfig,
-    json5Config,
-    jsoncConfig,
-    vscodeEslintConfig(),
-    jsonStyleConfig(),
-    // ref to: <https://github.com/antfu/eslint-config/blob/9de13a1cfeb1efafaf2d3813621fc3eacbffe803/src/configs/sort.ts>
-    pkgJsonConfig,
-    tsconfigConfig,
-]
-
-export default jsonEsConfig
+export function jsonConfigs(opts: Options): EslintFlatConfigs {
+    if (opts.json === false) return []
+    return [
+        setup(),
+        base(),
+        style(opts),
+        // ref to: <https://github.com/antfu/eslint-config/blob/9de13a1cfeb1efafaf2d3813621fc3eacbffe803/src/configs/sort.ts>
+        packageJson(),
+        tsconfig(),
+        vscode(),
+    ]
+}

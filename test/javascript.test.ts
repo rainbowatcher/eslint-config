@@ -1,33 +1,78 @@
-import { createExpectFn } from "./test-util"
+import { concat } from "eslint-flat-config-utils"
+import { jsConfigs } from "packages/javascript/src"
+import { describe, expect, it } from "vitest"
+import { createExpectFn, createFormatFn } from "./test_util"
 
-const { expectRule, expectStyle } = await createExpectFn("javascript")
+const configs = await concat(...jsConfigs({ style: true }))
+const { expectRule } = createExpectFn(configs, "javascript")
+const formatCode = createFormatFn(configs)
 
-// ## Types
-expectRule("no-var", "var foo = 1")
-// Disallow expressions where the operation doesn't affect the value
-expectRule("no-constant-binary-expression", "const value3 = !foo == null")
-expectRule("no-constant-binary-expression", "const objIsEmpty = someObj === {}") // never equal
-expectRule("no-constant-binary-expression", "const arrIsEmpty = someArr === []") // never equal
-expectRule("constructor-super", "class A extends B { constructor() { } }")
-expectRule("object-shorthand", "const foo = { a: a, b: \"foo\" };")
-expectRule("object-shorthand", "const foo = { w: function() {}, x: function *() {}, [y]: function() {}, z: z }")
-// # Styles
-expectStyle("style/space-infix-ops", "const foo =5", { expected: "const foo = 5\n" })
-expectStyle("style/quotes", "const foo = 'bar'", { expected: "const foo = \"bar\"\n" })
-expectStyle("style/quotes", "const foo = `bar`", { expected: "const foo = \"bar\"\n" })
-// Objects
-expectStyle("style/object-curly-newline", `const foo1 = { 
-  foo: "bar" }`, { expected: "const foo1 = { foo: \"bar\" }\n" })
-expectStyle("style/object-curly-newline", `
-const foo1 = { 
-  foo: "bar" }`, {
-    expected: `
-const foo1 = { foo: \"bar\" }\n`,
+describe("rules", () => {
+    expectRule("no-var", "var foo = 1")
+
+    // Disallow expressions where the operation doesn't affect the value
+    expectRule("no-constant-binary-expression", "const value3 = !foo == null")
+    expectRule("no-constant-binary-expression", "const objIsEmpty = someObj === {}") // never equal
+    expectRule("no-constant-binary-expression", "const arrIsEmpty = someArr === []") // never equal
+    expectRule("constructor-super", "class A extends B { constructor() { } }")
+    expectRule("object-shorthand", 'const foo = { a: a, b: "foo" };')
+    expectRule("object-shorthand", "const foo = { w: function() {}, x: function *() {}, [y]: function() {}, z: z }")
+    expectRule("no-control-regex", 'const RE = /[\u0000-\u001F"#$&*+,:;<=>?[\\]^`{|}\u007F]/g', { expected: false })
+    expectRule("no-await-in-loop", `
+    for (const item in [() => new Promise(() => {})]) {
+      await item()
+    }`)
 })
 
-expectRule("no-control-regex", "const RE = /[\u0000-\u001F\"#$&*+,:;<=>?[\\]^`{|}\u007F]/g", { expected: false })
+describe("style", () => {
+    it("space-infix-ops", () => {
+        const code = "const foo =5"
+        expect(formatCode(code)).toMatchInlineSnapshot(`
+          "const foo = 5
+          "
+        `)
+    })
 
-expectRule("no-await-in-loop", `
-for (const item in [() => new Promise(() => {})]) {
-  await item()
-}`)
+    it("quotes", () => {
+        const code = "const foo = 'bar'"
+        const code1 = "const foo = `bar`"
+        const code2 = "const foo = '`bar`'"
+        expect(formatCode(code)).toMatchInlineSnapshot(`
+          "const foo = "bar"
+          "
+        `)
+        expect(formatCode(code1)).toMatchInlineSnapshot(`
+          "const foo = "bar"
+          "
+        `)
+        expect(formatCode(code2)).toMatchInlineSnapshot(`
+          "const foo = "\`bar\`"
+          "
+        `)
+    })
+
+    it("object-curly-newline", () => {
+        const code = `
+        const foo = {
+            foo: "bar" }
+        `
+        expect(formatCode(code)).toMatchInlineSnapshot(`
+          "const foo = { foo: "bar" }
+          "
+        `)
+
+        const code1 = `
+        const foo = {foo:"1", 
+        bar: 2, baz: 3
+        }
+        `
+        expect(formatCode(code1)).toMatchInlineSnapshot(`
+          "const foo = {
+              bar: 2,
+              baz: 3,
+              foo: "1",
+          }
+          "
+        `)
+    })
+})

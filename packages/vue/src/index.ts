@@ -1,17 +1,9 @@
-import type { Linter } from "eslint"
-import { isPackageExists } from "local-pkg"
-import getBaseConfig from "./configs/base"
-import setupConfig from "./configs/setup"
+import { baseConfig } from "./configs/base"
+import type { EslintFlatConfigs, Options } from "@rainbowatcher/eslint-config-shared"
 
-const TS = isPackageExists("typescript")
-
-if (!TS) {
-    console.warn("[@rainbowatcher/eslint-config] TypeScript is not installed, fallback to JS only.")
+export function vueConfigs(opts: Options): EslintFlatConfigs {
+    if (opts.vue === false) return []
+    return [
+        baseConfig(opts),
+    ]
 }
-
-const vueEsConfig: Array<Linter.FlatConfig | Promise<Linter.FlatConfig>> = [
-    setupConfig,
-    getBaseConfig(TS),
-]
-
-export default vueEsConfig

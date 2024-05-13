@@ -1,11 +1,12 @@
-import type { Linter } from "eslint"
-import jsonc from "eslint-plugin-jsonc"
+import { interopDefault } from "@rainbowatcher/eslint-config-shared"
+import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 
-const jsonSetup: Linter.FlatConfig = {
-    name: "rainbowatcher/json/setup",
-    plugins: {
-        jsonc: jsonc as any,
-    },
+export async function setup(): Promise<EslintFlatConfigItem> {
+    const pluginJsonc = await interopDefault(import("eslint-plugin-jsonc"))
+    return {
+        name: "rainbowatcher:json:setup",
+        plugins: {
+            jsonc: pluginJsonc,
+        },
+    }
 }
-
-export default jsonSetup

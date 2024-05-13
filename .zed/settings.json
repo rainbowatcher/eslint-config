@@ -1,0 +1,15 @@
+{
+    "features": {
+        "copilot": false
+    },
+    "formatter": {
+        "code_actions": {
+
+            // Use ESLint's --fix:
+            "source.fixAll.eslint": true,
+
+            // Organize imports on save:
+            "source.organizeImports": true
+        }
+    }
+}
