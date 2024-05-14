@@ -217,6 +217,7 @@ async function main() {
         deps: new Set([
             `${configPrefix}-ignore`,
             `${configPrefix}-js`,
+            `${configPrefix}`,
         ]),
         pkgJson,
         spinner: p.spinner(),
