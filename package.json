@@ -1,7 +1,7 @@
 {
     "name": "@rainbowatcher/eslint-config-mono",
     "type": "module",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "private": true,
     "packageManager": "pnpm@9.1.1",
     "author": "rainbowatcher <rainbow-w@qq.com>",
@@ -19,8 +19,8 @@
         "build": "pnpm -r --sequential build",
         "watch": "pnpm --parallel watch",
         "prepare": "simple-git-hooks && tsx scripts/gen_type.ts",
-        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-        "release": "bumpp -r && pnpm -r publish",
+        "changelog": "conventional-changelog -si CHANGELOG.md -r 2",
+        "release": "bumpp -r -x changelog && pnpm -r publish",
         "test": "vitest"
     },
     "devDependencies": {
