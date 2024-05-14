@@ -223,7 +223,7 @@ async function main() {
         spinner: p.spinner(),
     }
 
-    p.intro(c.bgBlue(c.bold(" @rainbowatcher/eslint-config ")))
+    p.intro(c.bgBlue(c.bold(` @rainbowatcher/eslint-config ${version} `)))
     await handleConfigName(ctx)
     await handleOptions(ctx)
     await handleDeps(ctx)
