@@ -45,7 +45,6 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             // "style-js/comma-spacing": ["error", { after: true, before: false }],
             // "style-js/comma-style": ["error", "last"],
             // "style-js/key-spacing": ["error", { afterColon: true, beforeColon: false }],
-            // "style-js/dot-location": ["error", "property"],
             // "style-js/keyword-spacing": "error",
             // "style-js/newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
             "style-ex/indent-binary-ops": ["error", 4],
@@ -55,6 +54,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
             "style-js/brace-style": ["error", "1tbs", { allowSingleLine: true }],
             "style-js/comma-dangle": ["error", "always-multiline"],
+            "style-js/dot-location": ["error", "property"],
             "style-js/eol-last": ["error", "always"],
             "style-js/function-call-argument-newline": ["error", "consistent"],
             "style-js/indent": ["error", 4, {
