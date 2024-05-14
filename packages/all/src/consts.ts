@@ -17,4 +17,14 @@ export const abbrs = {
     typescript: "ts",
 }
 
+export const modules = [
+    "ignore",
+    "javascript",
+    "json",
+    "markdown",
+    "prettier",
+    "typescript",
+    "vue",
+]
+
 export const configPrefix = "@rainbowatcher/eslint-config"

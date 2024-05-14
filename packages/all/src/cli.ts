@@ -3,11 +3,13 @@ import fs from "node:fs/promises"
 import process from "node:process"
 import { installPackage } from "@antfu/install-pkg"
 import * as p from "@clack/prompts"
-import { isPackageExists } from "local-pkg"
+import detectIndent from "detect-indent"
+import { isPackageExists, loadPackageJSON } from "local-pkg"
 import { builders, loadFile, writeFile } from "magicast"
 import c from "picocolors"
+import { version } from "../../../package.json"
 import {
-    abbrs, configPrefix, legacyEslintConfigNames, validEslintConfigNames,
+    abbrs, configPrefix, legacyEslintConfigNames, modules, validEslintConfigNames,
 } from "./consts"
 import type { CliContext } from "./types"
 
@@ -86,71 +88,70 @@ async function handleConfigName(ctx: CliContext) {
 }
 
 async function handleOptions(ctx: CliContext) {
-    const ts = await p.confirm({
-        active: "yes",
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: true,
         message: "use typescript?",
-    })
+    }).then(use => assertCancel(use) && (ctx.configOptions.typescript = true))
 
-    if (assertCancel(ts)) {
-        ctx.configOptions.typescript = true
-    }
-
-    const framework = await p.select({
+    await p.select({
         initialValue: "vue",
         message: c.green("select project framework"),
         options: [
             { label: "Vue", value: "vue" },
             { label: "None", value: "" },
         ],
-    })
+    }).then(use => assertCancel(use) === "vue" && (ctx.configOptions.vue = true))
 
-    if (assertCancel(framework) === "vue") {
-        ctx.configOptions.vue = true
-    }
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: true,
+        message: "use style formatters?",
+    }).then(use => assertCancel(use) && (ctx.configOptions.style = true))
 
-    if (assertCancel(await p.confirm({
-        active: "yes",
-        message: "enable formatter?",
-    }))) {
-        ctx.configOptions.style = true
-    }
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: true,
+        message: c.green("use json?"),
+    }).then(use => assertCancel(use) && (ctx.configOptions.json = true))
 
-    const json = await p.confirm({
-        active: "yes",
-        message: c.green("lint json?"),
-    })
-    assertCancel(json) && (ctx.configOptions.json = true)
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: true,
+        message: c.green("use css?"),
+    }).then(enable => assertCancel(enable) && (ctx.configOptions.css = true))
 
-    const markdown = await p.confirm({
-        active: "yes",
-        message: c.green("lint markdown?"),
-    })
-    assertCancel(markdown) && (ctx.configOptions.markdown = true)
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: true,
+        message: c.green("use markdown?"),
+    }).then(enable => assertCancel(enable) && (ctx.configOptions.markdown = true))
 
-    // const style = await p.multiselect({
-    //     cursorAt: "toml",
-    //     initialValues: ["css", "json", "markdown", "typescript", "javascript"],
-    //     message: c.green("select project style"),
-    //     options: [
-    //         { label: "JavaScript", value: "javascript" },
-    //         { label: "TypeScript", value: "typescript" },
-    //         { label: "Markdown", value: "markdown" },
-    //         { label: "JSON", value: "json" },
-    //         { label: "CSS", value: "css" },
-    //         { label: "Jsx", value: "jsx" },
-    //         { label: "TOML", value: "toml" },
-    //         { label: "Vue", value: "vue" },
-    //         { label: "YAML", value: "yaml" },
-    //     ],
-    // })
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: false,
+        message: c.green("use graphql?"),
+    }).then(enable => assertCancel(enable) && (ctx.configOptions.graphql = true))
 
-    // ctx.configOptions.style = Object.fromEntries(assertCancel(style).map(i => [i, true])) as StyleOptions
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: false,
+        message: c.green("use yaml?"),
+    }).then(enable => assertCancel(enable) && (ctx.configOptions.yaml = true))
 
-    const gitIgnore = await p.confirm({
-        active: "yes",
-        message: c.green("enable .gitignore intergration?"),
-    })
-    assertCancel(gitIgnore) && (ctx.configOptions.gitignore = true)
+    await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: false,
+        message: c.green("use toml?"),
+    }).then(enable => assertCancel(enable) && (ctx.configOptions.toml = true))
 }
 
 async function generateCode(ctx: CliContext) {
@@ -166,44 +167,66 @@ async function generateCode(ctx: CliContext) {
 }
 
 async function handleDeps(ctx: CliContext) {
+    const packageJsonPath = `${process.cwd()}/package.json`
+    const indent = await getPkgIndent(packageJsonPath)
+
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
-        if (["gitignore", "style"].includes(opt)) continue
-        const abbr = abbrs[opt as keyof typeof abbrs] ?? opt
-        val && ctx.deps.add(`${configPrefix}-${abbr}`)
+        if (modules.includes(opt)) {
+            if (opt === "style") ctx.deps.add(`${configPrefix}-prettier`)
+            const abbr = abbrs[opt as keyof typeof abbrs] ?? opt
+            val && ctx.deps.add(`${configPrefix}-${abbr}`)
+        }
+    }
+
+    if (!ctx.pkgJson.devDependencies) {
+        ctx.pkgJson.devDependencies = {}
     }
 
     for await (const dep of ctx.deps) {
-        if (isPackageExists(dep)) {
-            p.log.info(`${dep} is installed.`)
-        } else {
-            ctx.spinner.message(`installing ${dep}...`)
-            await installPackage(dep, { silent: true })
-        }
+        ctx.pkgJson.devDependencies[dep] = version
+    }
+
+    await fs.writeFile(packageJsonPath, JSON.stringify(ctx.pkgJson, null, indent))
+    ctx.spinner.start("installing deps")
+    await installPackage([], { silent: true })
+    ctx.spinner.stop("deps installed")
+}
+
+async function getPkgIndent(packageJsonPath: string): Promise<number> {
+    let indent = -1
+    try {
+        const content = await fs.readFile(packageJsonPath)
+        indent = detectIndent(content.toString("utf8")).amount
+        return indent
+    } catch {
+        return indent
     }
 }
 
 async function main() {
+    const pkgJson = await loadPackageJSON(process.cwd())
+    if (!pkgJson) {
+        throw new Error("`package.json` not found, please init project first")
+    }
+
     const ctx: CliContext = {
         configName: "eslint.config.js",
-        configOptions: {},
+        configOptions: {
+            gitignore: true,
+        },
         deps: new Set([
-            "eslint-flat-config-utils",
             `${configPrefix}-ignore`,
             `${configPrefix}-js`,
         ]),
+        pkgJson,
         spinner: p.spinner(),
     }
-    p.intro(c.bgBlue(c.bold(" @rainbowatcher/eslint-config ")))
 
+    p.intro(c.bgBlue(c.bold(" @rainbowatcher/eslint-config ")))
     await handleConfigName(ctx)
     await handleOptions(ctx)
-    ctx.spinner.start("installing deps...")
     await handleDeps(ctx)
-    ctx.spinner.stop("deps installed")
-    ctx.spinner.start("generating code...")
     await generateCode(ctx)
-    ctx.spinner.stop("code generated")
-
     p.outro(c.bgGreen(" all done! "))
 }
 
