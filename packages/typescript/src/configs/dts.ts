@@ -7,6 +7,7 @@ export function dts(): EslintFlatConfigItem {
         name: "rainbowatcher:ts:dts",
         rules: {
             "ts/no-unused-vars": "off",
+            "unicorn/no-abusive-eslint-disable": "off",
         },
     }
 }
