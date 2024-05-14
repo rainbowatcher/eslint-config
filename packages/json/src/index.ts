@@ -18,3 +18,5 @@ export function jsonConfigs(opts: Options): EslintFlatConfigs {
         vscode(),
     ]
 }
+
+export default jsonConfigs

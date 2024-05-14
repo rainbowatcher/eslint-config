@@ -8,3 +8,5 @@ export function ignoreConfigs(opts: Options): EslintFlatConfigs {
         gitignoreConfig(opts),
     ]
 }
+
+export default ignoreConfigs

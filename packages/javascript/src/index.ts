@@ -22,3 +22,5 @@ export function jsConfigs(opts: Options): EslintFlatConfigs {
         cli(),
     ]
 }
+
+export default jsConfigs

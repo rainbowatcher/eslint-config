@@ -13,3 +13,5 @@ export function mdConfigs(opts: Options): EslintFlatConfigs {
         baseConfig(),
     ]
 }
+
+export default mdConfigs

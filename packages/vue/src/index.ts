@@ -7,3 +7,5 @@ export function vueConfigs(opts: Options): EslintFlatConfigs {
         baseConfig(opts),
     ]
 }
+
+export default vueConfigs

@@ -11,3 +11,5 @@ export function prettierConfigs(opts: Options): EslintFlatConfigs {
         markdown(opts),
     ]
 }
+
+export default prettierConfigs

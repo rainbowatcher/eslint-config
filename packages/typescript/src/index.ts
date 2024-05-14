@@ -20,3 +20,5 @@ export function tsConfigs(opts: Options): EslintFlatConfigs {
         tsx(),
     ]
 }
+
+export default tsConfigs
