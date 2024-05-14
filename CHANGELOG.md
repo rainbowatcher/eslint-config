@@ -1,3 +1,17 @@
+## <small>0.5.2 (2024-05-14)</small>
+
+* chore: add ignore module in gen_type.ts ([3cf32d6](https://github.com/rainbowatcher/eslint-config/commit/3cf32d6))
+* chore: add prettier and markdown in commitlint ([da9d493](https://github.com/rainbowatcher/eslint-config/commit/da9d493))
+* chore: remove default values for type Option ([515771e](https://github.com/rainbowatcher/eslint-config/commit/515771e))
+* chore(javascript): set dot-location to property ([32ec679](https://github.com/rainbowatcher/eslint-config/commit/32ec679))
+* chore(typescript): disable unicorn/no-abusive-eslint-disable in *.d.ts ([5eef6a6](https://github.com/rainbowatcher/eslint-config/commit/5eef6a6))
+* refactor(all): refactor cli app ([3904e35](https://github.com/rainbowatcher/eslint-config/commit/3904e35))
+* style: use newly eslint rule ([cf6d946](https://github.com/rainbowatcher/eslint-config/commit/cf6d946))
+* docs: update CHANGELOG.md ([34c048d](https://github.com/rainbowatcher/eslint-config/commit/34c048d))
+* feat: add default export for config packages ([44f5da7](https://github.com/rainbowatcher/eslint-config/commit/44f5da7))
+
+
+
 ## <small>0.5.1 (2024-05-13)</small>
 
 * chore: release v0.5.1 ([8210e3e](https://github.com/rainbowatcher/eslint-config/commit/8210e3e))
