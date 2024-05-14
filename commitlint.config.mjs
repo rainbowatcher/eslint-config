@@ -4,7 +4,15 @@ export default {
         "scope-enum": [
             2,
             "always",
-            ["vue", "javascript", "typescript", "json", "all"],
+            [
+                "all",
+                "javascript",
+                "json",
+                "markdown",
+                "prettier",
+                "typescript",
+                "vue",
+            ],
         ],
     },
 }
