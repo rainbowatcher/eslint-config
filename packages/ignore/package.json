@@ -1,7 +1,7 @@
 {
     "name": "@rainbowatcher/eslint-config-ignore",
     "type": "module",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "description": "rainbowatcher's ESLint config presets",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
