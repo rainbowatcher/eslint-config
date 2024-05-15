@@ -4,7 +4,7 @@ import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config
 
 export function imports(opts: Options): EslintFlatConfigItem {
     return {
-        files: getFiles(opts),
+        files: getFiles({ ...opts, json: false }),
         name: "rainbowatcher:js:imports",
         rules: {
             "antfu/import-dedupe": "error",

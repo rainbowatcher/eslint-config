@@ -1,10 +1,13 @@
-import { GLOB_MARKDOWN_CODE, GLOB_SRC, interopDefault } from "@rainbowatcher/eslint-config-shared"
-import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
+import {
+    GLOB_JS, GLOB_JSX, GLOB_MARKDOWN_CODE, GLOB_SRC, interopDefault,
+} from "@rainbowatcher/eslint-config-shared"
+import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-export async function unicorn(): Promise<EslintFlatConfigItem[]> {
+export async function unicorn(opts: Options): Promise<EslintFlatConfigItem[]> {
     // @ts-expect-error missing types
     const pluginUnicorn = await interopDefault(import("eslint-plugin-unicorn"))
     return [{
+        files: opts.typescript ? [GLOB_SRC] : [GLOB_JS, GLOB_JSX],
         ignores: [GLOB_MARKDOWN_CODE],
         name: "rainbowatcher:js:unicorn",
         rules: {

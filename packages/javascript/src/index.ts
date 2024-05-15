@@ -16,9 +16,9 @@ export function jsConfigs(opts: Options): EslintFlatConfigs {
         style(opts),
         imports(opts),
         sort(opts),
+        node(opts),
+        unicorn(opts),
         test(),
-        node(),
-        unicorn(),
         cli(),
     ]
 }
