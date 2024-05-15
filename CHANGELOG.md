@@ -1,3 +1,9 @@
+## <small>0.5.6 (2024-05-15)</small>
+
+* chore: update release script ([61551a0](https://github.com/rainbowatcher/eslint-config/commit/61551a0))
+
+
+
 ## <small>0.5.5 (2024-05-15)</small>
 
 * chore: update CHANGELOG.md ([6a734dc](https://github.com/rainbowatcher/eslint-config/commit/6a734dc))
