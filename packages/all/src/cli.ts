@@ -171,8 +171,8 @@ async function handleDeps(ctx: CliContext) {
     const indent = await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
+        if (opt === "style" && val) ctx.deps.add(`${configPrefix}-prettier`)
         if (modules.includes(opt)) {
-            if (opt === "style") ctx.deps.add(`${configPrefix}-prettier`)
             const abbr = abbrs[opt as keyof typeof abbrs] ?? opt
             val && ctx.deps.add(`${configPrefix}-${abbr}`)
         }
