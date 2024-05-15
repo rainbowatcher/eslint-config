@@ -62,7 +62,9 @@ async function handleConfigName(ctx: CliContext) {
     // create config is not exists
     if (!filename) {
         const createConfig = await p.confirm({
-            active: "yes",
+            active: "Yes",
+            inactive: "No",
+            initialValue: true,
             message: "not found eslint config, create a new one?",
         })
         if (!assertCancel(createConfig)) {
@@ -71,17 +73,19 @@ async function handleConfigName(ctx: CliContext) {
             process.exit(0)
         }
     } else if (isLegacy) {
-        const useLegacy = await p.confirm({
-            active: "no",
+        const createConfig = await p.confirm({
+            active: "Yes",
+            inactive: "No",
+            initialValue: true,
             message: "you are using legacy eslint config, replace with modern eslint config?",
         })
-        if (assertCancel(useLegacy)) {
+        if (assertCancel(createConfig)) {
+            // delete legacy config file
+            await fs.rm(fullPath!)
+        } else {
             // not supported, exit\
             p.outro(c.red("not supported"))
             process.exit(1)
-        } else {
-            // delete legacy config file
-            await fs.rm(fullPath!)
         }
     } else {
         ctx.configName = filename
