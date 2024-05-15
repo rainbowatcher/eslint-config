@@ -1,4 +1,5 @@
 export const legacyEslintConfigNames = [
+    ".eslintrc",
     ".eslintrc.js",
     ".eslintrc.cjs",
     ".eslintrc.yaml",
