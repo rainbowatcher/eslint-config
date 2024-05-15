@@ -1,3 +1,11 @@
+## <small>0.6.1 (2024-05-15)</small>
+
+* fix: missing prettier config in lock file ([e7ced81](https://github.com/rainbowatcher/eslint-config/commit/e7ced81))
+* fix(all): wrong prompt option ([7d91430](https://github.com/rainbowatcher/eslint-config/commit/7d91430))
+* fix(prettier): prettier config is not add to index.ts ([c202413](https://github.com/rainbowatcher/eslint-config/commit/c202413))
+
+
+
 ## 0.6.0 (2024-05-15)
 
 * feat: add unocss module ([c77189c](https://github.com/rainbowatcher/eslint-config/commit/c77189c))
