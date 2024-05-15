@@ -1,3 +1,13 @@
+## 0.6.0 (2024-05-15)
+
+* feat: add unocss module ([c77189c](https://github.com/rainbowatcher/eslint-config/commit/c77189c))
+* feat(all): add unocss option in cli instead of graphql ([dc23bd4](https://github.com/rainbowatcher/eslint-config/commit/dc23bd4))
+* fix: add missing valid eslint config file name ([05dfcc4](https://github.com/rainbowatcher/eslint-config/commit/05dfcc4))
+* fix(all): add missing peer dep prettier ([d8c3dad](https://github.com/rainbowatcher/eslint-config/commit/d8c3dad))
+* fix(all): create config file when file not exists ([381c7ae](https://github.com/rainbowatcher/eslint-config/commit/381c7ae))
+
+
+
 ## <small>0.5.7 (2024-05-15)</small>
 
 * perf(all): optimize install dependencies ([99d72f0](https://github.com/rainbowatcher/eslint-config/commit/99d72f0))
