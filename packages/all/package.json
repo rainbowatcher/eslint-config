@@ -32,6 +32,7 @@
         "@rainbowatcher/eslint-config-js": "workspace:*",
         "@rainbowatcher/eslint-config-json": "workspace:*",
         "@rainbowatcher/eslint-config-md": "workspace:*",
+        "@rainbowatcher/eslint-config-prettier": "workspace:*",
         "@rainbowatcher/eslint-config-ts": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "eslint": ">=9.0.0"
@@ -47,6 +48,9 @@
             "optional": true
         },
         "@rainbowatcher/eslint-config-md": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-prettier": {
             "optional": true
         },
         "@rainbowatcher/eslint-config-ts": {
