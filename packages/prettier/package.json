@@ -31,7 +31,8 @@
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "eslint-plugin-prettier": "^5.1.3",
-        "prettier": "^3.2.5"
+        "prettier": "^3.2.5",
+        "yaml-eslint-parser": "^1.2.2"
     },
     "devDependencies": {
         "eslint": "^9.2.0"
