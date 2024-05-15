@@ -124,35 +124,35 @@ async function handleOptions(ctx: CliContext) {
         inactive: "No",
         initialValue: true,
         message: "use css?",
-    }).then(enable => assertCancel(enable) && (ctx.configOptions.css = true))
+    }).then(use => assertCancel(use) && (ctx.configOptions.css = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: true,
         message: "use markdown?",
-    }).then(enable => assertCancel(enable) && (ctx.configOptions.markdown = true))
+    }).then(use => assertCancel(use) && (ctx.configOptions.markdown = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: false,
-        message: "use graphql?",
-    }).then(enable => assertCancel(enable) && (ctx.configOptions.graphql = true))
+        message: "use unocss?",
+    }).then(use => assertCancel(use) && (ctx.configOptions.unocss = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: false,
         message: "use yaml?",
-    }).then(enable => assertCancel(enable) && (ctx.configOptions.yaml = true))
+    }).then(use => assertCancel(use) && (ctx.configOptions.yaml = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: false,
         message: "use toml?",
-    }).then(enable => assertCancel(enable) && (ctx.configOptions.toml = true))
+    }).then(use => assertCancel(use) && (ctx.configOptions.toml = true))
 }
 
 async function generateCode(ctx: CliContext) {

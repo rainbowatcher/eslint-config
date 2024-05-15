@@ -34,6 +34,7 @@
         "@rainbowatcher/eslint-config-md": "workspace:*",
         "@rainbowatcher/eslint-config-prettier": "workspace:*",
         "@rainbowatcher/eslint-config-ts": "workspace:*",
+        "@rainbowatcher/eslint-config-unocss": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "eslint": ">=9.0.0"
     },
@@ -54,6 +55,9 @@
             "optional": true
         },
         "@rainbowatcher/eslint-config-ts": {
+            "optional": true
+        },
+        "@rainbowatcher/eslint-config-unocss": {
             "optional": true
         },
         "@rainbowatcher/eslint-config-vue": {
