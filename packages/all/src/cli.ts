@@ -157,6 +157,10 @@ async function handleOptions(ctx: CliContext) {
 
 async function generateCode(ctx: CliContext) {
     const configPath = `${process.cwd()}/${ctx.configName}`
+    const exists = await fileExists(configPath)
+    if (!exists) {
+        await fs.writeFile(configPath, "")
+    }
     const file = await loadFile(configPath)
     file.imports.$add({ from: "@rainbowatcher/eslint-config", imported: "defineConfig" })
 
