@@ -1,3 +1,10 @@
+## <small>0.5.5 (2024-05-15)</small>
+
+* chore: update CHANGELOG.md ([6a734dc](https://github.com/rainbowatcher/eslint-config/commit/6a734dc))
+* fix: missing install prettier plugin ([113634a](https://github.com/rainbowatcher/eslint-config/commit/113634a))
+
+
+
 ## <small>0.5.4 (2024-05-14)</small>
 
 * chore: release v0.5.4 ([9e5a63f](https://github.com/rainbowatcher/eslint-config/commit/9e5a63f))
