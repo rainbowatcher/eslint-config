@@ -1,3 +1,20 @@
+## <small>0.5.4 (2024-05-14)</small>
+
+* chore: release v0.5.4 ([9e5a63f](https://github.com/rainbowatcher/eslint-config/commit/9e5a63f))
+* feat: print version in cli start ([5755a33](https://github.com/rainbowatcher/eslint-config/commit/5755a33))
+* fix: forget build before release ([d6446f6](https://github.com/rainbowatcher/eslint-config/commit/d6446f6))
+
+
+
+## <small>0.5.3 (2024-05-14)</small>
+
+* chore: release v0.5.3 ([200f719](https://github.com/rainbowatcher/eslint-config/commit/200f719))
+* chore: revert release script ([b6b2f33](https://github.com/rainbowatcher/eslint-config/commit/b6b2f33))
+* fix(all): add missing eslint-config dep in ctx ([83a9153](https://github.com/rainbowatcher/eslint-config/commit/83a9153))
+* docs: update CHANGLOG.md ([3d94aff](https://github.com/rainbowatcher/eslint-config/commit/3d94aff))
+
+
+
 ## <small>0.5.2 (2024-05-14)</small>
 
 * chore: add ignore module in gen_type.ts ([3cf32d6](https://github.com/rainbowatcher/eslint-config/commit/3cf32d6))
