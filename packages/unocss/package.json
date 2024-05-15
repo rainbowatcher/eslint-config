@@ -1,0 +1,32 @@
+{
+    "name": "@rainbowatcher/eslint-config-unocss",
+    "type": "module",
+    "version": "0.5.7",
+    "description": "rainbowatcher's ESLint config presets",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "keywords": [
+        "eslint-config"
+    ],
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup --clean --dts",
+        "watch": "tsup --dts --watch"
+    },
+    "dependencies": {
+        "@unocss/eslint-plugin": "^0.60.2",
+        "eslint-config-flat-gitignore": "^0.1.5"
+    }
+}
