@@ -7,4 +7,5 @@ export default defineConfig({
     style: true,
     typescript: true,
     vue: true,
+    yaml: true,
 })
