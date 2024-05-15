@@ -1,3 +1,13 @@
+## <small>0.6.2 (2024-05-15)</small>
+
+* chore: add yaml in eslint config ([b91f7cc](https://github.com/rainbowatcher/eslint-config/commit/b91f7cc))
+* chore: update editor config ([e0355e7](https://github.com/rainbowatcher/eslint-config/commit/e0355e7))
+* fix(javascript): add files for configs, avoid mess file rule check ([2d0d315](https://github.com/rainbowatcher/eslint-config/commit/2d0d315))
+* fix(prettier): add yaml eslint parser ([2737a8a](https://github.com/rainbowatcher/eslint-config/commit/2737a8a))
+* style: add final new line ([35f6ff8](https://github.com/rainbowatcher/eslint-config/commit/35f6ff8))
+
+
+
 ## <small>0.6.1 (2024-05-15)</small>
 
 * fix: missing prettier config in lock file ([e7ced81](https://github.com/rainbowatcher/eslint-config/commit/e7ced81))
