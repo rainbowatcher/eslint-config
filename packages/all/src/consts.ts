@@ -25,6 +25,13 @@ export const modules = [
     "prettier",
     "typescript",
     "vue",
-]
+] as const
+
+export const prettierLintLangs = [
+    "markdown",
+    "graphql",
+    "yaml",
+    "css",
+] as const
 
 export const configPrefix = "@rainbowatcher/eslint-config"

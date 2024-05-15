@@ -1,17 +1,18 @@
 /* eslint-disable unicorn/no-process-exit */
+import { exec } from "node:child_process"
 import fs from "node:fs/promises"
 import process from "node:process"
-import { installPackage } from "@antfu/install-pkg"
+import { detectPackageManager } from "@antfu/install-pkg"
 import * as p from "@clack/prompts"
 import detectIndent from "detect-indent"
-import { isPackageExists, loadPackageJSON } from "local-pkg"
+import { loadPackageJSON } from "local-pkg"
 import { builders, loadFile, writeFile } from "magicast"
 import c from "picocolors"
 import { version } from "../../../package.json"
 import {
-    abbrs, configPrefix, legacyEslintConfigNames, modules, validEslintConfigNames,
+    abbrs, configPrefix, legacyEslintConfigNames, modules, prettierLintLangs, validEslintConfigNames,
 } from "./consts"
-import type { CliContext } from "./types"
+import type { CliContext, Module } from "./types"
 
 function assertCancel<T>(result: T | symbol): T {
     if (p.isCancel(result)) {
@@ -62,7 +63,7 @@ async function handleConfigName(ctx: CliContext) {
     if (!filename) {
         const createConfig = await p.confirm({
             active: "yes",
-            message: c.green("not found eslint config, create a new one?"),
+            message: "not found eslint config, create a new one?",
         })
         if (!assertCancel(createConfig)) {
             // when not create config, exit
@@ -72,7 +73,7 @@ async function handleConfigName(ctx: CliContext) {
     } else if (isLegacy) {
         const useLegacy = await p.confirm({
             active: "no",
-            message: c.green("you are using legacy eslint config, replace with modern eslint config?"),
+            message: "you are using legacy eslint config, replace with modern eslint config?",
         })
         if (assertCancel(useLegacy)) {
             // not supported, exit\
@@ -97,7 +98,7 @@ async function handleOptions(ctx: CliContext) {
 
     await p.select({
         initialValue: "vue",
-        message: c.green("select project framework"),
+        message: "select project framework",
         options: [
             { label: "Vue", value: "vue" },
             { label: "None", value: "" },
@@ -115,42 +116,42 @@ async function handleOptions(ctx: CliContext) {
         active: "Yes",
         inactive: "No",
         initialValue: true,
-        message: c.green("use json?"),
+        message: "use json?",
     }).then(use => assertCancel(use) && (ctx.configOptions.json = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: true,
-        message: c.green("use css?"),
+        message: "use css?",
     }).then(enable => assertCancel(enable) && (ctx.configOptions.css = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: true,
-        message: c.green("use markdown?"),
+        message: "use markdown?",
     }).then(enable => assertCancel(enable) && (ctx.configOptions.markdown = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: false,
-        message: c.green("use graphql?"),
+        message: "use graphql?",
     }).then(enable => assertCancel(enable) && (ctx.configOptions.graphql = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: false,
-        message: c.green("use yaml?"),
+        message: "use yaml?",
     }).then(enable => assertCancel(enable) && (ctx.configOptions.yaml = true))
 
     await p.confirm({
         active: "Yes",
         inactive: "No",
         initialValue: false,
-        message: c.green("use toml?"),
+        message: "use toml?",
     }).then(enable => assertCancel(enable) && (ctx.configOptions.toml = true))
 }
 
@@ -171,8 +172,10 @@ async function handleDeps(ctx: CliContext) {
     const indent = await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
-        if (opt === "style" && val) ctx.deps.add(`${configPrefix}-prettier`)
-        if (modules.includes(opt)) {
+        if (opt === "style" && val && prettierLintLangs.findIndex(lang => ctx.configOptions[lang]) !== -1) {
+            ctx.deps.add(`${configPrefix}-prettier`)
+        }
+        if (modules.includes(opt as Module)) {
             const abbr = abbrs[opt as keyof typeof abbrs] ?? opt
             val && ctx.deps.add(`${configPrefix}-${abbr}`)
         }
@@ -186,10 +189,28 @@ async function handleDeps(ctx: CliContext) {
         ctx.pkgJson.devDependencies[dep] = version
     }
 
-    await fs.writeFile(packageJsonPath, JSON.stringify(ctx.pkgJson, null, indent))
-    ctx.spinner.start("installing deps")
-    await installPackage([], { silent: true })
-    ctx.spinner.stop("deps installed")
+    const confirm = await p.confirm({
+        active: "Yes",
+        inactive: "No",
+        initialValue: true,
+        message: "install dependencies?",
+    })
+    if (assertCancel(confirm)) {
+        await fs.writeFile(packageJsonPath, JSON.stringify(ctx.pkgJson, null, indent))
+        ctx.spinner.start("installing deps")
+        const pm = await detectPackageManager() ?? "pnpm"
+        await new Promise((resolve, reject) => {
+            exec(`${pm} install --silent`, (error, stdout, stderr) => {
+                if (error) {
+                    reject(error)
+                    return
+                }
+
+                ctx.spinner.stop("deps installed")
+                resolve(stdout ?? stderr)
+            })
+        })
+    }
 }
 
 async function getPkgIndent(packageJsonPath: string): Promise<number> {
