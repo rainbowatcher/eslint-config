@@ -89,12 +89,18 @@ importers:
       '@rainbowatcher/eslint-config-md':
         specifier: workspace:*
         version: link:../markdown
+      '@rainbowatcher/eslint-config-prettier':
+        specifier: workspace:*
+        version: link:../prettier
       '@rainbowatcher/eslint-config-shared':
         specifier: workspace:*
         version: link:../shared
       '@rainbowatcher/eslint-config-ts':
         specifier: workspace:*
         version: link:../typescript
+      '@rainbowatcher/eslint-config-unocss':
+        specifier: workspace:*
+        version: link:../unocss
       '@rainbowatcher/eslint-config-vue':
         specifier: workspace:*
         version: link:../vue
