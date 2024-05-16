@@ -30,11 +30,11 @@ jobs:
       - name: Install
         run: nci
 
+      - name: Build
+        run: nr build
+
       - name: Lint
         run: nr lint
 
       - name: Test
         run: nr test
-
-      - name: Build
-        run: nr build

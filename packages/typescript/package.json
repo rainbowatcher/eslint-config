@@ -36,7 +36,6 @@
         "@stylistic/eslint-plugin-ts": "^2.1.0",
         "@typescript-eslint/eslint-plugin": "^7.8.0",
         "@typescript-eslint/parser": "^7.8.0",
-        "eslint-flat-config-utils": "^0.2.4",
         "eslint-plugin-antfu": "^2.2.0",
         "eslint-plugin-jest": "^28.5.0",
         "local-pkg": "^0.5.0"
