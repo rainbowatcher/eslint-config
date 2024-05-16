@@ -3,7 +3,7 @@ import { jsonConfigs } from "packages/json/src"
 import { describe, expect, it } from "vitest"
 import { createExpectFn, createFormatFn } from "./test_util"
 
-const configs = await concat(...jsonConfigs({ json: true }))
+const configs = await concat(...jsonConfigs({ json: true, style: true }))
 const { expectRule } = createExpectFn(configs, "json")
 const formatCode = createFormatFn(configs, "_.json")
 
