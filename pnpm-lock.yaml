@@ -301,9 +301,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^7.8.0
         version: 7.8.0(eslint@9.2.0)(typescript@5.4.5)
-      eslint-flat-config-utils:
-        specifier: ^0.2.4
-        version: 0.2.4
       eslint-plugin-antfu:
         specifier: ^2.2.0
         version: 2.2.0(eslint@9.2.0)
