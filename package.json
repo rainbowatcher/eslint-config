@@ -15,13 +15,14 @@
         "url": "https://github.com/rainbowatcher/eslint-config/issues"
     },
     "scripts": {
-        "lint": "eslint .",
         "build": "pnpm -r --sequential build",
-        "watch": "pnpm --parallel watch",
-        "prepare": "simple-git-hooks && tsx scripts/gen_type.ts",
         "changelog": "conventional-changelog -si CHANGELOG.md",
+        "lint": "eslint .",
+        "prepare": "simple-git-hooks",
         "release": "bumpp -r --all -x 'pnpm changelog' && pnpm build && pnpm -r publish",
-        "test": "vitest"
+        "test": "vitest",
+        "typegen": "tsx scripts/gen_type.ts",
+        "watch": "pnpm --parallel watch"
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
