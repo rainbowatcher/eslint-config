@@ -30,7 +30,6 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "eslint-flat-config-utils": "^0.2.4",
         "eslint-plugin-jsonc": "^2.15.1"
     },
     "devDependencies": {
