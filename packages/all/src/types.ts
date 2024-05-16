@@ -4,9 +4,10 @@ import type { Options } from "@rainbowatcher/eslint-config-shared"
 import type { PackageJson } from "pkg-types"
 
 export type CliContext = {
-    configName: string
     configOptions: Partial<Options>
+    configPath: string
     deps: Set<string>
+    legacyConfigPath?: string
     pkgJson: PackageJson
     spinner: ReturnType<typeof spinner>
 }

@@ -69,8 +69,8 @@ async function handleConfigName(ctx: CliContext) {
         })
         if (!assertCancel(createConfig)) {
             // when not create config, exit
-            p.outro(c.red("not supported"))
-            process.exit(0)
+            p.outro(c.red("legacy config file format is not supported"))
+            process.exit(1)
         }
     } else if (isLegacy) {
         const createConfig = await p.confirm({
@@ -81,14 +81,14 @@ async function handleConfigName(ctx: CliContext) {
         })
         if (assertCancel(createConfig)) {
             // delete legacy config file
-            await fs.rm(fullPath!)
+            ctx.legacyConfigPath = fullPath!
         } else {
             // not supported, exit\
-            p.outro(c.red("not supported"))
+            p.outro(c.red("legacy config file format is not supported"))
             process.exit(1)
         }
     } else {
-        ctx.configName = filename
+        ctx.configPath = `${process.cwd()}/${filename}`
     }
 }
 
@@ -160,17 +160,15 @@ async function handleOptions(ctx: CliContext) {
 }
 
 async function generateCode(ctx: CliContext) {
-    const configPath = `${process.cwd()}/${ctx.configName}`
-    const exists = await fileExists(configPath)
-    if (!exists) {
-        await fs.writeFile(configPath, "")
-    }
-    const file = await loadFile(configPath)
+    const isConfigExists = await fileExists(ctx.configPath)
+    if (ctx.legacyConfigPath) await fs.rm(ctx.legacyConfigPath)
+    if (!isConfigExists) await fs.writeFile(ctx.configPath, "")
+    const file = await loadFile(ctx.configPath)
     file.imports.$add({ from: "@rainbowatcher/eslint-config", imported: "defineConfig" })
 
     file.exports.default = builders.functionCall("defineConfig", ctx.configOptions)
 
-    await writeFile(file, configPath, {
+    await writeFile(file, ctx.configPath, {
         quote: "double", tabWidth: 4, trailingComma: true, useTabs: false,
     })
 }
@@ -194,7 +192,7 @@ async function handleDeps(ctx: CliContext) {
     }
 
     for await (const dep of ctx.deps) {
-        ctx.pkgJson.devDependencies[dep] = version
+        ctx.pkgJson.devDependencies[dep] = `^${version}`
     }
 
     const confirm = await p.confirm({
@@ -239,10 +237,10 @@ async function main() {
     }
 
     const ctx: CliContext = {
-        configName: "eslint.config.js",
         configOptions: {
             gitignore: true,
         },
+        configPath: "eslint.config.js",
         deps: new Set([
             `${configPrefix}-ignore`,
             `${configPrefix}-js`,
