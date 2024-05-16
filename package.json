@@ -51,6 +51,6 @@
         "commit-msg": "npx commitlint --edit $1"
     },
     "lint-staged": {
-        "*.{js,ts,json}": "eslint --fix"
+        "*.{js,ts,json,md,yml}": "eslint --fix"
     }
 }
