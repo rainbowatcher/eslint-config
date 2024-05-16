@@ -1,7 +1,7 @@
 {
     "name": "@rainbowatcher/eslint-config-prettier",
     "type": "module",
-    "version": "0.6.2",
+    "version": "0.6.3",
     "description": "rainbowatcher's ESLint config presets",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",

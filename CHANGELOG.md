@@ -1,3 +1,21 @@
+## <small>0.6.3 (2024-05-16)</small>
+
+* chore: add file extensions in lint-staged ([d542f2b](https://github.com/rainbowatcher/eslint-config/commit/d542f2b))
+* chore: clear dependencies ([13afd15](https://github.com/rainbowatcher/eslint-config/commit/13afd15))
+* chore: update lock file ([2913674](https://github.com/rainbowatcher/eslint-config/commit/2913674))
+* chore(deps): update actions/checkout digest to 0ad4b8f ([b7e05ca](https://github.com/rainbowatcher/eslint-config/commit/b7e05ca))
+* chore(deps): update all non-major dependencies ([b287377](https://github.com/rainbowatcher/eslint-config/commit/b287377))
+* docs: rewrite usage and features ([7b83cf8](https://github.com/rainbowatcher/eslint-config/commit/7b83cf8))
+* ci: try fix ci broken ([971a2ea](https://github.com/rainbowatcher/eslint-config/commit/971a2ea))
+* ci: use node v20, because of v18 will fail the ci ([80098b0](https://github.com/rainbowatcher/eslint-config/commit/80098b0))
+* fix: tsx fail the ci, move it out prepare ([289534a](https://github.com/rainbowatcher/eslint-config/commit/289534a))
+* test: json should enable style option ([e00f673](https://github.com/rainbowatcher/eslint-config/commit/e00f673))
+* feat: add picocolors dep ([73c476c](https://github.com/rainbowatcher/eslint-config/commit/73c476c))
+* feat: add types in gen_type.ts ([52d4309](https://github.com/rainbowatcher/eslint-config/commit/52d4309))
+* feat(all): put rm legacy config behind and add caret symbol for version ([c3c29ba](https://github.com/rainbowatcher/eslint-config/commit/c3c29ba))
+
+
+
 ## <small>0.6.2 (2024-05-15)</small>
 
 * chore: add yaml in eslint config ([b91f7cc](https://github.com/rainbowatcher/eslint-config/commit/b91f7cc))
