@@ -1,36 +1,27 @@
-[![npm](https://img.shields.io/npm/v/@rainbowatcher/eslint-config?color=a1b858)](https://npmjs.com/package/@rainbowatcher/eslint-config)
-![npm download](https://img.shields.io/github/license/rainbowatcher/eslint-config?color=a1b858&)
-![GitHub repo size](https://img.shields.io/github/repo-size/rainbowatcher/eslint-config)
+[![npm](https://img.shields.io/npm/v/@rainbowatcher/eslint-config?color=006769)](https://npmjs.com/package/@rainbowatcher/eslint-config)
+![npm download](https://img.shields.io/github/license/rainbowatcher/eslint-config?color=006769)
+![GitHub repo size](https://img.shields.io/github/repo-size/rainbowatcher/eslint-config?color=006769)
 
 # @rainbowatcher/eslint-config
 
 ## Features
 
-- Double quotes, no semi colon
-
-## Why
-
-1. double quotes
+- Opinionated
+- Auto fix for formatting, Double quotes, no semi colon
+- Designed to work with TypeScript, JSX, Vue, JSON, YAML, Toml, Markdown, etc. Out-of-box.
 
 We use double quotes, because Strings in many other backend languages that are using double quotes, It can reduce the discomfort when switching languages and make coding smoother.
 
 ## Usage
 
-### Install
+### Run init script
 
 ```bash
-pnpm add -D eslint @rainbowatcher/eslint-config
+npx @rainbowatcher/eslint-config
 ```
 
-### Config `.eslintrc`
-
-```json
-{
-    "extends": "@rainbowatcher"
-}
-```
-
-<!-- > You don't need `.eslintignore` normally as it has been provided by the preset. -->
+> [!NOTE]
+> following steps will automatic execute in init script in the near future
 
 ### Add script for package.json
 
@@ -55,34 +46,109 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
-    }
+    },
+    "eslint.validate": [
+        "json",
+        "jsonc",
+        "json5",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "markdown",
+        "yaml",
+    ],
 }
 ```
 
-### TypeScript Aware Rules
+### Result
 
-Type aware rules are enabled when a `tsconfig.eslint.json` is found in the project root, which will introduce some stricter rules into your project. If you want to enable it while have no `tsconfig.eslint.json` in the project root, you can change tsconfig name by modifying `ESLINT_TSCONFIG` env.
-
-```ts
-// eslint.config.js
-import process from "node:process"
-import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
-
-// const foo = "bar"
-process.env.ESLINT_TSCONFIG = "tsconfig.json"
-export default {
-    extends: "@rainbowatcher",
-}
-```
+the final result will be like follow
 
 ```js
 // eslint.config.js
-import process from "node:process"
-import { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
+import { defineConfig } from "@rainbowatcher/eslint-config"
 
-process.env.ESLINT_TSCONFIG = "tsconfig.json"
-export default {
-    extends: "@rainbowatcher",
+export default defineConfig({
+    gitignore: true,
+    json: true,
+    markdown: true,
+    style: true,
+    typescript: true,
+    vue: true,
+    yaml: true,
+})
+```
+
+## Options
+
+```ts
+/**
+ * there has no default value for each properties, all properties are optional and be set by defineConfig
+ */
+export type Options = {
+    /**
+     * enable eslint for css
+     */
+    css?: boolean
+
+    /**
+     * enable git ignore intergration
+     */
+    gitignore?: boolean
+
+    /**
+     * enable lint for graphql
+     */
+    graphql?: boolean
+
+    /**
+     * enable lint for json
+     */
+    json?: boolean
+
+    /**
+     * enable lint for jsx
+     */
+    jsx?: boolean
+
+    /**
+     * enable lint for markdown
+     */
+    markdown?: boolean
+
+    /**
+     * enable stylistic rules
+     */
+    style?: boolean
+
+    /**
+     * enable lint for toml
+     */
+    toml?: boolean
+
+    /**
+     * enable lint for typescript
+     */
+    typescript?: boolean
+
+    /**
+     * enable lint for unocss
+     */
+    unocss?: boolean
+
+    /**
+     * enable eslint for vue
+     */
+    vue?: boolean
+
+    /**
+     * enable lint for yaml
+     */
+    yaml?: boolean
+
+    // astro/react/svelte/...
 }
 ```
 
@@ -98,9 +164,8 @@ We will consider referencing the following projects:
 ## Development
 
 1. Clone this repository
-2. Enable Corepack by using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
-3. Install dependencies by using `pnpm install`
-4. Add rules and test cases, then run tests by using `pnpm test`
+2. Install dependencies by using `pnpm install`
+3. Add rules and test cases, then run tests by using `pnpm test`
 
 ## License
 
