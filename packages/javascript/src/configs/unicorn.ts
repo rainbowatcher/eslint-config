@@ -17,6 +17,7 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem[]> {
             "unicorn/no-empty-file": "error",
             "unicorn/no-null": "off",
             "unicorn/prefer-export-from": "off",
+            "unicorn/prefer-ternary": ["error", "only-single-line"],
             "unicorn/prevent-abbreviations": "off",
         },
     }, {
