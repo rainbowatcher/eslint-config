@@ -6,6 +6,7 @@ export function test(): EslintFlatConfigItem {
         files: [GLOB_TESTS],
         name: "rainbowatcher:js:test-style",
         rules: {
+            "unicorn/error-message": "off",
             "unicorn/no-useless-undefined": "off",
         },
     }
