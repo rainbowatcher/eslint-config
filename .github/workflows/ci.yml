@@ -24,17 +24,14 @@ jobs:
           node-version: 20
           cache: pnpm
 
-      - name: Setup
-        run: pnpm i -g @antfu/ni
-
       - name: Install
-        run: nci
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: nr build
+        run: pnpm build
 
       - name: Lint
-        run: nr lint
+        run: pnpm lint
 
       - name: Test
-        run: nr test
+        run: pnpm test
