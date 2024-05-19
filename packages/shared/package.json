@@ -27,6 +27,6 @@
     },
     "dependencies": {
         "eslint-config-flat-gitignore": "^0.1.5",
-        "eslint-flat-config-utils": "^0.2.4"
+        "eslint-flat-config-utils": "^0.2.5"
     }
 }
