@@ -5,7 +5,10 @@ import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config
 
 export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.style) return {}
-    const stylisticTs = await interopDefault(import("@stylistic/eslint-plugin-ts"))
+    const [pluginStylisticTs, pluginStylisticPlus] = await Promise.all([
+        interopDefault(import("@stylistic/eslint-plugin-ts")),
+        interopDefault(import("@stylistic/eslint-plugin-plus")),
+    ])
     const files = opts.jsx ? [GLOB_TS, GLOB_TSX] : [GLOB_TS]
     opts.vue && files.push(GLOB_VUE)
 
@@ -13,10 +16,11 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
         files,
         name: "rainbowatcher:ts:style",
         plugins: {
-            "style-ts": stylisticTs,
+            "style-ex": pluginStylisticPlus,
+            "style-ts": pluginStylisticTs,
         },
         rules: {
-            ...renameRules(stylisticTs.configs["all-flat"].rules, { "@stylistic/ts": "style-ts" }),
+            ...renameRules(pluginStylisticTs.configs["all-flat"].rules, { "@stylistic/ts": "style-ts" }),
 
             // "style-ts/func-call-spacing": ["error", "never"],
             // "style-ts/comma-spacing": ["error", { after: true, before: false }],
