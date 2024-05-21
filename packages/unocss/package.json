@@ -1,7 +1,7 @@
 {
     "name": "@rainbowatcher/eslint-config-unocss",
     "type": "module",
-    "version": "0.6.5",
+    "version": "0.6.6",
     "description": "rainbowatcher's ESLint config presets",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",

@@ -1,3 +1,9 @@
+## <small>0.6.6 (2024-05-21)</small>
+
+* feat(typescript): add stylistic plus ([8d809af](https://github.com/rainbowatcher/eslint-config/commit/8d809af))
+
+
+
 ## <small>0.6.5 (2024-05-21)</small>
 
 * fix: when typescript is enable then drop vue globs in js config ([4a858b4](https://github.com/rainbowatcher/eslint-config/commit/4a858b4))
