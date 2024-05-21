@@ -1,3 +1,11 @@
+## <small>0.6.7 (2024-05-21)</small>
+
+* chore: add commit scope ([11729a3](https://github.com/rainbowatcher/eslint-config/commit/11729a3))
+* chore: add css/uno in eslint config and add new uno.config.js ([8b9a517](https://github.com/rainbowatcher/eslint-config/commit/8b9a517))
+* fix(prettier): add parserPlain for formatters ([10155c2](https://github.com/rainbowatcher/eslint-config/commit/10155c2))
+
+
+
 ## <small>0.6.6 (2024-05-21)</small>
 
 * feat(typescript): add stylistic plus ([8d809af](https://github.com/rainbowatcher/eslint-config/commit/8d809af))
