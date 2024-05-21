@@ -1,3 +1,16 @@
+## <small>0.6.4 (2024-05-21)</small>
+
+* fix: perfectionist/sort-vue-attrivutes conflict with vue/attributes-order ([74a7045](https://github.com/rainbowatcher/eslint-config/commit/74a7045))
+* fix(javascript): remove plugin-vitest ([71555d4](https://github.com/rainbowatcher/eslint-config/commit/71555d4))
+* ci: use pnpm instead of ni ([50481a8](https://github.com/rainbowatcher/eslint-config/commit/50481a8))
+* chore(deps): update all non-major dependencies ([f5c7e24](https://github.com/rainbowatcher/eslint-config/commit/f5c7e24))
+* chore(deps): update pnpm/action-setup action to v4 ([a5f8dfe](https://github.com/rainbowatcher/eslint-config/commit/a5f8dfe))
+* chore(javascript): config prefer-ternary to only-single-line ([1950158](https://github.com/rainbowatcher/eslint-config/commit/1950158))
+* chore(javascript): disable error-message in test files ([86b6d74](https://github.com/rainbowatcher/eslint-config/commit/86b6d74))
+* docs: add description for modules ([48f80e5](https://github.com/rainbowatcher/eslint-config/commit/48f80e5))
+
+
+
 ## <small>0.6.3 (2024-05-16)</small>
 
 * chore: add file extensions in lint-staged ([d542f2b](https://github.com/rainbowatcher/eslint-config/commit/d542f2b))
