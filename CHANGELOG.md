@@ -1,3 +1,10 @@
+## <small>0.6.5 (2024-05-21)</small>
+
+* fix: when typescript is enable then drop vue globs in js config ([4a858b4](https://github.com/rainbowatcher/eslint-config/commit/4a858b4))
+* feat(vue): add vue style rules ([ea82c90](https://github.com/rainbowatcher/eslint-config/commit/ea82c90))
+
+
+
 ## <small>0.6.4 (2024-05-21)</small>
 
 * fix: perfectionist/sort-vue-attrivutes conflict with vue/attributes-order ([74a7045](https://github.com/rainbowatcher/eslint-config/commit/74a7045))
