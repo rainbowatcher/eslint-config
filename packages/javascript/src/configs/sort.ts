@@ -15,6 +15,7 @@ export async function sort(opts: Options): Promise<EslintFlatConfigItem> {
                 "ignore-case": false, order: "asc", "spread-last": true, type: "natural",
             }],
             "perfectionist/sort-imports": "off",
+            "perfectionist/sort-vue-attributes": "off",
         },
     }
 }
