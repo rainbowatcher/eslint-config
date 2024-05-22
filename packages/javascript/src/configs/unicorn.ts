@@ -12,6 +12,7 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem[]> {
         name: "rainbowatcher:js:unicorn",
         rules: {
             ...pluginUnicorn.configs.recommended.rules,
+            "unicorn/consistent-function-scoping": "warn",
             "unicorn/filename-case": "off",
             "unicorn/no-array-reduce": ["error", { allowSimpleOperations: true }],
             "unicorn/no-empty-file": "error",
