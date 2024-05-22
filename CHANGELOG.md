@@ -1,3 +1,11 @@
+## <small>0.6.8 (2024-05-22)</small>
+
+* fix(javascript): turn unicorn/consistent-function-scoping to warn instead of error ([338e872](https://github.com/rainbowatcher/eslint-config/commit/338e872))
+* fix(typescript): disable lines before line comments ([2829e3b](https://github.com/rainbowatcher/eslint-config/commit/2829e3b))
+* feat(typescript): allow leadingUnderscore in variable name ([8bcc849](https://github.com/rainbowatcher/eslint-config/commit/8bcc849))
+
+
+
 ## <small>0.6.7 (2024-05-21)</small>
 
 * chore: add commit scope ([11729a3](https://github.com/rainbowatcher/eslint-config/commit/11729a3))
