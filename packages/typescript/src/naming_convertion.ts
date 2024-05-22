@@ -36,19 +36,18 @@ export function namingConvertion(isTsx: boolean): Linter.RulesRecord {
             },
             {
                 format: ["camelCase"],
+                leadingUnderscore: "allowSingleOrDouble",
                 selector: "variable",
             },
             {
                 // storybook use PascalCase define template
                 format: ["camelCase", "UPPER_CASE", "PascalCase"],
+                leadingUnderscore: "allowSingleOrDouble",
                 modifiers: ["const"],
                 selector: "variable",
             },
             {
-                format: [
-                    "PascalCase",
-                ],
-                selector: "typeLike",
+                format: ["PascalCase"], selector: "typeLike",
             },
             {
                 filter: /^(?!I)[A-Z]/.source,
