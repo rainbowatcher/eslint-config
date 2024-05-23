@@ -1,5 +1,6 @@
 import {
-    GLOB_JS, GLOB_JSX, GLOB_MARKDOWN_CODE, GLOB_SRC, interopDefault,
+    GLOB_JS, GLOB_JSX, GLOB_MARKDOWN_CODE, GLOB_SRC,
+    GLOB_TS, GLOB_TSX, interopDefault,
 } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
@@ -21,15 +22,28 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem[]> {
             "unicorn/prefer-ternary": ["error", "only-single-line"],
             "unicorn/prevent-abbreviations": "off",
         },
-    }, {
-        files: [GLOB_SRC],
+    },
+    {
+        files: [GLOB_JS, GLOB_TS],
+        ignores: [GLOB_MARKDOWN_CODE],
+        name: "rainbowatcher:js:limitFileName",
+        rules: {
+            "unicorn/filename-case": ["error", {
+                cases: {
+                    camelCase: true,
+                    snakeCase: true,
+                },
+            }],
+        },
+    },
+    {
+        files: [GLOB_JSX, GLOB_TSX],
         ignores: [GLOB_MARKDOWN_CODE],
         name: "rainbowatcher:js:limitFileName",
         rules: {
             "unicorn/filename-case": ["error", {
                 cases: {
                     pascalCase: true,
-                    snakeCase: true,
                 },
             }],
         },
