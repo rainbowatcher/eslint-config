@@ -217,7 +217,10 @@ const typeAwareRules: EslintFlatConfigItem["rules"] = {
     "no-throw-literal": "off",
     "ts/await-thenable": "error",
     "ts/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
-    "ts/dot-notation": ["error", { allowKeywords: true }],
+    "ts/dot-notation": ["error", {
+        allowIndexSignaturePropertyAccess: true,
+        allowKeywords: true,
+    }],
     "ts/no-base-to-string": "error",
     "ts/no-confusing-void-expression": "error",
     "ts/no-floating-promises": "error",
