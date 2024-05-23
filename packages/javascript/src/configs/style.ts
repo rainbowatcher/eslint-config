@@ -79,7 +79,11 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             }],
             "style-js/multiline-comment-style": "off",
             "style-js/multiline-ternary": ["error", "always-multiline"],
-            "style-js/no-extra-parens": ["error", "all", { nestedBinaryExpressions: false }],
+            "style-js/no-extra-parens": ["error", "all", {
+                enforceForArrowConditionals: false,
+                ignoreJSX: "all",
+                nestedBinaryExpressions: false,
+            }],
             "style-js/no-multi-spaces": "error",
             "style-js/no-multiple-empty-lines": ["error", {
                 max: 2, maxBOF: 0, maxEOF: 0,
