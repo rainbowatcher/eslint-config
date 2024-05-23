@@ -1,3 +1,9 @@
+## <small>0.6.9 (2024-05-23)</small>
+
+* fix(javascript): use camel case for *.[tj]s, pascal case for *.[tj]sx ([f5f44ca](https://github.com/rainbowatcher/eslint-config/commit/f5f44ca))
+
+
+
 ## <small>0.6.8 (2024-05-22)</small>
 
 * fix(javascript): turn unicorn/consistent-function-scoping to warn instead of error ([338e872](https://github.com/rainbowatcher/eslint-config/commit/338e872))
