@@ -20,9 +20,6 @@ We use double quotes, because Strings in many other backend languages that are u
 npx @rainbowatcher/eslint-config
 ```
 
-> [!NOTE]
-> following steps will automatic execute in init script in the near future
-
 ### Add script for package.json
 
 For example:
@@ -30,8 +27,7 @@ For example:
 ```json
 {
     "scripts": {
-        "lint": "eslint .",
-        "lint:fix": "eslint . --fix"
+        "lint": "eslint ."
     }
 }
 ```
