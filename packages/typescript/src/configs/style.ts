@@ -41,6 +41,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/brace-style": "off",
             "style-js/comma-dangle": "off",
             "style-js/comma-spacing": "off",
+            "style-js/function-call-spacing": "off",
             "style-js/indent": "off",
             "style-js/lines-around-comment": "off",
             "style-js/no-extra-parens": "off",
@@ -50,6 +51,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/space-infix-ops": "off",
             "style-ts/brace-style": ["error", "1tbs", { allowSingleLine: true }],
             "style-ts/comma-dangle": ["error", "always-multiline"],
+            "style-ts/function-call-spacing": ["error", "never"],
             "style-ts/indent": ["error", 4, {
                 SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1,
             }],
