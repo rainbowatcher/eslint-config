@@ -7,25 +7,20 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.style) return {}
 
     const [
-        pluginStylisticJs, pluginStylisticJsPlus, pluginStylisticJsx,
+        pluginStylisticJs, pluginStylisticJsx,
     ] = await Promise.all([
         interopDefault(import("@stylistic/eslint-plugin-js")),
-        interopDefault(import("@stylistic/eslint-plugin-plus")),
         interopDefault(import("@stylistic/eslint-plugin-jsx")),
     ])
 
     return {
         files: getFiles(opts),
         name: "rainbowatcher:js:style",
-        plugins: {
-            "style-ex": pluginStylisticJsPlus,
-            "style-js": pluginStylisticJs,
-            "style-jsx": pluginStylisticJsx,
-        },
         rules: {
             "antfu/top-level-function": "error",
 
             ...renameRules(pluginStylisticJs.configs["all-flat"].rules, { "@stylistic/js": "style-js" }),
+            ...renameRules(pluginStylisticJsx.configs["all-flat"].rules, { "@stylistic/jsx": "style-jsx" }),
 
             // "style-js/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
             // "style-js/no-mixed-spaces-and-tabs": "error",
