@@ -26,6 +26,7 @@ describe("rules", () => {
     expectRule("regexp/match-any", String.raw`const re = /[\S\s]*/g`, { expected: false })
     expectRule("regexp/match-any", "const re = /[^]*/g", { expected: false })
     expectRule("regexp/match-any", "const re = /.*/g", { expected: false })
+    expectRule("regexp/no-super-linear-backtracking", String.raw`const re = /([\w-]+)(.*?)>/g`, { expected: false })
 })
 
 describe("style", () => {
