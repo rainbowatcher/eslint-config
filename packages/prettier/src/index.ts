@@ -1,4 +1,4 @@
-import { css } from "./configs/css"
+import { css, less, scss } from "./configs/css"
 import { graphql } from "./configs/graphql"
 import { markdown } from "./configs/markdown"
 import { setup } from "./configs/setup"
@@ -10,9 +10,11 @@ export function prettierConfigs(opts: Options): EslintFlatConfigs {
     return [
         setup(),
         css(opts),
-        markdown(opts),
-        yaml(opts),
         graphql(opts),
+        less(opts),
+        markdown(opts),
+        scss(opts),
+        yaml(opts),
     ]
 }
 

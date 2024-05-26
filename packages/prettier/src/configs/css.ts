@@ -4,9 +4,9 @@ import {
 import { prettierOptions } from "../options"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-export function css(opts: Options): EslintFlatConfigItem[] {
-    if (!opts.css) return []
-    return [{
+export function css(opts: Options): EslintFlatConfigItem {
+    if (!opts.css) return {}
+    return {
         files: [GLOB_CSS, GLOB_POSTCSS],
         languageOptions: {
             parser: parserPlain,
@@ -20,7 +20,12 @@ export function css(opts: Options): EslintFlatConfigItem[] {
                 usePrettierrc: false,
             }],
         },
-    }, {
+    }
+}
+
+export function scss(opts: Options): EslintFlatConfigItem {
+    if (!opts.style) return {}
+    return {
         files: [GLOB_SCSS],
         languageOptions: {
             parser: parserPlain,
@@ -34,7 +39,12 @@ export function css(opts: Options): EslintFlatConfigItem[] {
                 usePrettierrc: false,
             }],
         },
-    }, {
+    }
+}
+
+export function less(opts: Options): EslintFlatConfigItem {
+    if (!opts.style) return {}
+    return {
         files: [GLOB_LESS],
         languageOptions: {
             parser: parserPlain,
@@ -48,5 +58,5 @@ export function css(opts: Options): EslintFlatConfigItem[] {
                 usePrettierrc: false,
             }],
         },
-    }]
+    }
 }
