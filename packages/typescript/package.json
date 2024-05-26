@@ -34,8 +34,8 @@
         "@stylistic/eslint-plugin-jsx": "^2.1.0",
         "@stylistic/eslint-plugin-plus": "^2.1.0",
         "@stylistic/eslint-plugin-ts": "^2.1.0",
-        "@typescript-eslint/eslint-plugin": "^7.9.0",
-        "@typescript-eslint/parser": "^7.9.0",
+        "@typescript-eslint/eslint-plugin": "^7.10.0",
+        "@typescript-eslint/parser": "^7.10.0",
         "eslint-plugin-antfu": "^2.2.0",
         "eslint-plugin-jest": "^28.5.0",
         "local-pkg": "^0.5.0"
