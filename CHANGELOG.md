@@ -1,3 +1,26 @@
+## 0.7.0 (2024-05-26)
+
+* docs: remove note ([992e2ed](https://github.com/rainbowatcher/eslint-config/commit/992e2ed))
+* chore: bump deps ([3d0ee33](https://github.com/rainbowatcher/eslint-config/commit/3d0ee33))
+* chore: enable jsx in eslint config ([c53ab74](https://github.com/rainbowatcher/eslint-config/commit/c53ab74))
+* chore(deps): update dependency eslint-plugin-unused-imports to v4 ([0e49b78](https://github.com/rainbowatcher/eslint-config/commit/0e49b78))
+* chore(ignore): rename function names ([f9e7c04](https://github.com/rainbowatcher/eslint-config/commit/f9e7c04))
+* chore(javascript): adjust no-extra-parens ([d2f3c13](https://github.com/rainbowatcher/eslint-config/commit/d2f3c13))
+* chore(typescript): enable style-ts/no-extra-parens ([df9195c](https://github.com/rainbowatcher/eslint-config/commit/df9195c))
+* feat(javascript): add regexp plugin ([9a3d9f2](https://github.com/rainbowatcher/eslint-config/commit/9a3d9f2))
+* feat(javascript): allow unicorn rules in vue file ([72f0c7b](https://github.com/rainbowatcher/eslint-config/commit/72f0c7b))
+* feat(javascript): move plugins to setup config ([427f3fa](https://github.com/rainbowatcher/eslint-config/commit/427f3fa))
+* feat(shared): add findConfig in utils ([6d23c7c](https://github.com/rainbowatcher/eslint-config/commit/6d23c7c))
+* feat(vue): extract style config to one file ([e590eed](https://github.com/rainbowatcher/eslint-config/commit/e590eed))
+* test: allow no-control-regex for now ([a8877f9](https://github.com/rainbowatcher/eslint-config/commit/a8877f9))
+* revert(javascript): revert typescript and javascript lint for vue ([2493b7e](https://github.com/rainbowatcher/eslint-config/commit/2493b7e))
+* refactor(javascript): split config item array into function ([0f49988](https://github.com/rainbowatcher/eslint-config/commit/0f49988))
+* refactor(prettier): split config item array into function ([ba81453](https://github.com/rainbowatcher/eslint-config/commit/ba81453))
+* refactor(shared): remove arrable in EslintFlatConfigs ([a956e9d](https://github.com/rainbowatcher/eslint-config/commit/a956e9d))
+* fix(typescript): allow index signature property access ([948743f](https://github.com/rainbowatcher/eslint-config/commit/948743f))
+
+
+
 ## <small>0.6.9 (2024-05-23)</small>
 
 * fix(javascript): use camel case for *.[tj]s, pascal case for *.[tj]sx ([f5f44ca](https://github.com/rainbowatcher/eslint-config/commit/f5f44ca))
