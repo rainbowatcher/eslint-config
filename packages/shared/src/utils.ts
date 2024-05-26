@@ -1,3 +1,4 @@
+import type { EslintFlatConfigItem, EslintFlatConfigs } from "./types"
 import type { Linter } from "eslint"
 import type { Awaitable } from "eslint-flat-config-utils"
 
@@ -23,17 +24,31 @@ export function renameRules(
         }))
 }
 
-export function extractRules(configs: Linter.FlatConfig[]): Partial<Linter.RulesRecord> {
+export async function extractRules(configs: Array<Awaitable<EslintFlatConfigItem>>, configName?: string): Promise<Partial<Linter.RulesRecord>> {
     const acc: Partial<Linter.RulesRecord> = {}
-    for (const config of configs) {
-        const { rules } = config
-        if (rules) {
-            for (const [key, value] of Object.entries(rules)) {
-                acc[key] = value
+    for await (const config of configs) {
+        if (!configName || config.name?.includes(configName)) {
+            const { rules } = config
+            if (rules) {
+                for (const [key, value] of Object.entries(rules)) {
+                    acc[key] = value
+                }
             }
         }
     }
     return acc
+}
+
+export async function findConfig(configs: EslintFlatConfigs, configName?: string): Promise<EslintFlatConfigItem | undefined> {
+    let configItem: EslintFlatConfigItem | undefined = undefined
+
+    for await (const config of configs) {
+        if (!configName || config.name?.includes(configName)) {
+            configItem = config
+            break
+        }
+    }
+    return configItem
 }
 
 export const parserPlain = {
