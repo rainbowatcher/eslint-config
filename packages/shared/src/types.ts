@@ -1,11 +1,11 @@
 import type { Linter } from "eslint"
-import type { Arrayable, Awaitable } from "eslint-flat-config-utils"
+import type { Awaitable } from "eslint-flat-config-utils"
 
 export type EslintFlatConfigItem = {
     plugins?: Record<string, any>
 } & Omit<Linter.FlatConfig<Linter.RulesRecord>, "plugins">
 
-export type EslintFlatConfigs = Array< Awaitable < Arrayable<EslintFlatConfigItem>>>
+export type EslintFlatConfigs = Array< Awaitable <EslintFlatConfigItem>>
 
 /**
  * there has no default value for each properties, all properties are optional and be set by defineConfig
