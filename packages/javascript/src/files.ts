@@ -13,7 +13,7 @@ export function getFiles(opts: Options): string[] {
         else if (typescript) files.push(GLOB_TS, GLOB_JS)
         else files.push(GLOB_JS)
     }
-    if (vue && !typescript) files.push(GLOB_VUE)
+    if (vue) files.push(GLOB_VUE)
     json && files.push(GLOB_JSON, GLOB_JSON5, GLOB_JSONC)
 
     return files
