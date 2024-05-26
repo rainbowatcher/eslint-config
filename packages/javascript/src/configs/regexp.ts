@@ -9,6 +9,12 @@ export async function regexp(opts: Options): Promise<EslintFlatConfigItem> {
         name: "rainbowatcher:js:regexp",
         rules: {
             ...pluginRegexp.configs.recommended.rules,
+            "regexp/match-any": ["error", {
+                allows: [
+                    // eslint-disable-next-line unicorn/prefer-string-raw
+                    "[\\S\\s]", "dotAll", "[^]",
+                ],
+            }],
         },
     }
 }

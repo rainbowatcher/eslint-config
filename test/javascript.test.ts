@@ -22,6 +22,10 @@ describe("rules", () => {
     for (const item in [() => new Promise(() => {})]) {
       await item()
     }`)
+    expectRule("regexp/match-any", String.raw`const re = /[\s\S]*/g`)
+    expectRule("regexp/match-any", String.raw`const re = /[\S\s]*/g`, { expected: false })
+    expectRule("regexp/match-any", "const re = /[^]*/g", { expected: false })
+    expectRule("regexp/match-any", "const re = /.*/g", { expected: false })
 })
 
 describe("style", () => {
