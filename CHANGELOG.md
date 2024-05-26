@@ -1,3 +1,10 @@
+## <small>0.7.1 (2024-05-26)</small>
+
+* chore(javascript): turn off regexp/no-super-linear-backtracking ([c865f00](https://github.com/rainbowatcher/eslint-config/commit/c865f00))
+* feat(javascript): config regexp/match-any ([2affd0d](https://github.com/rainbowatcher/eslint-config/commit/2affd0d))
+
+
+
 ## 0.7.0 (2024-05-26)
 
 * docs: remove note ([992e2ed](https://github.com/rainbowatcher/eslint-config/commit/992e2ed))
