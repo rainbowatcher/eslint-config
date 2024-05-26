@@ -17,7 +17,7 @@ describe("rules", () => {
     expectRule("constructor-super", "class A extends B { constructor() { } }")
     expectRule("object-shorthand", 'const foo = { a: a, b: "foo" };')
     expectRule("object-shorthand", "const foo = { w: function() {}, x: function *() {}, [y]: function() {}, z: z }")
-    expectRule("no-control-regex", 'const RE = /[\u0000-\u001F"#$&*+,:;<=>?[\\]^`{|}\u007F]/g', { expected: false })
+    expectRule("no-control-regex", 'const RE = /[\u0000-\u001F"#$&*+,:;<=>?[\\]^`{|}\u007F]/g'/* , { expected: false } */)
     expectRule("no-await-in-loop", `
     for (const item in [() => new Promise(() => {})]) {
       await item()
