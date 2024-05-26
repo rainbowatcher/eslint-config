@@ -6,18 +6,20 @@ import { setup } from "./configs/setup"
 import { sort } from "./configs/sort"
 import { style } from "./configs/style"
 import { test } from "./configs/test"
-import { unicorn } from "./configs/unicorn"
+import { fileName, jsxFileName, unicorn } from "./configs/unicorn"
 import type { EslintFlatConfigs, Options } from "@rainbowatcher/eslint-config-shared"
 
 export function jsConfigs(opts: Options): EslintFlatConfigs {
     return [
-        setup(),
+        setup(opts),
         base(opts),
         style(opts),
         imports(opts),
         sort(opts),
         node(opts),
         unicorn(opts),
+        fileName(),
+        jsxFileName(),
         test(),
         cli(),
     ]
