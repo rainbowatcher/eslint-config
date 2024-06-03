@@ -18,6 +18,7 @@ export async function regexp(opts: Options): Promise<EslintFlatConfigItem> {
             }],
             // we do want turn on this rule, but it can lead unwanted false positives
             "regexp/no-super-linear-backtracking": "off",
+            "regexp/no-trivially-nested-quantifier": "off",
         },
     }
 }
