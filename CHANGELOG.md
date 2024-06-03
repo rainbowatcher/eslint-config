@@ -1,3 +1,14 @@
+## <small>0.7.2 (2024-06-03)</small>
+
+* chore: disable regexp/no-trivially-nested-quantifier ([fb1fd5f](https://github.com/rainbowatcher/eslint-config/commit/fb1fd5f))
+* chore: turn unicorn/prefer-ternary off ([4242518](https://github.com/rainbowatcher/eslint-config/commit/4242518))
+* chore(deps): update actions/checkout digest to a5ac7e5 ([608078c](https://github.com/rainbowatcher/eslint-config/commit/608078c))
+* chore(deps): update all non-major dependencies ([904f142](https://github.com/rainbowatcher/eslint-config/commit/904f142))
+* chore(deps): update all non-major dependencies ([f18bdef](https://github.com/rainbowatcher/eslint-config/commit/f18bdef))
+* fix(typescript): fix function-call-spacing conflict ([83823d5](https://github.com/rainbowatcher/eslint-config/commit/83823d5))
+
+
+
 ## <small>0.7.1 (2024-05-26)</small>
 
 * chore(javascript): turn off regexp/no-super-linear-backtracking ([c865f00](https://github.com/rainbowatcher/eslint-config/commit/c865f00))
