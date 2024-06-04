@@ -20,7 +20,7 @@ We use double quotes, because Strings in many other backend languages that are u
 npx @rainbowatcher/eslint-config
 ```
 
-### Add script for package.json
+### Add script in package.json
 
 For example:
 
@@ -38,6 +38,7 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
 
 ```json
 {
+    // recommend turn prettier disable when style option is enable
     "prettier.enable": false,
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
