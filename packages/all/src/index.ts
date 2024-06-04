@@ -4,7 +4,7 @@ import { interopDefault } from "@rainbowatcher/eslint-config-shared"
 import { composer } from "eslint-flat-config-utils"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-export async function defineConfig(opts: Options): Promise<EslintFlatConfigItem[]> {
+export async function defineConfig(opts: Options, ...otherConfigs: EslintFlatConfigItem[]): Promise<EslintFlatConfigItem[]> {
     const {
         css, graphql, json, markdown, style, typescript, unocss, vue, yaml,
     } = opts
@@ -37,5 +37,7 @@ export async function defineConfig(opts: Options): Promise<EslintFlatConfigItem[
         const prettierConfigs = await interopDefault(import("@rainbowatcher/eslint-config-prettier"))
         configs.push(...prettierConfigs(opts))
     }
-    return composer(...configs).onResolved(cs => cs.filter(c => Object.keys(c).length > 0))
+    return composer(...configs)
+        .append(...otherConfigs)
+        .onResolved(cs => cs.filter(c => Object.keys(c).length > 0))
 }
