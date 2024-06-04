@@ -2,7 +2,7 @@ import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { tsConfigs } from "packages/typescript/src"
 import { describe, expect, it } from "vitest"
-import { createExpectFn, createFormatFn } from "./test_util"
+import { createExpectFn } from "./test_util"
 
 const opts = { style: true, typescript: true }
 const configs = await concat(
@@ -10,8 +10,7 @@ const configs = await concat(
     ...tsConfigs(opts),
     { rules: { "style-js/eol-last": "off" } },
 )
-const { expectRule } = createExpectFn(configs, "typescript")
-const formatCode = createFormatFn(configs, "_.ts")
+const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
 describe("rules", () => {
     expectRule("ts/adjacent-overload-signatures", `type Foo = {

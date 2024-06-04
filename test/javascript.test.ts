@@ -1,11 +1,10 @@
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { describe, expect, it } from "vitest"
-import { createExpectFn, createFormatFn } from "./test_util"
+import { createExpectFn } from "./test_util"
 
 const configs = await concat(...jsConfigs({ style: true }))
-const { expectRule } = createExpectFn(configs, "javascript")
-const formatCode = createFormatFn(configs)
+const { expectRule, formatCode } = createExpectFn(configs)
 
 describe("rules", () => {
     expectRule("no-var", "var foo = 1")

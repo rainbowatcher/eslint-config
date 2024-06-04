@@ -10,7 +10,7 @@ const configs = await concat(
     ...tsConfigs(opts),
     ...vueConfigs(opts),
 )
-const { expectRule } = createExpectFn(configs, "vue")
+const { expectRule } = createExpectFn(configs, "_.vue")
 
 // Test for vue/dot-location
 expectRule("vue/dot-location", `<script setup lang="ts">
