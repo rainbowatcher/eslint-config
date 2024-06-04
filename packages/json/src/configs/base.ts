@@ -44,6 +44,8 @@ export async function base(): Promise<EslintFlatConfigItem> {
             "jsonc/strict": "off",
             "jsonc/valid-json-number": "error",
             "jsonc/vue-custom-block/no-parsing-error": "error",
+
+            "style-js/lines-around-comment": "off",
         },
     }
 }
