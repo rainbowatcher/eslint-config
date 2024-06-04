@@ -41,3 +41,5 @@ export async function defineConfig(opts: Options, ...otherConfigs: EslintFlatCon
         .append(...otherConfigs)
         .onResolved(cs => cs.filter(c => Object.keys(c).length > 0))
 }
+
+export default defineConfig
