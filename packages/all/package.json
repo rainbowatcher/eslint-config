@@ -75,7 +75,6 @@
         "picocolors": "^1.0.1"
     },
     "devDependencies": {
-        "eslint": "^9.3.0",
         "pkg-types": "^1.1.1"
     }
 }
