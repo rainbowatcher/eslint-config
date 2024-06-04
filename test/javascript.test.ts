@@ -26,6 +26,16 @@ describe("rules", () => {
     expectRule("regexp/match-any", "const re = /[^]*/g", { expected: false })
     expectRule("regexp/match-any", "const re = /.*/g", { expected: false })
     expectRule("regexp/no-super-linear-backtracking", String.raw`const re = /([\w-]+)(.*?)>/g`, { expected: false })
+    expectRule("regexp/no-trivially-nested-quantifier", String.raw`const re = /(?:a{1,2})+/`, { expected: false })
+    expectRule("regexp/no-trivially-nested-quantifier", String.raw`const re = /(\d{2,4}){3}/`, { expected: false })
+    expectRule("regexp/no-super-linear-backtracking", String.raw`/\s*(.*?)(?=:)/`, { expected: false })
+    expectRule("unicorn/prefer-ternary", `function unicorn() {
+        if (test) {
+            return a;
+        } else {
+            return b;
+        }
+    }`, { expected: false })
 })
 
 describe("style", () => {
