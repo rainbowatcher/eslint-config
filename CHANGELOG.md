@@ -1,3 +1,18 @@
+## 0.8.0 (2024-06-04)
+
+* chore: bump deps and remove unused deps ([d1746cc](https://github.com/rainbowatcher/eslint-config/commit/d1746cc))
+* chore: tweaks ([a3be14a](https://github.com/rainbowatcher/eslint-config/commit/a3be14a))
+* chore(all): add default export for defineConfig ([cae993c](https://github.com/rainbowatcher/eslint-config/commit/cae993c))
+* docs: update ([3c9b9f0](https://github.com/rainbowatcher/eslint-config/commit/3c9b9f0))
+* test: add test cases ([42fcb9d](https://github.com/rainbowatcher/eslint-config/commit/42fcb9d))
+* refactor: remove unused function and variable ([16f177b](https://github.com/rainbowatcher/eslint-config/commit/16f177b))
+* feat: make defineConfig can take additional configs ([e980eca](https://github.com/rainbowatcher/eslint-config/commit/e980eca))
+* feat(json): disable style-js/lines-around-comment in json configs ([404e766](https://github.com/rainbowatcher/eslint-config/commit/404e766))
+* ci: add .pnpm-store for run action local ([8857b70](https://github.com/rainbowatcher/eslint-config/commit/8857b70))
+* ci: rename ([27ca327](https://github.com/rainbowatcher/eslint-config/commit/27ca327))
+
+
+
 ## <small>0.7.2 (2024-06-03)</small>
 
 * chore: disable regexp/no-trivially-nested-quantifier ([fb1fd5f](https://github.com/rainbowatcher/eslint-config/commit/fb1fd5f))
