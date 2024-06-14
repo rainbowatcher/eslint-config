@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.8.0",
     "private": true,
-    "packageManager": "pnpm@9.2.0",
+    "packageManager": "pnpm@9.3.0",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
     "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
@@ -43,15 +43,15 @@
         "bumpp": "^9.4.1",
         "commitlint": "^19.3.0",
         "conventional-changelog-cli": "^5.0.0",
-        "eslint": "^9.4.0",
+        "eslint": "^9.5.0",
         "eslint-typegen": "^0.2.4",
-        "lint-staged": "^15.2.5",
+        "lint-staged": "^15.2.7",
         "simple-git-hooks": "^2.11.1",
         "tsup": "^8.1.0",
-        "tsx": "^4.15.1",
+        "tsx": "^4.15.4",
         "typescript": "^5.4.5",
         "vitest": "^1.6.0",
-        "vue": "^3.4.27"
+        "vue": "^3.4.29"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged",
