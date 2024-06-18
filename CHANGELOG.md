@@ -1,3 +1,15 @@
+## 0.9.0 (2024-06-18)
+
+* feat: add inspect script ([acddfcb](https://github.com/rainbowatcher/eslint-config/commit/acddfcb))
+* feat(javascript): add jsx config and extract jsx style rule ([4196cac](https://github.com/rainbowatcher/eslint-config/commit/4196cac))
+* feat(typescript): add parser for tsx and make tsx config can disable ([ab0a0d5](https://github.com/rainbowatcher/eslint-config/commit/ab0a0d5))
+* chore: sync .vscode folder ([e4d1fbc](https://github.com/rainbowatcher/eslint-config/commit/e4d1fbc))
+* chore(deps): update actions/checkout digest to 692973e ([f8324a3](https://github.com/rainbowatcher/eslint-config/commit/f8324a3))
+* chore(deps): update all non-major dependencies ([d401c55](https://github.com/rainbowatcher/eslint-config/commit/d401c55))
+* chore(deps): update all non-major dependencies ([d4f4f7f](https://github.com/rainbowatcher/eslint-config/commit/d4f4f7f))
+
+
+
 ## 0.8.0 (2024-06-04)
 
 * chore: bump deps and remove unused deps ([d1746cc](https://github.com/rainbowatcher/eslint-config/commit/d1746cc))
