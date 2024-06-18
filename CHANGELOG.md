@@ -1,3 +1,11 @@
+## <small>0.9.1 (2024-06-18)</small>
+
+* chore: bump deps ([28cd5de](https://github.com/rainbowatcher/eslint-config/commit/28cd5de))
+* chore(deps): update dependency eslint-plugin-unicorn to v54 ([3b74f1e](https://github.com/rainbowatcher/eslint-config/commit/3b74f1e))
+* fix(all): use some instead of findIndex ([639a15f](https://github.com/rainbowatcher/eslint-config/commit/639a15f))
+
+
+
 ## 0.9.0 (2024-06-18)
 
 * feat: add inspect script ([acddfcb](https://github.com/rainbowatcher/eslint-config/commit/acddfcb))
