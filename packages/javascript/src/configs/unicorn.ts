@@ -43,9 +43,10 @@ export function fileName(): EslintFlatConfigItem {
     }
 }
 
-export function jsxFileName(): EslintFlatConfigItem {
+export function jsxFileName(opts: Options): EslintFlatConfigItem {
+    if (!opts.jsx) return {}
     return {
-        files: [GLOB_JSX, GLOB_TSX],
+        files: opts.typescript ? [GLOB_JSX, GLOB_TSX] : [GLOB_JSX],
         ignores: [GLOB_MARKDOWN_CODE],
         name: "rainbowatcher:js:jsx-file-name",
         rules: {
