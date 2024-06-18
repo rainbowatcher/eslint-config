@@ -22,10 +22,12 @@
         "release": "bumpp -r --all -x 'pnpm changelog' && pnpm build && pnpm -r publish",
         "test": "vitest",
         "typegen": "tsx scripts/gen_type.ts",
-        "watch": "pnpm --parallel watch"
+        "watch": "pnpm --parallel watch",
+        "inspect": "eslint-inspector --open"
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
+        "@eslint/config-inspector": "^0.4.11",
         "@rainbowatcher/eslint-config": "workspace:*",
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
         "@rainbowatcher/eslint-config-js": "workspace:*",
