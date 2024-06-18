@@ -1,17 +1,14 @@
 // import process from "node:process"
-import { interopDefault, renameRules } from "@rainbowatcher/eslint-config-shared"
+import {
+    GLOB_JSX, GLOB_TSX, interopDefault, renameRules,
+} from "@rainbowatcher/eslint-config-shared"
 import { getFiles } from "../files"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.style) return {}
 
-    const [
-        pluginStylisticJs, pluginStylisticJsx,
-    ] = await Promise.all([
-        interopDefault(import("@stylistic/eslint-plugin-js")),
-        interopDefault(import("@stylistic/eslint-plugin-jsx")),
-    ])
+    const pluginStylisticJs = await interopDefault(import("@stylistic/eslint-plugin-js"))
 
     return {
         files: getFiles(opts),
@@ -20,7 +17,6 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "antfu/top-level-function": "error",
 
             ...renameRules(pluginStylisticJs.configs["all-flat"].rules, { "@stylistic/js": "style-js" }),
-            ...renameRules(pluginStylisticJsx.configs["all-flat"].rules, { "@stylistic/jsx": "style-jsx" }),
 
             // "style-js/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
             // "style-js/no-mixed-spaces-and-tabs": "error",
@@ -134,6 +130,24 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 },
             }],
             "style-js/wrap-regex": "off",
+        },
+    }
+}
+
+
+export async function jsxStyle(opts: Options): Promise<EslintFlatConfigItem> {
+    if (!opts.style) return {}
+    if (!opts.jsx) return {}
+    const pluginStylisticJsx = await interopDefault(import("@stylistic/eslint-plugin-jsx"))
+
+    return {
+        files: [GLOB_JSX, GLOB_TSX],
+        name: "rainbowatcher:js:jsx-style",
+        rules: {
+            ...renameRules(pluginStylisticJsx.configs["all-flat"].rules, { "@stylistic/jsx": "style-jsx" }),
+            "style-jsx/jsx-indent": ["error", 4],
+            "style-jsx/jsx-newline": ["error", { allowMultilines: true, prevent: true }],
+            "style-jsx/jsx-wrap-multilines": ["error", { return: "parens-new-line" }],
         },
     }
 }
