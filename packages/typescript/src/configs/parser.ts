@@ -17,6 +17,26 @@ export async function tsParserConfig(opts: Options): Promise<EslintFlatConfigIte
     return await makeParser({ files, tsconfigPath: "tsconfig.json", typeAware: true })
 }
 
+export async function tsxParseConfig(opts: Options): Promise<EslintFlatConfigItem> {
+    if (!opts.jsx) return {}
+    const parserTs = await interopDefault(import("@typescript-eslint/parser"))
+
+    return {
+        files: [GLOB_TSX],
+        languageOptions: {
+            parser: parserTs,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true,
+                },
+                project: null,
+            },
+            sourceType: "module",
+        },
+        name: "rainbowatcher:ts:tsx-parser",
+    }
+}
+
 type MakeParserOptions = {
     componentExts?: string[]
     files: string[]

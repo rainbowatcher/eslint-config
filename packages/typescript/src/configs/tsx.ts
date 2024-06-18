@@ -1,8 +1,9 @@
 import { GLOB_TSX } from "@rainbowatcher/eslint-config-shared"
 import { namingConvertion } from "../naming_convertion"
-import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
+import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-export function tsx(): EslintFlatConfigItem {
+export function tsx(opts: Options): EslintFlatConfigItem {
+    if (!opts.jsx) return {}
     return {
         files: [GLOB_TSX],
         name: "rainbowatcher:ts:tsx",
@@ -11,5 +12,3 @@ export function tsx(): EslintFlatConfigItem {
         },
     }
 }
-
-export default tsx
