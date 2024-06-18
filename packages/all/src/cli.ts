@@ -178,7 +178,7 @@ async function handleDeps(ctx: CliContext) {
     const indent = await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
-        if (opt === "style" && val && prettierLintLangs.findIndex(lang => ctx.configOptions[lang]) !== -1) {
+        if (opt === "style" && val && prettierLintLangs.some(lang => ctx.configOptions[lang])) {
             ctx.deps.add(`${configPrefix}-prettier`)
         }
         if (modules.includes(opt as Module)) {
