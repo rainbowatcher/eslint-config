@@ -1,3 +1,13 @@
+## 0.10.0 (2024-06-27)
+
+* feat(typescript): add prefer-nullish-coalescing and prefer-optional-chain ([4d727c1](https://github.com/rainbowatcher/eslint-config/commit/4d727c1))
+* chore(deps): update all non-major dependencies ([d89891c](https://github.com/rainbowatcher/eslint-config/commit/d89891c))
+* chore(deps): update all non-major dependencies ([2f624aa](https://github.com/rainbowatcher/eslint-config/commit/2f624aa))
+* chore(typescript): add style rules ([5b5e369](https://github.com/rainbowatcher/eslint-config/commit/5b5e369))
+* fix(javascript): make jsx-file-name config less opinionated ([dd97e49](https://github.com/rainbowatcher/eslint-config/commit/dd97e49))
+
+
+
 ## <small>0.9.1 (2024-06-18)</small>
 
 * chore: bump deps ([28cd5de](https://github.com/rainbowatcher/eslint-config/commit/28cd5de))
