@@ -25,7 +25,6 @@ export function base(opts: Options): EslintFlatConfigItem {
             "no-redeclare": "off",
             "no-restricted-imports": "off",
             "no-unused-vars": "off",
-
             // To allow `ignoreVoid` in `ts/no-floating-promises`
             "no-void": ["error", { allowAsStatement: true }],
             "ts/adjacent-overload-signatures": "error",
@@ -225,35 +224,36 @@ const typeAwareRules: EslintFlatConfigItem["rules"] = {
     "ts/no-confusing-void-expression": "error",
     "ts/no-floating-promises": "error",
     "ts/no-for-in-array": "error",
-
     "ts/no-implied-eval": "error",
     "ts/no-meaningless-void-operator": "error",
     "ts/no-misused-promises": ["error", {
         checksConditionals: true,
-
         // TODO: I really want this to be `true`, but it makes it inconvenient to use
         // async functions as event handlers... I need to find a good way to handle that.
         // https://github.com/sindresorhus/refined-github/pull/2391#discussion_r318990466
         checksVoidReturn: false,
     }],
     "ts/no-redundant-type-constituents": "error",
-
     "ts/no-unnecessary-boolean-literal-compare": "error",
     "ts/no-unnecessary-type-assertion": "error",
-
+    "ts/no-unsafe-return": "error",
+    "ts/no-var-requires": "error",
     // may cause incorrect type judgment.
     // "ts/no-unsafe-argument": "error",
     // "ts/no-unsafe-assignment": "off",
-    // "ts/no-unsafe-call": "error",
     // "ts/no-unsafe-member-access": "error",
-    "ts/no-unsafe-return": "error",
-    "ts/no-var-requires": "error",
+    // "ts/no-unsafe-call": "error",
     "ts/only-throw-error": ["error", {
         allowThrowingAny: false,
-
         // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
         allowThrowingUnknown: true,
     }],
+    "ts/prefer-nullish-coalescing": ["error", {
+        ignoreConditionalTests: false,
+        ignoreMixedLogicalExpressions: true,
+        ignoreTernaryTests: false,
+    }],
+    "ts/prefer-optional-chain": "error",
     "ts/require-await": "error",
     "ts/restrict-plus-operands": "error",
     "ts/restrict-template-expressions": "error",

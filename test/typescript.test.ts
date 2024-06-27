@@ -40,6 +40,12 @@ describe("rules", () => {
     expectRule("ts/naming-convention", "let FOO = 2")
     expectRule("ts/naming-convention", "const FOO = 2", { expected: false })
     expectRule("no-var", "var FOO = 2")
+    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; a || b")
+    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; a ?? b", { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; const c: null | string; a || (b && c);", { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; const c: null | string; a ?? (b && c);", { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; a || \"a string\";")
+    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; a ?? \"a string\";", { expected: false })
 })
 
 describe("style", () => {
