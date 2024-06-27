@@ -45,7 +45,9 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/indent": "off",
             "style-js/lines-around-comment": "off",
             "style-js/no-extra-parens": "off",
+            "style-js/object-curly-newline": "off",
             "style-js/object-curly-spacing": "off",
+            "style-js/object-property-newline": "off",
             "style-js/quotes": "off",
             "style-js/semi": "off",
             "style-js/space-infix-ops": "off",
@@ -86,7 +88,28 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 ignoreJSX: "all",
                 nestedBinaryExpressions: false,
             }],
+            "style-ts/object-curly-newline": ["error", {
+                ExportDeclaration: {
+                    minProperties: 4, multiline: true,
+                },
+                ImportDeclaration: {
+                    minProperties: 4, multiline: true,
+                },
+                ObjectExpression: {
+                    consistent: true, minProperties: 4, multiline: true,
+                },
+                ObjectPattern: {
+                    consistent: true, minProperties: 6, multiline: true,
+                },
+                TSInterfaceBody: {
+                    consistent: true, minProperties: 4, multiline: true,
+                },
+                TSTypeLiteral: {
+                    consistent: true, minProperties: 4, multiline: true,
+                },
+            }],
             "style-ts/object-curly-spacing": ["error", "always"],
+            "style-ts/object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
             "style-ts/quote-props": ["error", "as-needed"],
             "style-ts/quotes": ["error", "double", { avoidEscape: true }],
             "style-ts/semi": ["error", "never"],
