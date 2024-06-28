@@ -1,3 +1,10 @@
+## <small>0.10.1 (2024-06-28)</small>
+
+* chore: bump deps ([85a5335](https://github.com/rainbowatcher/eslint-config/commit/85a5335))
+* chore: set member expression chain indent to 0 ([dde04fa](https://github.com/rainbowatcher/eslint-config/commit/dde04fa))
+
+
+
 ## 0.10.0 (2024-06-27)
 
 * feat(typescript): add prefer-nullish-coalescing and prefer-optional-chain ([4d727c1](https://github.com/rainbowatcher/eslint-config/commit/4d727c1))
