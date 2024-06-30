@@ -1,3 +1,10 @@
+## <small>0.10.2 (2024-06-30)</small>
+
+* chore: bump deps ([7f6e024](https://github.com/rainbowatcher/eslint-config/commit/7f6e024))
+* Revert "chore: set member expression chain indent to 0" ([15fbf6e](https://github.com/rainbowatcher/eslint-config/commit/15fbf6e))
+
+
+
 ## <small>0.10.1 (2024-06-28)</small>
 
 * chore: bump deps ([85a5335](https://github.com/rainbowatcher/eslint-config/commit/85a5335))
