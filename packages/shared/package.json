@@ -26,7 +26,7 @@
         "watch": "tsup --dts --watch"
     },
     "dependencies": {
-        "eslint-config-flat-gitignore": "^0.1.5",
+        "eslint-config-flat-gitignore": "^0.1.6",
         "eslint-flat-config-utils": "^0.2.5"
     }
 }
