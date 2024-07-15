@@ -1,3 +1,15 @@
+## 0.11.0 (2024-07-15)
+
+* feat: add toml package ([58fde51](https://github.com/rainbowatcher/eslint-config/commit/58fde51))
+* fix: raise can't find packages module error, use dot start path instead ([45b11f4](https://github.com/rainbowatcher/eslint-config/commit/45b11f4))
+* chore: eslint-inspector has rename to eslint-config-inspector ([0639065](https://github.com/rainbowatcher/eslint-config/commit/0639065))
+* chore(deps): update all non-major dependencies ([492f258](https://github.com/rainbowatcher/eslint-config/commit/492f258))
+* chore(deps): update all non-major dependencies ([127a78b](https://github.com/rainbowatcher/eslint-config/commit/127a78b))
+* chore(deps): update dependency eslint-plugin-import-x to v3 ([6149833](https://github.com/rainbowatcher/eslint-config/commit/6149833))
+* docs: add docs for shared function extractRules ([bb1a89b](https://github.com/rainbowatcher/eslint-config/commit/bb1a89b))
+
+
+
 ## <small>0.10.2 (2024-06-30)</small>
 
 * chore: bump deps ([7f6e024](https://github.com/rainbowatcher/eslint-config/commit/7f6e024))
