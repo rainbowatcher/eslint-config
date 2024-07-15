@@ -24,6 +24,13 @@ export function renameRules(
         }))
 }
 
+/**
+ * Extracts rules from the provided configurations based on the specified configName.
+ *
+ * @param configs - The array of configurations to extract rules from.
+ * @param  configName - The name of the configuration to filter rules by.
+ * @return A Promise that resolves to a partial record of ESLint rules extracted from the configurations.
+ */
 export async function extractRules(configs: Array<Awaitable<EslintFlatConfigItem>>, configName?: string): Promise<Partial<Linter.RulesRecord>> {
     const acc: Partial<Linter.RulesRecord> = {}
     for await (const config of configs) {
