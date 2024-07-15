@@ -23,7 +23,7 @@
         "test": "vitest",
         "typegen": "tsx scripts/gen_type.ts",
         "watch": "pnpm --parallel watch",
-        "inspect": "eslint-inspector --open"
+        "inspect": "eslint-config-inspector --open"
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
