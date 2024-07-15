@@ -1,18 +1,19 @@
 import fs from "node:fs/promises"
 import { concat } from "eslint-flat-config-utils"
 import { flatConfigsToRulesDTS } from "eslint-typegen/core"
-import ignoreConfigs from "packages/ignore/src"
-import jsConfigs from "packages/javascript/src"
-import jsonConfigs from "packages/json/src"
-import mdConfigs from "packages/markdown/src"
-import prettierConfigs from "packages/prettier/src"
-import tsConfigs from "packages/typescript/src"
-import unocssConfigs from "packages/unocss/src"
-import vueConfigs from "packages/vue/src"
 import p from "picocolors"
+import ignoreConfigs from "../packages/ignore/src"
+import jsConfigs from "../packages/javascript/src"
+import jsonConfigs from "../packages/json/src"
+import mdConfigs from "../packages/markdown/src"
+import prettierConfigs from "../packages/prettier/src"
+import tomlConfigs from "../packages/toml/src"
+import tsConfigs from "../packages/typescript/src"
+import unocssConfigs from "../packages/unocss/src"
+import vueConfigs from "../packages/vue/src"
+import type { Module } from "../packages/all/src/types"
+import type { EslintFlatConfigs, Options } from "../packages/shared/src"
 import type { Linter } from "eslint"
-import type { Module } from "packages/all/src/types"
-import type { EslintFlatConfigs, Options } from "packages/shared/src"
 
 async function genType(
     configs: Linter.FlatConfig[],
@@ -46,6 +47,7 @@ const configs: Record<Module, EslintFlatConfigs> = {
     json: jsonConfigs(opts),
     markdown: mdConfigs(opts),
     prettier: prettierConfigs(opts),
+    toml: tomlConfigs(opts),
     typescript: tsConfigs(opts),
     unocss: unocssConfigs(opts),
     vue: vueConfigs(opts),
