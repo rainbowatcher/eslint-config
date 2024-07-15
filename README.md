@@ -1,6 +1,7 @@
-[![npm](https://img.shields.io/npm/v/@rainbowatcher/eslint-config?color=006769)](https://npmjs.com/package/@rainbowatcher/eslint-config)
-![npm download](https://img.shields.io/github/license/rainbowatcher/eslint-config?color=006769)
-![GitHub repo size](https://img.shields.io/github/repo-size/rainbowatcher/eslint-config?color=006769)
+[![npm](https://img.shields.io/npm/v/@rainbowatcher/eslint-config?color=16a34a&label=latest)](https://npmjs.com/package/@rainbowatcher/eslint-config)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/rainbowatcher/eslint-config/ci.yml?color=16a34a)
+![npm download](https://img.shields.io/github/license/rainbowatcher/eslint-config?color=16a34a)
+![GitHub repo size](https://img.shields.io/github/repo-size/rainbowatcher/eslint-config?color=16a34a)
 
 # @rainbowatcher/eslint-config
 
