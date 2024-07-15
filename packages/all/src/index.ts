@@ -6,7 +6,7 @@ import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config
 
 export async function defineConfig(opts: Options, ...otherConfigs: EslintFlatConfigItem[]): Promise<EslintFlatConfigItem[]> {
     const {
-        css, graphql, json, markdown, style, typescript, unocss, vue, yaml,
+        css, graphql, json, markdown, style, toml, typescript, unocss, vue, yaml,
     } = opts
 
     const configs = [
@@ -28,6 +28,10 @@ export async function defineConfig(opts: Options, ...otherConfigs: EslintFlatCon
     if (vue) {
         const vueConfigs = await interopDefault(import("@rainbowatcher/eslint-config-vue"))
         configs.push(...vueConfigs(opts))
+    }
+    if (toml) {
+        const tomlConfigs = await interopDefault(import("@rainbowatcher/eslint-config-toml"))
+        configs.push(...tomlConfigs(opts))
     }
     if (unocss) {
         const unocssConfigs = await interopDefault(import("@rainbowatcher/eslint-config-unocss"))

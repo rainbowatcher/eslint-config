@@ -7,6 +7,7 @@ export default defineConfig({
     jsx: true,
     markdown: true,
     style: true,
+    toml: true,
     typescript: true,
     unocss: true,
     vue: true,

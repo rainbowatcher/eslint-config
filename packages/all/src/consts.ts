@@ -25,6 +25,7 @@ export const modules = [
     "markdown",
     "prettier",
     "unocss",
+    "toml",
     "typescript",
     "vue",
 ] as const

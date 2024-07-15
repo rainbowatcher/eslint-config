@@ -1,0 +1,33 @@
+{
+    "name": "@rainbowatcher/eslint-config-toml",
+    "type": "module",
+    "version": "0.10.2",
+    "description": "rainbowatcher's ESLint config presets",
+    "author": "rainbowatcher <rainbow-w@qq.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rainbowatcher/eslint-config/issues"
+    },
+    "keywords": [
+        "eslint-config"
+    ],
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup --clean --dts",
+        "watch": "tsup --dts --watch"
+    },
+    "dependencies": {
+        "@rainbowatcher/eslint-config-shared": "workspace:*",
+        "eslint-plugin-toml": "^0.11.1",
+        "toml-eslint-parser": "^0.10.0"
+    }
+}
