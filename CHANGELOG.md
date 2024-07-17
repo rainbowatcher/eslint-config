@@ -1,3 +1,10 @@
+## <small>0.11.2 (2024-07-17)</small>
+
+* fix(javascript): disable filename-case and prefer-module rule in cli ([38e1591](https://github.com/rainbowatcher/eslint-config/commit/38e1591))
+* fix(javascript): turn off perfectionist/sort-classes in typescript file ([2cc7f92](https://github.com/rainbowatcher/eslint-config/commit/2cc7f92))
+
+
+
 ## <small>0.11.1 (2024-07-17)</small>
 
 * feat(toml): disable padding-line-between-pairs ([0a28d48](https://github.com/rainbowatcher/eslint-config/commit/0a28d48))
