@@ -12,6 +12,7 @@ export default {
                 "markdown",
                 "prettier",
                 "shared",
+                "toml",
                 "typescript",
                 "unocss",
                 "vue",
