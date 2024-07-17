@@ -27,6 +27,8 @@ export function base(opts: Options): EslintFlatConfigItem {
             "no-unused-vars": "off",
             // To allow `ignoreVoid` in `ts/no-floating-promises`
             "no-void": ["error", { allowAsStatement: true }],
+            // conflict with ts/member-ordering
+            "perfectionist/sort-classes": "off",
             "ts/adjacent-overload-signatures": "error",
             "ts/array-type": ["error", { default: "array-simple" }],
             "ts/ban-ts-comment": ["error", {
