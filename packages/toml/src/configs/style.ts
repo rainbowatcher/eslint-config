@@ -13,7 +13,7 @@ export function style(opts: Options): EslintFlatConfigItem {
             "toml/inline-table-curly-spacing": "error",
             "toml/key-spacing": "error",
             "toml/no-space-dots": "error",
-            "toml/padding-line-between-pairs": "error",
+            "toml/padding-line-between-pairs": "off",
             "toml/padding-line-between-tables": "error",
             "toml/precision-of-fractional-seconds": "error",
             "toml/quoted-keys": "error",
