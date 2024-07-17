@@ -1,3 +1,12 @@
+## <small>0.11.1 (2024-07-17)</small>
+
+* feat(toml): disable padding-line-between-pairs ([0a28d48](https://github.com/rainbowatcher/eslint-config/commit/0a28d48))
+* chore: add toml scope in commitlint ([8ac4c58](https://github.com/rainbowatcher/eslint-config/commit/8ac4c58))
+* chore: update badge's color ([5ff5f44](https://github.com/rainbowatcher/eslint-config/commit/5ff5f44))
+* chore(deps): update vitest monorepo to v2 ([ca6096a](https://github.com/rainbowatcher/eslint-config/commit/ca6096a))
+
+
+
 ## 0.11.0 (2024-07-15)
 
 * feat: add toml package ([58fde51](https://github.com/rainbowatcher/eslint-config/commit/58fde51))
