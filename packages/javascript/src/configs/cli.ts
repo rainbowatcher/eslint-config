@@ -6,6 +6,8 @@ export function cli(): EslintFlatConfigItem {
         name: "rainbowatcher:js:cli",
         rules: {
             "antfu/no-import-dist": "off",
+            "unicorn/filename-case": "off",
+            "unicorn/prefer-module": "off",
         },
     }
 }
