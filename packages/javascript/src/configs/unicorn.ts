@@ -16,7 +16,7 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem> {
             ...pluginUnicorn.configs.recommended.rules,
             "unicorn/consistent-function-scoping": "warn",
             "unicorn/filename-case": "off",
-            "unicorn/no-array-reduce": ["error", { allowSimpleOperations: true }],
+            "unicorn/no-array-reduce": "error",
             "unicorn/no-empty-file": "error",
             "unicorn/no-null": "off",
             "unicorn/prefer-export-from": "off",
