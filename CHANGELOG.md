@@ -1,3 +1,13 @@
+## <small>0.11.3 (2024-07-18)</small>
+
+* docs(typescript): add comments ([ec5808e](https://github.com/rainbowatcher/eslint-config/commit/ec5808e))
+* feat(javascript): not allow use reduce function, it performance bad ([5a6c6c7](https://github.com/rainbowatcher/eslint-config/commit/5a6c6c7))
+* chore(javascript): disable padded-blocks ([13890cf](https://github.com/rainbowatcher/eslint-config/commit/13890cf))
+* chore(javascript): turn off repeating rules ([78e00a6](https://github.com/rainbowatcher/eslint-config/commit/78e00a6))
+* feat(typescript,javascript): set no-extra-parens check to functions ([e489d2f](https://github.com/rainbowatcher/eslint-config/commit/e489d2f))
+
+
+
 ## <small>0.11.2 (2024-07-17)</small>
 
 * fix(javascript): disable filename-case and prefer-module rule in cli ([38e1591](https://github.com/rainbowatcher/eslint-config/commit/38e1591))

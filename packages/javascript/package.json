@@ -1,7 +1,7 @@
 {
     "name": "@rainbowatcher/eslint-config-js",
     "type": "module",
-    "version": "0.11.2",
+    "version": "0.11.3",
     "description": "rainbowatcher's ESLint config presets",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
