@@ -82,6 +82,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 ignorePattern: "eslint|global",
             }],
             "style-ts/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
+            // don't need this, because we clear semi in source code
             // "style-ts/no-extra-semi": "error",
             "style-ts/no-extra-parens": ["error", "functions"],
             "style-ts/object-curly-newline": ["error", {
