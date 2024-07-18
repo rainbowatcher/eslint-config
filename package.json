@@ -27,7 +27,7 @@
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
-        "@eslint/config-inspector": "^0.5.1",
+        "@eslint/config-inspector": "^0.5.2",
         "@rainbowatcher/eslint-config": "workspace:*",
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
         "@rainbowatcher/eslint-config-js": "workspace:*",
@@ -40,20 +40,20 @@
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^8.56.10",
         "@types/eslint__js": "^8.42.3",
-        "@types/node": "^20.14.10",
+        "@types/node": "^20.14.11",
         "@vitest/ui": "^2.0.3",
         "bumpp": "^9.4.1",
         "commitlint": "^19.3.0",
         "conventional-changelog-cli": "^5.0.0",
-        "eslint": "^9.6.0",
+        "eslint": "^9.7.0",
         "eslint-typegen": "^0.2.4",
         "lint-staged": "^15.2.7",
         "simple-git-hooks": "^2.11.1",
-        "tsup": "^8.1.0",
+        "tsup": "^8.1.2",
         "tsx": "^4.16.2",
         "typescript": "^5.5.3",
         "vitest": "^2.0.3",
-        "vue": "^3.4.31"
+        "vue": "^3.4.32"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged",
