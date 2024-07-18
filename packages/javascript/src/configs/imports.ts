@@ -38,6 +38,7 @@ export function imports(opts: Options): EslintFlatConfigItem {
                 pathGroupsExcludedImportTypes: ["type"],
             }],
 
+            "no-unused-vars": "off",
             "unused-imports/no-unused-imports": isInEditor ? "off" : "error",
             "unused-imports/no-unused-vars": ["error", {
                 args: "after-used",
