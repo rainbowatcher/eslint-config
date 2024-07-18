@@ -36,6 +36,8 @@ describe("rules", () => {
             return b;
         }
     }`, { expected: false })
+    expectRule("style-js/no-extra-parens", String.raw`const a = 1;const foo = a > 1 ? 0 : (a < 1 ? 1 : 2)`, { expected: false })
+    expectRule("style-js/no-extra-parens", String.raw`const a = 1;const b = 2;const foo = (a > b) ? a : b`, { expected: false })
 })
 
 describe("style", () => {

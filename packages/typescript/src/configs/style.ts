@@ -83,11 +83,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             }],
             "style-ts/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
             // "style-ts/no-extra-semi": "error",
-            "style-ts/no-extra-parens": ["error", "all", {
-                enforceForArrowConditionals: false,
-                ignoreJSX: "all",
-                nestedBinaryExpressions: false,
-            }],
+            "style-ts/no-extra-parens": ["error", "functions"],
             "style-ts/object-curly-newline": ["error", {
                 ExportDeclaration: {
                     minProperties: 4, multiline: true,
