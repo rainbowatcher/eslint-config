@@ -93,12 +93,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/object-curly-spacing": ["error", "always"],
             "style-js/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
             "style-js/operator-linebreak": ["error", "before"],
-
-            "style-js/padded-blocks": ["error", {
-                blocks: "never",
-                classes: "always",
-                switches: "never",
-            }, { allowSingleLineBlocks: true }],
+            "style-js/padded-blocks": "off",
 
             // this rule does not work
             "style-js/padding-line-between-statements": [
