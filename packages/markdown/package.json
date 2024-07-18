@@ -26,12 +26,12 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.6.0"
+        "eslint": ">=9.7.0"
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "eslint-merge-processors": "^0.1.0",
-        "eslint-plugin-markdown": "^5.0.0"
+        "eslint-plugin-markdown": "^5.1.0"
     },
     "devDependencies": {
         "@types/eslint-plugin-markdown": "^2.0.2"
