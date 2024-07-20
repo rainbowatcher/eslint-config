@@ -49,11 +49,11 @@
         "eslint-typegen": "^0.2.4",
         "lint-staged": "^15.2.7",
         "simple-git-hooks": "^2.11.1",
-        "tsup": "^8.1.2",
+        "tsup": "^8.2.1",
         "tsx": "^4.16.2",
         "typescript": "^5.5.3",
         "vitest": "^2.0.3",
-        "vue": "^3.4.32"
+        "vue": "^3.4.33"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged",
