@@ -36,12 +36,12 @@
         "@stylistic/eslint-plugin-plus": "^2.3.0",
         "eslint-config-flat-gitignore": "^0.1.8",
         "eslint-plugin-antfu": "^2.3.4",
-        "eslint-plugin-import-x": "^3.0.1",
+        "eslint-plugin-import-x": "^3.1.0",
         "eslint-plugin-n": "^17.9.0",
         "eslint-plugin-perfectionist": "^2.11.0",
         "eslint-plugin-regexp": "^2.6.0",
         "eslint-plugin-unicorn": "^54.0.0",
-        "eslint-plugin-unused-imports": "^4.0.0",
+        "eslint-plugin-unused-imports": "^4.0.1",
         "globals": "^15.8.0"
     },
     "devDependencies": {
