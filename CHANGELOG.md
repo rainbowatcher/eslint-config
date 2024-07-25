@@ -1,3 +1,12 @@
+## <small>0.11.4 (2024-07-25)</small>
+
+* chore(deps): update all non-major dependencies ([615a42e](https://github.com/rainbowatcher/eslint-config/commit/615a42e))
+* chore(deps): update all non-major dependencies ([a30b1bc](https://github.com/rainbowatcher/eslint-config/commit/a30b1bc))
+* chore(deps): update all non-major dependencies ([e51a4f9](https://github.com/rainbowatcher/eslint-config/commit/e51a4f9))
+* chore(javascript): allow implicit return undefined ([724a60b](https://github.com/rainbowatcher/eslint-config/commit/724a60b))
+
+
+
 ## <small>0.11.3 (2024-07-18)</small>
 
 * docs(typescript): add comments ([ec5808e](https://github.com/rainbowatcher/eslint-config/commit/ec5808e))
