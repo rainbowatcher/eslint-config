@@ -35,6 +35,7 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             ...eslintJs.configs.recommended.rules,
             // https://eslint.org/docs/latest/rules/<rule-name>
             "array-callback-return": ["error", {
+                allowImplicit: true,
                 checkForEach: true,
             }],
             "default-param-last": "error",
