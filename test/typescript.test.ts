@@ -12,7 +12,7 @@ const configs = await concat(
 )
 const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
-describe("rules", () => {
+describe.concurrent("rules", () => {
     expectRule("ts/adjacent-overload-signatures", `type Foo = {
     foo(s: string): void;
     foo(n: number): void;
@@ -50,7 +50,7 @@ describe("rules", () => {
     expectRule("style-ts/no-extra-parens", String.raw`const a = 1;const b = 2;const foo = (a > b) ? a : b;`, { expected: false })
 })
 
-describe("style", () => {
+describe.concurrent("style", () => {
     it("type-annotation-spacing", () => {
         const code1 = "type Foo = { name:string }"
         const code2 = "type Foo = { name : string }"

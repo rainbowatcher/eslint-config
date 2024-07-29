@@ -6,7 +6,7 @@ import { createExpectFn } from "./test_util"
 const configs = await concat(...jsConfigs({ style: true }))
 const { expectRule, formatCode } = createExpectFn(configs)
 
-describe("rules", () => {
+describe.concurrent("rules", () => {
     expectRule("no-var", "var foo = 1")
 
     // Disallow expressions where the operation doesn't affect the value
@@ -46,7 +46,7 @@ describe("rules", () => {
     expectRule("perfectionist/sort-array-includes", `const arr = ["foo", "bar", "baz"]; const baz = ["a", "b", ...arr].includes("foo")`, { expected: false })
 })
 
-describe("style", () => {
+describe.concurrent("style", () => {
     it("space-infix-ops", () => {
         const code = "const foo =5"
         expect(formatCode(code)).toMatchInlineSnapshot(`

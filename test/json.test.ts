@@ -9,7 +9,7 @@ const opts = { json: true, style: true }
 const configs = await concat(...jsConfigs(opts), ...jsonConfigs(opts))
 const { expectRule, formatCode } = createExpectFn(configs, "_.json")
 
-describe("json", () => {
+describe.concurrent("json", () => {
     expectRule("jsonc/array-bracket-spacing", '{ "foo": [ 1,2,3 ]}')
     expectRule("jsonc/array-bracket-newline", `{ "foo": [ 1,
         2,3 ]}`, { expected: false })
@@ -22,7 +22,7 @@ describe("json", () => {
     }`, { expected: false })
 })
 
-describe("style", () => {
+describe.concurrent("style", () => {
     it("quotes", () => {
         const code = "{ 'foo': 'bar' }"
         expect(formatCode(code)).toMatchInlineSnapshot(`
