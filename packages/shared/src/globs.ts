@@ -52,6 +52,7 @@ export const GLOB_EXCLUDE = [
     "**/.vitepress/cache",
     "**/.nuxt",
     "**/.next",
+    "**/.svelte-kit",
     "**/.vercel",
     "**/.changeset",
     "**/.idea",
@@ -59,6 +60,7 @@ export const GLOB_EXCLUDE = [
     "**/.output",
     "**/.vite-inspect",
     "**/.yarn",
+    "**/vite.config.*.timestamp-*",
 
     "**/CHANGELOG*.md",
     "**/*.min.*",
