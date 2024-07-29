@@ -16,10 +16,8 @@ export async function setup(opts: Options): Promise<EslintFlatConfigItem> {
         interopDefault(import("eslint-plugin-antfu")),
         interopDefault(import("eslint-plugin-import-x")),
         interopDefault(import("eslint-plugin-n")),
-        // @ts-expect-error missing types
         interopDefault(import("eslint-plugin-perfectionist")),
         interopDefault(import("eslint-plugin-regexp")),
-        // @ts-expect-error missing types
         interopDefault(import("eslint-plugin-unicorn")),
         // @ts-expect-error missing types
         interopDefault(import("eslint-plugin-unused-imports")),

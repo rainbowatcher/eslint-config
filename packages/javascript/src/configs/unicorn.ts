@@ -6,7 +6,6 @@ import { getFiles } from "../files"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export async function unicorn(opts: Options): Promise<EslintFlatConfigItem> {
-    // @ts-expect-error missing types
     const pluginUnicorn = await interopDefault(import("eslint-plugin-unicorn"))
     return {
         files: getFiles(opts),
