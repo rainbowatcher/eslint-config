@@ -54,7 +54,7 @@ export type Options = {
     /**
      * enable lint for typescript
      */
-    typescript?: boolean
+    typescript?: boolean | TypescriptOptions
 
     /**
      * enable lint for unocss
@@ -72,4 +72,9 @@ export type Options = {
     yaml?: boolean
 
     // astro/react/svelte/...
+}
+
+
+export type TypescriptOptions = {
+    typeAware: boolean
 }
