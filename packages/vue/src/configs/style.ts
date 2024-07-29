@@ -1,4 +1,3 @@
-import { } from "eslint-flat-config-utils"
 import { GLOB_VUE } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 

@@ -33,7 +33,6 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
         name: "rainbowatcher:js:rules",
         rules: {
             ...eslintJs.configs.recommended.rules,
-            // https://eslint.org/docs/latest/rules/<rule-name>
             "array-callback-return": ["error", {
                 allowImplicit: true,
                 checkForEach: true,
