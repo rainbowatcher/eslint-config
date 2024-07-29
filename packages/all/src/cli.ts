@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-process-exit */
 import { exec } from "node:child_process"
 import fs from "node:fs/promises"
 import process from "node:process"
@@ -14,7 +13,7 @@ import {
 } from "./consts"
 import type { CliContext, Module } from "./types"
 
-function assertCancel<T>(result: T | symbol): T {
+function assertCancel<T>(result: symbol | T): T {
     if (p.isCancel(result)) {
         p.log.warn(c.bgYellow(c.bold(" Canceled ")))
         process.exit(1)

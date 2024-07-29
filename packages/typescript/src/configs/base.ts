@@ -54,6 +54,11 @@ export function base(opts: Options): EslintFlatConfigItem {
                         message: "Use `boolean` instead.",
                     },
                     Function: "Use a specific function type instead, like `() => void`.",
+                    null: {
+                        fixWith: "undefined",
+                        message:
+                            "Use `undefined` instead, except you known what you want to do. See: https://github.com/sindresorhus/meta/issues/7",
+                    },
                     Number: {
                         fixWith: "number",
                         message: "Use `number` instead.",
@@ -63,6 +68,11 @@ export function base(opts: Options): EslintFlatConfigItem {
                         message:
                             "The `Object` type is mostly the same as `unknown`. You probably want `Record<string, unknown>` instead. See https://github.com/typescript-eslint/typescript-eslint/pull/848",
                     },
+                    object: {
+                        fixWith: "Record<string, unknown>",
+                        message:
+                            "The `object` type is hard to use. Use `Record<string, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
+                    },
                     String: {
                         fixWith: "string",
                         message: "Use `string` instead.",
@@ -70,16 +80,6 @@ export function base(opts: Options): EslintFlatConfigItem {
                     Symbol: {
                         fixWith: "symbol",
                         message: "Use `symbol` instead.",
-                    },
-                    null: {
-                        fixWith: "undefined",
-                        message:
-                            "Use `undefined` instead, except you known what you want to do. See: https://github.com/sindresorhus/meta/issues/7",
-                    },
-                    object: {
-                        fixWith: "Record<string, unknown>",
-                        message:
-                            "The `object` type is hard to use. Use `Record<string, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
                     },
                 },
             }],

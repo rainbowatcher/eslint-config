@@ -55,7 +55,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-ts/comma-dangle": ["error", "always-multiline"],
             "style-ts/function-call-spacing": ["error", "never"],
             "style-ts/indent": ["error", 4, {
-                SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1,
+                outerIIFEBody: 1, SwitchCase: 1, VariableDeclarator: 1,
             }],
             "style-ts/lines-around-comment": ["error", {
                 afterBlockComment: false,

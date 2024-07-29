@@ -49,7 +49,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/eol-last": ["error", "always"],
             "style-js/function-call-argument-newline": ["error", "consistent"],
             "style-js/indent": ["error", 4, {
-                SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1,
+                outerIIFEBody: 1, SwitchCase: 1, VariableDeclarator: 1,
             }],
             "style-js/linebreak-style": ["error", "unix"],
             "style-js/lines-around-comment": ["error", {
