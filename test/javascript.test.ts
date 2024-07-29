@@ -42,6 +42,8 @@ describe("rules", () => {
     expectRule("array-callback-return", String.raw`var undefAllTheThings = myArray.map(function(item) {
         return;
     });`, { expected: false })
+    expectRule("perfectionist/sort-array-includes", `const arr = ["foo", "bar", "baz"]; const baz = [...arr, "a", "b"].includes("foo")`)
+    expectRule("perfectionist/sort-array-includes", `const arr = ["foo", "bar", "baz"]; const baz = ["a", "b", ...arr].includes("foo")`, { expected: false })
 })
 
 describe("style", () => {

@@ -4,7 +4,6 @@ import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config
 import type { Linter } from "eslint"
 
 export async function sort(opts: Options): Promise<EslintFlatConfigItem> {
-    // @ts-expect-error missing types
     const pluginPerfectionist = await interopDefault(import("eslint-plugin-perfectionist"))
     return {
         files: getFiles(opts),
@@ -12,7 +11,7 @@ export async function sort(opts: Options): Promise<EslintFlatConfigItem> {
         rules: {
             ...pluginPerfectionist.configs["recommended-natural"].rules as Linter.RulesRecord,
             "perfectionist/sort-array-includes": ["error", {
-                "ignore-case": false, order: "asc", "spread-last": true, type: "natural",
+                groupKind: "literals-first", ignoreCase: false, order: "asc", type: "natural",
             }],
             "perfectionist/sort-imports": "off",
             "perfectionist/sort-vue-attributes": "off",
