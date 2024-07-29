@@ -3,7 +3,7 @@ import type { Awaitable } from "eslint-flat-config-utils"
 
 export type EslintFlatConfigItem = {
     plugins?: Record<string, any>
-} & Omit<Linter.FlatConfig<Linter.RulesRecord>, "plugins">
+} & Omit<Linter.Config, "plugins">
 
 export type EslintFlatConfigs = Array< Awaitable <EslintFlatConfigItem>>
 
