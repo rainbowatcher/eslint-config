@@ -1,9 +1,10 @@
-import { GLOB_VUE } from "@rainbowatcher/eslint-config-shared"
+import { DEFAULT_STYLE_OPTION, GLOB_VUE, resolveAltOption } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export function style(opts: Options): EslintFlatConfigItem {
     if (!opts.style) return {}
 
+    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
     return {
         files: [GLOB_VUE],
         name: "rainbowatcher:vue:style",
@@ -22,6 +23,7 @@ export function style(opts: Options): EslintFlatConfigItem {
             "vue/html-comment-content-spacing": ["error", "always", {
                 exceptions: ["-"],
             }],
+            "vue/html-indent": ["error", indent],
             "vue/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             "vue/keyword-spacing": ["error", { after: true, before: true }],
             "vue/object-curly-newline": "off",
@@ -32,7 +34,6 @@ export function style(opts: Options): EslintFlatConfigItem {
             "vue/quote-props": ["error", "consistent-as-needed"],
             "vue/space-in-parens": ["error", "never"],
             "vue/template-curly-spacing": "error",
-
         },
     }
 }

@@ -1,3 +1,4 @@
+import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { describe, expect, it } from "vitest"
@@ -50,8 +51,8 @@ describe.concurrent("style", () => {
     it("space-infix-ops", () => {
         const code = "const foo =5"
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "const foo = 5
-          "
+            "const foo = 5
+            "
         `)
     })
 
@@ -60,41 +61,41 @@ describe.concurrent("style", () => {
         const code1 = "const foo = `bar`"
         const code2 = "const foo = '`bar`'"
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "const foo = "bar"
-          "
+            "const foo = "bar"
+            "
         `)
         expect(formatCode(code1)).toMatchInlineSnapshot(`
-          "const foo = "bar"
-          "
+            "const foo = "bar"
+            "
         `)
         expect(formatCode(code2)).toMatchInlineSnapshot(`
-          "const foo = "\`bar\`"
-          "
+            "const foo = "\`bar\`"
+            "
         `)
     })
 
     it("object-curly-newline", () => {
-        const code = `
-        const foo = {
-            foo: "bar" }
+        const code = dedent`
+            const foo = {
+                foo: "bar" }
         `
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "const foo = { foo: "bar" }
-          "
+            "const foo = { foo: "bar" }
+            "
         `)
 
-        const code1 = `
-        const foo = {foo:"1", 
-        bar: 2, baz: 3
-        }
+        const code1 = dedent`
+            const foo = {foo:"1", 
+                bar: 2, baz: 3
+            }
         `
         expect(formatCode(code1)).toMatchInlineSnapshot(`
-          "const foo = {
-              bar: 2,
-              baz: 3,
-              foo: "1",
-          }
-          "
+            "const foo = {
+                bar: 2,
+                baz: 3,
+                foo: "1",
+            }
+            "
         `)
     })
 })

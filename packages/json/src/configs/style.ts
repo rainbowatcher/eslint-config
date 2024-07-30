@@ -1,11 +1,13 @@
-import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from "@rainbowatcher/eslint-config-shared"
+import {
+    DEFAULT_STYLE_OPTION, GLOB_JSON, GLOB_JSON5, GLOB_JSONC, resolveAltOption,
+} from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export function style(opts: Options): EslintFlatConfigItem {
     if (!opts.style) return {}
 
     const files = [GLOB_JSON, GLOB_JSONC, GLOB_JSON5]
-
+    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
     return {
         files,
         name: "rainbowatcher:json:style",
@@ -15,7 +17,7 @@ export function style(opts: Options): EslintFlatConfigItem {
             "jsonc/array-element-newline": "off",
             "jsonc/comma-dangle": "off",
             "jsonc/comma-style": ["error", "last"],
-            "jsonc/indent": ["error", 4],
+            "jsonc/indent": ["error", indent],
             "jsonc/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             "jsonc/no-floating-decimal": "off",
             "jsonc/object-curly-newline": ["error", { consistent: true, minProperties: 4, multiline: true }],

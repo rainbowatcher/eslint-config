@@ -1,6 +1,7 @@
 // import process from "node:process"
 import {
-    GLOB_JSX, GLOB_TSX, interopDefault, renameRules,
+    DEFAULT_STYLE_OPTION, GLOB_JSX, GLOB_TSX, interopDefault,
+    renameRules, resolveAltOption,
 } from "@rainbowatcher/eslint-config-shared"
 import { getFiles } from "../files"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
@@ -9,7 +10,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.style) return {}
 
     const pluginStylisticJs = await interopDefault(import("@stylistic/eslint-plugin-js"))
-
+    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
     return {
         files: getFiles(opts),
         name: "rainbowatcher:js:style",
@@ -38,7 +39,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             // "style-js/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             // "style-js/keyword-spacing": "error",
             // "style-js/newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
-            "style-ex/indent-binary-ops": ["error", 4],
+            "style-ex/indent-binary-ops": ["error", indent],
             "style-js/array-bracket-newline": ["error", "consistent"],
             "style-js/array-bracket-spacing": ["error", "never"],
             "style-js/array-element-newline": ["error", "consistent"],
@@ -48,7 +49,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/dot-location": ["error", "property"],
             "style-js/eol-last": ["error", "always"],
             "style-js/function-call-argument-newline": ["error", "consistent"],
-            "style-js/indent": ["error", 4, {
+            "style-js/indent": ["error", indent, {
                 outerIIFEBody: 1, SwitchCase: 1, VariableDeclarator: 1,
             }],
             "style-js/linebreak-style": ["error", "unix"],
@@ -121,6 +122,13 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 },
             }],
             "style-js/wrap-regex": "off",
+
+
+            "unicorn/template-indent": ["error", {
+                functions: ["dedent", "stripIndent"],
+                indent,
+                tags: ["outdent", "dedent", "gql", "sql", "html", "styled"],
+            }],
         },
     }
 }
@@ -131,12 +139,13 @@ export async function jsxStyle(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.jsx) return {}
     const pluginStylisticJsx = await interopDefault(import("@stylistic/eslint-plugin-jsx"))
 
+    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
     return {
         files: [GLOB_JSX, GLOB_TSX],
         name: "rainbowatcher:js:jsx-style",
         rules: {
             ...renameRules(pluginStylisticJsx.configs["all-flat"].rules, { "@stylistic/jsx": "style-jsx" }),
-            "style-jsx/jsx-indent": ["error", 4],
+            "style-jsx/jsx-indent": ["error", indent],
             "style-jsx/jsx-newline": ["error", { allowMultilines: true, prevent: true }],
             "style-jsx/jsx-wrap-multilines": ["error", { return: "parens-new-line" }],
         },

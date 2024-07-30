@@ -1,6 +1,10 @@
-import type { EslintFlatConfigItem, EslintFlatConfigs } from "./types"
+import type {
+    Alterable, AltOptionValue, EslintFlatConfigItem, EslintFlatConfigs,
+    Options,
+} from "./types"
 import type { Linter } from "eslint"
 import type { Awaitable } from "eslint-flat-config-utils"
+
 
 export async function interopDefault<T>(m: Awaitable<T>): Promise<T extends { default: infer U } ? U : T> {
     const resolved = await m as { default?: unknown }
@@ -22,6 +26,29 @@ export function renameRules(
             }
             return [key, value]
         }))
+}
+
+
+/**
+ * Resolves the value of an option in the Options object.
+ *
+ * @param opts - The object containing the options.
+ * @param key - The key of the option to resolve.
+ * @param defaultValue - The default value to use if the option is not found.
+ * @return The resolved value of the option.
+ */
+export function resolveAltOption<K extends keyof Alterable<Options>>(
+    opts: Alterable<Options>,
+    key: K,
+    defaultValue?: AltOptionValue<Alterable<Options>[K]>,
+): AltOptionValue<Alterable<Options>[K]> {
+    const value = opts[key]
+    const _default = defaultValue ?? {}
+    if (typeof value === "boolean") {
+        // this need all Alterable field's child fields are optional
+        return (value ? _default : {}) as AltOptionValue<Alterable<Options>[K]>
+    }
+    return (value || _default) as AltOptionValue<Alterable<Options>[K]>
 }
 
 /**

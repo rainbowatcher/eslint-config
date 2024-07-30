@@ -3,6 +3,7 @@ import fs from "node:fs/promises"
 import process from "node:process"
 import { detectPackageManager } from "@antfu/install-pkg"
 import * as p from "@clack/prompts"
+import { DEFAULT_STYLE_OPTION, resolveAltOption } from "@rainbowatcher/eslint-config-shared"
 import detectIndent from "detect-indent"
 import { loadPackageJSON } from "local-pkg"
 import { builders, loadFile, writeFile } from "magicast"
@@ -62,9 +63,6 @@ async function handleConfigName(ctx: CliContext) {
     // create config is not exists
     if (!filename) {
         const createConfig = await p.confirm({
-            active: "Yes",
-            inactive: "No",
-            initialValue: true,
             message: "not found eslint config, create a new one?",
         })
         if (!assertCancel(createConfig)) {
@@ -74,9 +72,6 @@ async function handleConfigName(ctx: CliContext) {
         }
     } else if (isLegacy) {
         const createConfig = await p.confirm({
-            active: "Yes",
-            inactive: "No",
-            initialValue: true,
             message: "you are using legacy eslint config, replace with modern eslint config?",
         })
         if (assertCancel(createConfig)) {
@@ -94,9 +89,6 @@ async function handleConfigName(ctx: CliContext) {
 
 async function handleOptions(ctx: CliContext) {
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
-        initialValue: true,
         message: "use typescript?",
     }).then(use => assertCancel(use) && (ctx.configOptions.typescript = true))
 
@@ -110,50 +102,32 @@ async function handleOptions(ctx: CliContext) {
     }).then(use => assertCancel(use) === "vue" && (ctx.configOptions.vue = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
-        initialValue: true,
         message: "use style formatters?",
     }).then(use => assertCancel(use) && (ctx.configOptions.style = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
-        initialValue: true,
         message: "use json?",
     }).then(use => assertCancel(use) && (ctx.configOptions.json = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
-        initialValue: true,
         message: "use css?",
     }).then(use => assertCancel(use) && (ctx.configOptions.css = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
-        initialValue: true,
         message: "use markdown?",
     }).then(use => assertCancel(use) && (ctx.configOptions.markdown = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
         initialValue: false,
         message: "use unocss?",
     }).then(use => assertCancel(use) && (ctx.configOptions.unocss = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
         initialValue: false,
         message: "use yaml?",
     }).then(use => assertCancel(use) && (ctx.configOptions.yaml = true))
 
     await p.confirm({
-        active: "Yes",
-        inactive: "No",
         initialValue: false,
         message: "use toml?",
     }).then(use => assertCancel(use) && (ctx.configOptions.toml = true))
@@ -168,14 +142,15 @@ async function generateCode(ctx: CliContext) {
 
     file.exports.default = builders.functionCall(DEFINE_CONFIG, ctx.configOptions)
 
-    await writeFile(file, ctx.configPath, {
-        quote: "double", tabWidth: 4, trailingComma: true, useTabs: false,
-    })
+    const styleOptions = resolveAltOption(ctx.configOptions, "style", DEFAULT_STYLE_OPTION)
+    await writeFile(file, ctx.configPath, styleOptions)
 }
 
 async function handleDeps(ctx: CliContext) {
     const packageJsonPath = `${process.cwd()}/package.json`
-    const indent = await getPkgIndent(packageJsonPath)
+    const styleOption = resolveAltOption(ctx.configOptions, "style")
+
+    const indent = styleOption?.indent ?? await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
         if (opt === "style" && val && PRETTIER_LINT_LANGS.some(lang => ctx.configOptions[lang])) {
@@ -196,9 +171,6 @@ async function handleDeps(ctx: CliContext) {
     }
 
     const confirm = await p.confirm({
-        active: "Yes",
-        inactive: "No",
-        initialValue: true,
         message: "install dependencies?",
     })
     if (assertCancel(confirm)) {

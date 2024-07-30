@@ -44,7 +44,7 @@ export type Options = {
     /**
      * enable stylistic rules
      */
-    style?: boolean
+    style?: boolean | StyleOptions
 
     /**
      * enable lint for toml
@@ -74,7 +74,21 @@ export type Options = {
     // astro/react/svelte/...
 }
 
+// get all alterable field of a object
+export type Alterable<T> = {
+    [K in keyof T as T[K] extends boolean | undefined ? never : K]: T[K]
+}
+
+export type AltOptionValue<T> = T extends boolean ? never : T
 
 export type TypescriptOptions = {
-    typeAware: boolean
+    typeAware?: boolean
+}
+
+export type StyleOptions = {
+    indent?: number
+    quote?: "double" | "single"
+    semi?: boolean
+    trailingComma?: boolean
+    useTabs?: boolean
 }

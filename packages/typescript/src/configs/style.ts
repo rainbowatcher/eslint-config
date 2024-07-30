@@ -1,5 +1,5 @@
 import {
-    GLOB_TS, GLOB_TSX, GLOB_VUE, interopDefault, renameRules,
+    DEFAULT_STYLE_OPTION, GLOB_TS, GLOB_TSX, GLOB_VUE, interopDefault, renameRules, resolveAltOption,
 } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
@@ -12,6 +12,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     const files = opts.jsx ? [GLOB_TS, GLOB_TSX] : [GLOB_TS]
     opts.vue && files.push(GLOB_VUE)
 
+    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
     return {
         files,
         name: "rainbowatcher:ts:style",
@@ -54,7 +55,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-ts/brace-style": ["error", "1tbs", { allowSingleLine: true }],
             "style-ts/comma-dangle": ["error", "always-multiline"],
             "style-ts/function-call-spacing": ["error", "never"],
-            "style-ts/indent": ["error", 4, {
+            "style-ts/indent": ["error", indent, {
                 outerIIFEBody: 1, SwitchCase: 1, VariableDeclarator: 1,
             }],
             "style-ts/lines-around-comment": ["error", {

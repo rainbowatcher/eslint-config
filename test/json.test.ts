@@ -1,3 +1,4 @@
+import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import jsConfigs from "packages/javascript/src"
 import jsonConfigs from "packages/json/src"
@@ -26,34 +27,34 @@ describe.concurrent("style", () => {
     it("quotes", () => {
         const code = "{ 'foo': 'bar' }"
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "{ "foo": "bar" }
-          "
+            "{ "foo": "bar" }
+            "
         `)
         const code1 = "{ foo: 'bar' }"
         expect(formatCode(code1)).toMatchInlineSnapshot(`
-          "{ "foo": "bar" }
-          "
+            "{ "foo": "bar" }
+            "
         `)
         const code2 = "{ foo: 1 }"
         expect(formatCode(code2)).toMatchInlineSnapshot(`
-          "{ "foo": 1 }
-          "
+            "{ "foo": 1 }
+            "
         `)
     })
 
     it("bracket-spacing", () => {
         const code = "{'foo': 'bar'}"
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "{ "foo": "bar" }
-          "
+            "{ "foo": "bar" }
+            "
         `)
     })
 
     it("array-bracket-spacing", () => {
         const code = '{"foo": [ 1,2,3 ]}'
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "{ "foo": [1, 2, 3] }
-          "
+            "{ "foo": [1, 2, 3] }
+            "
         `)
     })
 
@@ -64,20 +65,20 @@ describe.concurrent("style", () => {
             ]
         }`
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "{
-              "foo": [
-                  1, 2, 3
-              ]
-          }
-          "
+            "{
+                "foo": [
+                    1, 2, 3
+                ]
+            }
+            "
         `)
     })
 
     it("array-element-newline", () => {
         const code = "[1, 2, 3]"
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "[1, 2, 3]
-          "
+            "[1, 2, 3]
+            "
         `)
     })
 
@@ -86,24 +87,26 @@ describe.concurrent("style", () => {
             'foo': 'bar',
         }`
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "{
-              "foo": "bar",
-          }
-          "
+            "{
+                "foo": "bar",
+            }
+            "
         `)
     })
 
     it("style-js/lines-around-comment", () => {
-        const code = `{
-            // comment
-            foo: "bar"
-        }`
+        const code = dedent`
+            {
+                // comment
+                foo: "bar"
+            }
+        `
         expect(formatCode(code)).toMatchInlineSnapshot(`
-          "{
-              // comment
-              "foo": "bar"
-          }
-          "
+            "{
+                // comment
+                "foo": "bar"
+            }
+            "
         `)
     })
 })
