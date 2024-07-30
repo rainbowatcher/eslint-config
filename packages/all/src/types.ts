@@ -1,4 +1,4 @@
-import type { modules, prettierLintLangs } from "./consts"
+import type { MODULES, PRETTIER_LINT_LANGS } from "./consts"
 import type { spinner } from "@clack/prompts"
 import type { Options } from "@rainbowatcher/eslint-config-shared"
 import type { PackageJson } from "pkg-types"
@@ -12,5 +12,5 @@ export type CliContext = {
     spinner: ReturnType<typeof spinner>
 }
 
-export type Module = typeof modules[number]
-export type PrettierLintLang = typeof prettierLintLangs[number]
+export type Module = typeof MODULES[number]
+export type PrettierLintLang = typeof PRETTIER_LINT_LANGS[number]

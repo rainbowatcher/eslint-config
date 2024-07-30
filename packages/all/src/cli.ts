@@ -9,7 +9,8 @@ import { builders, loadFile, writeFile } from "magicast"
 import c from "picocolors"
 import { version } from "../../../package.json"
 import {
-    abbrs, configPrefix, legacyEslintConfigNames, modules, prettierLintLangs, validEslintConfigNames,
+    ABBRS, CONFIG_PREFIX, DEFINE_CONFIG, LEGACY_ESLINT_CONFIG_NAMES, MODULES, PRETTIER_LINT_LANGS,
+    VALID_ESLINT_CONFIG_NAMES,
 } from "./consts"
 import type { CliContext, Module } from "./types"
 
@@ -23,7 +24,7 @@ function assertCancel<T>(result: symbol | T): T {
 }
 
 async function detectEslintConfig() {
-    const files = await Promise.all(validEslintConfigNames.map(async (filename) => {
+    const files = await Promise.all(VALID_ESLINT_CONFIG_NAMES.map(async (filename) => {
         const exist = await fileExists(`${process.cwd()}/${filename}`)
         if (exist) {
             return {
@@ -34,7 +35,7 @@ async function detectEslintConfig() {
     }))
     const { filename, fullPath } = files.find(f => f?.filename) ?? {}
     let isLegacy = false
-    if (filename && legacyEslintConfigNames.includes(filename)) {
+    if (filename && LEGACY_ESLINT_CONFIG_NAMES.includes(filename)) {
         isLegacy = true
     }
 
@@ -163,9 +164,9 @@ async function generateCode(ctx: CliContext) {
     if (ctx.legacyConfigPath) await fs.rm(ctx.legacyConfigPath)
     if (!isConfigExists) await fs.writeFile(ctx.configPath, "")
     const file = await loadFile(ctx.configPath)
-    file.imports.$add({ from: "@rainbowatcher/eslint-config", imported: "defineConfig" })
+    file.imports.$add({ from: "@rainbowatcher/eslint-config", imported: DEFINE_CONFIG })
 
-    file.exports.default = builders.functionCall("defineConfig", ctx.configOptions)
+    file.exports.default = builders.functionCall(DEFINE_CONFIG, ctx.configOptions)
 
     await writeFile(file, ctx.configPath, {
         quote: "double", tabWidth: 4, trailingComma: true, useTabs: false,
@@ -177,12 +178,12 @@ async function handleDeps(ctx: CliContext) {
     const indent = await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
-        if (opt === "style" && val && prettierLintLangs.some(lang => ctx.configOptions[lang])) {
-            ctx.deps.add(`${configPrefix}-prettier`)
+        if (opt === "style" && val && PRETTIER_LINT_LANGS.some(lang => ctx.configOptions[lang])) {
+            ctx.deps.add(`${CONFIG_PREFIX}-prettier`)
         }
-        if (modules.includes(opt as Module)) {
-            const abbr = abbrs[opt as keyof typeof abbrs] ?? opt
-            val && ctx.deps.add(`${configPrefix}-${abbr}`)
+        if (MODULES.includes(opt as Module)) {
+            const abbr = ABBRS[opt as keyof typeof ABBRS] ?? opt
+            val && ctx.deps.add(`${CONFIG_PREFIX}-${abbr}`)
         }
     }
 
@@ -241,9 +242,9 @@ async function main() {
         },
         configPath: "eslint.config.js",
         deps: new Set([
-            `${configPrefix}-ignore`,
-            `${configPrefix}-js`,
-            `${configPrefix}`,
+            `${CONFIG_PREFIX}-ignore`,
+            `${CONFIG_PREFIX}-js`,
+            `${CONFIG_PREFIX}`,
         ]),
         pkgJson,
         spinner: p.spinner(),

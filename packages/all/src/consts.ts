@@ -1,4 +1,4 @@
-export const legacyEslintConfigNames = [
+export const LEGACY_ESLINT_CONFIG_NAMES = [
     ".eslintrc",
     ".eslintrc.js",
     ".eslintrc.cjs",
@@ -7,22 +7,22 @@ export const legacyEslintConfigNames = [
     ".eslintrc.json",
 ]
 
-export const validEslintConfigNames = [
-    ...legacyEslintConfigNames,
+export const VALID_ESLINT_CONFIG_NAMES = [
+    ...LEGACY_ESLINT_CONFIG_NAMES,
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs",
 ]
 
 /* abbrs of modules */
-export const abbrs = {
+export const ABBRS = {
     javascript: "js",
     markdown: "md",
     typescript: "ts",
 }
 
 /* modules that has create eslint config */
-export const modules = [
+export const MODULES = [
     "ignore",
     "javascript",
     "json",
@@ -35,11 +35,13 @@ export const modules = [
 ] as const
 
 /* languages that prettier can format */
-export const prettierLintLangs = [
+export const PRETTIER_LINT_LANGS = [
     "markdown",
     "graphql",
     "yaml",
     "css",
 ] as const
 
-export const configPrefix = "@rainbowatcher/eslint-config"
+export const CONFIG_PREFIX = "@rainbowatcher/eslint-config"
+
+export const DEFINE_CONFIG = "defineConfig"
