@@ -1,3 +1,32 @@
+## 0.12.0 (2024-07-31)
+
+* docs: update types ([e034173](https://github.com/rainbowatcher/eslint-config/commit/e034173))
+* docs(all): add docs for constants ([eccca1c](https://github.com/rainbowatcher/eslint-config/commit/eccca1c))
+* chore: bump deps ([d787c98](https://github.com/rainbowatcher/eslint-config/commit/d787c98))
+* chore: disable fix when commit ([c7a3126](https://github.com/rainbowatcher/eslint-config/commit/c7a3126))
+* chore: remove unused imports ([d2ef46a](https://github.com/rainbowatcher/eslint-config/commit/d2ef46a))
+* chore: tweaks ([244408b](https://github.com/rainbowatcher/eslint-config/commit/244408b))
+* chore(all): make constants upper case ([ab9539d](https://github.com/rainbowatcher/eslint-config/commit/ab9539d))
+* chore(deps): update dependency eslint-plugin-unicorn to v55 ([78c4173](https://github.com/rainbowatcher/eslint-config/commit/78c4173))
+* chore(deps): update devdependency @types/eslint to v9 ([7f7d3b0](https://github.com/rainbowatcher/eslint-config/commit/7f7d3b0))
+* chore(javascript): remove useless comments ([c8b31a1](https://github.com/rainbowatcher/eslint-config/commit/c8b31a1))
+* chore(javascript): rename test config ([d5c2dbc](https://github.com/rainbowatcher/eslint-config/commit/d5c2dbc))
+* chore(shared): update global exclude list ([8dfb67a](https://github.com/rainbowatcher/eslint-config/commit/8dfb67a))
+* feat: add style alternative option ([588d160](https://github.com/rainbowatcher/eslint-config/commit/588d160))
+* feat(javascript): add file for cli config ([05211df](https://github.com/rainbowatcher/eslint-config/commit/05211df))
+* feat(javascript): classify import rules ([cfa923d](https://github.com/rainbowatcher/eslint-config/commit/cfa923d))
+* feat(javascript): use perfectionist/sort-imports instead of import/order ([fadea19](https://github.com/rainbowatcher/eslint-config/commit/fadea19))
+* feat(javascript): use specify options for sort config ([9003043](https://github.com/rainbowatcher/eslint-config/commit/9003043))
+* feat(shared): update type for flat config ([66fdc50](https://github.com/rainbowatcher/eslint-config/commit/66fdc50))
+* style: apply eslint style rule ([447b342](https://github.com/rainbowatcher/eslint-config/commit/447b342))
+* style: sort imports ([258e11e](https://github.com/rainbowatcher/eslint-config/commit/258e11e))
+* test: try speed up unit test ([3534854](https://github.com/rainbowatcher/eslint-config/commit/3534854))
+* test: use dedent for multiline text ([d70b73e](https://github.com/rainbowatcher/eslint-config/commit/d70b73e))
+* feat(typescript,shared): add type aware option ([185da6c](https://github.com/rainbowatcher/eslint-config/commit/185da6c))
+* fix(javascript): perfectionist/sort-array-includes modified the property names ([08f7e8f](https://github.com/rainbowatcher/eslint-config/commit/08f7e8f))
+
+
+
 ## <small>0.11.4 (2024-07-25)</small>
 
 * chore(deps): update all non-major dependencies ([615a42e](https://github.com/rainbowatcher/eslint-config/commit/615a42e))
