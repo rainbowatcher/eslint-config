@@ -119,7 +119,7 @@ export type Options = {
     /**
      * enable stylistic rules
      */
-    style?: boolean
+    style?: boolean | StyleOptions
 
     /**
      * enable lint for toml
@@ -129,7 +129,7 @@ export type Options = {
     /**
      * enable lint for typescript
      */
-    typescript?: boolean
+    typescript?: boolean | TypescriptOptions
 
     /**
      * enable lint for unocss
@@ -145,8 +145,18 @@ export type Options = {
      * enable lint for yaml
      */
     yaml?: boolean
+}
 
-    // astro/react/svelte/...
+export type TypescriptOptions = {
+    typeAware?: boolean
+}
+
+export type StyleOptions = {
+    indent?: number
+    quote?: "double" | "single"
+    semi?: boolean
+    trailingComma?: boolean
+    useTabs?: boolean
 }
 ```
 
@@ -154,10 +164,10 @@ export type Options = {
 
 We will consider referencing the following projects:
 
-1. [eslint-config-standard](https://github.com/standard/eslint-config-standard)
-2. [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
-3. [eslint-config-alloy](https://github.com/AlloyTeam/eslint-config-alloy)
-4. [antfu/eslint-config](https://github.com/antfu/eslint-config)
+1. [antfu/eslint-config](https://github.com/antfu/eslint-config)
+2. [eslint-config-standard](https://github.com/standard/eslint-config-standard)
+3. [eslint-config-xo](https://github.com/xojs/eslint-config-xo)
+4. [eslint-config-alloy](https://github.com/AlloyTeam/eslint-config-alloy)
 
 ## Development
 
