@@ -1,7 +1,7 @@
-import type { MODULES, PRETTIER_LINT_LANGS } from "./consts"
 import type { spinner } from "@clack/prompts"
 import type { Options } from "@rainbowatcher/eslint-config-shared"
 import type { PackageJson } from "pkg-types"
+import type { MODULES, PRETTIER_LINT_LANGS } from "./consts"
 
 export type CliContext = {
     configOptions: Partial<Options>

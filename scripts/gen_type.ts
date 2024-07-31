@@ -11,9 +11,9 @@ import tomlConfigs from "../packages/toml/src"
 import tsConfigs from "../packages/typescript/src"
 import unocssConfigs from "../packages/unocss/src"
 import vueConfigs from "../packages/vue/src"
+import type { Linter } from "eslint"
 import type { Module } from "../packages/all/src/types"
 import type { EslintFlatConfigs, Options } from "../packages/shared/src"
-import type { Linter } from "eslint"
 
 async function genType(
     configs: Linter.FlatConfig[],

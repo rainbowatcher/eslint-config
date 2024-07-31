@@ -1,9 +1,9 @@
+import type { Linter } from "eslint"
+import type { Awaitable } from "eslint-flat-config-utils"
 import type {
     Alterable, AltOptionValue, EslintFlatConfigItem, EslintFlatConfigs,
     Options,
 } from "./types"
-import type { Linter } from "eslint"
-import type { Awaitable } from "eslint-flat-config-utils"
 
 
 export async function interopDefault<T>(m: Awaitable<T>): Promise<T extends { default: infer U } ? U : T> {
