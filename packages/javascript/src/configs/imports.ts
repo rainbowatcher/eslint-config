@@ -73,22 +73,4 @@ const stylisticRules: Linter.RulesRecord = {
     "import/exports-last": "off",
     "import/first": "error",
     "import/newline-after-import": ["error", { count: 1 }],
-    "import/order": ["error", {
-        alphabetize: {
-            caseInsensitive: true,
-            order: "asc",
-        },
-        groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-            "object",
-            "type",
-        ],
-        pathGroups: [{ group: "internal", pattern: "{{@,~}/,#}**" }],
-        pathGroupsExcludedImportTypes: ["type"],
-    }],
 }
