@@ -1,3 +1,4 @@
+import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { tsConfigs } from "packages/typescript/src"
@@ -13,12 +14,14 @@ const configs = await concat(
 const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
 describe.concurrent("rules", () => {
-    expectRule("ts/adjacent-overload-signatures", `type Foo = {
-    foo(s: string): void;
-    foo(n: number): void;
-    bar(): void;
-    foo(sn: string | number): void;
-  }`)
+    expectRule("ts/adjacent-overload-signatures", dedent`
+        type Foo = {
+            foo(s: string): void
+            foo(n: number): void
+            bar(): void
+            foo(sn: string | number): void
+        }
+    `)
     expectRule("ts/ban-types", "type foo = String")
     expectRule("ts/ban-types", "type foo = string", { expected: false })
     expectRule("ts/ban-types", "type foo = Number")
@@ -40,26 +43,70 @@ describe.concurrent("rules", () => {
     expectRule("ts/naming-convention", "let FOO = 2")
     expectRule("ts/naming-convention", "const FOO = 2", { expected: false })
     expectRule("no-var", "var FOO = 2")
-    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; a || b")
-    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; a ?? b", { expected: false })
-    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; const c: null | string; a || (b && c);", { expected: false })
-    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; const b: null | string; const c: null | string; a ?? (b && c);", { expected: false })
-    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; a || \"a string\";")
-    expectRule("ts/prefer-nullish-coalescing", "const a: null | string; a ?? \"a string\";", { expected: false })
-    expectRule("style-ts/no-extra-parens", String.raw`const a = 1;const foo = a > 1 ? 0 : (a < 1 ? 1 : 2);`, { expected: false })
-    expectRule("style-ts/no-extra-parens", String.raw`const a = 1;const b = 2;const foo = (a > b) ? a : b;`, { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", dedent`
+        let a: null | string
+        let b: null | string
+        a || b
+    `)
+    expectRule("ts/prefer-nullish-coalescing", dedent`
+        let a: null | string
+        let b: null | string
+        a ?? b
+    `, { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", dedent`
+        let a: null | string
+        let b: null | string
+        let c: null | string
+        a || (b && c)
+    `, { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", dedent`
+        let a: null | string
+        let b: null | string
+        let c: null | string
+        a ?? (b && c)
+    `, { expected: false })
+    expectRule("ts/prefer-nullish-coalescing", dedent`
+        let a: null | string
+        let b = a || "a string"
+    `)
+    expectRule("ts/prefer-nullish-coalescing", dedent`
+        let a: null | string
+        let b = a ?? "a string"
+    `, { expected: false })
+    expectRule("style-ts/no-extra-parens", dedent`
+        const a = 1
+        const foo = a > 1 ? 0 : (a < 1 ? 1 : 2)
+    `, { expected: false })
+    expectRule("style-ts/no-extra-parens", dedent`
+        const a = 1
+        const b = 2
+        const foo = (a > b) ? a : b
+    `, { expected: false })
 })
 
 describe.concurrent("style", () => {
     it("type-annotation-spacing", () => {
         const code1 = "type Foo = { name:string }"
         const code2 = "type Foo = { name : string }"
-        expect(formatCode(code1)).toMatchInlineSnapshot("\"type Foo = { name: string }\"")
-        expect(formatCode(code2)).toMatchInlineSnapshot("\"type Foo = { name: string }\"")
+        expect(formatCode(code1)).toMatchInlineSnapshot(`"type Foo = { name: string }"`)
+        expect(formatCode(code2)).toMatchInlineSnapshot(`"type Foo = { name: string }"`)
     })
 
     it("space-infix-ops", () => {
         const code = "const foo =5"
-        expect(formatCode(code)).toMatchInlineSnapshot("\"const foo = 5\"")
+        expect(formatCode(code)).toMatchInlineSnapshot(`"const foo = 5"`)
+    })
+
+    it("indent", () => {
+        const code = dedent`
+            const foo = {
+            foo: "bar"
+            }
+        `
+        expect(formatCode(code)).toMatchInlineSnapshot(`
+            "const foo = {
+                foo: "bar",
+            }"
+        `)
     })
 })

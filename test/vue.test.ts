@@ -1,8 +1,9 @@
+import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { tsConfigs } from "packages/typescript/src"
 import { vueConfigs } from "packages/vue/src"
-import { describe } from "vitest"
+import { describe, expect, it } from "vitest"
 import { createExpectFn } from "./test_util"
 
 const opts = { style: true, typescript: true, vue: true }
@@ -11,23 +12,27 @@ const configs = await concat(
     ...tsConfigs(opts),
     ...vueConfigs(opts),
 )
-const { expectRule } = createExpectFn(configs, "_.vue")
+const { expectRule, formatCode } = createExpectFn(configs, "_.vue")
 
 
 describe.concurrent("rules", () => {
-    expectRule("vue/dot-location", `<script setup lang="ts">
-    defineProps<{
-      name: string
-    }>()
-    </script>`, { expected: false })
+    expectRule("vue/dot-location", dedent`
+        <script setup lang="ts">
+        defineProps<{
+            name: string
+        }>()
+        </script>
+    `, { expected: false })
 
-    expectRule("vue/no-arrow-functions-in-watch", `<script>
-    export default {
-      watch: {
-        a: () => {},
-      }
-    }
-    </script>`)
+    expectRule("vue/no-arrow-functions-in-watch", dedent`
+        <script>
+        export default {
+            watch: {
+                a: () => {},
+            }
+        }
+        </script>
+    `)
 
     expectRule("vue/no-async-in-computed-properties", `<script setup>
     computed(async () => {})
@@ -53,4 +58,24 @@ describe.concurrent("rules", () => {
     expectRule("ts/no-array-constructor", `<script setup>
     const arr = new Array()
     </script>`)
+})
+
+
+describe.concurrent("style", () => {
+    it("indent", () => {
+        const code = dedent`
+            <template>
+            <div class="foo">
+            <i class="bar"></i>
+            </div>
+            </template>
+        `
+        expect(formatCode(code)).toBe(dedent`
+            <template>
+                <div class="foo">
+                    <i class="bar" />
+                </div>
+            </template>\n
+        `)
+    })
 })

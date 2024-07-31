@@ -59,11 +59,13 @@ describe.concurrent("style", () => {
     })
 
     it("array-bracket-newline", () => {
-        const code = `{
-            "foo": [
-                1, 2, 3
-            ]
-        }`
+        const code = dedent`
+            {
+                "foo": [
+                    1, 2, 3
+                ]
+            }
+        `
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "{
                 "foo": [
@@ -83,9 +85,11 @@ describe.concurrent("style", () => {
     })
 
     it("comma-dangle", () => {
-        const code = `{
-            'foo': 'bar',
-        }`
+        const code = dedent`
+            {
+                'foo': 'bar',
+            }
+        `
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "{
                 "foo": "bar",
@@ -104,6 +108,20 @@ describe.concurrent("style", () => {
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "{
                 // comment
+                "foo": "bar"
+            }
+            "
+        `)
+    })
+
+    it("indent", () => {
+        const code = dedent`
+            {
+            foo: "bar"
+            }
+        `
+        expect(formatCode(code)).toMatchInlineSnapshot(`
+            "{
                 "foo": "bar"
             }
             "
