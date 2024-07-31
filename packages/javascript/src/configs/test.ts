@@ -4,7 +4,7 @@ import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 export function test(): EslintFlatConfigItem {
     return {
         files: [GLOB_TESTS],
-        name: "rainbowatcher:js:test-style",
+        name: "rainbowatcher:js:test",
         rules: {
             "unicorn/error-message": "off",
             "unicorn/no-useless-undefined": "off",
