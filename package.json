@@ -40,9 +40,9 @@
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.0",
         "@types/eslint__js": "^8.42.3",
-        "@types/node": "^22.0.0",
-        "@vitest/ui": "^2.0.4",
-        "bumpp": "^9.4.1",
+        "@types/node": "^22.1.0",
+        "@vitest/ui": "^2.0.5",
+        "bumpp": "^9.4.2",
         "commitlint": "^19.3.0",
         "conventional-changelog-cli": "^5.0.0",
         "dedent": "^1.5.3",
@@ -50,11 +50,11 @@
         "eslint-typegen": "^0.3.0",
         "lint-staged": "^15.2.7",
         "simple-git-hooks": "^2.11.1",
-        "tsup": "^8.2.3",
-        "tsx": "^4.16.2",
+        "tsup": "^8.2.4",
+        "tsx": "^4.16.5",
         "typescript": "^5.5.4",
-        "vitest": "^2.0.4",
-        "vue": "^3.4.34"
+        "vitest": "^2.0.5",
+        "vue": "^3.4.35"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged",
