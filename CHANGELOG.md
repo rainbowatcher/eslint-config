@@ -1,3 +1,10 @@
+## <small>0.12.1 (2024-08-05)</small>
+
+* fix(javascript,typescript): disable lines-between-class-members, use comment to split members ([f1243d2](https://github.com/rainbowatcher/eslint-config/commit/f1243d2))
+* chore(deps): update all non-major dependencies ([bd36784](https://github.com/rainbowatcher/eslint-config/commit/bd36784))
+
+
+
 ## 0.12.0 (2024-07-31)
 
 * docs: update types ([e034173](https://github.com/rainbowatcher/eslint-config/commit/e034173))
