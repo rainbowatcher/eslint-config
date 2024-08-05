@@ -48,8 +48,27 @@ describe.concurrent("rules", () => {
             return;
         });
     `, { expected: false })
-    expectRule("perfectionist/sort-array-includes", `const arr = ["foo", "bar", "baz"]; const baz = [...arr, "a", "b"].includes("foo")`)
-    expectRule("perfectionist/sort-array-includes", `const arr = ["foo", "bar", "baz"]; const baz = ["a", "b", ...arr].includes("foo")`, { expected: false })
+    expectRule("perfectionist/sort-array-includes", dedent`
+        const arr = ["foo", "bar", "baz"]
+        const baz = [...arr, "a", "b"].includes("foo")
+    `)
+    expectRule("perfectionist/sort-array-includes", dedent`
+        const arr = ["foo", "bar", "baz"]
+        const baz = ["a", "b", ...arr].includes("foo")
+    `, { expected: false })
+    expectRule("style-js/lines-between-class-members", dedent`
+        class Foo {
+            attributes = {}
+            options = {}
+        }
+    `, { expected: false })
+    expectRule("style-js/lines-around-comment", dedent`
+        class Foo {
+            attributes = {}
+            /** comment */
+            options = {}
+        }
+    `)
 })
 
 describe.concurrent("style", () => {

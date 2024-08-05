@@ -26,19 +26,11 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             // "style-ts/func-call-spacing": ["error", "never"],
             // "style-ts/comma-spacing": ["error", { after: true, before: false }],
             // "style-ts/key-spacing": ["error", { afterColon: true, beforeColon: false }],
-            // "style-ts/keyword-spacing": "error",
-            // "style-ts/lines-between-class-members": [
-            //     "error",
-            //     "always",
-            //     {
-            //         exceptAfterSingleLine: true,
-            //     },
-            // ],
             // "style-ts/space-infix-ops": "error",
             "style-ex/type-generic-spacing": "error",
-
             // "style-ts/block-spacing": ["error", "always"],
             "style-ex/type-named-tuple-spacing": "error",
+
             "style-js/brace-style": "off",
             "style-js/comma-dangle": "off",
             "style-js/comma-spacing": "off",
@@ -82,6 +74,8 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 beforeLineComment: false,
                 ignorePattern: "eslint|global",
             }],
+            // "style-ts/keyword-spacing": "error",
+            "style-ts/lines-between-class-members": "off",
             "style-ts/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
             // don't need this, because we clear semi in source code
             // "style-ts/no-extra-semi": "error",

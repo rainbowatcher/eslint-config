@@ -82,6 +82,20 @@ describe.concurrent("rules", () => {
         const b = 2
         const foo = (a > b) ? a : b
     `, { expected: false })
+    expectRule("style-ts/lines-between-class-members", dedent`
+        class Foo {
+            private attributes = {}
+            private options: object
+        }
+    `, { expected: false })
+    expectRule("style-ts/lines-around-comment", dedent`
+        class Foo {
+
+            private attributes = {}
+            /** comment */
+            private options: object
+        }
+    `)
 })
 
 describe.concurrent("style", () => {

@@ -19,7 +19,8 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
 
             ...renameRules(pluginStylisticJs.configs["all-flat"].rules, { "@stylistic/js": "style-js" }),
 
-            // "style-js/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
+            // "style-js/newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
+            "style-ex/indent-binary-ops": ["error", indent],
             // "style-js/no-mixed-spaces-and-tabs": "error",
             // "style-js/space-in-parens": ["error", "never"],
             // "style-js/space-before-blocks": ["error", "always"],
@@ -38,8 +39,6 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             // "style-js/comma-style": ["error", "last"],
             // "style-js/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             // "style-js/keyword-spacing": "error",
-            // "style-js/newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
-            "style-ex/indent-binary-ops": ["error", indent],
             "style-js/array-bracket-newline": ["error", "consistent"],
             "style-js/array-bracket-spacing": ["error", "never"],
             "style-js/array-element-newline": ["error", "consistent"],
@@ -69,6 +68,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 beforeLineComment: true,
                 ignorePattern: "eslint|global",
             }],
+            "style-js/lines-between-class-members": "off",
             "style-js/multiline-comment-style": "off",
             "style-js/multiline-ternary": ["error", "always-multiline"],
             "style-js/no-extra-parens": ["error", "functions"],
