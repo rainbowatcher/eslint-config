@@ -1,3 +1,9 @@
+## <small>0.12.2 (2024-08-06)</small>
+
+* feat: turn off unicorn/consistent-function-scoping ([4e179d9](https://github.com/rainbowatcher/eslint-config/commit/4e179d9))
+
+
+
 ## <small>0.12.1 (2024-08-05)</small>
 
 * fix(javascript,typescript): disable lines-between-class-members, use comment to split members ([f1243d2](https://github.com/rainbowatcher/eslint-config/commit/f1243d2))
