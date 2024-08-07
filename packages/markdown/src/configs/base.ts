@@ -16,6 +16,10 @@ export function baseConfig(): EslintFlatConfigItem {
         },
         name: "rainbowatcher:markdown:rules",
         rules: {
+            // disable typeAware rules
+            ...typeAwareRules,
+            ...disableStyleRules,
+
             "eol-last": "off",
             "no-alert": "off",
             "no-console": "off",
@@ -41,9 +45,6 @@ export function baseConfig(): EslintFlatConfigItem {
 
             "unused-imports/no-unused-imports": "off",
             "unused-imports/no-unused-vars": "off",
-
-            // disable typeAware rules
-            ...typeAwareRules,
         },
     }
 }
@@ -65,4 +66,9 @@ const typeAwareRules: EslintFlatConfigItem["rules"] = {
     "ts/restrict-plus-operands": "off",
     "ts/restrict-template-expressions": "off",
     "ts/unbound-method": "off",
+}
+
+const disableStyleRules: EslintFlatConfigItem["rules"] = {
+    "style-js/lines-around-comment": "off",
+    "style-ts/lines-around-comment": "off",
 }
