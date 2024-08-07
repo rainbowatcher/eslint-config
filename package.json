@@ -16,6 +16,7 @@
     },
     "scripts": {
         "build": "pnpm -r --sequential build",
+        "build:only": "pnpm --parallel build:only",
         "changelog": "conventional-changelog -si CHANGELOG.md",
         "lint": "eslint .",
         "prepare": "simple-git-hooks",

@@ -25,6 +25,7 @@
     ],
     "scripts": {
         "build": "tsup --clean --dts",
+        "build:only": "tsup",
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
