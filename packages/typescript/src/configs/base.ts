@@ -14,16 +14,19 @@ export function base(opts: Options): EslintFlatConfigItem {
         // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
         rules: {
             "default-param-last": "off",
+            "dot-notation": "off",
             "import/named": "off",
             "import/no-unresolved": "off",
             "no-array-constructor": "off",
             "no-dupe-class-members": "off",
             "no-duplicate-imports": "off",
             "no-empty-function": "off",
+            "no-implied-eval": "off",
             "no-loop-func": "off",
             "no-loss-of-precision": "off",
             "no-redeclare": "off",
             "no-restricted-imports": "off",
+            "no-throw-literal": "off",
             "no-unused-vars": "off",
             // To allow `ignoreVoid` in `ts/no-floating-promises`
             "no-void": ["error", { allowAsStatement: true }],
@@ -36,54 +39,7 @@ export function base(opts: Options): EslintFlatConfigItem {
                 "ts-expect-error": "allow-with-description",
             }],
             "ts/ban-tslint-comment": "error",
-            "ts/ban-types": ["error", {
-                extendDefaults: false,
-                types: {
-                    "[[[[[]]]]]": "🦄💥",
-                    "[[[[]]]]": "ur drunk 🤡",
-                    "[[[]]]": "Don't use `[[[]]]`. Use `SomeType[][][]` instead.",
-                    "[[]]":
-                        "Don't use `[[]]`. It only allows an array with a single element which is an empty array. Use `SomeType[][]` instead.",
-                    "[]": "Don't use the empty array type `[]`. It only allows empty arrays. Use `SomeType[]` instead.",
-                    BigInt: {
-                        fixWith: "bigint",
-                        message: "Use `bigint` instead.",
-                    },
-                    Boolean: {
-                        fixWith: "boolean",
-                        message: "Use `boolean` instead.",
-                    },
-                    Function: "Use a specific function type instead, like `() => void`.",
-                    null: {
-                        fixWith: "undefined",
-                        message:
-                            "Use `undefined` instead, except you known what you want to do. See: https://github.com/sindresorhus/meta/issues/7",
-                    },
-                    Number: {
-                        fixWith: "number",
-                        message: "Use `number` instead.",
-                    },
-                    Object: {
-                        fixWith: "Record<string, unknown>",
-                        message:
-                            "The `Object` type is mostly the same as `unknown`. You probably want `Record<string, unknown>` instead. See https://github.com/typescript-eslint/typescript-eslint/pull/848",
-                    },
-                    object: {
-                        fixWith: "Record<string, unknown>",
-                        message:
-                            "The `object` type is hard to use. Use `Record<string, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
-                    },
-                    String: {
-                        fixWith: "string",
-                        message: "Use `string` instead.",
-                    },
-                    Symbol: {
-                        fixWith: "symbol",
-                        message: "Use `symbol` instead.",
-                    },
-                },
-            }],
-            "ts/class-literal-property-style": ["error", "fields"],
+            "ts/class-literal-property-style": ["error", "getters"],
             "ts/consistent-generic-constructors": ["error", "constructor"],
             "ts/consistent-indexed-object-style": "error",
             "ts/consistent-type-assertions": ["error", {
@@ -159,6 +115,7 @@ export function base(opts: Options): EslintFlatConfigItem {
             "ts/no-dynamic-delete": "error",
             "ts/no-empty-function": "off",
             "ts/no-empty-interface": ["error", { allowSingleExtends: true }],
+            "ts/no-empty-object-type": "off",
             // This rule may cause eslint to mischeck
             "ts/no-explicit-any": "off",
             "ts/no-extraneous-class": ["error", {
@@ -189,10 +146,38 @@ export function base(opts: Options): EslintFlatConfigItem {
                     "colors",
                 ],
             }],
+            "ts/no-restricted-types": [
+                "error",
+                {
+                    types: {
+                        "[[[[[]]]]]": "🦄💥",
+                        "[[[[]]]]": "ur drunk 🤡",
+                        "[[[]]]": "Don't use `[[[]]]`. Use `SomeType[][][]` instead.",
+                        "[[]]": "Don't use `[[]]`. It only allows an array with a single element which is an empty array. Use `SomeType[][]` instead.",
+                        "[]": "Don't use the empty array type `[]`. It only allows empty arrays. Use `SomeType[]` instead.",
+                        Buffer: {
+                            message: "Use Uint8Array instead. See: https://sindresorhus.com/blog/goodbye-nodejs-buffer",
+                            suggest: [
+                                "Uint8Array",
+                            ],
+                        },
+                        null: {
+                            fixWith: "undefined",
+                            message: "Use `undefined` instead. See: https://github.com/sindresorhus/meta/issues/7",
+                        },
+                        object: {
+                            fixWith: "Record<string, unknown>",
+                            message: "The `object` type is hard to use. Use `Record<string, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
+                        },
+                    },
+                },
+            ],
             "ts/no-this-alias": ["error", {
                 allowDestructuring: true,
             }],
+            "ts/no-unsafe-function-type": "error",
             "ts/no-unused-vars": "off",
+            "ts/no-wrapper-object-types": "error",
 
             ...namingConvertion(false),
         },
@@ -208,57 +193,50 @@ export function typeAware(opts: Options): EslintFlatConfigItem {
         ignores: [GLOB_MARKDOWN_CODE],
         name: "rainbowatcher:ts:type-aware",
         rules: {
-            ...typeAwareRules,
+            "ts/await-thenable": "error",
+            "ts/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
+            "ts/dot-notation": ["error", {
+                allowIndexSignaturePropertyAccess: true,
+                allowKeywords: true,
+            }],
+            "ts/no-base-to-string": "error",
+            "ts/no-confusing-void-expression": "error",
+            "ts/no-floating-promises": "error",
+            "ts/no-for-in-array": "error",
+            "ts/no-implied-eval": "error",
+            "ts/no-meaningless-void-operator": "error",
+            "ts/no-misused-promises": ["error", {
+                checksConditionals: true,
+                // TODO: I really want this to be `true`, but it makes it inconvenient to use
+                // async functions as event handlers... I need to find a good way to handle that.
+                // https://github.com/sindresorhus/refined-github/pull/2391#discussion_r318990466
+                checksVoidReturn: false,
+            }],
+            "ts/no-redundant-type-constituents": "error",
+            "ts/no-unnecessary-boolean-literal-compare": "error",
+            "ts/no-unnecessary-type-assertion": "error",
+            "ts/no-unsafe-return": "error",
+            "ts/no-var-requires": "error",
+            // may cause incorrect type judgment.
+            // "ts/no-unsafe-argument": "error",
+            // "ts/no-unsafe-assignment": "off",
+            // "ts/no-unsafe-member-access": "error",
+            // "ts/no-unsafe-call": "error",
+            "ts/only-throw-error": ["error", {
+                allowThrowingAny: false,
+                // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
+                allowThrowingUnknown: true,
+            }],
+            "ts/prefer-nullish-coalescing": ["error", {
+                ignoreConditionalTests: false,
+                ignoreMixedLogicalExpressions: true,
+                ignoreTernaryTests: false,
+            }],
+            "ts/prefer-optional-chain": "error",
+            "ts/require-await": "error",
+            "ts/restrict-plus-operands": "error",
+            "ts/restrict-template-expressions": "error",
+            "ts/unbound-method": "error",
         },
     }
-}
-
-const typeAwareRules: EslintFlatConfigItem["rules"] = {
-    "dot-notation": "off",
-    "no-implied-eval": "off",
-    "no-throw-literal": "off",
-    "ts/await-thenable": "error",
-    "ts/consistent-type-exports": ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
-    "ts/dot-notation": ["error", {
-        allowIndexSignaturePropertyAccess: true,
-        allowKeywords: true,
-    }],
-    "ts/no-base-to-string": "error",
-    "ts/no-confusing-void-expression": "error",
-    "ts/no-floating-promises": "error",
-    "ts/no-for-in-array": "error",
-    "ts/no-implied-eval": "error",
-    "ts/no-meaningless-void-operator": "error",
-    "ts/no-misused-promises": ["error", {
-        checksConditionals: true,
-        // TODO: I really want this to be `true`, but it makes it inconvenient to use
-        // async functions as event handlers... I need to find a good way to handle that.
-        // https://github.com/sindresorhus/refined-github/pull/2391#discussion_r318990466
-        checksVoidReturn: false,
-    }],
-    "ts/no-redundant-type-constituents": "error",
-    "ts/no-unnecessary-boolean-literal-compare": "error",
-    "ts/no-unnecessary-type-assertion": "error",
-    "ts/no-unsafe-return": "error",
-    "ts/no-var-requires": "error",
-    // may cause incorrect type judgment.
-    // "ts/no-unsafe-argument": "error",
-    // "ts/no-unsafe-assignment": "off",
-    // "ts/no-unsafe-member-access": "error",
-    // "ts/no-unsafe-call": "error",
-    "ts/only-throw-error": ["error", {
-        allowThrowingAny: false,
-        // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
-        allowThrowingUnknown: true,
-    }],
-    "ts/prefer-nullish-coalescing": ["error", {
-        ignoreConditionalTests: false,
-        ignoreMixedLogicalExpressions: true,
-        ignoreTernaryTests: false,
-    }],
-    "ts/prefer-optional-chain": "error",
-    "ts/require-await": "error",
-    "ts/restrict-plus-operands": "error",
-    "ts/restrict-template-expressions": "error",
-    "ts/unbound-method": "error",
 }
