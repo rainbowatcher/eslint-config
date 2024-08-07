@@ -85,7 +85,7 @@ export async function findConfig(configs: EslintFlatConfigs, configName?: string
     return configItem
 }
 
-export const parserPlain = {
+export const parserPlain: Linter.Parser = {
     meta: {
         name: "parser-plain",
     },
