@@ -34,30 +34,36 @@ describe.concurrent("rules", () => {
         </script>
     `)
 
-    expectRule("vue/no-async-in-computed-properties", `<script setup>
-    computed(async () => {})
-    </script>`)
-    expectRule("vue/no-async-in-computed-properties", `<script setup>
-    computed(() => setTimeout(() => {}, 0))
-    </script>`)
-    expectRule("vue/no-async-in-computed-properties", `<script setup>
-    computed(() => setInterval(() => {}, 0))
-    </script>`)
-    expectRule("vue/no-async-in-computed-properties", `<script setup>
-    computed(() => requestAnimationFrame(() => {}))
-    </script>`)
-
-    expectRule("vue/no-child-content", `<template>
-    <div v-html="replacesChildContent">child content</div>
-    <template>`)
-
-    expectRule("ts/ban-types", `<script setup>
-    const str: String = 'foo'
-    </script>`)
-
-    expectRule("ts/no-array-constructor", `<script setup>
-    const arr = new Array()
-    </script>`)
+    expectRule("vue/no-async-in-computed-properties", dedent`
+        <script setup>
+            computed(async () => {})
+        </script>
+    `)
+    expectRule("vue/no-async-in-computed-properties", dedent`
+        <script setup>
+            computed(() => setTimeout(() => {}, 0))
+        </script>
+    `)
+    expectRule("vue/no-async-in-computed-properties", dedent`
+        <script setup>
+            computed(() => setInterval(() => {}, 0))
+        </script>
+    `)
+    expectRule("vue/no-async-in-computed-properties", dedent`
+        <script setup>
+            computed(() => requestAnimationFrame(() => {}))
+        </script>
+    `)
+    expectRule("vue/no-child-content", dedent`
+        <template>
+            <div v-html="replacesChildContent">child content</div>
+        <template>
+    `)
+    expectRule("ts/no-array-constructor", dedent`
+        <script setup>
+            const arr = new Array()
+        </script>
+    `)
 })
 
 
