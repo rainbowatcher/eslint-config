@@ -43,13 +43,25 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             "no-await-in-loop": "warn",
             "no-constructor-return": "error",
             "no-control-regex": "off",
-            "no-duplicate-imports": ["error", {
-                includeExports: true,
-            }],
+            "no-duplicate-imports": [
+                "error", {
+                    includeExports: true,
+                },
+            ],
             "no-empty-function": "warn",
             "no-loop-func": "error",
             "no-new-func": "error",
-            "no-restricted-globals": ["error", "event"],
+            "no-restricted-globals": [
+                "error",
+                {
+                    message: "Use local parameter instead.",
+                    name: "event",
+                },
+                {
+                    message: "Do not commit fdescribe. Use describe instead.",
+                    name: "fdescribe",
+                },
+            ],
             "no-undef": "off",
             "no-unneeded-ternary": "error",
             "no-useless-escape": "error",
