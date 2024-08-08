@@ -14,6 +14,14 @@ const configs = await concat(
 const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
 describe.concurrent("rules", () => {
+    expectRule("ts/adjacent-overload-signatures", dedent`
+        type Foo = {
+            foo(s: string): void
+            foo(n: number): void
+            bar(): void
+            foo(sn: string | number): void
+        }
+    `)
     expectRule("ts/no-wrapper-object-types", "type Foo = String")
     expectRule("ts/no-wrapper-object-types", "type Foo = string", { expected: false })
     expectRule("ts/no-wrapper-object-types", "type Foo = Number")
@@ -36,14 +44,6 @@ describe.concurrent("rules", () => {
     expectRule("ts/naming-convention", "let FOO = 2")
     expectRule("ts/naming-convention", "const FOO = 2", { expected: false })
     expectRule("no-var", "var FOO = 2")
-    expectRule("ts/adjacent-overload-signatures", dedent`
-        type Foo = {
-            foo(s: string): void
-            foo(n: number): void
-            bar(): void
-            foo(sn: string | number): void
-        }
-    `)
     // expectRule("ts/prefer-nullish-coalescing", dedent`
     //     let a: null | string;
     //     let b: null | string;
