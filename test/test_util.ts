@@ -17,7 +17,8 @@ export function createExpectFn(config: EslintFlatConfigItem[], filePattern?: str
             const linter = new Linter({ configType: "flat" })
             const result = linter.verify(input, config, file)
             const hasRule = result.some(error => error.ruleId === rule)
-            expect(hasRule, JSON.stringify(result, null, 2)).toBe(expected)
+            const errMsg = `Expected rule: ${rule}\n\nSource: ${input}\n\nLint message:${JSON.stringify(result, null, 2)}`
+            expect(hasRule, errMsg).toBe(expected)
         })
     }
 
