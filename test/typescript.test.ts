@@ -22,23 +22,24 @@ describe.concurrent("rules", () => {
             foo(sn: string | number): void
         }
     `)
-    expectRule("ts/ban-types", "type foo = String")
-    expectRule("ts/ban-types", "type foo = string", { expected: false })
-    expectRule("ts/ban-types", "type foo = Number")
-    expectRule("ts/ban-types", "type foo = number", { expected: false })
-    expectRule("ts/ban-types", "type foo = Boolean")
-    expectRule("ts/ban-types", "type foo = boolean", { expected: false })
-    expectRule("ts/ban-types", "type foo = Symbol")
-    expectRule("ts/ban-types", "type foo = symbol", { expected: false })
-    expectRule("ts/ban-types", "type foo = Object")
-    expectRule("ts/ban-types", "type foo = {}", { expected: false })
-    expectRule("ts/ban-types", "type foo = object")
-    expectRule("ts/ban-types", "type foo = Record<string, unknown>", { expected: false })
-    expectRule("ts/ban-types", "type foo = BigInt")
-    expectRule("ts/ban-types", "type foo = bigint", { expected: false })
-    expectRule("ts/ban-types", "type foo = Function")
-    expectRule("ts/ban-types", "type foo = () => void", { expected: false })
-    expectRule("ts/ban-types", "type foo = null")
+    expectRule("ts/no-wrapper-object-types", "type Foo = String")
+    expectRule("ts/no-wrapper-object-types", "type Foo = string", { expected: false })
+    expectRule("ts/no-wrapper-object-types", "type Foo = Number")
+    expectRule("ts/no-wrapper-object-types", "type Foo = number", { expected: false })
+    expectRule("ts/no-wrapper-object-types", "type Foo = Boolean")
+    expectRule("ts/no-wrapper-object-types", "type Foo = boolean", { expected: false })
+    expectRule("ts/no-wrapper-object-types", "type Foo = Symbol")
+    expectRule("ts/no-wrapper-object-types", "type Foo = symbol", { expected: false })
+    expectRule("ts/no-wrapper-object-types", "type Foo = BigInt")
+    expectRule("ts/no-wrapper-object-types", "type Foo = bigint", { expected: false })
+    expectRule("ts/no-wrapper-object-types", "type Foo = Object")
+    // should use Record<string, unknown> instead of object
+    expectRule("ts/no-restricted-types", "type Foo = object")
+    expectRule("ts/no-empty-object-type", "type foo = {}", { expected: false })
+    expectRule("ts/no-unsafe-function-type", "type foo = Function")
+    expectRule("ts/no-unsafe-function-type", "type foo = () => void", { expected: false })
+    expectRule("ts/no-restricted-types", "type foo = Record<string, unknown>", { expected: false })
+    expectRule("ts/no-restricted-types", "type foo = null")
     expectRule("ts/naming-convention", "var FOO = 1")
     expectRule("ts/naming-convention", "let FOO = 2")
     expectRule("ts/naming-convention", "const FOO = 2", { expected: false })
@@ -82,15 +83,16 @@ describe.concurrent("rules", () => {
         const b = 2
         const foo = (a > b) ? a : b
     `, { expected: false })
+    // fields without block comment should not be split
     expectRule("style-ts/lines-between-class-members", dedent`
         class Foo {
             private attributes = {}
             private options: object
         }
     `, { expected: false })
+    // use block comment to split fields
     expectRule("style-ts/lines-around-comment", dedent`
         class Foo {
-
             private attributes = {}
             /** comment */
             private options: object
