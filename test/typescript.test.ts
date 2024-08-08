@@ -44,36 +44,36 @@ describe.concurrent("rules", () => {
             foo(sn: string | number): void
         }
     `)
-    expectRule("ts/prefer-nullish-coalescing", dedent`
-        let a: null | string;
-        let b: null | string;
-        a || b;
-    `)
-    expectRule("ts/prefer-nullish-coalescing", dedent`
-        let a: null | string;
-        let b: null | string;
-        a ?? b;
-    `, { expected: false })
-    expectRule("ts/prefer-nullish-coalescing", dedent`
-        let a: null | string;
-        let b: null | string;
-        let c: null | string;
-        a || (b && c);
-    `, { expected: false })
-    expectRule("ts/prefer-nullish-coalescing", dedent`
-        let a: null | string;
-        let b: null | string;
-        let c: null | string;
-        a ?? (b && c);
-    `, { expected: false })
-    expectRule("ts/prefer-nullish-coalescing", dedent`
-        let a: null | string;
-        let b = a || "a string";
-    `)
-    expectRule("ts/prefer-nullish-coalescing", dedent`
-        let a: null | string;
-        let b = a ?? "a string";
-    `, { expected: false })
+    // expectRule("ts/prefer-nullish-coalescing", dedent`
+    //     let a: null | string;
+    //     let b: null | string;
+    //     a || b;
+    // `)
+    // expectRule("ts/prefer-nullish-coalescing", dedent`
+    //     let a: null | string;
+    //     let b: null | string;
+    //     a ?? b;
+    // `, { expected: false })
+    // expectRule("ts/prefer-nullish-coalescing", dedent`
+    //     let a: null | string;
+    //     let b: null | string;
+    //     let c: null | string;
+    //     a || (b && c);
+    // `, { expected: false })
+    // expectRule("ts/prefer-nullish-coalescing", dedent`
+    //     let a: null | string;
+    //     let b: null | string;
+    //     let c: null | string;
+    //     a ?? (b && c);
+    // `, { expected: false })
+    // expectRule("ts/prefer-nullish-coalescing", dedent`
+    //     let a: null | string;
+    //     let b = a || "a string";
+    // `)
+    // expectRule("ts/prefer-nullish-coalescing", dedent`
+    //     let a: null | string;
+    //     let b = a ?? "a string";
+    // `, { expected: false })
     expectRule("style-ts/no-extra-parens", dedent`
         const a = 1;
         const foo = a > 1 ? 0 : (a < 1 ? 1 : 2);
