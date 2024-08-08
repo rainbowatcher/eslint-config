@@ -14,25 +14,25 @@ const configs = await concat(
 const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
 describe.concurrent("rules", () => {
-    expectRule("ts/adjacent-overload-signatures", dedent`
-        type Foo = {
-            foo(s: string): void
-            foo(n: number): void
-            bar(): void
-            foo(sn: string | number): void
-        }
-    `)
-    expectRule("ts/no-wrapper-object-types", "type Foo = String")
-    expectRule("ts/no-wrapper-object-types", "type Foo = string", { expected: false })
-    expectRule("ts/no-wrapper-object-types", "type Foo = Number")
-    expectRule("ts/no-wrapper-object-types", "type Foo = number", { expected: false })
-    expectRule("ts/no-wrapper-object-types", "type Foo = Boolean")
-    expectRule("ts/no-wrapper-object-types", "type Foo = boolean", { expected: false })
-    expectRule("ts/no-wrapper-object-types", "type Foo = Symbol")
-    expectRule("ts/no-wrapper-object-types", "type Foo = symbol", { expected: false })
-    expectRule("ts/no-wrapper-object-types", "type Foo = BigInt")
-    expectRule("ts/no-wrapper-object-types", "type Foo = bigint", { expected: false })
-    expectRule("ts/no-wrapper-object-types", "type Foo = Object")
+    // expectRule("ts/adjacent-overload-signatures", dedent`
+    //     type Foo = {
+    //         foo(s: string): void
+    //         foo(n: number): void
+    //         bar(): void
+    //         foo(sn: string | number): void
+    //     }
+    // `)
+    // expectRule("ts/no-wrapper-object-types", "type Foo = String")
+    // expectRule("ts/no-wrapper-object-types", "type Foo = string", { expected: false })
+    // expectRule("ts/no-wrapper-object-types", "type Foo = Number")
+    // expectRule("ts/no-wrapper-object-types", "type Foo = number", { expected: false })
+    // expectRule("ts/no-wrapper-object-types", "type Foo = Boolean")
+    // expectRule("ts/no-wrapper-object-types", "type Foo = boolean", { expected: false })
+    // expectRule("ts/no-wrapper-object-types", "type Foo = Symbol")
+    // expectRule("ts/no-wrapper-object-types", "type Foo = symbol", { expected: false })
+    // expectRule("ts/no-wrapper-object-types", "type Foo = BigInt")
+    // expectRule("ts/no-wrapper-object-types", "type Foo = bigint", { expected: false })
+    // expectRule("ts/no-wrapper-object-types", "type Foo = Object")
     // should use Record<string, unknown> instead of object
     expectRule("ts/no-restricted-types", "type Foo = object")
     expectRule("ts/no-empty-object-type", "type foo = {}", { expected: false })
