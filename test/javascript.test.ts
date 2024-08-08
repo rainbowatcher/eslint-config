@@ -9,7 +9,6 @@ const { expectRule, formatCode } = createExpectFn(configs)
 
 describe.concurrent("rules", () => {
     expectRule("no-var", "var foo = 1")
-
     // Disallow expressions where the operation doesn't affect the value
     expectRule("no-constant-binary-expression", "const value3 = !foo == null")
     expectRule("no-constant-binary-expression", "const objIsEmpty = someObj === {}") // never equal
@@ -40,8 +39,14 @@ describe.concurrent("rules", () => {
             }
         }
     `, { expected: false })
-    expectRule("style-js/no-extra-parens", String.raw`const a = 1;const foo = a > 1 ? 0 : (a < 1 ? 1 : 2)`, { expected: false })
-    expectRule("style-js/no-extra-parens", String.raw`const a = 1;const b = 2;const foo = (a > b) ? a : b`, { expected: false })
+    expectRule("style-js/no-extra-parens", dedent`
+        const a = 1
+        const foo = a > 1 ? 0 : (a < 1 ? 1 : 2)
+    `, { expected: false })
+    expectRule("style-js/no-extra-parens", dedent`
+        const a = 1;const b = 2
+        const foo = (a > b) ? a : b
+    `, { expected: false })
     // allow implicit return undefined
     expectRule("array-callback-return", dedent`
         var undefAllTheThings = myArray.map(function(item) {
@@ -56,12 +61,14 @@ describe.concurrent("rules", () => {
         const arr = ["foo", "bar", "baz"]
         const baz = ["a", "b", ...arr].includes("foo")
     `, { expected: false })
+    // fields without block comment should not be split
     expectRule("style-js/lines-between-class-members", dedent`
         class Foo {
             attributes = {}
             options = {}
         }
     `, { expected: false })
+    // use block comment to split fields
     expectRule("style-js/lines-around-comment", dedent`
         class Foo {
             attributes = {}
@@ -133,6 +140,44 @@ describe.concurrent("style", () => {
             "const foo = {
                 foo: "bar",
             }
+            "
+        `)
+    })
+})
+
+describe.concurrent("perfectionist", () => {
+    it("perfectionist/sort-objects", () => {
+        const code = dedent`
+            const arr = { foo: 1, bar: 2, baz: 3 }
+            const arr2 = {
+                foo: 1,
+                bar: 2,
+                baz: 3
+            }
+            const arr3 = {
+                foo: 1,
+
+                // region
+                bar: 2,
+                baz: 3
+            }
+            const { foo, bar, baz } = arr
+        `
+        expect(formatCode(code)).toMatchInlineSnapshot(`
+            "const arr = { bar: 2, baz: 3, foo: 1 }
+            const arr2 = {
+                bar: 2,
+                baz: 3,
+                foo: 1,
+            }
+            const arr3 = {
+                foo: 1,
+
+                // region
+                bar: 2,
+                baz: 3,
+            }
+            const { bar, baz, foo } = arr
             "
         `)
     })
