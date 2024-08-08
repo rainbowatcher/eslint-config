@@ -21,9 +21,6 @@ export function namingConvertion(isTsx: boolean): Linter.RulesRecord {
 
                 // Note: We are intentionally leaving out `enumMember` as it's usually pascal-case or upper-snake-case.
                 selector: [
-                    "function",
-                    "classProperty",
-
                     // disabled for some object's key is a path
                     // "objectLiteralProperty",
                     "parameterProperty",
@@ -33,6 +30,20 @@ export function namingConvertion(isTsx: boolean): Linter.RulesRecord {
                     "accessor",
                 ],
                 trailingUnderscore: "allow",
+            },
+            {
+                // allow decorator to use PascalCase
+                format: ["PascalCase", "camelCase"],
+                selector: ["function"],
+            },
+            {
+                format: ["camelCase"],
+                selector: ["classProperty", "classicAccessor"],
+            },
+            {
+                format: ["UPPER_CASE"],
+                modifiers: ["static"],
+                selector: ["classProperty", "classicAccessor"],
             },
             {
                 format: ["camelCase"],
@@ -47,7 +58,8 @@ export function namingConvertion(isTsx: boolean): Linter.RulesRecord {
                 selector: "variable",
             },
             {
-                format: ["PascalCase"], selector: "typeLike",
+                format: ["PascalCase"],
+                selector: ["typeLike"],
             },
             {
                 filter: /^(?!I)[A-Z]/.source,
