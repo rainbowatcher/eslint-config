@@ -13,7 +13,7 @@ const configs = await concat(
 )
 const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
-describe.concurrent("rules", () => {
+describe("rules", () => {
     expectRule("ts/no-wrapper-object-types", "type Foo = String")
     expectRule("ts/no-wrapper-object-types", "type Foo = string", { expected: false })
     expectRule("ts/no-wrapper-object-types", "type Foo = Number")
@@ -100,7 +100,7 @@ describe.concurrent("rules", () => {
     `)
 })
 
-describe.concurrent("style", () => {
+describe("style", () => {
     it("type-annotation-spacing", () => {
         const code1 = "type Foo = { name:string }"
         const code2 = "type Foo = { name : string }"
