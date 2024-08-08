@@ -1,7 +1,7 @@
 import { getFiles } from "../files"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
-const commonOptions = { ignoreCase: true, order: "asc", type: "alphabetical" } as const
+const commonOptions = { ignoreCase: false, order: "asc", type: "alphabetical" } as const
 
 export function sort(opts: Options): EslintFlatConfigItem {
 
@@ -12,7 +12,7 @@ export function sort(opts: Options): EslintFlatConfigItem {
             ...jsxRules(opts),
 
             "perfectionist/sort-array-includes": ["error", {
-                groupKind: "literals-first", ignoreCase: false, order: "asc", type: "natural",
+                ...commonOptions, groupKind: "literals-first",
             }],
             "perfectionist/sort-classes": ["error", {
                 ...commonOptions,
@@ -20,19 +20,17 @@ export function sort(opts: Options): EslintFlatConfigItem {
                 groups: [
                     "index-signature",
                     "static-property",
-                    "private-property",
                     "property",
                     "constructor",
                     "static-method",
-                    "private-method",
-                    ["get-method", "set-method"],
                     "method",
+                    ["get-method", "set-method"],
                     "unknown",
                 ],
                 partitionByComment: false,
             }],
             // partition comment same as region comment in vscode
-            "perfectionist/sort-enums": ["error", { partitionByComment: "#region", ...commonOptions }],
+            "perfectionist/sort-enums": ["error", { partitionByComment: "region", ...commonOptions }],
             // TODO: enable it when support astro
             // "perfectionist/sort-astro-attributes": "off",
             "perfectionist/sort-exports": ["error", commonOptions],
@@ -80,11 +78,11 @@ export function sort(opts: Options): EslintFlatConfigItem {
             "perfectionist/sort-objects": ["error", {
                 ...commonOptions,
                 customGroups: {},
-                customIgnore: [],
+                destructureOnly: false,
                 groups: [],
                 ignorePattern: [],
-                partitionByComment: "#region",
-                partitionByNewLine: false,
+                partitionByComment: [],
+                partitionByNewLine: true,
                 styledComponents: true,
             }],
             "perfectionist/sort-switch-case": ["error", commonOptions],
