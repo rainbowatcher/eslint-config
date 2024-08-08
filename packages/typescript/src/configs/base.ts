@@ -50,64 +50,17 @@ export function base(opts: Options): EslintFlatConfigItem {
             "ts/consistent-type-imports": ["error", { disallowTypeAnnotations: false, prefer: "type-imports" }],
             "ts/default-param-last": "error",
             "ts/member-ordering": ["error", {
-                default: [
-                    "signature",
-
-                    "public-static-field",
-                    "public-static-method",
-
-                    "protected-static-field",
-                    "protected-static-method",
-
-                    "private-static-field",
-                    "private-static-method",
-
-                    "static-field",
-                    "static-method",
-
-                    "public-decorated-field",
-                    "public-instance-field",
-                    "public-abstract-field",
-                    "public-field",
-
-                    "protected-decorated-field",
-                    "protected-instance-field",
-                    "protected-abstract-field",
-                    "protected-field",
-
-                    "private-decorated-field",
-                    "private-instance-field",
-                    "private-field",
-
-                    "instance-field",
-                    "abstract-field",
-                    "decorated-field",
-                    "field",
-
-                    "public-constructor",
-                    "protected-constructor",
-                    "private-constructor",
-                    "constructor",
-
-                    "public-decorated-method",
-                    "public-instance-method",
-                    "public-abstract-method",
-                    "public-method",
-
-                    "protected-decorated-method",
-                    "protected-instance-method",
-                    "protected-abstract-method",
-                    "protected-method",
-
-                    "private-decorated-method",
-                    "private-instance-method",
-                    "private-method",
-
-                    "instance-method",
-                    "abstract-method",
-                    "decorated-method",
-                    "method",
-                ],
+                default: {
+                    memberTypes: [
+                        "signature",
+                        "static-field",
+                        "field",
+                        "constructor",
+                        "static-method",
+                        "method",
+                    ],
+                    order: "alphabetically",
+                },
             }],
             "ts/no-array-constructor": "error",
             "ts/no-dupe-class-members": "error",
