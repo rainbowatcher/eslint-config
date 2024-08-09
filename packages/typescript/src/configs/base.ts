@@ -180,14 +180,16 @@ export function typeAware(opts: Options): EslintFlatConfigItem {
                 // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
                 allowThrowingUnknown: true,
             }],
+            "ts/prefer-nullish-coalescing": ["error", {
+                ignoreConditionalTests: false,
+                ignoreMixedLogicalExpressions: true,
+                ignoreTernaryTests: false,
+            }],
             "ts/prefer-optional-chain": "error",
             "ts/require-await": "error",
             "ts/restrict-plus-operands": "error",
             "ts/restrict-template-expressions": "error",
             "ts/unbound-method": "error",
-
-            // this rule fail in CI, maybe enable it in the future
-            "ts/prefer-nullish-coalescing": "off",
         },
     }
 }

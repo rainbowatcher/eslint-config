@@ -16,7 +16,7 @@ import type { Module } from "../packages/all/src/types"
 import type { EslintFlatConfigs, Options } from "../packages/shared/src"
 
 async function genType(
-    configs: Linter.FlatConfig[],
+    configs: Linter.Config[],
     dist: string,
     extra?: string,
 ) {

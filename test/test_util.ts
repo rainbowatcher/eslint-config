@@ -1,3 +1,4 @@
+import dedent from "dedent"
 import { Linter } from "eslint"
 import { expect, it } from "vitest"
 import type { EslintFlatConfigItem } from "../packages/shared/src"
@@ -9,6 +10,7 @@ type Options = {
 const fixturePath = "test/fixture/"
 
 export function createExpectFn(config: EslintFlatConfigItem[], filePattern?: string) {
+
     const expectRule = (rule: string, input: string, opts?: Options) => {
         const { expected = true } = opts ?? {}
         const file = filePattern ? fixturePath + filePattern : undefined
@@ -17,7 +19,13 @@ export function createExpectFn(config: EslintFlatConfigItem[], filePattern?: str
             const linter = new Linter({ configType: "flat" })
             const result = linter.verify(input, config, file)
             const hasRule = result.some(error => error.ruleId === rule)
-            const errMsg = `Expected rule: ${rule}\n\nSource: ${input}\n\nLint message:${JSON.stringify(result, null, 2)}`
+            // console.log(rule, result, hasRule === expected)
+            const errMsg = dedent`
+                Rule: ${rule}
+                Source: ${input}
+                Result: ${hasRule === expected}
+                Message:${JSON.stringify(result, null, 2)}
+            `
             expect(hasRule, errMsg).toBe(expected)
         })
     }
