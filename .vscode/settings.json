@@ -8,6 +8,7 @@
     "cSpell.words": [
         "abbrs",
         "attributify",
+        "fdescribe",
         "importx",
         "jsdelivr",
         "lockb",
@@ -15,7 +16,6 @@
         "perfactionist",
         "stroustrup",
     ],
-    "eslint.experimental.useFlatConfig": true,
     "eslint.validate": [
         "json",
         "jsonc",
