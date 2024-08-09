@@ -1,3 +1,35 @@
+## 0.13.0 (2024-08-09)
+
+* docs: add toml in settings.json ([c6abab6](https://github.com/rainbowatcher/eslint-config/commit/c6abab6))
+* chore: bump deps ([0e101b2](https://github.com/rainbowatcher/eslint-config/commit/0e101b2))
+* chore: move commit lint config to package.json ([bb16552](https://github.com/rainbowatcher/eslint-config/commit/bb16552))
+* chore: remove experimental option and add c-spell word ([e7dca5f](https://github.com/rainbowatcher/eslint-config/commit/e7dca5f))
+* chore: update tsx to v4.17.0 ([b7423f6](https://github.com/rainbowatcher/eslint-config/commit/b7423f6))
+* chore(deps): bump deps ([f5a9375](https://github.com/rainbowatcher/eslint-config/commit/f5a9375))
+* chore(javascript): bump perfectionist to v3.1.2 ([279cdeb](https://github.com/rainbowatcher/eslint-config/commit/279cdeb))
+* chore(shared): add type annotation ([d3cc1eb](https://github.com/rainbowatcher/eslint-config/commit/d3cc1eb))
+* chore(typescript): disable ts/prefer-nullish-coalescing to avoid ci fail ([ed86253](https://github.com/rainbowatcher/eslint-config/commit/ed86253))
+* chore(typescript): remove eslint-plugin-jest ([209e177](https://github.com/rainbowatcher/eslint-config/commit/209e177))
+* chore(typescript): rollback changes for prefer-nullish-coalescing, enable test cases in ts ([ac630e4](https://github.com/rainbowatcher/eslint-config/commit/ac630e4))
+* chore(typescript): update naming convertion rule ([c58fd70](https://github.com/rainbowatcher/eslint-config/commit/c58fd70))
+* test: update test util for better error message ([200e8b3](https://github.com/rainbowatcher/eslint-config/commit/200e8b3))
+* test(javascript): add test suit for perfectionist, comment add, style adjust ([53234ee](https://github.com/rainbowatcher/eslint-config/commit/53234ee))
+* test(typescript): move ban-types to alternative rules ([bfbee3b](https://github.com/rainbowatcher/eslint-config/commit/bfbee3b))
+* test(typescript): try disable some test to avoid ci fail ([a41804a](https://github.com/rainbowatcher/eslint-config/commit/a41804a))
+* test(typescript): try fix test fail ([3e3db39](https://github.com/rainbowatcher/eslint-config/commit/3e3db39))
+* test(typescript): try fix typescript test fail ([a0207ba](https://github.com/rainbowatcher/eslint-config/commit/a0207ba))
+* test(typescript): try repetition error ([6da4dec](https://github.com/rainbowatcher/eslint-config/commit/6da4dec))
+* test(vue): format test case ([8384b41](https://github.com/rainbowatcher/eslint-config/commit/8384b41))
+* revert(typescript): try fix test fail ([75988f7](https://github.com/rainbowatcher/eslint-config/commit/75988f7))
+* feat: add build:only script ([14539aa](https://github.com/rainbowatcher/eslint-config/commit/14539aa))
+* feat(javascript): add eslint-plugin-vitest ([c937c23](https://github.com/rainbowatcher/eslint-config/commit/c937c23))
+* feat(javascript): update no-restricted-globals ([e0da519](https://github.com/rainbowatcher/eslint-config/commit/e0da519))
+* feat(typescript): simplify member-order ([8c9d8ff](https://github.com/rainbowatcher/eslint-config/commit/8c9d8ff))
+* feat(typescript,vue): update @typescript-eslint/parser and @typescript-eslint/eslint-plugin to v8 ([2ff14fe](https://github.com/rainbowatcher/eslint-config/commit/2ff14fe))
+* fix(markdown): disable lines-around-comment for ts and js in markdown ([eb5da96](https://github.com/rainbowatcher/eslint-config/commit/eb5da96))
+
+
+
 ## <small>0.12.2 (2024-08-06)</small>
 
 * feat: turn off unicorn/consistent-function-scoping ([4e179d9](https://github.com/rainbowatcher/eslint-config/commit/4e179d9))
