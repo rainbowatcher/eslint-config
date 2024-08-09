@@ -37,7 +37,7 @@ For example:
 
 Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and create `.vscode/settings.json`
 
-```json
+```jsonc
 {
     // recommend turn prettier disable when style option is enable
     "prettier.enable": false,
@@ -56,6 +56,7 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
         "vue",
         "markdown",
         "yaml",
+        "toml",
     ],
 }
 ```
@@ -76,6 +77,7 @@ export default defineConfig({
     typescript: true,
     vue: true,
     yaml: true,
+    // ...
 })
 ```
 
