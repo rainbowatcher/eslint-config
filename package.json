@@ -6,14 +6,6 @@
     "packageManager": "pnpm@9.7.0",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
-    "homepage": "https://github.com/rainbowatcher/eslint-config#readme",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/rainbowatcher/eslint-config.git"
-    },
-    "bugs": {
-        "url": "https://github.com/rainbowatcher/eslint-config/issues"
-    },
     "scripts": {
         "build": "pnpm -r --sequential build",
         "build:only": "pnpm --parallel build:only",
@@ -63,5 +55,28 @@
     },
     "lint-staged": {
         "*.{js,ts,json,md,yml}": "eslint"
+    },
+    "commitlint": {
+        "extends": ["@commitlint/config-conventional"],
+        "rules": {
+            "scope-enum": [
+                2,
+                "always",
+                [
+                    "all",
+                    "ignore",
+                    "javascript",
+                    "json",
+                    "markdown",
+                    "prettier",
+                    "shared",
+                    "toml",
+                    "typescript",
+                    "unocss",
+                    "vue",
+                    "deps"
+                ]
+            ]
+        }
     }
 }
