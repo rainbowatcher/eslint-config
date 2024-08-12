@@ -6,5 +6,5 @@ export async function gitignore(opts: Options): Promise<EslintFlatConfigItem> {
         return {}
     }
     const configGitignore = await interopDefault(import("eslint-config-flat-gitignore"))
-    return configGitignore()
+    return configGitignore({ strict: false })
 }
