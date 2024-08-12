@@ -43,6 +43,7 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
     "prettier.enable": false,
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
+        "source.organizeImports": "never",
         "source.fixAll.eslint": true
     },
     "eslint.validate": [
