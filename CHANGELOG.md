@@ -1,3 +1,14 @@
+## <small>0.13.1 (2024-08-19)</small>
+
+* chore(deps): bump deps ([32f5c6c](https://github.com/rainbowatcher/eslint-config/commit/32f5c6c))
+* chore(deps): bump deps ([f559caa](https://github.com/rainbowatcher/eslint-config/commit/f559caa))
+* chore(deps): update all non-major dependencies ([289181e](https://github.com/rainbowatcher/eslint-config/commit/289181e))
+* chore(ignore): turn gitignore strict mode to false ([1a47d3c](https://github.com/rainbowatcher/eslint-config/commit/1a47d3c))
+* chore(typescript): use perfectionist/sort-classes instead of ts/member-ordering ([ec34b0a](https://github.com/rainbowatcher/eslint-config/commit/ec34b0a))
+* docs: disable vscode builtin import sort ([58f96cc](https://github.com/rainbowatcher/eslint-config/commit/58f96cc))
+
+
+
 ## 0.13.0 (2024-08-09)
 
 * docs: add toml in settings.json ([c6abab6](https://github.com/rainbowatcher/eslint-config/commit/c6abab6))
