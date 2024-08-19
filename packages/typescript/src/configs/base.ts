@@ -30,8 +30,6 @@ export function base(opts: Options): EslintFlatConfigItem {
             "no-unused-vars": "off",
             // To allow `ignoreVoid` in `ts/no-floating-promises`
             "no-void": ["error", { allowAsStatement: true }],
-            // conflict with ts/member-ordering
-            "perfectionist/sort-classes": "off",
             "ts/adjacent-overload-signatures": "error",
             "ts/array-type": ["error", { default: "array-simple" }],
             "ts/ban-ts-comment": ["error", {
@@ -49,19 +47,8 @@ export function base(opts: Options): EslintFlatConfigItem {
             "ts/consistent-type-definitions": ["error", "type"],
             "ts/consistent-type-imports": ["error", { disallowTypeAnnotations: false, prefer: "type-imports" }],
             "ts/default-param-last": "error",
-            "ts/member-ordering": ["error", {
-                default: {
-                    memberTypes: [
-                        "signature",
-                        "static-field",
-                        "field",
-                        "constructor",
-                        "static-method",
-                        "method",
-                    ],
-                    order: "alphabetically",
-                },
-            }],
+            // off member-ordering, because it can't fix by eslint, use perfectionist/sort-classes instead
+            "ts/member-ordering": "off",
             "ts/no-array-constructor": "error",
             "ts/no-dupe-class-members": "error",
             "ts/no-duplicate-enum-values": "error",
