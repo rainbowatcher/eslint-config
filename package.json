@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.13.0",
     "private": true,
-    "packageManager": "pnpm@9.7.0",
+    "packageManager": "pnpm@9.7.1",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
     "scripts": {
@@ -20,7 +20,7 @@
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
-        "@eslint/config-inspector": "^0.5.2",
+        "@eslint/config-inspector": "^0.5.3",
         "@rainbowatcher/eslint-config": "workspace:*",
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
         "@rainbowatcher/eslint-config-js": "workspace:*",
@@ -33,21 +33,21 @@
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.0",
         "@types/eslint__js": "^8.42.3",
-        "@types/node": "^22.2.0",
+        "@types/node": "^22.4.1",
         "@vitest/ui": "^2.0.5",
         "bumpp": "^9.5.1",
         "commitlint": "^19.4.0",
         "conventional-changelog-cli": "^5.0.0",
         "dedent": "^1.5.3",
         "eslint": "^9.9.0",
-        "eslint-typegen": "^0.3.0",
-        "lint-staged": "^15.2.8",
+        "eslint-typegen": "^0.3.1",
+        "lint-staged": "^15.2.9",
         "simple-git-hooks": "^2.11.1",
         "tsup": "^8.2.4",
         "tsx": "^4.17.0",
         "typescript": "^5.5.4",
         "vitest": "^2.0.5",
-        "vue": "^3.4.37"
+        "vue": "^3.4.38"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged",

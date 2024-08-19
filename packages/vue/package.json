@@ -31,7 +31,7 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@typescript-eslint/parser": "^8.0.1",
+        "@typescript-eslint/parser": "^8.1.0",
         "eslint-merge-processors": "^0.1.0",
         "eslint-plugin-vue": "^9.27.0",
         "eslint-processor-vue-blocks": "^0.1.2",
