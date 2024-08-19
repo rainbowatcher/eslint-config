@@ -20,7 +20,7 @@
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^19.2.2",
-        "@eslint/config-inspector": "^0.5.3",
+        "@eslint/config-inspector": "^0.5.4",
         "@rainbowatcher/eslint-config": "workspace:*",
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
         "@rainbowatcher/eslint-config-js": "workspace:*",

@@ -74,7 +74,7 @@
         "@clack/prompts": "^0.7.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "detect-indent": "^7.0.1",
-        "eslint-flat-config-utils": "^0.3.0",
+        "eslint-flat-config-utils": "^0.3.1",
         "local-pkg": "^0.5.0",
         "magicast": "^0.3.4",
         "picocolors": "^1.0.1"
