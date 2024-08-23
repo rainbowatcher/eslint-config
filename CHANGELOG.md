@@ -1,3 +1,14 @@
+## <small>0.13.2 (2024-08-23)</small>
+
+* chore: add vitest config file ([39d83d4](https://github.com/rainbowatcher/eslint-config/commit/39d83d4))
+* chore(deps): update all non-major dependencies ([fb7e966](https://github.com/rainbowatcher/eslint-config/commit/fb7e966))
+* chore(deps): update all non-major dependencies ([5b26804](https://github.com/rainbowatcher/eslint-config/commit/5b26804))
+* chore(deps): update all non-major dependencies ([3862695](https://github.com/rainbowatcher/eslint-config/commit/3862695))
+* chore(javascript): move eslint-plugin-vitest to @vitest/eslint-plugin ([34844fd](https://github.com/rainbowatcher/eslint-config/commit/34844fd))
+* perf(javascript): reduce files in filename config when typescript is not enable ([c435a6a](https://github.com/rainbowatcher/eslint-config/commit/c435a6a))
+
+
+
 ## <small>0.13.1 (2024-08-19)</small>
 
 * chore(deps): bump deps ([32f5c6c](https://github.com/rainbowatcher/eslint-config/commit/32f5c6c))
