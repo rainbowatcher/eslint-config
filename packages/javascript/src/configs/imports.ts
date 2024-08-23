@@ -58,7 +58,7 @@ const pluginImportOffRules: Linter.RulesRecord = {
 }
 
 const pluginUnusedimportRules: Linter.RulesRecord = {
-    "unused-imports/no-unused-imports": isInEditor ? "off" : "error",
+    "unused-imports/no-unused-imports": isInEditor() ? "off" : "error",
     "unused-imports/no-unused-vars": ["error", {
         args: "after-used",
         argsIgnorePattern: "^_",
