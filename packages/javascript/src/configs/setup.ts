@@ -20,9 +20,8 @@ export async function setup(opts: Options): Promise<EslintFlatConfigItem> {
         interopDefault(import("eslint-plugin-perfectionist")),
         interopDefault(import("eslint-plugin-regexp")),
         interopDefault(import("eslint-plugin-unicorn")),
-        // @ts-expect-error missing types
         interopDefault(import("eslint-plugin-unused-imports")),
-        interopDefault(import("eslint-plugin-vitest")),
+        interopDefault(import("@vitest/eslint-plugin")),
     ])
 
     config = {
