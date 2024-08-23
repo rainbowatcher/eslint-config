@@ -34,7 +34,6 @@
         "@typescript-eslint/parser": "^8.2.0",
         "eslint-merge-processors": "^0.1.0",
         "eslint-plugin-vue": "^9.27.0",
-        "eslint-processor-vue-blocks": "^0.1.2",
-        "local-pkg": "^0.5.0"
+        "eslint-processor-vue-blocks": "^0.1.2"
     }
 }
