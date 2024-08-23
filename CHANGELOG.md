@@ -1,3 +1,12 @@
+## 0.14.0 (2024-08-23)
+
+* chore: remove unused dep local-pkg ([a36b864](https://github.com/rainbowatcher/eslint-config/commit/a36b864))
+* chore: update lock file ([60f3d03](https://github.com/rainbowatcher/eslint-config/commit/60f3d03))
+* chore(shared): isInEditor support detect git hooks, remove unused vars ([ec072ed](https://github.com/rainbowatcher/eslint-config/commit/ec072ed))
+* feat(javascript): add test rules and fix files incorrect ([ba6d608](https://github.com/rainbowatcher/eslint-config/commit/ba6d608))
+
+
+
 ## <small>0.13.2 (2024-08-23)</small>
 
 * chore: add vitest config file ([39d83d4](https://github.com/rainbowatcher/eslint-config/commit/39d83d4))
