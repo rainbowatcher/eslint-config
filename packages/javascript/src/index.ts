@@ -22,7 +22,7 @@ export function jsConfigs(opts: Options): EslintFlatConfigs {
         sort(opts),
         node(opts),
         unicorn(opts),
-        fileName(),
+        fileName(opts),
         jsxFileName(opts),
         regexp(opts),
         test(),
