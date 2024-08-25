@@ -36,7 +36,7 @@ export function test(): EslintFlatConfigItem {
             "test/prefer-comparison-matcher": "off",
             "test/prefer-each": "error",
             "test/prefer-equality-matcher": "error",
-            "test/prefer-expect-assertions": "error",
+            "test/prefer-expect-assertions": ["error", { onlyFunctionsWithExpectInCallback: true }],
             "test/prefer-expect-resolves": "error",
             "test/prefer-hooks-in-order": "error",
             "test/prefer-hooks-on-top": "error",
@@ -59,7 +59,6 @@ export function test(): EslintFlatConfigItem {
             "test/valid-describe-callback": "error",
             "test/valid-expect": "error",
             "test/valid-title": ["error", {
-                mustMatch: [String.raw`^\s*\w+\s*$`],
                 mustNotMatch: [String.raw`^\s+$`, String.raw`^\s*\d+\s*$`],
             }],
 
