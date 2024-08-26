@@ -1,3 +1,21 @@
+## <small>0.14.1 (2024-08-26)</small>
+
+* test: apply eslint rules for test ([9747a4f](https://github.com/rainbowatcher/eslint-config/commit/9747a4f))
+* test: hoisting linter instance scope ([4266f48](https://github.com/rainbowatcher/eslint-config/commit/4266f48))
+* test: optimize test util ([3a753d0](https://github.com/rainbowatcher/eslint-config/commit/3a753d0))
+* test: use toBe or toEqual instead of inline snapshot ([b380b9a](https://github.com/rainbowatcher/eslint-config/commit/b380b9a))
+* feat: style follow user config ([c17eedb](https://github.com/rainbowatcher/eslint-config/commit/c17eedb))
+* feat(javascript): remove json file in js config ([5a34a7b](https://github.com/rainbowatcher/eslint-config/commit/5a34a7b))
+* feat(shared): make defaultValue as default param in resolveAltOption ([f4ee2aa](https://github.com/rainbowatcher/eslint-config/commit/f4ee2aa))
+* chore: use pnpm exec instead of npx ([cfbe2a0](https://github.com/rainbowatcher/eslint-config/commit/cfbe2a0))
+* chore(deps): upgrade @babel/parser version in lock file ([c41defb](https://github.com/rainbowatcher/eslint-config/commit/c41defb))
+* chore(javascript): use assertions only in test with callback ([8bbb83f](https://github.com/rainbowatcher/eslint-config/commit/8bbb83f))
+* fix(javascript): turn off require-hook ([23d9831](https://github.com/rainbowatcher/eslint-config/commit/23d9831))
+* fix(shared): add hasVue and isVue3 function and local-pkg dep ([9164f46](https://github.com/rainbowatcher/eslint-config/commit/9164f46))
+* fix(vue): update vue version detect ([9e0f2a5](https://github.com/rainbowatcher/eslint-config/commit/9e0f2a5))
+
+
+
 ## 0.14.0 (2024-08-23)
 
 * chore: remove unused dep local-pkg ([a36b864](https://github.com/rainbowatcher/eslint-config/commit/a36b864))
