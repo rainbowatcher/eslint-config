@@ -40,7 +40,7 @@ export function renameRules(
 export function resolveAltOption<K extends keyof Alterable<Options>>(
     opts: Alterable<Options>,
     key: K,
-    defaultValue?: AltOptionValue<Alterable<Options>[K]>,
+    defaultValue = {} as AltOptionValue<Alterable<Options>[K]>,
 ): AltOptionValue<Alterable<Options>[K]> {
     const value = opts[key]
     const _default = defaultValue ?? {}

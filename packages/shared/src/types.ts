@@ -79,7 +79,7 @@ export type Alterable<T> = {
     [K in keyof T as T[K] extends boolean | undefined ? never : K]: T[K]
 }
 
-export type AltOptionValue<T> = T extends boolean ? never : T
+export type AltOptionValue<T> = T extends boolean ? never : T extends undefined ? Record<string, any> : T
 
 export type TypescriptOptions = {
     typeAware?: boolean
