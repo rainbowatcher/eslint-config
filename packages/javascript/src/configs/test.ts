@@ -52,7 +52,7 @@ export function test(): EslintFlatConfigItem {
             "test/prefer-to-contain": "error",
             "test/prefer-to-have-length": "error",
             "test/prefer-todo": "error",
-            "test/require-hook": "error",
+            "test/require-hook": "off",
             "test/require-local-test-context-for-concurrent-snapshots": "error",
             "test/require-to-throw-message": "error",
             "test/require-top-level-describe": "error",
