@@ -38,7 +38,7 @@
         "@vitest/eslint-plugin": "^1.0.3",
         "eslint-config-flat-gitignore": "^0.1.8",
         "eslint-plugin-antfu": "^2.3.6",
-        "eslint-plugin-import-x": "^3.1.0",
+        "eslint-plugin-import-x": "^4.0.0",
         "eslint-plugin-n": "^17.10.2",
         "eslint-plugin-perfectionist": "^3.2.0",
         "eslint-plugin-regexp": "^2.6.0",
