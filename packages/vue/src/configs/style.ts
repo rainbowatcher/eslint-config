@@ -4,7 +4,7 @@ import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config
 export function style(opts: Options): EslintFlatConfigItem {
     if (!opts.style) return {}
 
-    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
+    const { tabWidth } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
         files: [GLOB_VUE],
         name: "rainbowatcher:vue:style",
@@ -23,7 +23,7 @@ export function style(opts: Options): EslintFlatConfigItem {
             "vue/html-comment-content-spacing": ["error", "always", {
                 exceptions: ["-"],
             }],
-            "vue/html-indent": ["error", indent],
+            "vue/html-indent": ["error", tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth],
             "vue/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             "vue/keyword-spacing": ["error", { after: true, before: true }],
             "vue/object-curly-newline": "off",

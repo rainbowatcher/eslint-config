@@ -1,11 +1,11 @@
 import {
-    GLOB_JS, GLOB_JSON, GLOB_JSON5, GLOB_JSONC, GLOB_JSX, GLOB_SRC, GLOB_TS, GLOB_VUE,
+    GLOB_JS, GLOB_JSX, GLOB_SRC, GLOB_TS, GLOB_VUE,
 } from "@rainbowatcher/eslint-config-shared"
 import type { Options } from "@rainbowatcher/eslint-config-shared"
 
 export function getFiles(opts: Options): string[] {
     const files = []
-    const { json, jsx, typescript, vue } = opts
+    const { jsx, typescript, vue } = opts
     if (jsx && typescript) {
         files.push(GLOB_SRC)
     } else {
@@ -14,7 +14,6 @@ export function getFiles(opts: Options): string[] {
         else files.push(GLOB_JS)
     }
     if (vue) files.push(GLOB_VUE)
-    json && files.push(GLOB_JSON, GLOB_JSON5, GLOB_JSONC)
 
     return files
 }
