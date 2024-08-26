@@ -1,7 +1,7 @@
 import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
-import { describe, expect, it } from "vitest"
+import { describe, it } from "vitest"
 import { createExpectFn } from "./test_util"
 
 const configs = await concat(...jsConfigs({ style: true }))
@@ -79,7 +79,7 @@ describe.concurrent("rules", () => {
 })
 
 describe.concurrent("style", () => {
-    it("space-infix-ops", () => {
+    it("space-infix-ops", ({ expect }) => {
         const code = "const foo =5"
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "const foo = 5
@@ -87,7 +87,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("quotes", () => {
+    it("quotes", ({ expect }) => {
         const code = "const foo = 'bar'"
         const code1 = "const foo = `bar`"
         const code2 = "const foo = '`bar`'"
@@ -105,7 +105,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("object-curly-newline", () => {
+    it("object-curly-newline", ({ expect }) => {
         const code = dedent`
             const foo = {
                 foo: "bar" }
@@ -130,7 +130,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("indent", () => {
+    it("indent", ({ expect }) => {
         const code = dedent`
             const foo = {
             foo: "bar"
@@ -146,7 +146,7 @@ describe.concurrent("style", () => {
 })
 
 describe.concurrent("perfectionist", () => {
-    it("perfectionist/sort-objects", () => {
+    it("perfectionist/sort-objects", ({ expect }) => {
         const code = dedent`
             const arr = { foo: 1, bar: 2, baz: 3 }
             const arr2 = {

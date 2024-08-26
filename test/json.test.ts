@@ -2,7 +2,7 @@ import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import jsConfigs from "packages/javascript/src"
 import jsonConfigs from "packages/json/src"
-import { describe, expect, it } from "vitest"
+import { describe, it } from "vitest"
 import { createExpectFn } from "./test_util"
 
 
@@ -24,7 +24,7 @@ describe.concurrent("json", () => {
 })
 
 describe.concurrent("style", () => {
-    it("quotes", () => {
+    it("quotes", ({ expect }) => {
         const code = "{ 'foo': 'bar' }"
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "{ "foo": "bar" }
@@ -42,7 +42,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("bracket-spacing", () => {
+    it("bracket-spacing", ({ expect }) => {
         const code = "{'foo': 'bar'}"
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "{ "foo": "bar" }
@@ -50,7 +50,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("array-bracket-spacing", () => {
+    it("array-bracket-spacing", ({ expect }) => {
         const code = '{"foo": [ 1,2,3 ]}'
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "{ "foo": [1, 2, 3] }
@@ -58,7 +58,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("array-bracket-newline", () => {
+    it("array-bracket-newline", ({ expect }) => {
         const code = dedent`
             {
                 "foo": [
@@ -76,7 +76,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("array-element-newline", () => {
+    it("array-element-newline", ({ expect }) => {
         const code = "[1, 2, 3]"
         expect(formatCode(code)).toMatchInlineSnapshot(`
             "[1, 2, 3]
@@ -84,7 +84,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("comma-dangle", () => {
+    it("comma-dangle", ({ expect }) => {
         const code = dedent`
             {
                 'foo': 'bar',
@@ -98,7 +98,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("style-js/lines-around-comment", () => {
+    it("style-js/lines-around-comment", ({ expect }) => {
         const code = dedent`
             {
                 // comment
@@ -114,7 +114,7 @@ describe.concurrent("style", () => {
         `)
     })
 
-    it("indent", () => {
+    it("indent", ({ expect }) => {
         const code = dedent`
             {
             foo: "bar"

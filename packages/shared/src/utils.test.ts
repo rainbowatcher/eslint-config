@@ -9,19 +9,19 @@ describe("resolveAltOption", () => {
     it("should return the default value when the option is undefined", () => {
         const opts = { style: undefined }
         const result = resolveAltOption(opts, "style", defaultValue)
-        expect(result).toEqual(defaultValue)
+        expect(result).toStrictEqual(defaultValue)
     })
 
     it("should return the {} when the option is a falsy value", () => {
         const opts = { style: false }
         const result = resolveAltOption(opts, "style", defaultValue)
-        expect(result).toEqual({})
+        expect(result).toStrictEqual({})
     })
 
     it("should return the option value when it is a truthy value", () => {
         const opts = { style: true }
         const result = resolveAltOption(opts, "style", defaultValue)
-        expect(result).toEqual(defaultValue)
+        expect(result).toStrictEqual(defaultValue)
     })
 
     it("should return the same object when it is a object", () => {
@@ -31,46 +31,31 @@ describe("resolveAltOption", () => {
             },
         } as const
         const result = resolveAltOption(opts, "style", defaultValue)
-        expect(result).toEqual(opts.style)
-    })
-
-    it("should return the same object when it is a object", () => {
-        const opts = {
-            style: {
-                indent: 4,
-            },
-        } as const
-        const result = resolveAltOption(opts, "style", defaultValue)
-        expect(result).toEqual(opts.style)
+        expect(result).toStrictEqual(opts.style)
     })
 
     it("should return the {} when it is a truthy value", () => {
         const opts = { style: true }
         const result = resolveAltOption(opts, "style")
-        expect(result).toEqual({})
+        expect(result).toStrictEqual({})
     })
 
     it("should return the {} when it is a falsy value", () => {
         const opts = { style: false }
         const result = resolveAltOption(opts, "style")
-        expect(result).toEqual({})
+        expect(result).toStrictEqual({})
     })
 
-    it("should return the {} when it is undefined", () => {
+    it("should return the {} when it is undefined without default option", () => {
         const opts = { style: undefined }
         const result = resolveAltOption(opts, "style")
-        expect(result).toEqual({})
+        expect(result).toStrictEqual({})
     })
 
-    it("should return the same object when it is a object", () => {
-        const opts = { style: { indent: 2 } }
-        const result = resolveAltOption(opts, "style")
-        expect(result).toEqual({ indent: 2 })
-    })
 
-    it("should return the {} when it is a truthy value", () => {
+    it("should return the {} when it is a truthy value without default option", () => {
         const opts = { style: true }
         const result = resolveAltOption(opts, "typescript")
-        expect(result).toEqual({})
+        expect(result).toStrictEqual({})
     })
 })

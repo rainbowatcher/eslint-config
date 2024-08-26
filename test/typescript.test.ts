@@ -2,7 +2,7 @@ import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { tsConfigs } from "packages/typescript/src"
-import { describe, expect, it } from "vitest"
+import { describe, it } from "vitest"
 import { createExpectFn } from "./test_util"
 
 const opts = { style: true, typescript: true }
@@ -111,19 +111,19 @@ describe.concurrent("rules", () => {
 })
 
 describe.concurrent("style", () => {
-    it("type-annotation-spacing", () => {
+    it("type-annotation-spacing", ({ expect }) => {
         const code1 = "type Foo = { name:string }"
         const code2 = "type Foo = { name : string }"
         expect(formatCode(code1)).toMatchInlineSnapshot(`"type Foo = { name: string }"`)
         expect(formatCode(code2)).toMatchInlineSnapshot(`"type Foo = { name: string }"`)
     })
 
-    it("space-infix-ops", () => {
+    it("space-infix-ops", ({ expect }) => {
         const code = "const foo =5"
         expect(formatCode(code)).toMatchInlineSnapshot(`"const foo = 5"`)
     })
 
-    it("indent", () => {
+    it("indent", ({ expect }) => {
         const code = dedent`
             const foo = {
             foo: "bar"
