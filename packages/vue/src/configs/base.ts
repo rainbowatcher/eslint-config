@@ -72,7 +72,7 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             }),
         ]),
         rules: {
-            ...isVue3 ? vue3Rules : vue2Rules,
+            ...isVue3() ? vue3Rules : vue2Rules,
             "node/prefer-global/process": "off",
             "vue/block-order": ["error", {
                 order: ["script", "template", "style"],
