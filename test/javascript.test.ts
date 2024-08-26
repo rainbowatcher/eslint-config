@@ -4,7 +4,16 @@ import { jsConfigs } from "packages/javascript/src"
 import { describe, it } from "vitest"
 import { createExpectFn } from "./test_util"
 
-const configs = await concat(...jsConfigs({ style: true }))
+const configs = await concat(
+    ...jsConfigs({ style: true }),
+    {
+        rules: {
+            "prefer-const": "off",
+            "style-js/eol-last": "off",
+            "style-ts/semi": "off",
+        },
+    },
+)
 const { expectRule, formatCode } = createExpectFn(configs)
 
 describe.concurrent("rules", () => {
@@ -81,28 +90,16 @@ describe.concurrent("rules", () => {
 describe.concurrent("style", () => {
     it("space-infix-ops", ({ expect }) => {
         const code = "const foo =5"
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "const foo = 5
-            "
-        `)
+        expect(formatCode(code)).toEqual("const foo = 5")
     })
 
     it("quotes", ({ expect }) => {
         const code = "const foo = 'bar'"
         const code1 = "const foo = `bar`"
         const code2 = "const foo = '`bar`'"
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "const foo = "bar"
-            "
-        `)
-        expect(formatCode(code1)).toMatchInlineSnapshot(`
-            "const foo = "bar"
-            "
-        `)
-        expect(formatCode(code2)).toMatchInlineSnapshot(`
-            "const foo = "\`bar\`"
-            "
-        `)
+        expect(formatCode(code)).toBe(`const foo = "bar"`)
+        expect(formatCode(code1)).toBe(`const foo = "bar"`)
+        expect(formatCode(code2)).toBe(`const foo = "\`bar\`"`)
     })
 
     it("object-curly-newline", ({ expect }) => {
@@ -110,23 +107,19 @@ describe.concurrent("style", () => {
             const foo = {
                 foo: "bar" }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "const foo = { foo: "bar" }
-            "
-        `)
+        expect(formatCode(code)).toBe(`const foo = { foo: "bar" }`)
 
         const code1 = dedent`
             const foo = {foo:"1", 
                 bar: 2, baz: 3
             }
         `
-        expect(formatCode(code1)).toMatchInlineSnapshot(`
-            "const foo = {
+        expect(formatCode(code1)).toBe(dedent`
+            const foo = {
                 bar: 2,
                 baz: 3,
                 foo: "1",
             }
-            "
         `)
     })
 
@@ -136,11 +129,10 @@ describe.concurrent("style", () => {
             foo: "bar"
             }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "const foo = {
+        expect(formatCode(code)).toBe(dedent`
+            const foo = {
                 foo: "bar",
             }
-            "
         `)
     })
 })
@@ -163,8 +155,8 @@ describe.concurrent("perfectionist", () => {
             }
             const { foo, bar, baz } = arr
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "const arr = { bar: 2, baz: 3, foo: 1 }
+        expect(formatCode(code)).toBe(dedent`
+            const arr = { bar: 2, baz: 3, foo: 1 }
             const arr2 = {
                 bar: 2,
                 baz: 3,
@@ -178,7 +170,6 @@ describe.concurrent("perfectionist", () => {
                 baz: 3,
             }
             const { bar, baz, foo } = arr
-            "
         `)
     })
 })

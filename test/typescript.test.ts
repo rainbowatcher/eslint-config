@@ -114,13 +114,13 @@ describe.concurrent("style", () => {
     it("type-annotation-spacing", ({ expect }) => {
         const code1 = "type Foo = { name:string }"
         const code2 = "type Foo = { name : string }"
-        expect(formatCode(code1)).toMatchInlineSnapshot(`"type Foo = { name: string }"`)
-        expect(formatCode(code2)).toMatchInlineSnapshot(`"type Foo = { name: string }"`)
+        expect(formatCode(code1)).toBe("type Foo = { name: string }")
+        expect(formatCode(code2)).toBe("type Foo = { name: string }")
     })
 
     it("space-infix-ops", ({ expect }) => {
         const code = "const foo =5"
-        expect(formatCode(code)).toMatchInlineSnapshot(`"const foo = 5"`)
+        expect(formatCode(code)).toBe("const foo = 5")
     })
 
     it("indent", ({ expect }) => {
@@ -129,10 +129,10 @@ describe.concurrent("style", () => {
             foo: "bar"
             }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "const foo = {
+        expect(formatCode(code)).toBe(dedent`
+            const foo = {
                 foo: "bar",
-            }"
+            }
         `)
     })
 })

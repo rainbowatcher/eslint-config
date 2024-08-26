@@ -7,7 +7,11 @@ import { createExpectFn } from "./test_util"
 
 
 const opts = { json: true, style: true }
-const configs = await concat(...jsConfigs(opts), ...jsonConfigs(opts))
+const configs = await concat(...jsConfigs(opts), ...jsonConfigs(opts), {
+    rules: {
+        "style-js/eol-last": "off",
+    },
+})
 const { expectRule, formatCode } = createExpectFn(configs, "_.json")
 
 describe.concurrent("json", () => {
@@ -26,36 +30,21 @@ describe.concurrent("json", () => {
 describe.concurrent("style", () => {
     it("quotes", ({ expect }) => {
         const code = "{ 'foo': 'bar' }"
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{ "foo": "bar" }
-            "
-        `)
+        expect(formatCode(code)).toBe(`{ "foo": "bar" }`)
         const code1 = "{ foo: 'bar' }"
-        expect(formatCode(code1)).toMatchInlineSnapshot(`
-            "{ "foo": "bar" }
-            "
-        `)
+        expect(formatCode(code1)).toBe(`{ "foo": "bar" }`)
         const code2 = "{ foo: 1 }"
-        expect(formatCode(code2)).toMatchInlineSnapshot(`
-            "{ "foo": 1 }
-            "
-        `)
+        expect(formatCode(code2)).toBe(`{ "foo": 1 }`)
     })
 
     it("bracket-spacing", ({ expect }) => {
         const code = "{'foo': 'bar'}"
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{ "foo": "bar" }
-            "
-        `)
+        expect(formatCode(code)).toBe(`{ "foo": "bar" }`)
     })
 
     it("array-bracket-spacing", ({ expect }) => {
         const code = '{"foo": [ 1,2,3 ]}'
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{ "foo": [1, 2, 3] }
-            "
-        `)
+        expect(formatCode(code)).toBe(`{ "foo": [1, 2, 3] }`)
     })
 
     it("array-bracket-newline", ({ expect }) => {
@@ -66,22 +55,18 @@ describe.concurrent("style", () => {
                 ]
             }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{
+        expect(formatCode(code)).toBe(dedent`
+            {
                 "foo": [
                     1, 2, 3
                 ]
             }
-            "
         `)
     })
 
     it("array-element-newline", ({ expect }) => {
         const code = "[1, 2, 3]"
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "[1, 2, 3]
-            "
-        `)
+        expect(formatCode(code)).toBe("[1, 2, 3]")
     })
 
     it("comma-dangle", ({ expect }) => {
@@ -90,11 +75,10 @@ describe.concurrent("style", () => {
                 'foo': 'bar',
             }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{
+        expect(formatCode(code)).toBe(dedent`
+            {
                 "foo": "bar",
             }
-            "
         `)
     })
 
@@ -105,12 +89,11 @@ describe.concurrent("style", () => {
                 foo: "bar"
             }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{
+        expect(formatCode(code)).toBe(dedent`
+            {
                 // comment
                 "foo": "bar"
             }
-            "
         `)
     })
 
@@ -120,11 +103,10 @@ describe.concurrent("style", () => {
             foo: "bar"
             }
         `
-        expect(formatCode(code)).toMatchInlineSnapshot(`
-            "{
+        expect(formatCode(code)).toBe(dedent`
+            {
                 "foo": "bar"
             }
-            "
         `)
     })
 })
