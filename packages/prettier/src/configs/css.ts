@@ -1,11 +1,13 @@
 import {
     GLOB_CSS, GLOB_LESS, GLOB_POSTCSS, GLOB_SCSS, parserPlain,
+    resolveAltOption,
 } from "@rainbowatcher/eslint-config-shared"
-import { prettierOptions } from "../options"
+import { DefaultPrettierOptions } from "../options"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export function css(opts: Options): EslintFlatConfigItem {
     if (!opts.css) return {}
+    const styleOptions = resolveAltOption(opts, "style")
     return {
         files: [GLOB_CSS, GLOB_POSTCSS],
         languageOptions: {
@@ -14,7 +16,8 @@ export function css(opts: Options): EslintFlatConfigItem {
         name: "rainbowatcher:prettier:css",
         rules: {
             "prettier/prettier": ["error", {
-                ...prettierOptions,
+                ...DefaultPrettierOptions,
+                ...styleOptions,
                 parser: "css",
             }, {
                 usePrettierrc: false,
@@ -33,7 +36,7 @@ export function scss(opts: Options): EslintFlatConfigItem {
         name: "rainbowatcher:prettier:scss",
         rules: {
             "prettier/prettier": ["error", {
-                ...prettierOptions,
+                ...DefaultPrettierOptions,
                 parser: "scss",
             }, {
                 usePrettierrc: false,
@@ -52,7 +55,7 @@ export function less(opts: Options): EslintFlatConfigItem {
         name: "rainbowatcher:prettier:less",
         rules: {
             "prettier/prettier": ["error", {
-                ...prettierOptions,
+                ...DefaultPrettierOptions,
                 parser: "less",
             }, {
                 usePrettierrc: false,

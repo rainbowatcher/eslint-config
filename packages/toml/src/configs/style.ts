@@ -1,17 +1,18 @@
-import { DEFAULT_STYLE_OPTION, resolveAltOption } from "@rainbowatcher/eslint-config-shared"
+import { DEFAULT_STYLE_OPTION, GLOB_TOML, resolveAltOption } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export function style(opts: Options): EslintFlatConfigItem {
     if (!opts.toml || !opts.style) return {}
 
-    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
+    const { tabWidth } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
+        files: [GLOB_TOML],
         name: "rainbowatcher:toml:style",
         rules: {
             "toml/array-bracket-newline": "error",
             "toml/array-bracket-spacing": ["error", "never"],
             "toml/array-element-newline": ["error", "consistent"],
-            "toml/indent": ["error", indent],
+            "toml/indent": ["error", tabWidth],
             "toml/inline-table-curly-spacing": "error",
             "toml/key-spacing": "error",
             "toml/no-space-dots": "error",
@@ -22,6 +23,8 @@ export function style(opts: Options): EslintFlatConfigItem {
             "toml/spaced-comment": "error",
             "toml/table-bracket-spacing": "error",
             "toml/tables-order": "error",
+
+            "style-js/eol-last": "error",
         },
     }
 }

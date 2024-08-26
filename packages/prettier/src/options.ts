@@ -1,6 +1,6 @@
 import type { Options } from "prettier"
 
-export const prettierOptions: Options = {
+export const DefaultPrettierOptions: Options = {
     arrowParens: "avoid",
     bracketSameLine: false,
     bracketSpacing: true,

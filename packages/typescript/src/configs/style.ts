@@ -12,7 +12,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     const files = opts.jsx ? [GLOB_TS, GLOB_TSX] : [GLOB_TS]
     opts.vue && files.push(GLOB_VUE)
 
-    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
+    const { semi, singleQuote, tabWidth, trailingComma } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
         files,
         name: "rainbowatcher:ts:style",
@@ -45,9 +45,9 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-js/semi": "off",
             "style-js/space-infix-ops": "off",
             "style-ts/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-            "style-ts/comma-dangle": ["error", "always-multiline"],
+            "style-ts/comma-dangle": ["error", trailingComma === "all" ? "always-multiline" : "never"],
             "style-ts/function-call-spacing": ["error", "never"],
-            "style-ts/indent": ["error", indent, {
+            "style-ts/indent": ["error", tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth, {
                 outerIIFEBody: 1, SwitchCase: 1, VariableDeclarator: 1,
             }],
             "style-ts/lines-around-comment": ["error", {
@@ -103,8 +103,8 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-ts/object-curly-spacing": ["error", "always"],
             "style-ts/object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
             "style-ts/quote-props": ["error", "as-needed"],
-            "style-ts/quotes": ["error", "double", { avoidEscape: true }],
-            "style-ts/semi": ["error", "never"],
+            "style-ts/quotes": ["error", singleQuote ? "single" : "double", { avoidEscape: true }],
+            "style-ts/semi": ["error", semi ? "always" : "never"],
             "style-ts/space-before-blocks": "error",
             "style-ts/space-before-function-paren": ["error", {
                 anonymous: "always", asyncArrow: "always", named: "never",

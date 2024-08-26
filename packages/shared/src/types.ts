@@ -86,9 +86,9 @@ export type TypescriptOptions = {
 }
 
 export type StyleOptions = {
-    indent?: number
-    quote?: "double" | "single"
     semi?: boolean
-    trailingComma?: boolean
+    singleQuote?: boolean
+    tabWidth?: number
+    trailingComma?: "all" | "none"
     useTabs?: boolean
 }

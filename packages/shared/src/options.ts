@@ -1,9 +1,9 @@
 import type { StyleOptions } from "./types"
 
-export const DEFAULT_STYLE_OPTION: StyleOptions = {
-    indent: 4,
-    quote: "double",
+export const DEFAULT_STYLE_OPTION: Required<StyleOptions> = {
     semi: false,
-    trailingComma: true,
+    singleQuote: false,
+    tabWidth: 4,
+    trailingComma: "all",
     useTabs: false,
 }

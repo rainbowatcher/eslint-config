@@ -4,7 +4,7 @@ import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config
 export function style(opts: Options): EslintFlatConfigItem {
     if (!opts.style) return {}
 
-    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
+    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
         files: [GLOB_VUE],
         name: "rainbowatcher:vue:style",

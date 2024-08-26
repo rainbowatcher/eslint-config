@@ -142,15 +142,20 @@ async function generateCode(ctx: CliContext) {
 
     file.exports.default = builders.functionCall(DEFINE_CONFIG, ctx.configOptions)
 
-    const styleOptions = resolveAltOption(ctx.configOptions, "style", DEFAULT_STYLE_OPTION)
-    await writeFile(file, ctx.configPath, styleOptions)
+    const { singleQuote, tabWidth, trailingComma, useTabs } = resolveAltOption(ctx.configOptions, "style", DEFAULT_STYLE_OPTION)
+    await writeFile(file, ctx.configPath, {
+        quote: singleQuote ? "single" : "double",
+        tabWidth,
+        trailingComma: trailingComma === "all",
+        useTabs,
+    })
 }
 
 async function handleDeps(ctx: CliContext) {
     const packageJsonPath = `${process.cwd()}/package.json`
     const styleOption = resolveAltOption(ctx.configOptions, "style")
 
-    const indent = styleOption?.indent ?? await getPkgIndent(packageJsonPath)
+    const indent = styleOption?.tabWidth ?? await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
         if (opt === "style" && val && PRETTIER_LINT_LANGS.some(lang => ctx.configOptions[lang])) {

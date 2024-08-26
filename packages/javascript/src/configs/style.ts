@@ -10,7 +10,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.style) return {}
 
     const pluginStylisticJs = await interopDefault(import("@stylistic/eslint-plugin-js"))
-    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
+    const { semi, singleQuote, tabWidth, trailingComma } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
         files: getFiles(opts),
         name: "rainbowatcher:js:style",
@@ -20,7 +20,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             ...renameRules(pluginStylisticJs.configs["all-flat"].rules, { "@stylistic/js": "style-js" }),
 
             // "style-js/newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
-            "style-ex/indent-binary-ops": ["error", indent],
+            "style-ex/indent-binary-ops": ["error", tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth],
             // "style-js/no-mixed-spaces-and-tabs": "error",
             // "style-js/space-in-parens": ["error", "never"],
             // "style-js/space-before-blocks": ["error", "always"],
@@ -34,21 +34,21 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             // ],
             // "style-js/space-infix-ops": "error",
             // "style-js/arrow-spacing": ["error", { after: true, before: true }],
-            // "style-js/block-spacing": ["error", "always"],
-            // "style-js/comma-spacing": ["error", { after: true, before: false }],
-            // "style-js/comma-style": ["error", "last"],
-            // "style-js/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             // "style-js/keyword-spacing": "error",
             "style-js/array-bracket-newline": ["error", "consistent"],
+            // "style-js/key-spacing": ["error", { afterColon: true, beforeColon: false }],
             "style-js/array-bracket-spacing": ["error", "never"],
             "style-js/array-element-newline": ["error", "consistent"],
             "style-js/arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
             "style-js/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-            "style-js/comma-dangle": ["error", "always-multiline"],
+            "style-js/comma-dangle": ["error", trailingComma === "all" ? "always-multiline" : "never"],
+            // "style-js/block-spacing": ["error", "always"],
+            "style-js/comma-spacing": ["error", { after: true, before: false }],
+            "style-js/comma-style": ["error", "last"],
             "style-js/dot-location": ["error", "property"],
             "style-js/eol-last": ["error", "always"],
             "style-js/function-call-argument-newline": ["error", "consistent"],
-            "style-js/indent": ["error", indent, {
+            "style-js/indent": ["error", tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth, {
                 outerIIFEBody: 1, SwitchCase: 1, VariableDeclarator: 1,
             }],
             "style-js/linebreak-style": ["error", "unix"],
@@ -103,8 +103,8 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 { blankLine: "always", next: "function", prev: "*" },
             ],
             "style-js/quote-props": ["error", "as-needed"],
-            "style-js/quotes": ["error", "double", { avoidEscape: true }],
-            "style-js/semi": ["error", "never"],
+            "style-js/quotes": ["error", singleQuote ? "single" : "double", { avoidEscape: true }],
+            "style-js/semi": ["error", semi ? "always" : "never"],
             "style-js/space-before-function-paren": ["error", {
                 anonymous: "always",
                 asyncArrow: "always",
@@ -126,7 +126,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
 
             "unicorn/template-indent": ["error", {
                 functions: ["dedent", "stripIndent"],
-                indent,
+                indent: tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth,
                 tags: ["outdent", "dedent", "gql", "sql", "html", "styled"],
             }],
         },
@@ -139,13 +139,13 @@ export async function jsxStyle(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.jsx) return {}
     const pluginStylisticJsx = await interopDefault(import("@stylistic/eslint-plugin-jsx"))
 
-    const { indent } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)!
+    const { tabWidth } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
         files: [GLOB_JSX, GLOB_TSX],
         name: "rainbowatcher:js:jsx-style",
         rules: {
             ...renameRules(pluginStylisticJsx.configs["all-flat"].rules, { "@stylistic/jsx": "style-jsx" }),
-            "style-jsx/jsx-indent": ["error", indent],
+            "style-jsx/jsx-indent": ["error", tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth],
             "style-jsx/jsx-newline": ["error", { allowMultilines: true, prevent: true }],
             "style-jsx/jsx-wrap-multilines": ["error", { return: "parens-new-line" }],
         },

@@ -4,7 +4,7 @@ import { style } from "./configs/style"
 import type { EslintFlatConfigs, Options } from "@rainbowatcher/eslint-config-shared"
 
 export function tomlConfigs(opts: Options): EslintFlatConfigs {
-    if (!opts.style) return []
+    if (!opts.toml) return []
     return [
         setup(opts),
         base(opts),
