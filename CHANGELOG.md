@@ -1,3 +1,10 @@
+## <small>0.14.2 (2024-08-28)</small>
+
+* chore(deps): update dependency eslint-plugin-import-x to v4 ([36d58c7](https://github.com/rainbowatcher/eslint-config/commit/36d58c7))
+* chore(javascript): adjust max nested describe and turn off max-expects ([a268a15](https://github.com/rainbowatcher/eslint-config/commit/a268a15))
+
+
+
 ## <small>0.14.1 (2024-08-26)</small>
 
 * test: apply eslint rules for test ([9747a4f](https://github.com/rainbowatcher/eslint-config/commit/9747a4f))
