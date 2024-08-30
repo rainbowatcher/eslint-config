@@ -28,6 +28,6 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "eslint-config-flat-gitignore": "^0.1.8"
+        "eslint-config-flat-gitignore": "^0.3.0"
     }
 }

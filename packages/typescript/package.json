@@ -32,11 +32,11 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@stylistic/eslint-plugin-jsx": "^2.6.4",
-        "@stylistic/eslint-plugin-plus": "^2.6.4",
-        "@stylistic/eslint-plugin-ts": "^2.6.4",
-        "@typescript-eslint/eslint-plugin": "^8.2.0",
-        "@typescript-eslint/parser": "^8.2.0",
+        "@stylistic/eslint-plugin-jsx": "^2.7.1",
+        "@stylistic/eslint-plugin-plus": "^2.7.1",
+        "@stylistic/eslint-plugin-ts": "^2.7.1",
+        "@typescript-eslint/eslint-plugin": "^8.3.0",
+        "@typescript-eslint/parser": "^8.3.0",
         "eslint-plugin-antfu": "^2.3.6"
     }
 }
