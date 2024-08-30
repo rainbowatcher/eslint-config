@@ -1,3 +1,11 @@
+## <small>0.14.3 (2024-08-30)</small>
+
+* chore: remove lint-staged ([304ecdc](https://github.com/rainbowatcher/eslint-config/commit/304ecdc))
+* chore(deps): bump and clear deps ([5a036a6](https://github.com/rainbowatcher/eslint-config/commit/5a036a6))
+* chore(typescript): allow underscore in class property and accessor ([a1e5c49](https://github.com/rainbowatcher/eslint-config/commit/a1e5c49))
+
+
+
 ## <small>0.14.2 (2024-08-28)</small>
 
 * chore(deps): update dependency eslint-plugin-import-x to v4 ([36d58c7](https://github.com/rainbowatcher/eslint-config/commit/36d58c7))
