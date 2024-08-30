@@ -38,6 +38,7 @@ export function namingConvertion(isTsx: boolean): Linter.RulesRecord {
             },
             {
                 format: ["camelCase"],
+                leadingUnderscore: "allowSingleOrDouble",
                 selector: ["classProperty", "classicAccessor"],
             },
             {
