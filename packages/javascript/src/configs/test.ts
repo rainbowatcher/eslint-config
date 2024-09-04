@@ -57,7 +57,7 @@ export function test(): EslintFlatConfigItem {
             "test/require-to-throw-message": "error",
             "test/require-top-level-describe": "error",
             "test/valid-describe-callback": "error",
-            "test/valid-expect": "error",
+            "test/valid-expect": ["error", { maxArgs: 10 }],
             "test/valid-title": ["error", {
                 mustNotMatch: [String.raw`^\s+$`, String.raw`^\s*\d+\s*$`],
             }],
