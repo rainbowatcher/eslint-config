@@ -30,7 +30,7 @@
         "eslint": ">=9.9.1"
     },
     "dependencies": {
-        "@eslint/js": "^9.9.1",
+        "@eslint/js": "^9.10.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "@stylistic/eslint-plugin-js": "^2.7.2",
         "@stylistic/eslint-plugin-jsx": "^2.7.2",
@@ -39,7 +39,7 @@
         "eslint-plugin-antfu": "^2.5.0",
         "eslint-plugin-import-x": "^4.2.1",
         "eslint-plugin-n": "^17.10.2",
-        "eslint-plugin-perfectionist": "^3.4.0",
+        "eslint-plugin-perfectionist": "^3.5.0",
         "eslint-plugin-regexp": "^2.6.0",
         "eslint-plugin-unicorn": "^55.0.0",
         "eslint-plugin-unused-imports": "^4.1.3",
