@@ -1,3 +1,14 @@
+## <small>0.14.4 (2024-09-08)</small>
+
+* chore(deps): bump deps ([f8715e0](https://github.com/rainbowatcher/eslint-config/commit/f8715e0))
+* chore(deps): update all non-major dependencies ([7725302](https://github.com/rainbowatcher/eslint-config/commit/7725302))
+* chore(deps): use cross-release instead of bumpp ([0f93f03](https://github.com/rainbowatcher/eslint-config/commit/0f93f03))
+* chore(javascript): set maxArgs in valid-expect to be 10 ([6186f77](https://github.com/rainbowatcher/eslint-config/commit/6186f77))
+* fix(javascript): disable require-top-level-describe ([ab00527](https://github.com/rainbowatcher/eslint-config/commit/ab00527))
+* test: use threads instead of forks ([9174841](https://github.com/rainbowatcher/eslint-config/commit/9174841))
+
+
+
 ## <small>0.14.3 (2024-08-30)</small>
 
 * chore: remove lint-staged ([304ecdc](https://github.com/rainbowatcher/eslint-config/commit/304ecdc))
