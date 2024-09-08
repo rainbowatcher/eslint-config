@@ -2,7 +2,7 @@ import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
 import { jsConfigs } from "packages/javascript/src"
 import { describe, it } from "vitest"
-import { createExpectFn } from "./test_util"
+import { createExpectFn } from "./__util__/test_util"
 
 const configs = await concat(...jsConfigs({ style: true }))
 const { expectRule, formatCode } = createExpectFn(configs, "_.test.js")

@@ -55,7 +55,7 @@ export function test(): EslintFlatConfigItem {
             "test/require-hook": "off",
             "test/require-local-test-context-for-concurrent-snapshots": "error",
             "test/require-to-throw-message": "error",
-            "test/require-top-level-describe": "error",
+            "test/require-top-level-describe": "off",
             "test/valid-describe-callback": "error",
             "test/valid-expect": ["error", { maxArgs: 10 }],
             "test/valid-title": ["error", {

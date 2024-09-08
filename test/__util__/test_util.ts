@@ -1,7 +1,7 @@
 import path from "node:path"
 import { Linter } from "eslint"
 import { it } from "vitest"
-import type { EslintFlatConfigItem } from "../packages/shared/src"
+import type { EslintFlatConfigItem } from "../../packages/shared/src"
 
 type Options = {
     expected?: boolean | string
@@ -25,7 +25,7 @@ Rule: ${rule}
 Source: ${input}
 Result: ${hasRule === expected}
 Message:${JSON.stringify(result, null, 2)}
-            `
+`
             expect(hasRule, errMsg).toBe(expected)
         })
     }

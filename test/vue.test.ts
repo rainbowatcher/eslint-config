@@ -4,7 +4,7 @@ import { jsConfigs } from "packages/javascript/src"
 import { tsConfigs } from "packages/typescript/src"
 import { vueConfigs } from "packages/vue/src"
 import { describe, expect, it } from "vitest"
-import { createExpectFn } from "./test_util"
+import { createExpectFn } from "./__util__/test_util"
 
 const opts = { style: true, typescript: true, vue: true }
 const configs = await concat(

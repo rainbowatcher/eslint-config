@@ -3,7 +3,7 @@ import { concat } from "eslint-flat-config-utils"
 import jsConfigs from "packages/javascript/src"
 import jsonConfigs from "packages/json/src"
 import { describe, it } from "vitest"
-import { createExpectFn } from "./test_util"
+import { createExpectFn } from "./__util__/test_util"
 
 
 const opts = { json: true, style: true }
