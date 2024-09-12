@@ -139,13 +139,11 @@ export async function jsxStyle(opts: Options): Promise<EslintFlatConfigItem> {
     if (!opts.jsx) return {}
     const pluginStylisticJsx = await interopDefault(import("@stylistic/eslint-plugin-jsx"))
 
-    const { tabWidth } = resolveAltOption(opts, "style", DEFAULT_STYLE_OPTION)
     return {
         files: [GLOB_JSX, GLOB_TSX],
         name: "rainbowatcher:js:jsx-style",
         rules: {
             ...renameRules(pluginStylisticJsx.configs["all-flat"].rules, { "@stylistic/jsx": "style-jsx" }),
-            "style-jsx/jsx-indent": ["error", tabWidth ?? DEFAULT_STYLE_OPTION.tabWidth],
             "style-jsx/jsx-newline": ["error", { allowMultilines: true, prevent: true }],
             "style-jsx/jsx-wrap-multilines": ["error", { return: "parens-new-line" }],
         },

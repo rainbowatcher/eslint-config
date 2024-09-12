@@ -81,7 +81,6 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             "vue/component-name-in-template-casing": ["error", "PascalCase"],
             "vue/component-options-name-casing": ["error", "PascalCase"],
 
-            "vue/component-tags-order": "off",
             "vue/custom-event-name-casing": ["error", "camelCase"],
             "vue/define-macros-order": ["error", {
                 order: ["defineOptions", "defineProps", "defineEmits", "defineSlots"],

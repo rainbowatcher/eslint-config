@@ -50,6 +50,7 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             ],
             "no-empty-function": "warn",
             "no-loop-func": "error",
+            "no-loss-of-precision": "error",
             "no-new-func": "error",
             "no-restricted-globals": [
                 "error",

@@ -20,7 +20,6 @@ export function baseConfig(): EslintFlatConfigItem {
             ...typeAwareRules,
             ...disableStyleRules,
 
-            "eol-last": "off",
             "no-alert": "off",
             "no-console": "off",
             "no-labels": "off",
@@ -30,7 +29,6 @@ export function baseConfig(): EslintFlatConfigItem {
             "no-unused-expressions": "off",
             "no-unused-labels": "off",
             "no-unused-vars": "off",
-            "padded-blocks": "off",
             strict: "off",
 
             "ts/consistent-type-imports": "off",
@@ -39,7 +37,6 @@ export function baseConfig(): EslintFlatConfigItem {
             "ts/no-require-imports": "off",
             "ts/no-unused-vars": "off",
             "ts/no-use-before-define": "off",
-            "ts/no-var-requires": "off",
 
             "unicode-bom": "off",
 
