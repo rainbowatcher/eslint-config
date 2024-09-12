@@ -14,7 +14,7 @@ const configs = await concat(
         },
     },
 )
-const { expectRule, formatCode } = createExpectFn(configs)
+const { expectRule, formatCode } = createExpectFn(configs, "_.js")
 
 describe.concurrent("rules", () => {
     expectRule("no-var", "var foo = 1")
