@@ -13,10 +13,11 @@ export function base(opts: Options): EslintFlatConfigItem {
         name: "rainbowatcher:ts:rules",
         // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/recommended-requiring-type-checking.ts
         rules: {
-            "default-param-last": "off",
-            "dot-notation": "off",
             "import/named": "off",
             "import/no-unresolved": "off",
+
+            "default-param-last": "off",
+            "dot-notation": "off",
             "no-array-constructor": "off",
             "no-dupe-class-members": "off",
             "no-duplicate-imports": "off",
@@ -29,6 +30,7 @@ export function base(opts: Options): EslintFlatConfigItem {
             "no-unused-vars": "off",
             // To allow `ignoreVoid` in `ts/no-floating-promises`
             "no-void": ["error", { allowAsStatement: true }],
+
             "ts/adjacent-overload-signatures": "error",
             "ts/array-type": ["error", { default: "array-simple" }],
             "ts/ban-ts-comment": ["error", {
