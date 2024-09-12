@@ -2,8 +2,6 @@ import { interopDefault } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
 export async function setup(opts: Options): Promise<EslintFlatConfigItem> {
-    let config: EslintFlatConfigItem = {}
-
     const [
         pluginAntfu,
         pluginImport,
@@ -24,18 +22,15 @@ export async function setup(opts: Options): Promise<EslintFlatConfigItem> {
         interopDefault(import("@vitest/eslint-plugin")),
     ])
 
-    config = {
-        name: "rainbowatcher:js:setup",
-        plugins: {
-            antfu: pluginAntfu,
-            import: pluginImport,
-            node: pluginNode,
-            perfectionist: pluginPerfectionist,
-            regexp: pluginRegexp,
-            test: pluginVitest,
-            unicorn: pluginUnicorn,
-            "unused-imports": pluginUnusedImports,
-        },
+    let plugins: EslintFlatConfigItem["plugins"] = {
+        antfu: pluginAntfu,
+        import: pluginImport,
+        node: pluginNode,
+        perfectionist: pluginPerfectionist,
+        regexp: pluginRegexp,
+        test: pluginVitest,
+        unicorn: pluginUnicorn,
+        "unused-imports": pluginUnusedImports,
     }
 
     if (opts.style) {
@@ -47,13 +42,16 @@ export async function setup(opts: Options): Promise<EslintFlatConfigItem> {
             interopDefault(import("@stylistic/eslint-plugin-jsx")),
         ])
 
-        config.plugins = {
-            ...config.plugins,
+        plugins = {
+            ...plugins,
             "style-ex": pluginStylisticJsPlus,
             "style-js": pluginStylisticJs,
             "style-jsx": pluginStylisticJsx,
         }
     }
 
-    return config
+    return {
+        name: "rainbowatcher:js:setup",
+        plugins,
+    }
 }
