@@ -17,7 +17,7 @@ export function createExpectFn(config: EslintFlatConfigItem[], filename?: string
         const { expected = true } = opts ?? {}
 
         it(rule, ({ expect }) => {
-            const result = linter.verify(input, config, { filename: _filename })
+            const result = linter.verify(input, config, _filename)
             const hasRule = result.some(error => error.ruleId === rule)
             // console.log(rule, result, hasRule === expected)
             const errMsg = `\
@@ -31,7 +31,7 @@ Message:${JSON.stringify(result, null, 2)}
     }
 
     const formatCode = (code: string): string => {
-        const result = linter.verifyAndFix(code, config, { filename: _filename })
+        const result = linter.verifyAndFix(code, config, _filename)
         return result.output
     }
 
