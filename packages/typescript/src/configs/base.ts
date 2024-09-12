@@ -122,6 +122,7 @@ export function base(opts: Options): EslintFlatConfigItem {
 }
 
 export function typeAware(opts: Options): EslintFlatConfigItem {
+    if (typeof opts.typescript === "boolean" && !opts.typescript) return {}
     if (typeof opts.typescript === "object" && !opts.typescript.typeAware) return {}
     const files = [GLOB_TS]
     opts.jsx && files.push(GLOB_TSX)
