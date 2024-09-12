@@ -45,6 +45,14 @@ export function baseConfig(): EslintFlatConfigItem {
 
             "unused-imports/no-unused-imports": "off",
             "unused-imports/no-unused-vars": "off",
+
+            "markdown/fenced-code-language": "error",
+            "markdown/heading-increment": "error",
+            "markdown/no-duplicate-headings": "off",
+            "markdown/no-empty-links": "error",
+            "markdown/no-html": "off",
+            "markdown/no-invalid-label-refs": "error",
+            "markdown/no-missing-label-refs": "error",
         },
     }
 }

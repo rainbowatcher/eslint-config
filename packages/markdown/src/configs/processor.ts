@@ -3,7 +3,7 @@ import { mergeProcessors, processorPassThrough } from "eslint-merge-processors"
 import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 
 export async function processor(): Promise<EslintFlatConfigItem> {
-    const pluginMarkdown = await interopDefault(import("eslint-plugin-markdown"))
+    const pluginMarkdown = await interopDefault(import("@eslint/markdown"))
 
     return {
         files: [GLOB_MARKDOWN],
@@ -11,7 +11,7 @@ export async function processor(): Promise<EslintFlatConfigItem> {
         name: "rainbowatcher:markdown:processor",
         processor: mergeProcessors([
             processorPassThrough,
-            pluginMarkdown.processors.markdown,
+            pluginMarkdown.processors!.markdown,
         ]),
     }
 }
