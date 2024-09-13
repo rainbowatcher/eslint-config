@@ -7,6 +7,6 @@ export default defineConfig({
             ...defaultExclude,
         ],
         name: "@rainbowatcher/eslint-config",
-        pool: "threads",
+        retry: 3,
     },
 })

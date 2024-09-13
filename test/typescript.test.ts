@@ -21,7 +21,7 @@ const configs = await concat(
 )
 const { expectRule, formatCode } = createExpectFn(configs, "_.ts")
 
-describe("rules", () => {
+describe.concurrent("rules", () => {
     // expect base eslint rule is enable in typescript
     expectRule("eqeqeq", "const a = 1;a == 1")
     expectRule("ts/adjacent-overload-signatures", dedent`
