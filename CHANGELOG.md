@@ -1,3 +1,18 @@
+## 0.15.0 (2024-09-13)
+
+* test: add filename for js test ([15877ac](https://github.com/rainbowatcher/eslint-config/commit/15877ac))
+* test: set retry times ([3d07430](https://github.com/rainbowatcher/eslint-config/commit/3d07430))
+* test: use string filename instead object ([8338e86](https://github.com/rainbowatcher/eslint-config/commit/8338e86))
+* style(javascript): adjust style for setup config ([ae78433](https://github.com/rainbowatcher/eslint-config/commit/ae78433))
+* style(typescript): adjust rule order ([53f780c](https://github.com/rainbowatcher/eslint-config/commit/53f780c))
+* fix: add assertion for type aware config ([e778924](https://github.com/rainbowatcher/eslint-config/commit/e778924))
+* fix: remove deprecated rules ([bbb0bc6](https://github.com/rainbowatcher/eslint-config/commit/bbb0bc6))
+* chore(deps): bump deps ([9d44399](https://github.com/rainbowatcher/eslint-config/commit/9d44399))
+* feat(ignore): add name for ignore config ([25f462c](https://github.com/rainbowatcher/eslint-config/commit/25f462c))
+* feat(markdown): upgrade eslint-plugin-markdown to @eslint/markdown ([fe15b06](https://github.com/rainbowatcher/eslint-config/commit/fe15b06))
+
+
+
 ## <small>0.14.4 (2024-09-08)</small>
 
 * chore(deps): bump deps ([f8715e0](https://github.com/rainbowatcher/eslint-config/commit/f8715e0))
