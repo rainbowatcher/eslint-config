@@ -84,8 +84,6 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             }],
             "prefer-rest-params": "error",
             "prefer-template": "error",
-
-            // use import/order instead
             "sort-imports": "off",
         },
     }

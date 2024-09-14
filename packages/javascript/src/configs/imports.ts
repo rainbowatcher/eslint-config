@@ -10,8 +10,7 @@ export function imports(opts: Options): EslintFlatConfigItem {
         rules: {
             "no-unused-vars": "off",
             ...pluginAntfuRules,
-            ...pluginImportOnRules,
-            ...pluginImportOffRules,
+            ...pluginImportRules,
             ...pluginUnusedimportRules,
             ...opts.style ? stylisticRules : {},
         },
@@ -24,10 +23,9 @@ const pluginAntfuRules: Linter.RulesRecord = {
     "antfu/no-import-node-modules-by-path": "error",
 }
 
-const pluginImportOnRules: Linter.RulesRecord = {
+const pluginImportRules: Linter.RulesRecord = {
     "import/no-absolute-path": "error",
     "import/no-amd": "error",
-    "import/no-cycle": "error",
     "import/no-duplicates": "error",
     "import/no-empty-named-blocks": "error",
     "import/no-mutable-exports": "error",
@@ -35,9 +33,7 @@ const pluginImportOnRules: Linter.RulesRecord = {
     "import/no-self-import": "error",
     "import/no-useless-path-segments": "error",
     "import/no-webpack-loader-syntax": "error",
-}
 
-const pluginImportOffRules: Linter.RulesRecord = {
     "import/default": "off",
     "import/extensions": "off",
     "import/group-exports": "off",
@@ -46,6 +42,8 @@ const pluginImportOffRules: Linter.RulesRecord = {
     "import/namespace": "off",
     "import/no-anonymous-default-export": "off",
     "import/no-commonjs": "off",
+    // this rule cost to many resource, will cause a oom in large repo
+    "import/no-cycle": "off",
     "import/no-default-export": "off",
     "import/no-dynamic-require": "off",
     "import/no-internal-modules": "off",
