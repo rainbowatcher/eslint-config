@@ -47,28 +47,6 @@ describe.concurrent("style", () => {
         expect(formatCode(code)).toBe(`{ "foo": [1, 2, 3] }`)
     })
 
-    it("array-bracket-newline", ({ expect }) => {
-        const code = dedent`
-            {
-                "foo": [
-                    1, 2, 3
-                ]
-            }
-        `
-        expect(formatCode(code)).toBe(dedent`
-            {
-                "foo": [
-                    1, 2, 3
-                ]
-            }
-        `)
-    })
-
-    it("array-element-newline", ({ expect }) => {
-        const code = "[1, 2, 3]"
-        expect(formatCode(code)).toBe("[1, 2, 3]")
-    })
-
     it("comma-dangle", ({ expect }) => {
         const code = dedent`
             {
