@@ -1,3 +1,13 @@
+## 0.16.0 (2024-09-14)
+
+* chore(deps): bump deps ([d522f1a](https://github.com/rainbowatcher/eslint-config/commit/d522f1a))
+* feat(javascript): add import sort groups ([0c52269](https://github.com/rainbowatcher/eslint-config/commit/0c52269))
+* test: make sure fix status for each style test ([f754263](https://github.com/rainbowatcher/eslint-config/commit/f754263))
+* test: remove array-bracket-newline and array-element-newline, we had disable it before ([b0da18c](https://github.com/rainbowatcher/eslint-config/commit/b0da18c))
+* fix(javascript): disable import/no-cycle for low down cost ([b563675](https://github.com/rainbowatcher/eslint-config/commit/b563675))
+
+
+
 ## 0.15.0 (2024-09-13)
 
 * test: add filename for js test ([15877ac](https://github.com/rainbowatcher/eslint-config/commit/15877ac))
