@@ -14,7 +14,8 @@
         "lockb",
         "outro",
         "perfactionist",
-        "stroustrup",
+        "shadcn",
+        "stroustrup"
     ],
     "eslint.validate": [
         "json",
