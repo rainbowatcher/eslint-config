@@ -15,6 +15,7 @@ const configs = await concat(
             "prefer-const": "off",
             "style-js/eol-last": "off",
             "style-ts/semi": "off",
+            "unused-imports/no-unused-imports": "off",
             "unused-imports/no-unused-vars": "off",
         },
     },
@@ -134,5 +135,47 @@ describe.concurrent("style", () => {
                 foo: "bar",
             }
         `)
+    })
+
+    describe("perfectionist", () => {
+        it("perfectionist/sort-imports", ({ expect }) => {
+            const code = dedent`
+                import path from 'path'
+                import axios from 'axios'
+                import Button from '~/components/Button'
+                import formatNumber from '../utils/format-number'
+                import config from './config'
+                import './set-production-env.js'
+                import './styles.scss'
+
+                import main from '.'
+                import log = console.log
+                import styles from './index.module.css'
+                import type { FC } from 'react'
+                import type { Server } from 'http'
+                import type { User } from '~/users'
+                import type { InputProps } from '../Input'
+                import type { Details } from './data'
+                import type { BaseOptions } from './index.d.ts'
+            `
+            expect(formatCode(code)).toBe(dedent`
+                import path from "node:path"
+                import axios from "axios"
+                import Button from "~/components/Button"
+                import main from "."
+                import config from "./config"
+                import formatNumber from "../utils/format-number"
+                import "./set-production-env.js"
+                import "./styles.scss"
+                import styles from "./index.module.css"
+                import log = console.log
+                import type { Server } from "node:http"
+                import type { FC } from "react"
+                import type { User } from "~/users"
+                import type { BaseOptions } from "./index.d.ts"
+                import type { Details } from "./data"
+                import type { InputProps } from "../Input"
+            `)
+        })
     })
 })

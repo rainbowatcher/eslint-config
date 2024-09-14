@@ -7,6 +7,5 @@ export default defineConfig({
             ...defaultExclude,
         ],
         name: "@rainbowatcher/eslint-config",
-        retry: 3,
     },
 })

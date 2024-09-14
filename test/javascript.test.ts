@@ -11,6 +11,7 @@ const configs = await concat(
             "prefer-const": "off",
             "style-js/eol-last": "off",
             "style-ts/semi": "off",
+            "unused-imports/no-unused-imports": "off",
         },
     },
 )
@@ -135,41 +136,67 @@ describe.concurrent("style", () => {
             }
         `)
     })
-})
 
-describe.concurrent("perfectionist", () => {
-    it("perfectionist/sort-objects", ({ expect }) => {
-        const code = dedent`
-            const arr = { foo: 1, bar: 2, baz: 3 }
-            const arr2 = {
-                foo: 1,
-                bar: 2,
-                baz: 3
-            }
-            const arr3 = {
-                foo: 1,
+    describe.concurrent("perfectionist", () => {
+        it("perfectionist/sort-objects", ({ expect }) => {
+            const code = dedent`
+                const arr = { foo: 1, bar: 2, baz: 3 }
+                const arr2 = {
+                    foo: 1,
+                    bar: 2,
+                    baz: 3
+                }
+                const arr3 = {
+                    foo: 1,
+    
+                    // region
+                    bar: 2,
+                    baz: 3
+                }
+                const { foo, bar, baz } = arr
+            `
+            expect(formatCode(code)).toBe(dedent`
+                const arr = { bar: 2, baz: 3, foo: 1 }
+                const arr2 = {
+                    bar: 2,
+                    baz: 3,
+                    foo: 1,
+                }
+                const arr3 = {
+                    foo: 1,
+    
+                    // region
+                    bar: 2,
+                    baz: 3,
+                }
+                const { bar, baz, foo } = arr
+            `)
+        })
 
-                // region
-                bar: 2,
-                baz: 3
-            }
-            const { foo, bar, baz } = arr
-        `
-        expect(formatCode(code)).toBe(dedent`
-            const arr = { bar: 2, baz: 3, foo: 1 }
-            const arr2 = {
-                bar: 2,
-                baz: 3,
-                foo: 1,
-            }
-            const arr3 = {
-                foo: 1,
-
-                // region
-                bar: 2,
-                baz: 3,
-            }
-            const { bar, baz, foo } = arr
-        `)
+        it("perfectionist/sort-imports", ({ expect }) => {
+            const code = dedent`
+                import axios from 'axios'
+                import Button from '~/components/Button'
+                import styles from './index.module.css'
+                import path from 'path'
+                import config from './config'
+    
+                import './set-production-env.js'
+                import formatNumber from '../utils/format-number'
+                import main from '.'
+                import './styles.scss'
+            `
+            expect(formatCode(code)).toBe(dedent`
+                import path from "node:path"
+                import axios from "axios"
+                import Button from "~/components/Button"
+                import main from "."
+                import config from "./config"
+                import formatNumber from "../utils/format-number"
+                import "./set-production-env.js"
+                import "./styles.scss"
+                import styles from "./index.module.css"
+            `)
+        })
     })
 })
