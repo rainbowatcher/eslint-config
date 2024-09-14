@@ -1,6 +1,6 @@
 import path from "node:path"
 import { Linter } from "eslint"
-import { it } from "vitest"
+import { expect, it } from "vitest"
 import type { EslintFlatConfigItem } from "../../packages/shared/src"
 
 type Options = {
@@ -31,8 +31,9 @@ Message:${JSON.stringify(result, null, 2)}
     }
 
     const formatCode = (code: string): string => {
-        const result = linter.verifyAndFix(code, config, _filename)
-        return result.output
+        const { fixed, messages, output } = linter.verifyAndFix(code, config, _filename)
+        expect(fixed, JSON.stringify(messages, null, 2)).toBeTruthy()
+        return output
     }
 
     return {
