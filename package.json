@@ -33,20 +33,20 @@
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.1",
         "@types/eslint__js": "^8.42.3",
-        "@types/node": "^22.5.4",
-        "@vitest/ui": "^2.0.5",
+        "@types/node": "^22.5.5",
+        "@vitest/ui": "^2.1.1",
         "commitlint": "^19.5.0",
         "conventional-changelog-cli": "^5.0.0",
-        "cross-release-cli": "0.1.0-alpha.4",
+        "cross-release-cli": "0.1.0",
         "dedent": "^1.5.3",
         "eslint": "^9.10.0",
         "eslint-typegen": "^0.3.2",
         "simple-git-hooks": "^2.11.1",
         "tsup": "^8.2.4",
-        "tsx": "^4.19.0",
+        "tsx": "^4.19.1",
         "typescript": "^5.6.2",
-        "vitest": "^2.0.5",
-        "vue": "^3.5.4"
+        "vitest": "^2.1.1",
+        "vue": "^3.5.5"
     },
     "simple-git-hooks": {
         "commit-msg": "pnpm exec commitlint --edit $1"
