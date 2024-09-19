@@ -8,11 +8,11 @@ import detectIndent from "detect-indent"
 import { loadPackageJSON } from "local-pkg"
 import { builders, loadFile, writeFile } from "magicast"
 import c from "picocolors"
-import { version } from "../../../package.json"
 import {
     ABBRS, CONFIG_PREFIX, DEFINE_CONFIG, LEGACY_ESLINT_CONFIG_NAMES, MODULES, PRETTIER_LINT_LANGS,
     VALID_ESLINT_CONFIG_NAMES,
 } from "./consts"
+import { version } from "../../../package.json"
 import type { CliContext, Module } from "./types"
 
 function assertCancel<T>(result: symbol | T): T {

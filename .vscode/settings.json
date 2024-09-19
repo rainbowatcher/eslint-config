@@ -15,7 +15,7 @@
         "outro",
         "perfactionist",
         "shadcn",
-        "stroustrup"
+        "stroustrup",
     ],
     "eslint.validate": [
         "json",
