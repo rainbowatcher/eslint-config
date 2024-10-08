@@ -28,9 +28,6 @@ jobs:
       - name: Install
         run: pnpm install --no-frozen-lockfile
 
-      - name: Typegen
-        run: pnpm typegen
-
       - name: Build
         run: pnpm build
 
