@@ -103,7 +103,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-ts/object-curly-spacing": ["error", "always"],
             "style-ts/object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
             "style-ts/quote-props": ["error", "as-needed"],
-            "style-ts/quotes": ["error", singleQuote ? "single" : "double", { avoidEscape: true }],
+            "style-ts/quotes": ["error", singleQuote ? "single" : "double", { allowTemplateLiterals: true, avoidEscape: true }],
             "style-ts/semi": ["error", semi ? "always" : "never"],
             "style-ts/space-before-blocks": "error",
             "style-ts/space-before-function-paren": ["error", {
