@@ -1,5 +1,5 @@
 export * from "./env"
 export * from "./globs"
 export * from "./options"
-export * from "./types"
+export type * from "./types"
 export * from "./utils"
