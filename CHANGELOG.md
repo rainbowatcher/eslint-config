@@ -1,3 +1,25 @@
+## <small>0.16.1 (2024-10-08)</small>
+
+* revert: "ci: run typegen before build" ([3b2d3c9](https://github.com/rainbowatcher/eslint-config/commit/3b2d3c9))
+* fix(all): fix deprecation ([4ed7c5a](https://github.com/rainbowatcher/eslint-config/commit/4ed7c5a))
+* fix(shared): avoid circular reference ([fdd2acd](https://github.com/rainbowatcher/eslint-config/commit/fdd2acd))
+* fix(shared): typegen only in shared ([7698f27](https://github.com/rainbowatcher/eslint-config/commit/7698f27))
+* fix(typescript): add allowTemplateLiterals option ([cb43071](https://github.com/rainbowatcher/eslint-config/commit/cb43071))
+* fix(vue): disable vue/no-reserved-props ([14ccbca](https://github.com/rainbowatcher/eslint-config/commit/14ccbca))
+* ci: run typegen before build ([7b9a9e4](https://github.com/rainbowatcher/eslint-config/commit/7b9a9e4))
+* feat(javascript): explicit declaration some rules in plugin unicorn ([46cdd30](https://github.com/rainbowatcher/eslint-config/commit/46cdd30))
+* style: fix style issue ([cd4cbbd](https://github.com/rainbowatcher/eslint-config/commit/cd4cbbd))
+* style(shared): use export type ([297b643](https://github.com/rainbowatcher/eslint-config/commit/297b643))
+* chore: remove useless tsconfig ([245cf28](https://github.com/rainbowatcher/eslint-config/commit/245cf28))
+* chore(deps): bump deps ([036c3f7](https://github.com/rainbowatcher/eslint-config/commit/036c3f7))
+* chore(deps): bump deps ([737c740](https://github.com/rainbowatcher/eslint-config/commit/737c740))
+* chore(deps): update all non-major dependencies ([c89ff9b](https://github.com/rainbowatcher/eslint-config/commit/c89ff9b))
+* chore(deps): update all non-major dependencies ([7f47e2d](https://github.com/rainbowatcher/eslint-config/commit/7f47e2d))
+* chore(deps): update all non-major dependencies ([f07d1eb](https://github.com/rainbowatcher/eslint-config/commit/f07d1eb))
+* fix(all,shared): fix await thenable issue ([01b5897](https://github.com/rainbowatcher/eslint-config/commit/01b5897))
+
+
+
 ## 0.16.0 (2024-09-14)
 
 * chore(deps): bump deps ([d522f1a](https://github.com/rainbowatcher/eslint-config/commit/d522f1a))
