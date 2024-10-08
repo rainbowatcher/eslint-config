@@ -138,7 +138,7 @@ async function generateCode(ctx: CliContext) {
     if (ctx.legacyConfigPath) await fs.rm(ctx.legacyConfigPath)
     if (!isConfigExists) await fs.writeFile(ctx.configPath, "")
     const file = await loadFile(ctx.configPath)
-    file.imports.$add({ from: "@rainbowatcher/eslint-config", imported: DEFINE_CONFIG })
+    file.imports.$prepend({ from: "@rainbowatcher/eslint-config", imported: DEFINE_CONFIG })
 
     file.exports.default = builders.functionCall(DEFINE_CONFIG, ctx.configOptions)
 
