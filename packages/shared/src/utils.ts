@@ -58,15 +58,15 @@ export function resolveAltOption<K extends keyof Alterable<Options>>(
  * @param  configName - The name of the configuration to filter rules by.
  * @return A Promise that resolves to a partial record of ESLint rules extracted from the configurations.
  */
-export async function extractRules(configs: Array<Awaitable<EslintFlatConfigItem>>, configName?: string): Promise<Partial<Linter.RulesRecord>> {
-    const acc: Partial<Linter.RulesRecord> = {}
+export async function extractRules(configs: Array<Awaitable<EslintFlatConfigItem>>, configName?: string): Promise<Linter.RulesRecord> {
+    const acc: Linter.RulesRecord = {}
 
     for (const config of await Promise.all(configs)) {
         if (!configName || config.name?.includes(configName)) {
             const { rules } = config
             if (rules) {
                 for (const [key, value] of Object.entries(rules)) {
-                    acc[key] = value
+                    acc[key] = value as any
                 }
             }
         }

@@ -10,7 +10,7 @@ async function genType(
     extra?: string,
 ) {
     console.log(`${p.green("generated")} ${dist}`)
-    let dts = await flatConfigsToRulesDTS(configs, { includeAugmentation: false })
+    let dts = await flatConfigsToRulesDTS(configs)
     dts += extra ?? ""
     await fs.writeFile(dist, dts)
 }
@@ -30,4 +30,4 @@ const configs = await defineConfig({
     yaml: true,
 })
 
-await genType(configs, "packages/shared/src/typegen.d.ts")
+await genType(configs, "typegen.d.ts")

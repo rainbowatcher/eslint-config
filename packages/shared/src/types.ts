@@ -1,10 +1,9 @@
 import type { Linter } from "eslint"
 import type { Awaitable } from "eslint-flat-config-utils"
-import type { RuleOptions } from "./typegen"
 
 export type EslintFlatConfigItem = {
     plugins?: Record<string, any>
-} & Omit<Linter.Config<Linter.RulesRecord & RuleOptions>, "plugins">
+} & Omit<Linter.Config<Linter.RulesRecord>, "plugins">
 
 export type EslintFlatConfigs = Array< Awaitable <EslintFlatConfigItem>>
 
