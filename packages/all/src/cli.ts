@@ -171,7 +171,7 @@ async function handleDeps(ctx: CliContext) {
         ctx.pkgJson.devDependencies = {}
     }
 
-    for await (const dep of ctx.deps) {
+    for (const dep of ctx.deps) {
         ctx.pkgJson.devDependencies[dep] = `^${version}`
     }
 

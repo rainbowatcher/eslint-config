@@ -60,7 +60,8 @@ export function resolveAltOption<K extends keyof Alterable<Options>>(
  */
 export async function extractRules(configs: Array<Awaitable<EslintFlatConfigItem>>, configName?: string): Promise<Partial<Linter.RulesRecord>> {
     const acc: Partial<Linter.RulesRecord> = {}
-    for await (const config of configs) {
+
+    for (const config of await Promise.all(configs)) {
         if (!configName || config.name?.includes(configName)) {
             const { rules } = config
             if (rules) {
@@ -76,7 +77,7 @@ export async function extractRules(configs: Array<Awaitable<EslintFlatConfigItem
 export async function findConfig(configs: EslintFlatConfigs, configName?: string): Promise<EslintFlatConfigItem | undefined> {
     let configItem: EslintFlatConfigItem | undefined = undefined
 
-    for await (const config of configs) {
+    for (const config of await Promise.all(configs)) {
         if (!configName || config.name?.includes(configName)) {
             configItem = config
             break
