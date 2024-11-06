@@ -27,7 +27,7 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.13.0"
+        "eslint": ">=9.14.0"
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
