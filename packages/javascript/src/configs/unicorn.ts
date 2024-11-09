@@ -30,23 +30,6 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem> {
     }
 }
 
-export function fileName(opts: Options): EslintFlatConfigItem {
-    const files = opts.typescript ? [GLOB_JS, GLOB_TS] : [GLOB_JS]
-    return {
-        files,
-        ignores: [GLOB_MARKDOWN_CODE],
-        name: "rainbowatcher:js:file-name",
-        rules: {
-            "unicorn/filename-case": ["error", {
-                cases: {
-                    camelCase: true,
-                    snakeCase: true,
-                },
-            }],
-        },
-    }
-}
-
 export function jsxFileName(opts: Options): EslintFlatConfigItem {
     if (!opts.jsx) return {}
     return {
