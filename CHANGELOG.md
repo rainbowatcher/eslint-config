@@ -1,3 +1,17 @@
+## <small>0.16.2 (2024-11-18)</small>
+
+* feat(javascript): add partition by comment option ([d614636](https://github.com/rainbowatcher/eslint-config/commit/d614636))
+* fix(javascript): remove filename case rule ([dafec33](https://github.com/rainbowatcher/eslint-config/commit/dafec33))
+* chore(deps): bump deps ([36ec95b](https://github.com/rainbowatcher/eslint-config/commit/36ec95b))
+* chore(deps): bump deps ([02f433f](https://github.com/rainbowatcher/eslint-config/commit/02f433f))
+* chore(deps): update actions/checkout digest to 11bd719 ([3d298b4](https://github.com/rainbowatcher/eslint-config/commit/3d298b4))
+* chore(deps): update actions/checkout digest to eef6144 ([79f43ed](https://github.com/rainbowatcher/eslint-config/commit/79f43ed))
+* chore(deps): update all non-major dependencies ([f666c3a](https://github.com/rainbowatcher/eslint-config/commit/f666c3a))
+* chore(deps): update all non-major dependencies ([325a285](https://github.com/rainbowatcher/eslint-config/commit/325a285))
+* chore(deps): update all non-major dependencies ([b3ed527](https://github.com/rainbowatcher/eslint-config/commit/b3ed527))
+
+
+
 ## <small>0.16.1 (2024-10-08)</small>
 
 * revert: "ci: run typegen before build" ([3b2d3c9](https://github.com/rainbowatcher/eslint-config/commit/3b2d3c9))
