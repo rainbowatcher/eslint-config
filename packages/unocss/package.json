@@ -27,6 +27,6 @@
         "watch": "tsup --dts --watch"
     },
     "dependencies": {
-        "@unocss/eslint-plugin": "^0.64.0"
+        "@unocss/eslint-plugin": "^0.64.1"
     }
 }
