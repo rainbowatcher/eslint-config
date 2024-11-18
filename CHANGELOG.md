@@ -1,3 +1,9 @@
+## <small>0.16.3 (2024-11-18)</small>
+
+* fix(javascript): disable broken rule ([94fadb6](https://github.com/rainbowatcher/eslint-config/commit/94fadb6))
+
+
+
 ## <small>0.16.2 (2024-11-18)</small>
 
 * feat(javascript): add partition by comment option ([d614636](https://github.com/rainbowatcher/eslint-config/commit/d614636))
