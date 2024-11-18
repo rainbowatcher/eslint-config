@@ -198,5 +198,25 @@ describe.concurrent("style", () => {
                 import styles from "./index.module.css"
             `)
         })
+
+        it("perfectionist/sort-classes", ({ expect }) => {
+            const code = dedent`
+                class Foo {
+                    options = {}
+                    // region: optional fields
+                    bar = {}
+                    attributes
+                }
+            `
+            expect(formatCode(code)).toBe(dedent`
+                class Foo {
+                    options = {}
+
+                    // region: optional fields
+                    attributes
+                    bar = {}
+                }
+            `)
+        })
     })
 })
