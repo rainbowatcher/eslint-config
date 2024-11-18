@@ -27,10 +27,10 @@ export function sort(opts: Options): EslintFlatConfigItem {
                     ["get-method", "set-method"],
                     "unknown",
                 ],
-                partitionByComment: false,
+                partitionByComment: ["region", "REGION"],
             }],
             // partition comment same as region comment in vscode
-            "perfectionist/sort-enums": ["error", { partitionByComment: "region", ...commonOptions }],
+            "perfectionist/sort-enums": ["error", { partitionByComment: ["region", "REGION"], ...commonOptions }],
             // TODO: enable it when support astro
             // "perfectionist/sort-astro-attributes": "off",
             "perfectionist/sort-exports": ["error", commonOptions],
@@ -86,7 +86,7 @@ export function sort(opts: Options): EslintFlatConfigItem {
                 destructureOnly: false,
                 groups: [],
                 ignorePattern: [],
-                partitionByComment: [],
+                partitionByComment: ["region", "REGION"],
                 partitionByNewLine: true,
                 styledComponents: true,
             }],
