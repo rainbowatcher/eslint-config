@@ -1,3 +1,9 @@
+## <small>0.16.4 (2024-11-18)</small>
+
+* fix(javascript): partition by comment should use pattern ([ab883bc](https://github.com/rainbowatcher/eslint-config/commit/ab883bc))
+
+
+
 ## <small>0.16.3 (2024-11-18)</small>
 
 * fix(javascript): disable broken rule ([94fadb6](https://github.com/rainbowatcher/eslint-config/commit/94fadb6))
