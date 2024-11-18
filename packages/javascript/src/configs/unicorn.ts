@@ -15,6 +15,7 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem> {
             "unicorn/better-regex": "off",
             "unicorn/consistent-existence-index-check": "error",
             "unicorn/consistent-function-scoping": "off",
+            "unicorn/expiring-todo-comments": "off",
             "unicorn/filename-case": "off",
             "unicorn/no-array-push-push": "error",
             "unicorn/no-array-reduce": "error",
@@ -25,6 +26,7 @@ export async function unicorn(opts: Options): Promise<EslintFlatConfigItem> {
             "unicorn/prefer-math-min-max": "error",
             // It doesn't work well. If there are more configuration items, We will try to open it.
             "unicorn/prefer-ternary": "off",
+            // TODO: https://github.com/sindresorhus/eslint-plugin-unicorn/issues/2496, this rule is broken in ESlint 9.15.0, open it later
             "unicorn/prevent-abbreviations": "off",
         },
     }
