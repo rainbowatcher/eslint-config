@@ -32,8 +32,6 @@ export function sort(opts: Options): EslintFlatConfigItem {
             "perfectionist/sort-decorators": ["error", commonOptions],
             // partition comment same as region comment in vscode
             "perfectionist/sort-enums": ["error", { partitionByComment: ["region:*", "REGION:*"], ...commonOptions }],
-            // TODO: enable it when support astro
-            // "perfectionist/sort-astro-attributes": "off",
             "perfectionist/sort-exports": ["error", commonOptions],
             "perfectionist/sort-heritage-clauses": ["error", commonOptions],
             "perfectionist/sort-imports": ["error", {
@@ -96,8 +94,6 @@ export function sort(opts: Options): EslintFlatConfigItem {
             "perfectionist/sort-switch-case": ["error", commonOptions],
             "perfectionist/sort-union-types": ["error", { ...commonOptions, groups: [] }],
             "perfectionist/sort-variable-declarations": ["error", commonOptions],
-            // it remove from perfectionist v4, https://github.com/azat-io/eslint-plugin-perfectionist/commit/0430412
-            // "perfectionist/sort-vue-attributes": "off",
         },
     }
 }
