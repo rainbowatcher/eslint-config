@@ -1,5 +1,5 @@
 import {
-    GLOB_JS, GLOB_JSX, GLOB_MARKDOWN_CODE, GLOB_TS, GLOB_TSX, interopDefault,
+    GLOB_JSX, GLOB_MARKDOWN_CODE, GLOB_TSX, interopDefault,
 } from "@rainbowatcher/eslint-config-shared"
 import { getFiles } from "../files"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
