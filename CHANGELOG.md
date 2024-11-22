@@ -1,3 +1,13 @@
+## 0.17.0 (2024-11-22)
+
+* fix(javascript): enable expiring-todo-comments ([cea9125](https://github.com/rainbowatcher/eslint-config/commit/cea9125))
+* fix(javascript): remove unused imports ([57f7e77](https://github.com/rainbowatcher/eslint-config/commit/57f7e77))
+* chore(deps): update all non-major dependencies ([ff5cbbc](https://github.com/rainbowatcher/eslint-config/commit/ff5cbbc))
+* chore(javascript): remove sort-astro-attributes and sort-vue-attributes ([0603bfd](https://github.com/rainbowatcher/eslint-config/commit/0603bfd))
+* feat(javascript): migrate to perfectionist v4 ([89db471](https://github.com/rainbowatcher/eslint-config/commit/89db471))
+
+
+
 ## <small>0.16.4 (2024-11-18)</small>
 
 * fix(javascript): partition by comment should use pattern ([ab883bc](https://github.com/rainbowatcher/eslint-config/commit/ab883bc))
