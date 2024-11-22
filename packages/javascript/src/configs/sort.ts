@@ -16,7 +16,7 @@ export function sort(opts: Options): EslintFlatConfigItem {
             }],
             "perfectionist/sort-classes": ["error", {
                 ...commonOptions,
-                customGroups: {},
+                customGroups: [],
                 groups: [
                     "index-signature",
                     "static-property",
@@ -29,11 +29,13 @@ export function sort(opts: Options): EslintFlatConfigItem {
                 ],
                 partitionByComment: ["region:*", "REGION:*"],
             }],
+            "perfectionist/sort-decorators": ["error", commonOptions],
             // partition comment same as region comment in vscode
             "perfectionist/sort-enums": ["error", { partitionByComment: ["region:*", "REGION:*"], ...commonOptions }],
             // TODO: enable it when support astro
             // "perfectionist/sort-astro-attributes": "off",
             "perfectionist/sort-exports": ["error", commonOptions],
+            "perfectionist/sort-heritage-clauses": ["error", commonOptions],
             "perfectionist/sort-imports": ["error", {
                 ...commonOptions,
                 // may make it configurable
@@ -57,7 +59,7 @@ export function sort(opts: Options): EslintFlatConfigItem {
                     "sibling-type",
                     "parent-type",
                 ],
-                internalPattern: ["#**", "~/**", "@/**"],
+                internalPattern: ["^#", "^~/", "^@/"],
                 newlinesBetween: "never",
                 sortSideEffects: false,
             }],
@@ -71,6 +73,7 @@ export function sort(opts: Options): EslintFlatConfigItem {
             }],
             "perfectionist/sort-intersection-types": ["error", { ...commonOptions, groups: [] }],
             "perfectionist/sort-maps": ["error", commonOptions],
+            "perfectionist/sort-modules": "off",
             "perfectionist/sort-named-exports": ["error", { ...commonOptions, groupKind: "values-first" }],
             "perfectionist/sort-named-imports": ["error", { ...commonOptions, groupKind: "values-first", ignoreAlias: false }],
             "perfectionist/sort-object-types": ["error", {
@@ -93,7 +96,8 @@ export function sort(opts: Options): EslintFlatConfigItem {
             "perfectionist/sort-switch-case": ["error", commonOptions],
             "perfectionist/sort-union-types": ["error", { ...commonOptions, groups: [] }],
             "perfectionist/sort-variable-declarations": ["error", commonOptions],
-            "perfectionist/sort-vue-attributes": "off",
+            // it remove from perfectionist v4, https://github.com/azat-io/eslint-plugin-perfectionist/commit/0430412
+            // "perfectionist/sort-vue-attributes": "off",
         },
     }
 }
