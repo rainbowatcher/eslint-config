@@ -26,11 +26,13 @@ const pluginAntfuRules: Linter.RulesRecord = {
 const pluginImportRules: Linter.RulesRecord = {
     "import/no-absolute-path": "error",
     "import/no-amd": "error",
+    "import/no-deprecated": isInEditor() ? "off" : "error",
     "import/no-duplicates": "error",
     "import/no-empty-named-blocks": "error",
     "import/no-mutable-exports": "error",
     "import/no-named-default": "error",
     "import/no-self-import": "error",
+    "import/no-unused-modules": isInEditor() ? "off" : "error",
     "import/no-useless-path-segments": "error",
     "import/no-webpack-loader-syntax": "error",
 
@@ -47,6 +49,8 @@ const pluginImportRules: Linter.RulesRecord = {
     "import/no-default-export": "off",
     "import/no-dynamic-require": "off",
     "import/no-internal-modules": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
     "import/no-relative-packages": "off",
     "import/no-relative-parent-imports": "off",
     "import/no-restricted-paths": "off",
