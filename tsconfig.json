@@ -15,6 +15,7 @@
         "scripts/**/*.ts",
         "test/**/*.ts",
         "vitest.config.ts",
+        "tsreset.d.ts",
         "uno.config.ts",
         "test/**/*.tsx",
     ]
