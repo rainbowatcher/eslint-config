@@ -1,4 +1,3 @@
-import process from "node:process"
 import {
     GLOB_TS, GLOB_TSX, GLOB_VUE, interopDefault,
 } from "@rainbowatcher/eslint-config-shared"
@@ -60,7 +59,7 @@ async function makeParser(opts: MakeParserOptions): Promise<EslintFlatConfigItem
                 ...opts.typeAware
                     ? {
                         project: opts.tsconfigPath,
-                        tsconfigRootDir: process.cwd(),
+                        tsconfigRootDir: import.meta.dirname,
                     }
                     : {},
                 ...opts.parserOptions as any,
