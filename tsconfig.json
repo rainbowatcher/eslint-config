@@ -11,7 +11,11 @@
         "skipLibCheck": true
     },
     "include": [
-        "**/*.ts",
-        "**/*.tsx",
+        "packages/**/*.ts",
+        "scripts/**/*.ts",
+        "test/**/*.ts",
+        "vitest.config.ts",
+        "uno.config.ts",
+        "test/**/*.tsx",
     ]
 }
