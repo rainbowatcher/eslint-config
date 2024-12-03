@@ -16,7 +16,7 @@
         "perfactionist",
         "shadcn",
         "stroustrup",
-        "tsreset"
+        "tsreset",
     ],
     "eslint.validate": [
         "json",
