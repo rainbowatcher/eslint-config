@@ -156,7 +156,8 @@ export function typeAware(opts: Options): EslintFlatConfigItem {
             "ts/no-require-imports": "error",
             "ts/no-unnecessary-boolean-literal-compare": "error",
             "ts/no-unnecessary-type-assertion": "error",
-            "ts/no-unsafe-return": "error",
+            // turn off this rule for performance issue
+            "ts/no-unsafe-return": "off",
             // may cause incorrect type judgment.
             // "ts/no-unsafe-argument": "error",
             // "ts/no-unsafe-assignment": "off",
