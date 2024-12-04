@@ -26,7 +26,6 @@ const pluginAntfuRules: Linter.RulesRecord = {
 const pluginImportRules: Linter.RulesRecord = {
     "import/no-absolute-path": "error",
     "import/no-amd": "error",
-    "import/no-deprecated": isInEditor() ? "off" : "error",
     "import/no-duplicates": "error",
     "import/no-empty-named-blocks": "error",
     "import/no-mutable-exports": "error",
@@ -47,6 +46,8 @@ const pluginImportRules: Linter.RulesRecord = {
     // this rule cost to many resource, will cause a oom in large repo
     "import/no-cycle": "off",
     "import/no-default-export": "off",
+    // there already has notice in editor
+    "import/no-deprecated": "off",
     "import/no-dynamic-require": "off",
     "import/no-internal-modules": "off",
     "import/no-named-as-default": "off",
