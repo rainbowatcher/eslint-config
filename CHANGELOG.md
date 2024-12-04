@@ -1,3 +1,9 @@
+## <small>0.18.1 (2024-12-04)</small>
+
+* fix(javascript): disable rule no-deprecated ([62b8715](https://github.com/rainbowatcher/eslint-config/commit/62b8715))
+
+
+
 ## 0.18.0 (2024-12-04)
 
 * chore: add comma in settings.json ([433fbbe](https://github.com/rainbowatcher/eslint-config/commit/433fbbe))
