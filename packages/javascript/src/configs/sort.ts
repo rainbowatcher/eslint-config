@@ -79,6 +79,7 @@ export function sort(opts: Options): EslintFlatConfigItem {
                 customGroups: {},
                 groupKind: "mixed",
                 groups: [],
+                partitionByComment: ["region:*", "REGION:*"],
                 partitionByNewLine: false,
             }],
             "perfectionist/sort-objects": ["error", {
