@@ -1,3 +1,18 @@
+## 0.18.0 (2024-12-04)
+
+* chore: add comma in settings.json ([433fbbe](https://github.com/rainbowatcher/eslint-config/commit/433fbbe))
+* chore: add tsreset.d.ts to include ([a9f4a66](https://github.com/rainbowatcher/eslint-config/commit/a9f4a66))
+* chore: refine include paths in tsconfig ([fa249b0](https://github.com/rainbowatcher/eslint-config/commit/fa249b0))
+* chore(deps): bump deps ([bcfc43c](https://github.com/rainbowatcher/eslint-config/commit/bcfc43c))
+* chore(deps): bump deps ([d845c67](https://github.com/rainbowatcher/eslint-config/commit/d845c67))
+* chore(typescript): use import.meta.dirname instead of process.cwd ([66e5730](https://github.com/rainbowatcher/eslint-config/commit/66e5730))
+* fix(javascript): add partitionByComment for sort-object-types ([b8edd5f](https://github.com/rainbowatcher/eslint-config/commit/b8edd5f))
+* fix(typescript): disable no-unsafe-return for performance improve ([074dfb9](https://github.com/rainbowatcher/eslint-config/commit/074dfb9))
+* revert: use import.meta.dirname instead of process.cwd ([d84364c](https://github.com/rainbowatcher/eslint-config/commit/d84364c))
+* feat(javascript): enable no-deprecated and no-unused-modules in ci ([7fc456a](https://github.com/rainbowatcher/eslint-config/commit/7fc456a))
+
+
+
 ## 0.17.0 (2024-11-22)
 
 * fix(javascript): enable expiring-todo-comments ([cea9125](https://github.com/rainbowatcher/eslint-config/commit/cea9125))
