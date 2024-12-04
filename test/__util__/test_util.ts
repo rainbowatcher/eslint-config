@@ -11,7 +11,11 @@ const fixturePath = "test/fixture"
 
 export function createExpectFn(config: EslintFlatConfigItem[], filename?: string) {
     const _filename = filename?.endsWith(".ts") ? path.join(fixturePath, filename) : filename ?? undefined
-    const linter = new Linter({ configType: "flat" })
+    const linter = new Linter({
+        configType: "flat",
+        // @ts-expect-error unknown field https://eslint.org/docs/latest/flags/
+        flags: ["test_only"],
+    })
 
     const expectRule = (rule: string, input: string, opts?: Options) => {
         const { expected = true } = opts ?? {}
