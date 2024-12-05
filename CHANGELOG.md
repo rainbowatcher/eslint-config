@@ -1,3 +1,10 @@
+## <small>0.18.2 (2024-12-05)</small>
+
+* chore: add typegen.d.ts to tsconfig include ([a911726](https://github.com/rainbowatcher/eslint-config/commit/a911726))
+* test: add flags option for linter ([13d26e2](https://github.com/rainbowatcher/eslint-config/commit/13d26e2))
+
+
+
 ## <small>0.18.1 (2024-12-04)</small>
 
 * fix(javascript): disable rule no-deprecated ([62b8715](https://github.com/rainbowatcher/eslint-config/commit/62b8715))
