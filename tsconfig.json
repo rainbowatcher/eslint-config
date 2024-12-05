@@ -17,6 +17,7 @@
         "vitest.config.ts",
         "tsreset.d.ts",
         "uno.config.ts",
+        "typegen.d.ts",
         "test/**/*.tsx",
     ]
 }
