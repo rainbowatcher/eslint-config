@@ -158,9 +158,11 @@ async function handleDeps(ctx: CliContext) {
     const indent = styleOption?.tabWidth ?? await getPkgIndent(packageJsonPath)
 
     for (const [opt, val] of Object.entries(ctx.configOptions)) {
+        // when option key is "style" and the option key in PRETTIER_LINT_LANGS has defined in config
         if (opt === "style" && val && PRETTIER_LINT_LANGS.some(lang => ctx.configOptions[lang])) {
             ctx.deps.add(`${CONFIG_PREFIX}-prettier`)
         }
+        // when option key is in MODULES
         if (MODULES.includes(opt as Module)) {
             const abbr = ABBRS[opt as keyof typeof ABBRS] ?? opt
             val && ctx.deps.add(`${CONFIG_PREFIX}-${abbr}`)
