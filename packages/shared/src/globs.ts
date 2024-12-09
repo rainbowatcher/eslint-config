@@ -63,6 +63,7 @@ export const GLOB_EXCLUDE = [
     "**/vite.config.*.timestamp-*",
 
     "**/CHANGELOG*.md",
+    "**/changelog*.md",
     "**/*.min.*",
     "**/LICENSE*",
     "**/__snapshots__",
