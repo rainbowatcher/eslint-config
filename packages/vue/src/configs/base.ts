@@ -65,6 +65,8 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
         ]),
         rules: {
             ...vue3RecommendedRules,
+            // https://github.com/un-ts/eslint-plugin-import-x/issues/177
+            "import/first": "off",
             "node/prefer-global/process": "off",
             "vue/block-order": ["error", {
                 order: ["script", "template", "style"],
