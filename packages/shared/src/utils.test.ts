@@ -4,7 +4,7 @@ import { resolveAltOption } from "./utils"
 
 describe("resolveAltOption", () => {
     const defaultValue = {
-        indent: 4, quote: "double", semi: false, trailingComma: true, useTabs: false,
+        indent: 4, quote: "double", semi: false, trailingComma: "all", useTabs: false,
     } as const
     it("should return the default value when the option is undefined", () => {
         const opts = { style: undefined }
@@ -27,7 +27,7 @@ describe("resolveAltOption", () => {
     it("should return the same object when it is a object", () => {
         const opts = {
             style: {
-                indent: 4, quote: "double", semi: true, trailingComma: true, useTabs: false,
+                indent: 4, quote: "double", semi: true, trailingComma: "all", useTabs: false,
             },
         } as const
         const result = resolveAltOption(opts, "style", defaultValue)
