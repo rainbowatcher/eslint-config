@@ -1,3 +1,16 @@
+## 0.19.0 (2024-12-11)
+
+* chore: add type check script ([662a470](https://github.com/rainbowatcher/eslint-config/commit/662a470))
+* chore(all): add some comments ([3aa2797](https://github.com/rainbowatcher/eslint-config/commit/3aa2797))
+* chore(deps): bump deps ([f27b79d](https://github.com/rainbowatcher/eslint-config/commit/f27b79d))
+* chore(deps): update all non-major dependencies ([e428def](https://github.com/rainbowatcher/eslint-config/commit/e428def))
+* test: fix type miss match ([4f06855](https://github.com/rainbowatcher/eslint-config/commit/4f06855))
+* fix(vue): import/first is not well work when using script and script setup ([f213d6b](https://github.com/rainbowatcher/eslint-config/commit/f213d6b))
+* feat(shared): add lower case changelog file to ignore glob list ([308d302](https://github.com/rainbowatcher/eslint-config/commit/308d302))
+* feat(vue): drop support for vue2 ([8723363](https://github.com/rainbowatcher/eslint-config/commit/8723363))
+
+
+
 ## <small>0.18.2 (2024-12-05)</small>
 
 * chore: add typegen.d.ts to tsconfig include ([a911726](https://github.com/rainbowatcher/eslint-config/commit/a911726))
