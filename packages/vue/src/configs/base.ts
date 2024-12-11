@@ -1,28 +1,20 @@
-import { GLOB_VUE, interopDefault, isVue3 } from "@rainbowatcher/eslint-config-shared"
+import { GLOB_VUE, interopDefault } from "@rainbowatcher/eslint-config-shared"
 import { mergeProcessors } from "eslint-merge-processors"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 import type { Linter } from "eslint"
 
 export async function base(opts: Options): Promise<EslintFlatConfigItem> {
     const [pluginVue, parserVue, processorVueBlocks] = await Promise.all([
-        // @ts-expect-error missing types
         interopDefault(import("eslint-plugin-vue")),
         interopDefault(import("vue-eslint-parser")),
         interopDefault(import("eslint-processor-vue-blocks")),
     ])
 
-    const vue3Rules: Linter.RulesRecord = {
-        ...pluginVue.configs.base.rules,
-        ...pluginVue.configs["vue3-essential"].rules,
-        ...pluginVue.configs["vue3-strongly-recommended"].rules,
-        ...pluginVue.configs["vue3-recommended"].rules,
-    }
-
-    const vue2Rules: Linter.RulesRecord = {
-        ...pluginVue.configs.base.rules,
-        ...pluginVue.configs.essential.rules,
-        ...pluginVue.configs["strongly-recommended"].rules,
-        ...pluginVue.configs.recommended.rules,
+    let vue3RecommendedRules: Linter.RulesRecord = {}
+    for (const config of pluginVue.configs["flat/recommended"]) {
+        if (config.rules) {
+            vue3RecommendedRules = { ...vue3RecommendedRules, ...config.rules as Linter.RulesRecord }
+        }
     }
 
     return {
@@ -72,7 +64,7 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             }),
         ]),
         rules: {
-            ...isVue3() ? vue3Rules : vue2Rules,
+            ...vue3RecommendedRules,
             "node/prefer-global/process": "off",
             "vue/block-order": ["error", {
                 order: ["script", "template", "style"],

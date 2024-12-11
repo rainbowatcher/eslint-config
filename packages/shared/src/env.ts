@@ -25,6 +25,7 @@ export function hasVue(): boolean {
     return isPackageExists("vue")
 }
 
+/** @deprecated drop support for vue2 */
 export function isVue3(): boolean {
     if (!hasVue()) return false
     const pkg = getPackageInfoSync("vue")
