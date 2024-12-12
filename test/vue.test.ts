@@ -11,6 +11,11 @@ const configs = await concat(
     ...jsConfigs(opts),
     ...tsConfigs(opts),
     ...vueConfigs(opts),
+    {
+        rules: {
+            "style-js/eol-last": "off",
+        },
+    },
 )
 const { expectRule, formatCode } = createExpectFn(configs, "_.vue")
 
@@ -64,6 +69,16 @@ describe.concurrent("rules", () => {
             const arr = new Array()
         </script>
     `)
+    expectRule("style-ts/lines-around-comment", dedent`
+        <script lang="ts" setup>
+        /** comment */
+        const ref = ref("")
+        </script>
+
+        <template>
+            <div>hi</div>
+        </template>
+    `, { expected: false })
 })
 
 
@@ -81,7 +96,7 @@ describe.concurrent("style", () => {
                 <div class="foo">
                     <i class="bar" />
                 </div>
-            </template>\n
+            </template>
         `)
     })
 })

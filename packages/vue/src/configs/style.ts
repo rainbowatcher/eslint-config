@@ -9,6 +9,9 @@ export function style(opts: Options): EslintFlatConfigItem {
         files: [GLOB_VUE],
         name: "rainbowatcher:vue:style",
         rules: {
+            // rules not work well in vue
+            "style-ts/lines-around-comment": "off",
+
             "vue/array-bracket-spacing": ["error", "never"],
             "vue/arrow-spacing": ["error", { after: true, before: true }],
             "vue/block-spacing": ["error", "always"],
