@@ -91,7 +91,7 @@ describe.concurrent("rules", () => {
 describe.concurrent("style", () => {
     it("space-infix-ops", ({ expect }) => {
         const code = "const foo =5"
-        expect(formatCode(code)).toEqual("const foo = 5")
+        expect(formatCode(code)).toBe("const foo = 5")
     })
 
     it("quotes", ({ expect }) => {
