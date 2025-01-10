@@ -1,3 +1,20 @@
+## <small>0.19.1 (2025-01-10)</small>
+
+* test: apply rule prefer-to-be ([d7fea9b](https://github.com/rainbowatcher/eslint-config/commit/d7fea9b))
+* chore(deps): update all non-major dependencies ([cd4ff93](https://github.com/rainbowatcher/eslint-config/commit/cd4ff93))
+* chore(deps): update all non-major dependencies ([24aa656](https://github.com/rainbowatcher/eslint-config/commit/24aa656))
+* chore(deps): update all non-major dependencies ([c3a6510](https://github.com/rainbowatcher/eslint-config/commit/c3a6510))
+* chore(deps): update dependency @antfu/install-pkg to v1 ([f8fc7eb](https://github.com/rainbowatcher/eslint-config/commit/f8fc7eb))
+* chore(deps): update dependency eslint-config-flat-gitignore to v1 ([ba01673](https://github.com/rainbowatcher/eslint-config/commit/ba01673))
+* chore(deps): update dependency eslint-flat-config-utils to v1 ([f8978d6](https://github.com/rainbowatcher/eslint-config/commit/f8978d6))
+* chore(deps): update dependency eslint-merge-processors to v1 ([2c5dba4](https://github.com/rainbowatcher/eslint-config/commit/2c5dba4))
+* chore(deps): update dependency eslint-processor-vue-blocks to v1 ([7812daf](https://github.com/rainbowatcher/eslint-config/commit/7812daf))
+* chore(deps): update dependency local-pkg to v1 ([e19375e](https://github.com/rainbowatcher/eslint-config/commit/e19375e))
+* chore(deps): update devdependency eslint-typegen to v1 ([cc86dcc](https://github.com/rainbowatcher/eslint-config/commit/cc86dcc))
+* fix(vue): disable lines-around-comment in vue ([16b7b8f](https://github.com/rainbowatcher/eslint-config/commit/16b7b8f))
+
+
+
 ## 0.19.0 (2024-12-11)
 
 * chore: add type check script ([662a470](https://github.com/rainbowatcher/eslint-config/commit/662a470))
