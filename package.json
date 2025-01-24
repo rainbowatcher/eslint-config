@@ -34,8 +34,8 @@
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.1",
         "@types/eslint__js": "^8.42.3",
-        "@types/node": "^22.10.7",
-        "@vitest/ui": "^3.0.2",
+        "@types/node": "^22.10.10",
+        "@vitest/ui": "^3.0.4",
         "commitlint": "^19.6.1",
         "conventional-changelog-cli": "^5.0.0",
         "cross-release-cli": "0.1.0",
@@ -46,7 +46,7 @@
         "tsup": "^8.3.5",
         "tsx": "^4.19.2",
         "typescript": "^5.7.3",
-        "vitest": "^3.0.2",
+        "vitest": "^3.0.4",
         "vue": "^3.5.13"
     },
     "simple-git-hooks": {
