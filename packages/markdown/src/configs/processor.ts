@@ -11,7 +11,7 @@ export async function processor(): Promise<EslintFlatConfigItem> {
         name: "rainbowatcher:markdown:processor",
         processor: mergeProcessors([
             processorPassThrough,
-            pluginMarkdown.processors!.markdown,
+            pluginMarkdown.processors.markdown,
         ]),
     }
 }
