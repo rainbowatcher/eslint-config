@@ -109,6 +109,21 @@ describe.concurrent("rules", () => {
             private options: Record<string, unknown>
         }
     `)
+    expectRule("ts/only-throw-error", dedent`
+        throw new Error("error")
+    `, { expected: false })
+    expectRule("ts/only-throw-error", dedent`
+        throw "error"
+    `, { expected: false }) // this rule is off
+    expectRule("ts/only-throw-error", dedent`
+        class CustomErr extends Error {}
+        throw new CustomErr("error")
+    `, { expected: false })
+    expectRule("ts/only-throw-error", dedent`
+        import { CustomError } from "./__util__/helper_classes"
+
+        throw new CustomErr("error")
+    `, { expected: false })
 })
 
 describe.concurrent("style", () => {

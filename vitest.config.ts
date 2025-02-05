@@ -7,5 +7,9 @@ export default defineConfig({
             ...defaultExclude,
         ],
         name: "@rainbowatcher/eslint-config",
+        sequence: {
+            concurrent: true,
+        },
+        testTimeout: 10_000,
     },
 })

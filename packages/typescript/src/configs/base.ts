@@ -163,11 +163,12 @@ export function typeAware(opts: Options): EslintFlatConfigItem {
             // "ts/no-unsafe-assignment": "off",
             // "ts/no-unsafe-member-access": "error",
             // "ts/no-unsafe-call": "error",
-            "ts/only-throw-error": ["error", {
-                allowThrowingAny: false,
-                // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
-                allowThrowingUnknown: true,
-            }],
+            "ts/only-throw-error": "off", // turn off because it can't recognize error that imported from files
+            // "ts/only-throw-error": ["off",
+            //     allowThrowingAny: false,
+            //     // This should ideally be `false`, but it makes rethrowing errors inconvenient. There should be a separate `allowRethrowingUnknown` option.
+            //     allowThrowingUnknown: true,
+            // }],
             "ts/prefer-nullish-coalescing": ["error", {
                 ignoreConditionalTests: false,
                 ignoreMixedLogicalExpressions: true,

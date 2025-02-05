@@ -89,7 +89,7 @@ export async function base(opts: Options): Promise<EslintFlatConfigItem> {
             "vue/no-empty-pattern": "error",
             "vue/no-irregular-whitespace": "error",
             "vue/no-loss-of-precision": "error",
-            // due to shadcn/ui use class as props
+            // due to shadcn/ui use class as property name
             "vue/no-reserved-props": "off",
             "vue/no-restricted-syntax": [
                 "error",
