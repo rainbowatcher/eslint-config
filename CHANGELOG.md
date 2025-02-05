@@ -1,3 +1,21 @@
+## <small>0.19.2 (2025-02-05)</small>
+
+* chore: add script to find type aware rules ([1cca595](https://github.com/rainbowatcher/eslint-config/commit/1cca595))
+* chore(deps): update all non-major dependencies ([9506679](https://github.com/rainbowatcher/eslint-config/commit/9506679))
+* chore(deps): update all non-major dependencies ([1d4ea73](https://github.com/rainbowatcher/eslint-config/commit/1d4ea73))
+* chore(deps): update dependency @unocss/eslint-plugin to v65 ([810c4e2](https://github.com/rainbowatcher/eslint-config/commit/810c4e2))
+* chore(deps): update dependency eslint-config-flat-gitignore to v2 ([4e76b45](https://github.com/rainbowatcher/eslint-config/commit/4e76b45))
+* chore(deps): update dependency eslint-flat-config-utils to v2 ([33519ad](https://github.com/rainbowatcher/eslint-config/commit/33519ad))
+* chore(deps): update dependency eslint-plugin-antfu to v3 ([b5569f6](https://github.com/rainbowatcher/eslint-config/commit/b5569f6))
+* chore(deps): update devdependency @eslint/config-inspector to v1 ([2558b97](https://github.com/rainbowatcher/eslint-config/commit/2558b97))
+* chore(deps): update eslint-stylistic monorepo to v3 ([c4ec57f](https://github.com/rainbowatcher/eslint-config/commit/c4ec57f))
+* chore(deps): update vitest monorepo to v3 ([cff2e50](https://github.com/rainbowatcher/eslint-config/commit/cff2e50))
+* chore(markdown): add type aware rules ([a5d2829](https://github.com/rainbowatcher/eslint-config/commit/a5d2829))
+* chore(markdown): remove not null assertion for pluginMarkdown.processors ([417a12d](https://github.com/rainbowatcher/eslint-config/commit/417a12d))
+* fix(typescript): disable ts/only-throw-error cause it can't recognize error that imported from files ([3344753](https://github.com/rainbowatcher/eslint-config/commit/3344753))
+
+
+
 ## <small>0.19.1 (2025-01-10)</small>
 
 * test: apply rule prefer-to-be ([d7fea9b](https://github.com/rainbowatcher/eslint-config/commit/d7fea9b))
