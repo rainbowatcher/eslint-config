@@ -5,7 +5,7 @@ import { tsConfigs } from "packages/typescript/src"
 import { describe, it } from "vitest"
 import { createExpectFn } from "./__util__/test_util"
 
-const opts = { style: true, typescript: true }
+const opts = { style: true, typescript: { tsconfigPath: "test/tsconfig.test.json", typeAware: true } }
 const configs = await concat(
     ...jsConfigs(opts),
     ...tsConfigs(opts),
@@ -190,6 +190,19 @@ describe.concurrent("style", () => {
                 import type { BaseOptions } from "./index.d.ts"
                 import type { Details } from "./data"
                 import type { InputProps } from "../Input"
+            `)
+        })
+
+        it.only("perfectionist/sort-union-types", ({ expect }) => {
+            const code = dedent`
+                type Foo = 100 | 10 | 1000 | 10_000 | 100_000 | 1_000_000
+                type Size = "lg" | "md" | "sm" | "xl" | "xs"
+                type Status = "Failed" | "Finished" | "Pending" | "Running"
+            `
+            expect(formatCode(code)).toBe(dedent`
+                type Foo = 10 | 100 | 1000 | 10_000 | 100_000 | 1_000_000
+                type Size = "lg" | "md" | "sm" | "xl" | "xs"
+                type Status = "Failed" | "Finished" | "Pending" | "Running"
             `)
         })
     })

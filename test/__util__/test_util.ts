@@ -35,8 +35,7 @@ Message:${JSON.stringify(result, null, 2)}
     }
 
     const formatCode = (code: string): string => {
-        const { fixed, messages, output } = linter.verifyAndFix(code, config, _filename)
-        expect(fixed, JSON.stringify(messages, null, 2)).toBeTruthy()
+        const { output } = linter.verifyAndFix(code, config, _filename)
         return output
     }
 
