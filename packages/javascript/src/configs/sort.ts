@@ -92,8 +92,8 @@ export function sort(opts: Options): EslintFlatConfigItem {
                 partitionByNewLine: true,
                 styledComponents: true,
             }],
-            "perfectionist/sort-switch-case": ["error", commonOptions],
-            "perfectionist/sort-union-types": ["error", { ...commonOptions, groups: [] }],
+            "perfectionist/sort-switch-case": ["error", { ...commonOptions }],
+            "perfectionist/sort-union-types": ["error", { ...commonOptions, type: "natural" }],
             "perfectionist/sort-variable-declarations": ["error", commonOptions],
         },
     }
