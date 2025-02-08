@@ -71,10 +71,10 @@
     },
     "dependencies": {
         "@antfu/install-pkg": "^1.0.0",
-        "@clack/prompts": "^0.9.1",
+        "@clack/prompts": "^0.10.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "detect-indent": "^7.0.1",
-        "eslint-flat-config-utils": "^2.0.0",
+        "eslint-flat-config-utils": "^2.0.1",
         "local-pkg": "^1.0.0",
         "magicast": "^0.3.5",
         "picocolors": "^1.1.1"
