@@ -14,7 +14,7 @@
         "prepare": "simple-git-hooks",
         "release": "cross-release -r --all -x 'pnpm changelog' && pnpm build && pnpm -r publish",
         "test": "vitest",
-        "typegen": "tsx scripts/gen_type.ts",
+        "typegen": "tsx scripts/typegen.ts",
         "typecheck": "tsc --noEmit",
         "watch": "pnpm --parallel watch",
         "inspect": "eslint-config-inspector --open"

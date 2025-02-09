@@ -1,5 +1,6 @@
 import fs from "node:fs/promises"
 import { flatConfigsToRulesDTS } from "eslint-typegen/core"
+import { builtinRules } from "eslint/use-at-your-own-risk"
 import defineConfig from "packages/all/src"
 import p from "picocolors"
 import type { Linter } from "eslint"
@@ -28,6 +29,12 @@ const configs = await defineConfig({
     unocss: true,
     vue: true,
     yaml: true,
+}, {
+    plugins: {
+        "": {
+            rules: Object.fromEntries(builtinRules.entries()),
+        },
+    },
 })
 
 await genType(configs, "typegen.d.ts")
