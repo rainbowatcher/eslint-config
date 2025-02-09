@@ -24,9 +24,9 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsup --clean --dts",
+        "build": "tsup --clean --dts src/index.ts",
         "build:only": "tsup",
-        "watch": "tsup --dts --watch"
+        "watch": "tsup --watch --dts src/index.ts"
     },
     "peerDependencies": {
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
