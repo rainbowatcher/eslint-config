@@ -128,8 +128,9 @@ export function typeAware(opts: Options): EslintFlatConfigItem {
     if (typeof opts.typescript === "object" && !opts.typescript.typeAware) return {}
     const files = [GLOB_TS]
     opts.jsx && files.push(GLOB_TSX)
+
     return {
-        files: [GLOB_TS],
+        files,
         ignores: [GLOB_MARKDOWN_CODE],
         name: "rainbowatcher:ts:type-aware",
         rules: {
