@@ -1,3 +1,24 @@
+## 0.20.0 (2025-02-09)
+
+* docs: update types ([a6364ee](https://github.com/rainbowatcher/eslint-config/commit/a6364ee))
+* test: add files in test to tsconfig, add jsx config in tsconfig.test.json ([829a9df](https://github.com/rainbowatcher/eslint-config/commit/829a9df))
+* test: increment timeout ([47ffedf](https://github.com/rainbowatcher/eslint-config/commit/47ffedf))
+* test: remove tsconfig.json in fixture, it mess eslint when using projectService instead of project ([efc1769](https://github.com/rainbowatcher/eslint-config/commit/efc1769))
+* test: rename _.tsx ([45d3e39](https://github.com/rainbowatcher/eslint-config/commit/45d3e39))
+* test: style adjust ([193ee9c](https://github.com/rainbowatcher/eslint-config/commit/193ee9c))
+* fix: correct filename path ([90b2a1c](https://github.com/rainbowatcher/eslint-config/commit/90b2a1c))
+* fix: fixed will be false when input same with output ([ef9ce54](https://github.com/rainbowatcher/eslint-config/commit/ef9ce54))
+* fix(typescript): files prop in type aware rule is had-coded ([48a79ee](https://github.com/rainbowatcher/eslint-config/commit/48a79ee))
+* fix(typescript): use projectService in parser, add non-typeaware rules ([dbfd39e](https://github.com/rainbowatcher/eslint-config/commit/dbfd39e))
+* build: add eslint builtin rules in typegen and rename scirpt file ([1dbbd24](https://github.com/rainbowatcher/eslint-config/commit/1dbbd24))
+* build(all): only gen dts for index.ts ([2550286](https://github.com/rainbowatcher/eslint-config/commit/2550286))
+* chore: use ts config file for eslint ([c06b056](https://github.com/rainbowatcher/eslint-config/commit/c06b056))
+* chore(deps): bump deps ([6e54478](https://github.com/rainbowatcher/eslint-config/commit/6e54478))
+* chore(javascript): sort union types by natural ([27a6d65](https://github.com/rainbowatcher/eslint-config/commit/27a6d65))
+* feat(typescript): clear typescript parsers ([cd2cae3](https://github.com/rainbowatcher/eslint-config/commit/cd2cae3))
+
+
+
 ## <small>0.19.2 (2025-02-05)</small>
 
 * chore: add script to find type aware rules ([1cca595](https://github.com/rainbowatcher/eslint-config/commit/1cca595))
