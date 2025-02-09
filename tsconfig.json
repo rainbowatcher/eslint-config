@@ -13,11 +13,10 @@
     "include": [
         "packages/**/*.ts",
         "scripts/**/*.ts",
-        "test/**/*.ts",
+        "test",
         "vitest.config.ts",
         "tsreset.d.ts",
         "uno.config.ts",
-        "typegen.d.ts",
-        "test/**/*.tsx",
+        "eslint.config.ts",
     ]
 }
