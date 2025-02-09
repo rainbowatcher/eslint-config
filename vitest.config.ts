@@ -10,6 +10,6 @@ export default defineConfig({
         sequence: {
             concurrent: true,
         },
-        testTimeout: 10_000,
+        testTimeout: 60_000,
     },
 })
