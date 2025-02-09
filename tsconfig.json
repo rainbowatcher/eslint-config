@@ -13,7 +13,9 @@
     "include": [
         "packages/**/*.ts",
         "scripts/**/*.ts",
-        "test",
+        "test/**/*.ts",
+        "test/**/*.tsx",
+        "test/**/*.vue",
         "vitest.config.ts",
         "tsreset.d.ts",
         "uno.config.ts",

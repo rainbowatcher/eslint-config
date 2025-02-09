@@ -66,7 +66,7 @@ describe.concurrent("rules", () => {
     `)
     expectRule("ts/no-array-constructor", dedent`
         <script setup>
-            const arr = new Array()
+        const arr = new Array()
         </script>
     `)
     expectRule("style-ts/lines-around-comment", dedent`

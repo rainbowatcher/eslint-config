@@ -2,11 +2,14 @@
     "extends": "../tsconfig.json",
     "compilerOptions": {
         "target": "ESNext",
+        "jsx": "preserve",
+        "jsxFactory": "h",
+        "jsxFragmentFactory": "Fragment",
         "baseUrl": ".",
         "module": "ESNext",
         "moduleResolution": "Bundler",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true
-    }
+    },
 }
