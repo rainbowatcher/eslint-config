@@ -1,6 +1,6 @@
 import path from "node:path"
 import { Linter } from "eslint"
-import { expect, it } from "vitest"
+import { it } from "vitest"
 import type { EslintFlatConfigItem } from "../../packages/shared/src"
 
 type Options = {

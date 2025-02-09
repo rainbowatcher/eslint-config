@@ -193,7 +193,7 @@ describe.concurrent("style", () => {
             `)
         })
 
-        it.only("perfectionist/sort-union-types", ({ expect }) => {
+        it("perfectionist/sort-union-types", ({ expect }) => {
             const code = dedent`
                 type Foo = 100 | 10 | 1000 | 10_000 | 100_000 | 1_000_000
                 type Size = "lg" | "md" | "sm" | "xl" | "xs"
