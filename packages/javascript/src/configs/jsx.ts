@@ -13,7 +13,7 @@ export function jsx(opts: Options): EslintFlatConfigItem {
                 },
             },
         },
-        name: "rainbowatcher:js:jsx-parser",
+        name: "rainbowatcher:js:jsx-setup",
     }
 }
 

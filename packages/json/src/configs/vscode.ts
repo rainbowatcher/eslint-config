@@ -1,6 +1,6 @@
-import type { Linter } from "eslint"
+import type { EslintFlatConfigItem } from "@rainbowatcher/eslint-config-shared"
 
-export function vscode(): Linter.FlatConfig {
+export function vscode(): EslintFlatConfigItem {
     return {
         files: ["**/.vscode/settings.json", "**/.vscode/extensions.json"],
         name: "rainbowatcher:json:vscode",

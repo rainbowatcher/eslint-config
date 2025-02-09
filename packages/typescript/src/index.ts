@@ -1,6 +1,6 @@
 import { base, typeAware } from "./configs/base"
 import { dts } from "./configs/dts"
-import { tsParserConfig, tsxParseConfig, vueParserConfig } from "./configs/parser"
+import { tsParserConfig } from "./configs/parser"
 import { setup } from "./configs/setup"
 import { style } from "./configs/style"
 import { tsx } from "./configs/tsx"
@@ -12,10 +12,8 @@ export function tsConfigs(opts: Options): EslintFlatConfigs {
     return [
         setup(),
         tsParserConfig(opts),
-        tsxParseConfig(opts),
-        vueParserConfig(opts),
-        typeAware(opts),
         base(opts),
+        typeAware(opts),
         style(opts),
         tsx(opts),
         dts(),

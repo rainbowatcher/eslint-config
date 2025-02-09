@@ -1,40 +1,36 @@
 import process from "node:process"
 import {
     GLOB_TS, GLOB_TSX, GLOB_VUE, interopDefault,
+    resolveAltOption,
 } from "@rainbowatcher/eslint-config-shared"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 import type { Linter } from "eslint"
 
-export async function vueParserConfig(opts: Options): Promise<EslintFlatConfigItem> {
-    if (!opts.vue) return {}
-    const files = opts.jsx ? [GLOB_TS, GLOB_TSX] : [GLOB_TS]
-    opts.vue && files.push(GLOB_VUE)
-    return await makeParser({ componentExts: ["vue"], files })
+const DEFAULT_TS_OPTIONS = {
+    tsconfigPath: "tsconfig.json",
+    typeAware: true,
 }
 
 export async function tsParserConfig(opts: Options): Promise<EslintFlatConfigItem> {
-    const files = opts.jsx ? [GLOB_TS, GLOB_TSX] : [GLOB_TS]
-    return await makeParser({ files, tsconfigPath: "tsconfig.json", typeAware: true })
-}
-
-export async function tsxParseConfig(opts: Options): Promise<EslintFlatConfigItem> {
-    if (!opts.jsx) return {}
-    const parserTs = await interopDefault(import("@typescript-eslint/parser"))
-
-    return {
-        files: [GLOB_TSX],
-        languageOptions: {
-            parser: parserTs,
-            parserOptions: {
-                ecmaFeatures: {
-                    jsx: true,
-                },
-                project: null,
-            },
-            sourceType: "module",
-        },
-        name: "rainbowatcher:ts:tsx-parser",
+    const files = [GLOB_TS]
+    const typescriptOpts = resolveAltOption(opts, "typescript", DEFAULT_TS_OPTIONS)
+    const componentExts = []
+    if (opts.vue) {
+        files.push(GLOB_VUE)
+        componentExts.push("vue")
     }
+    if (opts.jsx) {
+        files.push(GLOB_TSX)
+        componentExts.push("tsx")
+    }
+    return await makeParser({
+        componentExts,
+        files,
+        parserOptions: {
+            ecmaFeatures: { jsx: true },
+        },
+        ...typescriptOpts,
+    })
 }
 
 type MakeParserOptions = {
@@ -48,24 +44,26 @@ type MakeParserOptions = {
 
 async function makeParser(opts: MakeParserOptions): Promise<EslintFlatConfigItem> {
     const parserTs = await interopDefault(import("@typescript-eslint/parser"))
-
+    const {
+        componentExts, files, ignores, parserOptions, tsconfigPath, typeAware,
+    } = opts
     return {
-        files: opts.files,
-        ...opts.ignores ? { ignores: opts.ignores } : {},
+        files,
+        ...ignores ? { ignores } : {},
         languageOptions: {
             parser: parserTs,
             parserOptions: {
-                extraFileExtensions: opts.componentExts?.map(ext => `.${ext}`),
+                extraFileExtensions: componentExts?.map(ext => `.${ext}`),
                 sourceType: "module",
-                ...opts.typeAware
+                ...typeAware
                     ? {
-                        project: opts.tsconfigPath,
+                        project: tsconfigPath,
                         tsconfigRootDir: process.cwd(),
                     }
                     : {},
-                ...opts.parserOptions as any,
+                ...parserOptions as any,
             },
         },
-        name: `rainbowatcher:ts:${opts.typeAware ? "type-aware-parser" : "parser"}`,
+        name: `rainbowatcher:ts:${typeAware ? "type-aware-parser" : "parser"}`,
     }
 }

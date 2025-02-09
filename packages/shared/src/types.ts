@@ -5,7 +5,7 @@ export type EslintFlatConfigItem = {
     plugins?: Record<string, any>
 } & Omit<Linter.Config<Linter.RulesRecord>, "plugins">
 
-export type EslintFlatConfigs = Array< Awaitable <EslintFlatConfigItem>>
+export type EslintFlatConfigs = Array<Awaitable <EslintFlatConfigItem>>
 
 /**
  * there has no default value for each properties, all properties are optional and be set by defineConfig
@@ -82,6 +82,7 @@ export type Alterable<T> = {
 export type AltOptionValue<T> = T extends boolean ? never : T extends undefined ? Record<string, any> : T
 
 export type TypescriptOptions = {
+    tsconfigPath?: string
     typeAware?: boolean
 }
 
