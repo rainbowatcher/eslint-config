@@ -1,5 +1,7 @@
 import process from "node:process"
 import {
+    GLOB_ASTRO,
+    GLOB_MARKDOWN,
     GLOB_TS, GLOB_TSX, GLOB_VUE, interopDefault,
     resolveAltOption,
 } from "@rainbowatcher/eslint-config-shared"
@@ -11,23 +13,30 @@ const DEFAULT_TS_OPTIONS = {
     typeAware: true,
 }
 
-export async function tsParserConfig(opts: Options): Promise<EslintFlatConfigItem> {
+export async function tsParser(opts: Options): Promise<EslintFlatConfigItem> {
     const files = [GLOB_TS]
-    const typescriptOpts = resolveAltOption(opts, "typescript", DEFAULT_TS_OPTIONS)
-    const componentExts = []
-    if (opts.vue) {
-        files.push(GLOB_VUE)
-        componentExts.push("vue")
-    }
-    if (opts.jsx) {
-        files.push(GLOB_TSX)
-        componentExts.push("tsx")
-    }
+    const componentExts = opts.vue ? ["vue"] : []
+    opts.vue && files.push(GLOB_VUE)
+    opts.jsx && files.push(GLOB_TSX)
     return await makeParser({
         componentExts,
         files,
+    })
+}
+
+export async function tsTypeAwareParser(opts: Options): Promise<EslintFlatConfigItem> {
+    const typescriptOpts = resolveAltOption(opts, "typescript", DEFAULT_TS_OPTIONS)
+    if (!typescriptOpts?.typeAware) return {}
+    const files = [GLOB_TS]
+    const componentExts = opts.vue ? ["vue"] : []
+    opts.vue && files.push(GLOB_VUE)
+    opts.jsx && files.push(GLOB_TSX)
+    return await makeParser({
+        componentExts,
+        files,
+        ignores: [`${GLOB_MARKDOWN}/**`, `${GLOB_ASTRO}/*.ts`],
         parserOptions: {
-            ecmaFeatures: { jsx: true },
+            ecmaFeatures: { jsx: opts.jsx },
         },
         ...typescriptOpts,
     })
@@ -57,7 +66,10 @@ async function makeParser(opts: MakeParserOptions): Promise<EslintFlatConfigItem
                 sourceType: "module",
                 ...typeAware
                     ? {
-                        project: tsconfigPath,
+                        projectService: {
+                            allowDefaultProject: ["./*.js"],
+                            defaultProject: tsconfigPath,
+                        },
                         tsconfigRootDir: process.cwd(),
                     }
                     : {},

@@ -12,6 +12,7 @@ export const GLOB_YAML = "**/*.y?(a)ml"
 export const GLOB_TOML = "**/*.toml"
 export const GLOB_HTML = "**/*.htm?(l)"
 export const GLOB_ASTRO = "**/*.astro"
+export const GLOB_ASTRO_TS = "**/*.astro/*.ts"
 export const GLOB_GRAPHQL = "**/*.{g,graph}ql"
 export const GLOB_MARKDOWN = "**/*.md"
 export const GLOB_NEST_MARKDOWN = "**/*.md/*.md"
@@ -25,7 +26,7 @@ export const GLOB_SCSS = "**/*.scss"
 
 export const GLOB_SRC_EXT = "?([cm])[jt]s?(x)"
 export const GLOB_SRC = "**/*.?([cm])[jt]s?(x)"
-export const GLOB_MARKDOWN_CODE = `${GLOB_MARKDOWN}/${GLOB_SRC}`
+export const GLOB_MARKDOWN_CODE = `${GLOB_MARKDOWN}/${GLOB_SRC}` satisfies string
 export const GLOB_TESTS = [
     `**/__tests__/**/*.${GLOB_SRC_EXT}`,
     `**/*.spec.${GLOB_SRC_EXT}`,
