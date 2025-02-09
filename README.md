@@ -15,13 +15,31 @@ We use double quotes, because Strings in many other backend languages that are u
 
 ## Usage
 
-### Run init script
+### 1. Run init setup script
 
 ```bash
 npx @rainbowatcher/eslint-config
 ```
 
-### Add script in package.json
+finally it will generate a file like follow
+
+```js
+// eslint.config.js
+import { defineConfig } from "@rainbowatcher/eslint-config"
+
+export default defineConfig({
+    gitignore: true,
+    json: true,
+    markdown: true,
+    style: true,
+    typescript: true,
+    vue: true,
+    yaml: true,
+    // ...
+})
+```
+
+### 2. Add script in package.json
 
 For example:
 
@@ -33,7 +51,7 @@ For example:
 }
 ```
 
-### Config VS Code auto fix
+### 3. Config VS Code auto fix
 
 Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and create `.vscode/settings.json`
 
@@ -60,26 +78,6 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
         "toml",
     ],
 }
-```
-
-### Result
-
-the final result will be like follow
-
-```js
-// eslint.config.js
-import { defineConfig } from "@rainbowatcher/eslint-config"
-
-export default defineConfig({
-    gitignore: true,
-    json: true,
-    markdown: true,
-    style: true,
-    typescript: true,
-    vue: true,
-    yaml: true,
-    // ...
-})
 ```
 
 ## Options
@@ -151,14 +149,15 @@ export type Options = {
 }
 
 export type TypescriptOptions = {
+    tsconfigPath: string
     typeAware?: boolean
 }
 
 export type StyleOptions = {
-    indent?: number
-    quote?: "double" | "single"
     semi?: boolean
-    trailingComma?: boolean
+    singleQuote?: boolean
+    tabWidth?: number
+    trailingComma?: "all" | "none"
     useTabs?: boolean
 }
 ```
