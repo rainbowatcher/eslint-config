@@ -1,4 +1,4 @@
-import { defineConfig } from "@rainbowatcher/eslint-config"
+import { defineConfig } from "./packages/all/src"
 
 export default defineConfig({
     css: true,
