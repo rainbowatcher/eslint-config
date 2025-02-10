@@ -1,3 +1,11 @@
+## 0.21.0 (2025-02-10)
+
+* feat(all): re-export isInEditor ([d079e20](https://github.com/rainbowatcher/eslint-config/commit/d079e20))
+* feat(shared)!: resolveAltOptions now merge giving ops with default value ([2c28a98](https://github.com/rainbowatcher/eslint-config/commit/2c28a98))
+* chore(deps): update all non-major dependencies ([da19e10](https://github.com/rainbowatcher/eslint-config/commit/da19e10))
+
+
+
 ## 0.20.0 (2025-02-09)
 
 * docs: update types ([a6364ee](https://github.com/rainbowatcher/eslint-config/commit/a6364ee))
