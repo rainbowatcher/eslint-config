@@ -48,7 +48,7 @@ export function resolveAltOption<K extends keyof Alterable<Options>>(
         // this need all Alterable field's child fields are optional
         return (value ? _default : {}) as AltOptionValue<Alterable<Options>[K]>
     }
-    return (value || _default) as AltOptionValue<Alterable<Options>[K]>
+    return { ..._default, ...(value as any) } satisfies AltOptionValue<Alterable<Options>[K]>
 }
 
 /**

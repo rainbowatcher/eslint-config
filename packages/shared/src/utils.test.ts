@@ -58,4 +58,21 @@ describe("resolveAltOption", () => {
         const result = resolveAltOption(opts, "typescript")
         expect(result).toStrictEqual({})
     })
+
+    it("return object", () => {
+        const DEFAULT = {
+            tsconfigPath: "tsconfig.json",
+            typeAware: true,
+        }
+        const opts = {
+            typescript: {
+                typeAware: false,
+            },
+        }
+        const result = resolveAltOption(opts, "typescript", DEFAULT)
+        expect(result).toStrictEqual({
+            tsconfigPath: "tsconfig.json",
+            typeAware: false,
+        })
+    })
 })
