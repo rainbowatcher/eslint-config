@@ -1,6 +1,6 @@
 import ignoreConfigs from "@rainbowatcher/eslint-config-ignore"
 import jsConfigs from "@rainbowatcher/eslint-config-js"
-import { interopDefault } from "@rainbowatcher/eslint-config-shared"
+import { interopDefault, isInEditor } from "@rainbowatcher/eslint-config-shared"
 import { composer } from "eslint-flat-config-utils"
 import type { EslintFlatConfigItem, Options } from "@rainbowatcher/eslint-config-shared"
 
@@ -46,4 +46,5 @@ export async function defineConfig(opts: Options, ...otherConfigs: EslintFlatCon
         .onResolved(cs => cs.filter(c => Object.keys(c).length > 0))
 }
 
+export { isInEditor }
 export default defineConfig
