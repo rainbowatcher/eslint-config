@@ -37,6 +37,6 @@
         "@stylistic/eslint-plugin-ts": "^3.1.0",
         "@typescript-eslint/eslint-plugin": "^8.24.0",
         "@typescript-eslint/parser": "^8.24.0",
-        "eslint-plugin-antfu": "^3.0.0"
+        "eslint-plugin-antfu": "^3.1.0"
     }
 }
