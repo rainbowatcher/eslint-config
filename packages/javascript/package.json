@@ -32,9 +32,9 @@
     "dependencies": {
         "@eslint/js": "^9.20.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@stylistic/eslint-plugin-js": "^3.1.0",
-        "@stylistic/eslint-plugin-jsx": "^3.1.0",
-        "@stylistic/eslint-plugin-plus": "^3.1.0",
+        "@stylistic/eslint-plugin-js": "^4.0.0",
+        "@stylistic/eslint-plugin-jsx": "^4.0.0",
+        "@stylistic/eslint-plugin-plus": "^4.0.0",
         "@vitest/eslint-plugin": "^1.1.31",
         "eslint-plugin-antfu": "^3.1.0",
         "eslint-plugin-import-x": "^4.6.1",
