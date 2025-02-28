@@ -32,9 +32,9 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@stylistic/eslint-plugin-jsx": "^4.0.1",
-        "@stylistic/eslint-plugin-plus": "^4.0.1",
-        "@stylistic/eslint-plugin-ts": "^4.0.1",
+        "@stylistic/eslint-plugin-jsx": "^4.1.0",
+        "@stylistic/eslint-plugin-plus": "^4.1.0",
+        "@stylistic/eslint-plugin-ts": "^4.1.0",
         "@typescript-eslint/eslint-plugin": "^8.25.0",
         "@typescript-eslint/parser": "^8.25.0",
         "eslint-plugin-antfu": "^3.1.0"

@@ -28,6 +28,6 @@
     },
     "dependencies": {
         "eslint-flat-config-utils": "^2.0.1",
-        "local-pkg": "^1.0.0"
+        "local-pkg": "^1.1.0"
     }
 }
