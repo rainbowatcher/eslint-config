@@ -11,7 +11,9 @@ async function genType(
     extra?: string,
 ) {
     console.log(`${p.green("generated")} ${dist}`)
-    let dts = await flatConfigsToRulesDTS(configs)
+    let dts = await flatConfigsToRulesDTS(configs, {
+        includeAugmentation: false,
+    })
     dts += extra ?? ""
     await fs.writeFile(dist, dts)
 }
