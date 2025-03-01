@@ -65,7 +65,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
                 allowObjectEnd: false,
                 allowObjectStart: true,
                 beforeBlockComment: true,
-                beforeLineComment: true,
+                beforeLineComment: false,
                 ignorePattern: "eslint|global",
             }],
             "style-js/lines-between-class-members": "off",
