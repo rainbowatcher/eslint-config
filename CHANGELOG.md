@@ -1,3 +1,28 @@
+## <small>0.21.1 (2025-03-01)</small>
+
+* test: fix line-around-comment rule in sort classes test ([f50a969](https://github.com/rainbowatcher/eslint-config/commit/f50a969))
+* revert: not generate type in prepare script ([6708491](https://github.com/rainbowatcher/eslint-config/commit/6708491))
+* revert(shared): fix generated type info missing ([1f063ae](https://github.com/rainbowatcher/eslint-config/commit/1f063ae))
+* fix: generate type in prepare script ([d452589](https://github.com/rainbowatcher/eslint-config/commit/d452589))
+* fix(javascript): turn off lines-around-comment with line comment ([fade4b6](https://github.com/rainbowatcher/eslint-config/commit/fade4b6))
+* chore(deps): bump deps and remove deprecated dep @types/eslint__js ([e76bbbe](https://github.com/rainbowatcher/eslint-config/commit/e76bbbe))
+* chore(deps): update all non-major dependencies ([225c067](https://github.com/rainbowatcher/eslint-config/commit/225c067))
+* chore(deps): update all non-major dependencies ([45c7439](https://github.com/rainbowatcher/eslint-config/commit/45c7439))
+* chore(deps): update all non-major dependencies ([2b8897b](https://github.com/rainbowatcher/eslint-config/commit/2b8897b))
+* chore(deps): update all non-major dependencies ([6e0d7a7](https://github.com/rainbowatcher/eslint-config/commit/6e0d7a7))
+* chore(deps): update all non-major dependencies ([df6b9dd](https://github.com/rainbowatcher/eslint-config/commit/df6b9dd))
+* chore(deps): update all non-major dependencies ([845e96a](https://github.com/rainbowatcher/eslint-config/commit/845e96a))
+* chore(deps): update all non-major dependencies to ^8.24.1 ([d685d20](https://github.com/rainbowatcher/eslint-config/commit/d685d20))
+* chore(deps): update dependency @unocss/eslint-plugin to v66 ([74b26c6](https://github.com/rainbowatcher/eslint-config/commit/74b26c6))
+* chore(deps): update dependency eslint-plugin-unicorn to v57 ([a080558](https://github.com/rainbowatcher/eslint-config/commit/a080558))
+* chore(deps): update dependency globals to v16 ([5df2edb](https://github.com/rainbowatcher/eslint-config/commit/5df2edb))
+* chore(deps): update devdependency eslint-typegen to v2 ([acc4463](https://github.com/rainbowatcher/eslint-config/commit/acc4463))
+* chore(deps): update devdependency pkg-types to v2 ([e5e32cc](https://github.com/rainbowatcher/eslint-config/commit/e5e32cc))
+* chore(deps): update eslint-stylistic monorepo to v4 ([d1a46d0](https://github.com/rainbowatcher/eslint-config/commit/d1a46d0))
+* chore(shared): fix generated type info missing ([baa3b9f](https://github.com/rainbowatcher/eslint-config/commit/baa3b9f))
+
+
+
 ## 0.21.0 (2025-02-10)
 
 * feat(all): re-export isInEditor ([d079e20](https://github.com/rainbowatcher/eslint-config/commit/d079e20))

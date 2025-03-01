@@ -1,7 +1,7 @@
 {
     "name": "@rainbowatcher/eslint-config-mono",
     "type": "module",
-    "version": "0.21.0",
+    "version": "0.21.1",
     "private": true,
     "packageManager": "pnpm@10.5.2",
     "author": "rainbowatcher <rainbow-w@qq.com>",
