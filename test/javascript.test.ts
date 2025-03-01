@@ -211,7 +211,6 @@ describe.concurrent("style", () => {
             expect(formatCode(code)).toBe(dedent`
                 class Foo {
                     options = {}
-
                     // region: optional fields
                     attributes
                     bar = {}
