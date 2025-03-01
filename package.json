@@ -11,7 +11,7 @@
         "build:only": "pnpm --parallel build:only",
         "changelog": "conventional-changelog -si CHANGELOG.md",
         "lint": "eslint .",
-        "prepare": "simple-git-hooks && pnpm typegen",
+        "prepare": "simple-git-hooks",
         "release": "cross-release -r --all -x 'pnpm changelog' && pnpm build && pnpm -r publish",
         "test": "vitest",
         "typegen": "tsx scripts/typegen.ts",
