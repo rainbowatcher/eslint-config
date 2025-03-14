@@ -51,9 +51,11 @@ For example:
 }
 ```
 
-### 3. Config VS Code auto fix
+### 3. Config Editor for auto fix
 
-Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and create `.vscode/settings.json`
+#### VS Code
+
+Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and create `.vscode/settings.json` based on your project root
 
 ```jsonc
 {
@@ -65,18 +67,55 @@ Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?it
         "source.fixAll.eslint": true
     },
     "eslint.validate": [
-        "json",
-        "jsonc",
-        "json5",
         "javascript",
         "javascriptreact",
+        "json",
+        "json5",
+        "jsonc",
+        "markdown",
+        "toml",
         "typescript",
         "typescriptreact",
         "vue",
-        "markdown",
         "yaml",
-        "toml",
     ],
+}
+```
+
+#### Zed
+
+create `.zed/settings.json` based on your project root
+
+```jsonc
+{
+    "formatter": {
+        "code_actions": {
+            "source.fixAll.eslint": true,
+        },
+    },
+    "languages": {
+        "Markdown": {
+            "format_on_save": "on"
+        }
+    },
+    "language_servers": ["eslint", "vtsls"],
+    "language_server_options": {
+        "eslint": {
+            "language_ids": [
+                "javascript",
+                "javascriptreact",
+                "json",
+                "json5",
+                "jsonc",
+                "markdown",
+                "toml",
+                "typescript",
+                "typescriptreact",
+                "vue",
+                "yaml",
+            ],
+        }
+    }
 }
 ```
 
