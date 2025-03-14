@@ -4,12 +4,28 @@
     },
     "formatter": {
         "code_actions": {
-
-            // Use ESLint's --fix:
             "source.fixAll.eslint": true,
-
-            // Organize imports on save:
-            "source.organizeImports": true
+        },
+    },
+    "languages": {
+        "Markdown": {
+            "format_on_save": "on",
+        }
+    },
+    "language_servers": ["eslint", "vtsls"],
+    "language_server_options": {
+        "eslint": {
+            "language_ids": [
+                "javascript",
+                "javascriptreact",
+                "json",
+                "jsonc",
+                "markdown",
+                "toml",
+                "typescript",
+                "typescriptreact",
+                "yaml",
+            ],
         }
     }
 }
