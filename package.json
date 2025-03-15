@@ -40,7 +40,7 @@
         "cross-release-cli": "0.1.0",
         "dedent": "^1.5.3",
         "eslint": "^9.22.0",
-        "eslint-typegen": "^2.0.0",
+        "eslint-typegen": "^2.1.0",
         "happy-dom": "^17.4.4",
         "simple-git-hooks": "^2.11.1",
         "tsup": "^8.4.0",
