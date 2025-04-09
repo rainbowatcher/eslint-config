@@ -71,7 +71,7 @@
     },
     "dependencies": {
         "@antfu/install-pkg": "^1.0.0",
-        "@clack/prompts": "^0.10.0",
+        "@clack/prompts": "^0.10.1",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "detect-indent": "^7.0.1",
         "eslint-flat-config-utils": "^2.0.1",
