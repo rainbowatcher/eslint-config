@@ -27,15 +27,15 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.24.0"
+        "eslint": ">=9.25.0"
     },
     "dependencies": {
-        "@eslint/js": "^9.24.0",
+        "@eslint/js": "^9.25.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "@stylistic/eslint-plugin-js": "^4.2.0",
         "@stylistic/eslint-plugin-jsx": "^4.2.0",
         "@stylistic/eslint-plugin-plus": "^4.2.0",
-        "@vitest/eslint-plugin": "^1.1.42",
+        "@vitest/eslint-plugin": "^1.1.43",
         "eslint-plugin-antfu": "^3.1.1",
         "eslint-plugin-import-x": "^4.10.5",
         "eslint-plugin-n": "^17.17.0",
