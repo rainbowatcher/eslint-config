@@ -38,7 +38,7 @@
         "@rainbowatcher/eslint-config-ts": "workspace:*",
         "@rainbowatcher/eslint-config-unocss": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
-        "eslint": ">=9.24.0"
+        "eslint": ">=9.25.1"
     },
     "peerDependenciesMeta": {
         "@rainbowatcher/eslint-config-ignore": {
