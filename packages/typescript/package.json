@@ -27,7 +27,7 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.25.1",
+        "eslint": ">=9.26.0",
         "typescript": ">= 5.8.3"
     },
     "dependencies": {
@@ -35,8 +35,8 @@
         "@stylistic/eslint-plugin-jsx": "^4.2.0",
         "@stylistic/eslint-plugin-plus": "^4.2.0",
         "@stylistic/eslint-plugin-ts": "^4.2.0",
-        "@typescript-eslint/eslint-plugin": "^8.31.1",
-        "@typescript-eslint/parser": "^8.31.1",
+        "@typescript-eslint/eslint-plugin": "^8.32.0",
+        "@typescript-eslint/parser": "^8.32.0",
         "eslint-plugin-antfu": "^3.1.1"
     }
 }
