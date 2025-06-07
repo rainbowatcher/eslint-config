@@ -30,7 +30,7 @@
         "eslint": ">=9.28.0"
     },
     "dependencies": {
-        "@eslint/markdown": "^6.4.0",
+        "@eslint/markdown": "^6.5.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "eslint-merge-processors": "^2.0.0"
     }
