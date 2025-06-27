@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.21.1",
     "private": true,
-    "packageManager": "pnpm@10.12.1",
+    "packageManager": "pnpm@10.12.4",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
     "scripts": {
@@ -33,7 +33,7 @@
         "@rainbowatcher/eslint-config-unocss": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.1",
-        "@types/node": "^22.15.32",
+        "@types/node": "^22.15.33",
         "@vitest/ui": "^3.2.4",
         "commitlint": "^19.8.1",
         "conventional-changelog-cli": "^5.0.0",

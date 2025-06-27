@@ -80,6 +80,6 @@
         "picocolors": "^1.1.1"
     },
     "devDependencies": {
-        "pkg-types": "^2.1.0"
+        "pkg-types": "^2.1.1"
     }
 }
