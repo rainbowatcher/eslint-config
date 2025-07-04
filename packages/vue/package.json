@@ -33,7 +33,7 @@
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "@typescript-eslint/parser": "^8.35.1",
         "eslint-merge-processors": "^2.0.0",
-        "eslint-plugin-vue": "^10.2.0",
+        "eslint-plugin-vue": "^10.3.0",
         "eslint-processor-vue-blocks": "^2.0.0"
     }
 }
