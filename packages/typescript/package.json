@@ -35,8 +35,8 @@
         "@stylistic/eslint-plugin-jsx": "^4.4.1",
         "@stylistic/eslint-plugin-plus": "^4.4.1",
         "@stylistic/eslint-plugin-ts": "^4.4.1",
-        "@typescript-eslint/eslint-plugin": "^8.35.1",
-        "@typescript-eslint/parser": "^8.35.1",
+        "@typescript-eslint/eslint-plugin": "^8.36.0",
+        "@typescript-eslint/parser": "^8.36.0",
         "eslint-plugin-antfu": "^3.1.1"
     }
 }
