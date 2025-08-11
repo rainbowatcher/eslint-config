@@ -27,11 +27,11 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.32.0"
+        "eslint": ">=9.33.0"
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@typescript-eslint/parser": "^8.39.0",
+        "@typescript-eslint/parser": "^8.39.1",
         "eslint-merge-processors": "^2.0.0",
         "eslint-plugin-vue": "^10.4.0",
         "eslint-processor-vue-blocks": "^2.0.0"
