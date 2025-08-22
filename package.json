@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.21.1",
     "private": true,
-    "packageManager": "pnpm@10.14.0",
+    "packageManager": "pnpm@10.15.0",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
     "scripts": {
@@ -47,7 +47,7 @@
         "tsx": "^4.20.4",
         "typescript": "^5.9.2",
         "vitest": "^3.2.4",
-        "vue": "^3.5.18"
+        "vue": "^3.5.19"
     },
     "simple-git-hooks": {
         "commit-msg": "pnpm exec commitlint --edit $1"
