@@ -33,7 +33,7 @@
         "@rainbowatcher/eslint-config-unocss": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.1",
-        "@types/node": "^22.17.2",
+        "@types/node": "^22.18.0",
         "@vitest/ui": "^3.2.4",
         "commitlint": "^19.8.1",
         "conventional-changelog-cli": "^5.0.0",
@@ -44,10 +44,10 @@
         "happy-dom": "^17.6.3",
         "simple-git-hooks": "^2.13.1",
         "tsup": "^8.5.0",
-        "tsx": "^4.20.4",
+        "tsx": "^4.20.5",
         "typescript": "^5.9.2",
         "vitest": "^3.2.4",
-        "vue": "^3.5.19"
+        "vue": "^3.5.20"
     },
     "simple-git-hooks": {
         "commit-msg": "pnpm exec commitlint --edit $1"
