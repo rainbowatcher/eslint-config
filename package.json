@@ -20,7 +20,7 @@
         "inspect": "eslint-config-inspector --open"
     },
     "devDependencies": {
-        "@commitlint/config-conventional": "^19.8.1",
+        "@commitlint/config-conventional": "^20.0.0",
         "@eslint/config-inspector": "^1.2.0",
         "@rainbowatcher/eslint-config": "workspace:*",
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
@@ -35,7 +35,7 @@
         "@types/eslint": "^9.6.1",
         "@types/node": "^22.18.3",
         "@vitest/ui": "^3.2.4",
-        "commitlint": "^19.8.1",
+        "commitlint": "^20.1.0",
         "conventional-changelog-cli": "^5.0.0",
         "cross-release-cli": "0.4.0",
         "dedent": "^1.7.0",
