@@ -41,7 +41,7 @@
         "dedent": "^1.7.0",
         "eslint": "^9.35.0",
         "eslint-typegen": "^2.3.0",
-        "happy-dom": "^18.0.1",
+        "happy-dom": "^20.0.11",
         "simple-git-hooks": "^2.13.1",
         "tsup": "^8.5.0",
         "tsx": "^4.20.5",
