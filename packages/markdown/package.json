@@ -27,10 +27,10 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.35.0"
+        "eslint": ">=9.39.1"
     },
     "dependencies": {
-        "@eslint/markdown": "^7.5.0",
+        "@eslint/markdown": "^7.5.1",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
         "eslint-merge-processors": "^2.0.0"
     }
