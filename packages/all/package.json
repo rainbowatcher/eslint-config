@@ -38,7 +38,7 @@
         "@rainbowatcher/eslint-config-ts": "workspace:*",
         "@rainbowatcher/eslint-config-unocss": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
-        "eslint": ">=9.35.0"
+        "eslint": ">=9.39.1"
     },
     "peerDependenciesMeta": {
         "@rainbowatcher/eslint-config-ignore": {
@@ -73,10 +73,10 @@
         "@antfu/install-pkg": "^1.1.0",
         "@clack/prompts": "^0.11.0",
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "detect-indent": "^7.0.1",
-        "eslint-flat-config-utils": "^2.1.1",
+        "detect-indent": "^7.0.2",
+        "eslint-flat-config-utils": "^2.1.4",
         "local-pkg": "^1.1.2",
-        "magicast": "^0.3.5",
+        "magicast": "^0.5.1",
         "picocolors": "^1.1.1"
     },
     "devDependencies": {
