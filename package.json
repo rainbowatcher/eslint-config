@@ -33,7 +33,7 @@
         "@rainbowatcher/eslint-config-unocss": "workspace:*",
         "@rainbowatcher/eslint-config-vue": "workspace:*",
         "@types/eslint": "^9.6.1",
-        "@types/node": "^22.18.3",
+        "@types/node": "^24.10.1",
         "@vitest/ui": "^3.2.4",
         "commitlint": "^20.1.0",
         "conventional-changelog-cli": "^5.0.0",
