@@ -27,6 +27,7 @@
         "watch": "tsup --dts --watch"
     },
     "dependencies": {
+        "@rainbowatcher/eslint-config-shared": "workspace:*",
         "@unocss/eslint-plugin": "^66.5.10"
     }
 }

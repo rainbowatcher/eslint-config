@@ -2,6 +2,7 @@ import process from "node:process"
 import { getPackageInfoSync, isPackageExists } from "local-pkg"
 
 export function isInEditor(): boolean {
+    if (!process) return false
     if (process.env.CI) return false
     if (isInGitHooksOrLintStaged()) return false
     return !!(
@@ -14,6 +15,7 @@ export function isInEditor(): boolean {
 }
 
 export function isInGitHooksOrLintStaged(): boolean {
+    if (!process) return false
     return !!(
         process.env.GIT_PARAMS
         ?? process.env.VSCODE_GIT_COMMAND
