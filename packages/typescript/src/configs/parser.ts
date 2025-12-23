@@ -66,10 +66,7 @@ async function makeParser(opts: MakeParserOptions): Promise<EslintFlatConfigItem
                 sourceType: "module",
                 ...typeAware
                     ? {
-                        projectService: {
-                            allowDefaultProject: ["./*.js"],
-                            defaultProject: tsconfigPath,
-                        },
+                        project: tsconfigPath,
                         tsconfigRootDir: process.cwd(),
                     }
                     : {},
