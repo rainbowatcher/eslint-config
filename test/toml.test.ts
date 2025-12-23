@@ -1,9 +1,9 @@
 import dedent from "dedent"
 import { concat } from "eslint-flat-config-utils"
-import jsConfigs from "packages/javascript/src"
-import tomlConfigs from "packages/toml/src"
 import { describe, it } from "vitest"
 import { createExpectFn } from "./__util__/test_util"
+import jsConfigs from "../packages/javascript/src"
+import tomlConfigs from "../packages/toml/src"
 
 
 const opts = { style: true, toml: true }
