@@ -23,6 +23,23 @@ export function createExpectFn(config: EslintFlatConfigItem[], filename?: string
         it(rule, ({ expect }) => {
             const result = linter.verify(input, config, _filename)
             const hasRule = result.some(error => error.ruleId === rule)
+            if (rule === "ts/prefer-nullish-coalescing") {
+                console.log("=== DEBUG ts/prefer-nullish-coalescing ===")
+                console.log("Rule:", JSON.stringify(rule))
+                console.log("Result length:", result.length)
+                console.log("Result items:")
+                for (const [index, error] of result.entries()) {
+                    console.log(`  [${index}]:`, {
+                        equal: error.ruleId === rule,
+                        ruleId: error.ruleId,
+                        ruleIdType: typeof error.ruleId,
+                        strictEqual: Object.is(error.ruleId, rule),
+                    })
+                }
+                console.log("hasRule:", hasRule)
+                console.log("expected:", expected)
+                console.log("=====================================")
+            }
             // console.log(rule, result, hasRule === expected)
             const errMsg = `\
 Rule: ${rule}
