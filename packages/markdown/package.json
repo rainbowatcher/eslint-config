@@ -27,7 +27,7 @@
         "watch": "tsup --dts --watch"
     },
     "peerDependencies": {
-        "eslint": ">=9.39.1"
+        "eslint": ">=9.39.2"
     },
     "dependencies": {
         "@eslint/markdown": "^7.5.1",
