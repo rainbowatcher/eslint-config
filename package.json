@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.21.1",
     "private": true,
-    "packageManager": "pnpm@10.26.2",
+    "packageManager": "pnpm@10.27.0",
     "author": "rainbowatcher <rainbow-w@qq.com>",
     "license": "MIT",
     "scripts": {
@@ -20,7 +20,7 @@
         "inspect": "eslint-config-inspector --open"
     },
     "devDependencies": {
-        "@commitlint/config-conventional": "^20.2.0",
+        "@commitlint/config-conventional": "^20.3.0",
         "@eslint/config-inspector": "^1.4.2",
         "@rainbowatcher/eslint-config": "workspace:*",
         "@rainbowatcher/eslint-config-ignore": "workspace:*",
@@ -35,7 +35,7 @@
         "@types/eslint": "^9.6.1",
         "@types/node": "^24.10.4",
         "@vitest/ui": "^4.0.16",
-        "commitlint": "^20.2.0",
+        "commitlint": "^20.3.0",
         "conventional-changelog-cli": "^5.0.0",
         "cross-release-cli": "0.4.0",
         "dedent": "^1.7.1",
