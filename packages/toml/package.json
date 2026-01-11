@@ -28,7 +28,7 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "eslint-plugin-toml": "^0.12.0",
-        "toml-eslint-parser": "^0.10.1"
+        "eslint-plugin-toml": "^0.13.1",
+        "toml-eslint-parser": "^0.12.0"
     }
 }
