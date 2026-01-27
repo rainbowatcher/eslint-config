@@ -28,6 +28,6 @@
     },
     "dependencies": {
         "@rainbowatcher/eslint-config-shared": "workspace:*",
-        "@unocss/eslint-plugin": "^66.5.12"
+        "@unocss/eslint-plugin": "^66.6.0"
     }
 }
