@@ -21,7 +21,7 @@ export async function style(opts: Options): Promise<EslintFlatConfigItem> {
             "style-ts": pluginStylisticTs,
         },
         rules: {
-            ...renameRules(pluginStylisticTs.configs["all-flat"].rules, { "@stylistic/ts": "style-ts" }),
+            ...renameRules(pluginStylisticTs.configs.all.rules, { "@stylistic/ts": "style-ts" }),
 
             // "style-ts/func-call-spacing": ["error", "never"],
             // "style-ts/comma-spacing": ["error", { after: true, before: false }],

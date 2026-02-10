@@ -1,4 +1,4 @@
-import { rules } from "@typescript-eslint/eslint-plugin"
+import tsPlugin from "@typescript-eslint/eslint-plugin"
 import { Window } from "happy-dom"
 
 async function getRulesFromWeb() {
@@ -29,7 +29,7 @@ async function getRulesFromWeb() {
 function getRulesFromLib() {
     const typeAwareRules = []
     const otherRules = []
-    for (const [key, value] of Object.entries(rules)) {
+    for (const [key, value] of Object.entries(tsPlugin.rules)) {
         const ruleName = `ts/${key}`
         if (value.meta.docs.requiresTypeChecking) {
             typeAwareRules.push(ruleName)
