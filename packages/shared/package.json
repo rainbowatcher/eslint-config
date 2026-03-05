@@ -27,7 +27,7 @@
         "watch": "tsup --dts --watch"
     },
     "dependencies": {
-        "eslint-flat-config-utils": "^2.1.4",
+        "eslint-flat-config-utils": "^3.0.1",
         "local-pkg": "^1.1.2"
     }
 }
